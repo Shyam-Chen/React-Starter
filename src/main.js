@@ -3,9 +3,9 @@ import { render } from 'react-dom';
 
 import { Provider } from 'react-redux';
 
-import { store } from './root';
+import store from './root';
 
-import App from './containers/App';
+import App from './components/App';
 
 render(
   <Provider store={ store }>

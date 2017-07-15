@@ -1,11 +1,12 @@
 {
   "presets": [
-    "es2015",
+    "latest",
     "react"
   ],
   "plugins": [
     "transform-runtime",
     "transform-function-bind",
+    "transform-object-rest-spread",
     [
       "transform-imports", {
         "rxjs": {
