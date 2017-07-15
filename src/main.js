@@ -1,40 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { render } from 'react-dom';
 
-import { createStore } from 'redux'
 import { Provider } from 'react-redux';
 
-import App from './components/App';
+import { store } from './root';
 
-export class App extends React.Component {
-  constructor(props) {
-    super(props);
+import App from './containers/App';
 
-    this.state = {};
-  }
-
-  getList() {
-    xhr.get('https://web-go-demo.herokuapp.com/__/list')
-      .then(res => {
-        this.setState({
-          list: res.text
-        });
-      });
-  }
-
-  render() {
-    return (
-      <div>
-
-      </div>
-    );
-  }
-}
-
-App.propTypes = {};
-
-ReactDOM.render(
+render(
   <Provider store={ store }>
     <App />
   </Provider>,

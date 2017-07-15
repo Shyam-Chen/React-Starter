@@ -1,15 +1,24 @@
 {
   "name": "React-Starter-Kit",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A boilerplate for React and Redux.",
   "scripts": {
     "start": "webpack-dev-server --devtool eval --progress --colors --content-base build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shyam-Chen/React-Starter-Kit.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Yen-cheng Chen, 陳彥澄",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shyam-Chen/React-Starter-Kit/issues"
+  },
+  "homepage": "https://github.com/Shyam-Chen/React-Starter-Kit#readme",
   "dependencies": {
     "d3": "4.9.1",
     "immutable": "3.8.1",
