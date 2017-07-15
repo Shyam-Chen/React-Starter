@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+
 import { addTodo } from '../actions'
 
 let AddTodo = ({ dispatch }) => {
@@ -25,6 +27,11 @@ let AddTodo = ({ dispatch }) => {
     </div>
   )
 }
-AddTodo = connect()(AddTodo)
+
+AddTodo.propTypes = {
+  dispatch: PropTypes.func
+};
+
+AddTodo = connect()(AddTodo);
 
 export default AddTodo
