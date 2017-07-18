@@ -8,7 +8,18 @@ class Counter extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.incrementIfOdd = this.incrementIfOdd.bind(this);
+    this.incrementAsync = this.incrementAsync.bind(this);
+  }
+
+  incrementIfOdd() {
+    if (this.props.counter.value % 2 === 1) {
+      this.props.actions.onIncrement();
+    }
+  }
+
+  incrementAsync() {
+    setTimeout(this.props.actions.onIncrement, 1000);
   }
 
   render() {
@@ -16,9 +27,11 @@ class Counter extends Component {
 
     return (
       <p>
-        Clicked: { counter.counter } times
+        Clicked: { counter.value } times
         <button onClick={ actions.onIncrement }>+</button>
         <button onClick={ actions.onDecrement }>-</button>
+        <button onClick={ this.incrementAsync }>+ (Async)</button>
+        <button onClick={ this.incrementIfOdd }>+ (If Odd)</button>
       </p>
     );
   }
@@ -33,5 +46,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  mapStateToProps, mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Counter)

@@ -1,15 +1,15 @@
 import { INCREMENT, DECREMENT } from '../constants';
 
 const init = {
-  counter: 0
+  value: 0
 };
 
 export default (state = init, action) => {
   switch (action.type) {
     case INCREMENT:
-      return { ...state, counter: state.counter + 1 };
+      return { ...state, value: state.value + 1 };
     case DECREMENT:
-      return { ...state, counter: state.counter - 1 };
+      return { ...state, value: state.value - 1 };
     default:
       return state;
   }
