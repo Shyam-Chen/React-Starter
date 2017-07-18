@@ -42,6 +42,9 @@
     "prefer-template": "error",
     "symbol-description": "error",
     "template-curly-spacing": ["error", "never"],
-    "yield-star-spacing": ["error", "after"]
+    "yield-star-spacing": ["error", "after"],
+
+    // React
+    "react/prop-types": "off"
   }
 }
