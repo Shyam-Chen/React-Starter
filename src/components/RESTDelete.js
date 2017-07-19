@@ -29,7 +29,6 @@ export class RESTDelete extends Component {
   }
 
   deleteItem() {
-    console.log(123);
     this.props.actions.onDeleteItem(this.props.id);
   }
 

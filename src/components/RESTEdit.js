@@ -7,11 +7,16 @@ export class RESTEdit extends Component {
     super(props);
 
     this.state = {
-      modalOpen: false
+      modalOpen: false,
+
+      foo: props.foo,
+      bar: props.bar,
     };
 
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
+
+    this.editItem = this.editItem.bind(this);
   }
 
   handleOpen() {
@@ -26,6 +31,11 @@ export class RESTEdit extends Component {
     });
   }
 
+  editItem() {
+    this.props.actions.onEditItem(this.props.id, this.state.foo, this.state.bar);
+    this.handleClose();
+  }
+
   render() {
     return (
       <Modal
@@ -38,16 +48,16 @@ export class RESTEdit extends Component {
         <Header icon='edit' content='Edit' />
         <Modal.Content>
           <div>
-            <Input />
+            <Input value={ this.state.foo } onChange={ event => this.setState({ foo: event.target.value }) } />
             { ' - ' }
-            <Input />
+            <Input value={ this.state.bar } onChange={ event => this.setState({ bar: event.target.value }) } />
           </div>
         </Modal.Content>
         <Modal.Actions>
           <Button basic color='red' onClick={ this.handleClose } inverted>
             <Icon name='remove' /> Cancel
           </Button>
-          <Button color='green' inverted>
+          <Button color='green' onClick={ this.editItem } inverted>
             <Icon name='checkmark' /> Save
           </Button>
         </Modal.Actions>

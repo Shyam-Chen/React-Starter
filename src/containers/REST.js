@@ -31,7 +31,7 @@ const REST = ({ rest, actions }) => {
             <li key={ item.id }>
               { item.foo } - { item.bar } { ' ' }
               <RESTDelete id={ item.id } actions={ actions } />
-              <RESTEdit />
+              <RESTEdit id={ item.id } foo={ item.foo } bar={ item.bar } actions={ actions } />
             </li>
           ))
         }

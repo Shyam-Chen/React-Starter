@@ -1,4 +1,4 @@
-import { ADD_ITEM, GET_LIST, EDIT_ITEM, DELETE_ITEM } from '../constants';
+import { ADD_ITEM, GET_LIST, EDIT_ITEM, DELETE_ITEM, SEARCH_ITEM } from '../constants';
 
 const init = [
   { id: 1, foo: 'Angular', bar: 'Ngrx' },
@@ -7,7 +7,7 @@ const init = [
 ];
 
 export default (state = init, action) => {
-  const { type, foo, bar } = action;
+  const { type, id, foo, bar } = action;
 
   switch (type) {
     case ADD_ITEM:
@@ -20,11 +20,14 @@ export default (state = init, action) => {
         ...state
       ];
     case GET_LIST:
+      console.log(state);
       return [...state];
     case EDIT_ITEM:
-      return state;
+      return state.map(item => item.id === id ? { ...item, foo, bar } : item);
     case DELETE_ITEM:
-      return state.filter(item => item.id !== action.id);
+      return state.filter(item => item.id !== id);
+    case SEARCH_ITEM:
+      return [...state];
     default:
       return state;
   }
