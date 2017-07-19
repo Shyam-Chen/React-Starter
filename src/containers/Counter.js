@@ -1,41 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as counterActions from '../actions/counter';
 
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-
-    this.incrementIfOdd = this.incrementIfOdd.bind(this);
-    this.incrementAsync = this.incrementAsync.bind(this);
-  }
-
-  incrementIfOdd() {
-    if (this.props.counter.value % 2 === 1) {
-      this.props.actions.onIncrement();
+const Counter = ({ counter, actions }) => {
+  const incrementIfOdd = () => {
+    if (counter.value % 2 === 1) {
+      actions.onIncrement();
     }
-  }
+  };
 
-  incrementAsync() {
-    setTimeout(this.props.actions.onIncrement, 1000);
-  }
+  const incrementAsync = () => {
+    setTimeout(actions.onIncrement, 1000);
+  };
 
-  render() {
-    const { counter, actions } = this.props;
-
-    return (
-      <p>
-        Clicked: { counter.value } times
-        <button onClick={ actions.onIncrement }>+</button>
-        <button onClick={ actions.onDecrement }>-</button>
-        <button onClick={ this.incrementAsync }>+ (Async)</button>
-        <button onClick={ this.incrementIfOdd }>+ (If Odd)</button>
-      </p>
-    );
-  }
-}
+  return (
+    <div>
+      Clicked: { counter.value } times
+      <button onClick={ actions.onIncrement }>+</button>
+      <button onClick={ actions.onDecrement }>-</button>
+      <button onClick={ incrementAsync }>+ (Async)</button>
+      <button onClick={ incrementIfOdd }>+ (If Odd)</button>
+    </div>
+  );
+};
 
 const mapStateToProps = ({ counter }) => ({
   counter
