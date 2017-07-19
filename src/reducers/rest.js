@@ -21,13 +21,23 @@ export default (state = init, action) => {
       ];
     case GET_LIST:
       console.log(state);
-      return [...state];
+      return [...init];
     case EDIT_ITEM:
       return state.map(item => item.id === id ? { ...item, foo, bar } : item);
     case DELETE_ITEM:
       return state.filter(item => item.id !== id);
     case SEARCH_ITEM:
-      return [...state];
+      return state.filter((item) => {
+        const _foo = item.foo.toLowerCase().indexOf(foo.toLowerCase());
+        const _bar = item.bar.toLowerCase().indexOf(bar.toLowerCase());
+
+        console.log(_foo, _bar);
+
+        if(_foo !== -1 && _bar !== -1) {
+          console.log(item);
+          return state.push(item);
+        }
+      })
     default:
       return state;
   }

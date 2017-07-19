@@ -32,8 +32,12 @@ export class RESTEdit extends Component {
   }
 
   editItem() {
-    this.props.actions.onEditItem(this.props.id, this.state.foo, this.state.bar);
-    this.handleClose();
+    const { foo, bar } = this.state;
+
+    if (foo && bar) {
+      this.props.actions.onEditItem(this.props.id, foo, bar);
+      this.handleClose();
+    }
   }
 
   render() {
