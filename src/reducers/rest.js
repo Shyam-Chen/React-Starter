@@ -1,20 +1,30 @@
 import { ADD_ITEM, GET_LIST, EDIT_ITEM, DELETE_ITEM } from '../constants';
 
 const init = [
-  { foo: 'TT', bar: 'gh' },
-  { foo: 'UQ', bar: '232' },
+  { id: 1, foo: 'Angular', bar: 'Ngrx' },
+  { id: 2, foo: 'React', bar: 'Redux' },
+  { id: 3, foo: 'Vue', bar: 'Vuex' },
 ];
 
 export default (state = init, action) => {
-  switch (action.type) {
+  const { type, foo, bar } = action;
+
+  switch (type) {
     case ADD_ITEM:
-      return
+      return [
+        {
+          id: state.reduce((maxId, item) => Math.max(item.id, maxId), -1) + 1,
+          foo,
+          bar
+        },
+        ...state
+      ];
     case GET_LIST:
-      return
+      return [...state];
     case EDIT_ITEM:
-      return
+      return state;
     case DELETE_ITEM:
-      return
+      return state.filter(item => item.id !== action.id);
     default:
       return state;
   }

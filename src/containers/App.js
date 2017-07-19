@@ -5,6 +5,7 @@ import Home from '../components/Home';
 import About from '../components/About';
 
 import Counter from '../containers/Counter';
+import REST from '../containers/REST';
 
 const App = () => (
   <div>
@@ -12,6 +13,7 @@ const App = () => (
     <About />
 
     <Counter />
+    <REST />
   </div>
 );
 

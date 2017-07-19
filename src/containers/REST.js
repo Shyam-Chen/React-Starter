@@ -1,24 +1,44 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import { Button, Input } from 'semantic-ui-react';
+
 import * as restActions from '../actions/rest';
 
-class REST extends Component {
-  constructor(props) {
-    super(props);
-  }
+import { RESTAdd } from '../components/RESTAdd';
+import { RESTDelete } from '../components/RESTDelete';
+import { RESTEdit } from '../components/RESTEdit';
 
-  render() {
-    const { rest, actions } = this.props;
-
-    return (
+const REST = ({ rest, actions }) => {
+  return (
+    <div>
       <div>
-
+        <Input />
+        { ' - ' }
+        <Input />
+        { ' ' }
+        <Button>Search</Button>
       </div>
-    );
-  }
-}
+
+      <Button onClick={ actions.onGetList }>Get List</Button>
+
+      <RESTAdd actions={ actions } />
+
+      <ul>
+        {
+          rest.map((item) => (
+            <li key={ item.id }>
+              { item.foo } - { item.bar } { ' ' }
+              <RESTDelete id={ item.id } actions={ actions } />
+              <RESTEdit />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  );
+};
 
 const mapStateToProps = ({ rest }) => ({
   rest
