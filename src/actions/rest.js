@@ -1,6 +1,4 @@
-import { ADD_ITEM, GET_LIST, EDIT_ITEM, DELETE_ITEM, SEARCH_ITEM } from '../constants';
-
-export const onGetList = () => ({ type: GET_LIST });
+import { ADD_ITEM, DELETE_ITEM, EDIT_ITEM, SEARCH_ITEM } from '../constants';
 
 export const onAddItem = (foo, bar) => ({ type: ADD_ITEM, foo, bar });
 export const onDeleteItem = id => ({ type: DELETE_ITEM, id });
