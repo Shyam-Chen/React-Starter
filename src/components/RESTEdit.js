@@ -21,7 +21,7 @@ export class RESTEdit extends Component {
 
   handleOpen() {
     this.setState({
-      modalOpen: open
+      modalOpen: true
     });
   }
 
@@ -43,13 +43,13 @@ export class RESTEdit extends Component {
   render() {
     return (
       <Modal
-        trigger={ <Button onClick={ this.handleOpen }>Edit</Button> }
+        trigger={ <Button basic color="blue" onClick={ this.handleOpen }>Edit</Button> }
         open={ this.state.modalOpen }
         onClose={ this.handleClose }
         basic
-        size='small'
+        size="small"
       >
-        <Header icon='edit' content='Edit' />
+        <Header icon="edit" content="Edit" />
         <Modal.Content>
           <div>
             <Input value={ this.state.foo } onChange={ event => this.setState({ foo: event.target.value }) } />
@@ -58,11 +58,11 @@ export class RESTEdit extends Component {
           </div>
         </Modal.Content>
         <Modal.Actions>
-          <Button basic color='red' onClick={ this.handleClose } inverted>
-            <Icon name='remove' /> Cancel
+          <Button basic color="red" onClick={ this.handleClose } inverted>
+            <Icon name="remove" /> Cancel
           </Button>
-          <Button color='green' onClick={ this.editItem } inverted>
-            <Icon name='checkmark' /> Save
+          <Button color="green" onClick={ this.editItem } inverted>
+            <Icon name="checkmark" /> Save
           </Button>
         </Modal.Actions>
       </Modal>

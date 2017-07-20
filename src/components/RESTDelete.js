@@ -18,7 +18,7 @@ export class RESTDelete extends Component {
 
   handleOpen() {
     this.setState({
-      modalOpen: open
+      modalOpen: true
     });
   }
 
@@ -35,24 +35,24 @@ export class RESTDelete extends Component {
   render() {
     return (
       <Modal
-        trigger={ <Button onClick={ this.handleOpen }>Delete</Button> }
+        trigger={ <Button basic color="red" onClick={ this.handleOpen }>Delete</Button> }
         open={ this.state.modalOpen }
         onClose={ this.handleClose }
         basic
-        size='small'
+        size="small"
       >
-        <Header icon='delete' content='Delete' />
+        <Header icon="delete" content="Delete" />
         <Modal.Content>
           <div>
             Are you sure you want to delete it?
           </div>
         </Modal.Content>
         <Modal.Actions>
-          <Button basic color='red' onClick={ this.handleClose } inverted>
-            <Icon name='remove' /> Cancel
+          <Button basic color="red" onClick={ this.handleClose } inverted>
+            <Icon name="remove" /> Cancel
           </Button>
-          <Button color='green' onClick={ this.deleteItem } inverted>
-            <Icon name='checkmark' /> Delete
+          <Button color="green" onClick={ this.deleteItem } inverted>
+            <Icon name="checkmark" /> Delete
           </Button>
         </Modal.Actions>
       </Modal>

@@ -21,10 +21,10 @@ export default (state = init, action) => {
         },
         ...state
       ];
-    case EDIT_ITEM:
-      return state.map(item => item.id === id ? { ...item, foo, bar } : item);
     case DELETE_ITEM:
       return state.filter(item => item.id !== id);
+    case EDIT_ITEM:
+      return state.map(item => item.id === id ? { ...item, foo, bar } : item);
     case SEARCH_ITEM:
       return init.filter((item) => {
         const _foo = item.foo.toLowerCase().indexOf(foo.toLowerCase());
@@ -33,7 +33,7 @@ export default (state = init, action) => {
         if(_foo !== -1 && _bar !== -1) {
           return searchResult.push(item);
         }
-      })
+      });
     default:
       return state;
   }
