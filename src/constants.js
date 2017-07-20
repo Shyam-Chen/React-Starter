@@ -1,13 +1,28 @@
+/**
+ * @name counter
+ */
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 
+/**
+ * @name rest
+ */
 export const ADD_ITEM = 'ADD_ITEM';
 export const DELETE_ITEM = 'DELETE_ITEM';
 export const EDIT_ITEM = 'EDIT_ITEM';
 export const SEARCH_ITEM = 'SEARCH_ITEM';
 
-export const FOO_VALUE = 'FOO_VALUE';
-export const BAR_VALUE = 'BAR_VALUE';
+/**
+ * @name value
+ */
+export const FOO_ADD_VALUE = 'FOO_ADD_VALUE';
+export const BAR_ADD_VALUE = 'BAR_ADD_VALUE';
 
+export const FOO_SEARCH_VALUE = 'FOO_SEARCH_VALUE';
+export const BAR_SEARCH_VALUE = 'BAR_SEARCH_VALUE';
+
+/**
+ * @name modal
+ */
 export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';

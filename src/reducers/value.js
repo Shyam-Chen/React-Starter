@@ -1,18 +1,25 @@
-import { FOO_VALUE, BAR_VALUE } from '../constants';
+import {
+  FOO_ADD_VALUE, BAR_ADD_VALUE,
+  FOO_SEARCH_VALUE, BAR_SEARCH_VALUE
+} from '../constants';
 
 const init = {
-  foo: '',
-  bar: ''
+  addValue: { foo: '', bar: '' },
+  searchValue: { foo: '', bar: '' }
 };
 
 export default (state = init, action) => {
   const { type, foo, bar } = action;
 
   switch (type) {
-    case FOO_VALUE:
-      return { ...state, foo: foo };
-    case BAR_VALUE:
-      return { ...state, bar: bar };
+    case FOO_ADD_VALUE:
+      return { ...state, addValue: { ...state.addValue, foo } };
+    case BAR_ADD_VALUE:
+      return { ...state, addValue: { ...state.addValue, bar } };
+    case FOO_SEARCH_VALUE:
+      return { ...state, searchValue: { ...state.searchValue, foo } };
+    case BAR_SEARCH_VALUE:
+      return { ...state, searchValue: { ...state.searchValue, bar } };
     default:
       return state;
   }

@@ -13,7 +13,7 @@ import { RESTSearch } from '../components/RESTSearch';
 
 const REST = ({ rest, actions, value, valueActions, modal, modalActions }) => (
   <div>
-    <RESTSearch actions={ actions } />
+    <RESTSearch actions={ actions } value={ value } valueActions={ valueActions } />
     <RESTAdd actions={ actions } value={ value } valueActions={ valueActions } />
 
     <ul>
