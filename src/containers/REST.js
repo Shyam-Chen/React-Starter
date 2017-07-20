@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as restActions from '../actions/rest';
+import * as valueActions from '../actions/value';
 import * as modalActions from '../actions/modal';
 
 import { RESTAdd } from '../components/RESTAdd';
@@ -10,10 +11,10 @@ import { RESTDelete } from '../components/RESTDelete';
 import { RESTEdit } from '../components/RESTEdit';
 import { RESTSearch } from '../components/RESTSearch';
 
-const REST = ({ rest, actions, modal, modalActions }) => (
+const REST = ({ rest, actions, value, valueActions, modal, modalActions }) => (
   <div>
     <RESTSearch actions={ actions } />
-    <RESTAdd actions={ actions } />
+    <RESTAdd actions={ actions } value={ value } valueActions={ valueActions } />
 
     <ul>
       {
@@ -29,13 +30,15 @@ const REST = ({ rest, actions, modal, modalActions }) => (
   </div>
 );
 
-const mapStateToProps = ({ rest, modal }) => ({
+const mapStateToProps = ({ rest, value, modal }) => ({
   rest,
+  value,
   modal
 });
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(restActions, dispatch),
+  valueActions: bindActionCreators(valueActions, dispatch),
   modalActions: bindActionCreators(modalActions, dispatch)
 });
 

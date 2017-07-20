@@ -6,31 +6,27 @@ export class RESTAdd extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      foo: '',
-      bar: ''
-    };
-
     this.onAdd = this.onAdd.bind(this);
   }
 
   onAdd() {
-    const { foo, bar } = this.state;
+    const { value } = this.props;
 
-    if (foo && bar) {
-      this.props.actions.onAddItem(foo, bar);
-      this.setState({ foo: '', bar: '' });
+    if (value.foo && value.bar) {
+      this.props.actions.onAddItem(value.foo, value.bar);
+      value.foo = '';
+      value.bar = '';
     }
   }
 
   render() {
-    const { foo, bar } = this.state;
+    const { value, valueActions } = this.props;
 
     return (
       <div>
-        <Input value={ foo } onChange={ event => this.setState({ foo: event.target.value }) } />
+        <Input value={ value.foo } onChange={ event => valueActions.onChangeFoo(event.target.value) } />
         { ' - ' }
-        <Input value={ bar } onChange={ event => this.setState({ bar: event.target.value }) } />
+        <Input value={ value.bar } onChange={ event => valueActions.onChangeBar(event.target.value) } />
         { ' ' }
         <Button basic color="black" onClick={ this.onAdd }>Add</Button>
       </div>

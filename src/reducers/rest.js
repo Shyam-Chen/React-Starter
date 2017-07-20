@@ -1,6 +1,4 @@
-import {
-  ADD_ITEM, DELETE_ITEM, EDIT_ITEM, SEARCH_ITEM
-} from '../constants';
+import { ADD_ITEM, DELETE_ITEM, EDIT_ITEM, SEARCH_ITEM } from '../constants';
 
 const init = [
   { id: 1, foo: 'Angular', bar: 'Ngrx' },
