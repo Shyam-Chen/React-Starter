@@ -8,11 +8,9 @@ import { createBrowserHistory } from 'history';
 import store from './root';
 import App from './containers/App';
 
-const history = syncHistoryWithStore(createBrowserHistory(), store);
-
 render(
   <Provider store={ store }>
-    <Router history={ history }>
+    <Router history={ syncHistoryWithStore(createBrowserHistory(), store) }>
       <Route path="/" component={ App } />
     </Router>
   </Provider>,

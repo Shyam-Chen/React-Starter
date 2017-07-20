@@ -24,13 +24,15 @@ export class RESTAdd extends Component {
   }
 
   render() {
+    const { foo, bar } = this.state;
+
     return (
       <div>
-        <Input value={ this.state.foo } onChange={ event => this.setState({ foo: event.target.value }) } />
+        <Input value={ foo } onChange={ event => this.setState({ foo: event.target.value }) } />
         { ' - ' }
-        <Input value={ this.state.bar } onChange={ event => this.setState({ bar: event.target.value }) } />
+        <Input value={ bar } onChange={ event => this.setState({ bar: event.target.value }) } />
         { ' ' }
-        <Button onClick={ this.onAdd }>Add</Button>
+        <Button basic color="black" onClick={ this.onAdd }>Add</Button>
       </div>
     );
   }

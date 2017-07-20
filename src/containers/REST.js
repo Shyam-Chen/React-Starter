@@ -10,7 +10,7 @@ import { RESTDelete } from '../components/RESTDelete';
 import { RESTEdit } from '../components/RESTEdit';
 import { RESTSearch } from '../components/RESTSearch';
 
-const REST = ({ rest, actions, modalActions }) => (
+const REST = ({ rest, actions, modal, modalActions }) => (
   <div>
     <RESTSearch actions={ actions } />
     <RESTAdd actions={ actions } />
@@ -20,8 +20,8 @@ const REST = ({ rest, actions, modalActions }) => (
         rest.map((item) => (
           <li key={ item.id }>
             { item.foo } - { item.bar } { ' ' }
-            <RESTDelete id={ item.id } actions={ actions } modalActions={ modalActions } />
-            <RESTEdit id={ item.id } foo={ item.foo } bar={ item.bar } actions={ actions } modalActions={ modalActions } />
+            <RESTDelete id={ item.id } actions={ actions } modal={ modal } modalActions={ modalActions } />
+            <RESTEdit id={ item.id } foo={ item.foo } bar={ item.bar } actions={ actions } modal={ modal } modalActions={ modalActions } />
           </li>
         ))
       }
@@ -29,8 +29,9 @@ const REST = ({ rest, actions, modalActions }) => (
   </div>
 );
 
-const mapStateToProps = ({ rest }) => ({
-  rest
+const mapStateToProps = ({ rest, modal }) => ({
+  rest,
+  modal
 });
 
 const mapDispatchToProps = dispatch => ({

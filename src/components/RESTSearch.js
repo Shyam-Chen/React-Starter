@@ -29,7 +29,7 @@ export class RESTSearch extends Component {
         { ' - ' }
         <Input value={ bar } onChange={ event => this.setState({ bar: event.target.value }) } />
         { ' ' }
-        <Button onClick={ this.search }>Search</Button>
+        <Button basic color="black" onClick={ this.search }>Search</Button>
       </div>
     )
   }
