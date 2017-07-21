@@ -59,15 +59,17 @@ module.exports = {
       },
     ]
   },
-  devServer: {
-    inline: true,
-    port: 8000,
-    historyApiFallback: true
-  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html'
     })
-  ]
+  ],
+  devServer: {
+    contentBase: join(__dirname, 'dist'),
+    historyApiFallback: true,
+    inline: true,
+    port: 8000,
+  },
+  devtool: 'source-map',
 };
