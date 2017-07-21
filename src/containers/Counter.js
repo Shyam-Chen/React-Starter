@@ -4,27 +4,15 @@ import { bindActionCreators } from 'redux';
 
 import * as counterActions from '../actions/counter';
 
-const Counter = ({ counter, actions }) => {
-  const incrementIfOdd = () => {
-    if (counter.value % 2 === 1) {
-      actions.onIncrement();
-    }
-  };
-
-  const incrementAsync = () => {
-    setTimeout(actions.onIncrement, 1000);
-  };
-
-  return (
-    <div>
-      Clicked: { counter.value } times
-      <button onClick={ actions.onIncrement }>+</button>
-      <button onClick={ actions.onDecrement }>-</button>
-      <button onClick={ incrementAsync }>+ (Async)</button>
-      <button onClick={ incrementIfOdd }>+ (If Odd)</button>
-    </div>
-  );
-};
+const Counter = ({ counter, actions }) => (
+  <div>
+    Clicked: { counter.value } times
+    <button onClick={ actions.onIncrement }>+</button>
+    <button onClick={ actions.onDecrement }>-</button>
+    <button onClick={ actions.onIncrementAsync }>+ (Async)</button>
+    <button onClick={ actions.onIncrementIfOdd }>+ (If Odd)</button>
+  </div>
+);
 
 const mapStateToProps = ({ counter }) => ({
   counter
