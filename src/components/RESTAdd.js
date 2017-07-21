@@ -13,9 +13,9 @@ export const RESTAdd = ({ actions, value, valueActions }) => {
 
   return (
     <div>
-      <Input value={ value.addValue.foo } onChange={ event => valueActions.onChangeFoo(event.target.value) } />
+      <Input value={ value.addValue.foo } onChange={ event => valueActions.onChangeAddFoo(event.target.value) } />
       { ' - ' }
-      <Input value={ value.addValue.bar } onChange={ event => valueActions.onChangeBar(event.target.value) } />
+      <Input value={ value.addValue.bar } onChange={ event => valueActions.onChangeAddBar(event.target.value) } />
       { ' ' }
       <Button basic color="black" onClick={ onAdd }>Add</Button>
     </div>

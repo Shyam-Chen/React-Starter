@@ -22,7 +22,11 @@ const REST = ({ rest, actions, value, valueActions, modal, modalActions }) => (
           <li key={ item.id }>
             { item.foo } - { item.bar } { ' ' }
             <RESTDelete id={ item.id } actions={ actions } modal={ modal } modalActions={ modalActions } />
-            <RESTEdit id={ item.id } foo={ item.foo } bar={ item.bar } actions={ actions } modal={ modal } modalActions={ modalActions } />
+            <RESTEdit
+              id={ item.id } foo={ item.foo } bar={ item.bar } actions={ actions }
+              value={ value } valueActions={ valueActions }
+              modal={ modal } modalActions={ modalActions }
+            />
           </li>
         ))
       }

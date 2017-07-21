@@ -41,6 +41,8 @@ export class RESTEdit extends Component {
   }
 
   render() {
+    // const { foo, bar, value, valueActions } = this.props;
+
     return (
       <Modal
         trigger={ <Button basic color="blue" onClick={ this.handleOpen }>Edit</Button> }
