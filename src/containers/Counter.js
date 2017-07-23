@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import * as counterActions from '../actions/counter';
+import * as actions from '../actions/counter';
 
 const Counter = ({ counter, actions }) => (
   <div>
@@ -14,15 +14,10 @@ const Counter = ({ counter, actions }) => (
   </div>
 );
 
-const mapStateToProps = ({ counter }) => ({
-  counter
-});
-
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(counterActions, dispatch)
-});
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  // map state to props
+  ({ counter }) => ({ counter }),
+
+  // map dispatch to props
+  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(Counter);

@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 
 import { Button, Modal, Header, Icon, Input } from 'semantic-ui-react';
 
-export class RESTEdit extends Component {
+export class Edit extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       modalOpen: false,
 
-      foo: props.foo,
-      bar: props.bar,
+      primary: props.primary,
+      accent: props.accent,
     };
 
     this.handleOpen = this.handleOpen.bind(this);
@@ -32,17 +32,15 @@ export class RESTEdit extends Component {
   }
 
   editItem() {
-    const { foo, bar } = this.state;
+    const { primary, accent } = this.state;
 
-    if (foo && bar) {
-      this.props.actions.onEditItem(this.props.id, foo, bar);
+    if (primary && accent) {
+      this.props.actions.onEditItem(this.props.id, primary, accent);
       this.handleClose();
     }
   }
 
   render() {
-    // const { foo, bar, value, valueActions } = this.props;
-
     return (
       <Modal
         trigger={ <Button basic color="blue" onClick={ this.handleOpen }>Edit</Button> }
@@ -54,9 +52,9 @@ export class RESTEdit extends Component {
         <Header icon="edit" content="Edit" />
         <Modal.Content>
           <div>
-            <Input value={ this.state.foo } onChange={ event => this.setState({ foo: event.target.value }) } />
+            <Input value={ this.state.primary } onChange={ event => this.setState({ primary: event.target.value }) } />
             { ' - ' }
-            <Input value={ this.state.bar } onChange={ event => this.setState({ bar: event.target.value }) } />
+            <Input value={ this.state.accent } onChange={ event => this.setState({ accent: event.target.value }) } />
           </div>
         </Modal.Content>
         <Modal.Actions>

@@ -1,13 +1,6 @@
-import axios from 'axios';
+import { ADD_ITEM, DELETE_ITEM, EDIT_ITEM, SEARCH_ITEM } from '../constants';
 
-import { CREATE, READ, UPDATE, DELETE } from '../constants';
-
-export const onCreate = () => ({ type: CREATE });
-export const onRead = () => ({ type: READ });
-export const onUpdate = () => ({ type: UPDATE });
-export const onDelete = () => ({ type: DELETE });
-
-export const onSearch = () =>
-  dispatch =>
-    axios.get('https://web-go-demo.herokuapp.com/__/list')
-      .then(response => dispatch({ type: READ, data: response.data }));
+export const onAddItem = (primary, accent) => ({ type: ADD_ITEM, primary, accent });
+export const onDeleteItem = id => ({ type: DELETE_ITEM, id });
+export const onEditItem = (id, primary, accent) => ({ type: EDIT_ITEM, id, primary, accent });
+export const onSearchItem = (primary, accent) => ({ type: SEARCH_ITEM, primary, accent });

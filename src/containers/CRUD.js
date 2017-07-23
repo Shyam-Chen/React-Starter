@@ -2,35 +2,36 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { Button } from 'semantic-ui-react';
-
 import * as actions from '../actions/crud';
 
-export const CRUD = ({ crud, actions }) => {
-  return (
-    <div>
-      <Button basic color="black" onClick={ actions.onSearch }>Search</Button>
+import { Add } from '../components/crud/Add';
+import { Delete } from '../components/crud/Delete';
+import { Edit } from '../components/crud/Edit';
+import { Search } from '../components/crud/Search';
 
-      <ul>
-        {
-          crud.map((item) => (
-            <li key={ item._id }>{ item.text }</li>
-          ))
-        }
-      </ul>
-    </div>
-  );
-};
+const CRUD = ({ crud, actions }) => (
+  <div>
+    <Search actions={ actions } />
+    <Add actions={ actions } />
 
-const mapStateToProps = ({ crud }) => ({
-  crud
-});
-
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(actions, dispatch)
-});
+    <ul>
+      {
+        crud.map((item) => (
+          <li key={ item.id }>
+            { item.primary } - { item.accent } { ' ' }
+            <Delete id={ item.id } actions={ actions } />
+            <Edit id={ item.id } primary={ item.primary } accent={ item.accent } actions={ actions } />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+);
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  // map state to props
+  ({ crud }) => ({ crud }),
+
+  // map dispatch to props
+  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(CRUD);

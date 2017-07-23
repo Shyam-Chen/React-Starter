@@ -5,8 +5,8 @@ import Home from '../components/Home';
 import About from '../components/About';
 
 import Counter from '../containers/Counter';
-import REST from '../containers/REST';
 import CRUD from '../containers/CRUD';
+import REST from '../containers/REST';
 
 const App = () => (
   <div>
@@ -19,11 +19,11 @@ const App = () => (
 
     <hr />
 
-    <REST />
+    <CRUD />
 
     <hr />
 
-    <CRUD />
+    <REST />
   </div>
 );
 

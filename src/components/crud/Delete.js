@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Button, Modal, Header, Icon } from 'semantic-ui-react';
 
-export class RESTDelete extends Component {
+export class Delete extends Component {
   constructor(props) {
     super(props);
 
