@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Shyam-Chen/React-Starter-Kit#readme",
   "dependencies": {
+    "axios": "0.16.2",
     "d3": "4.9.1",
     "immutable": "3.8.1",
     "lodash": "4.17.4",

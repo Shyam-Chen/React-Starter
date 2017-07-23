@@ -10,6 +10,7 @@ import counter from './reducers/counter';
 import rest from './reducers/rest';
 import value from './reducers/value';
 import modal from './reducers/modal';
+import crud from './reducers/crud';
 
 // const rootEpic = combineEpics(
 //   onIincrementIfOddEpic
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   rest,
   value,
   modal,
+  crud,
   routing: routerReducer
 });
 

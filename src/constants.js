@@ -31,3 +31,11 @@ export const BAR_SEARCH_VALUE = 'BAR_SEARCH_VALUE';
  */
 export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
+
+/**
+ * @name crud
+ */
+export const CREATE = 'CREATE';
+export const READ = 'READ';
+export const UPDATE = 'UPDATE';
+export const DELETE = 'DELETE';
