@@ -22,7 +22,42 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [{ loader: 'babel-loader' }]
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              babelrc: false,
+              presets: [
+                'latest',
+                'react'
+              ],
+              plugins: [
+                'transform-runtime',
+                'transform-function-bind',
+                'transform-object-rest-spread',
+                [
+                  'transform-imports', {
+                    'rxjs': {
+                      transform: 'rxjs/${member}',
+                      preventFullImport: true,
+                      skipDefaultConversion: true
+                    },
+                    'rxjs/observable': {
+                      transform: 'rxjs/observable/${member}',
+                      preventFullImport: true,
+                      skipDefaultConversion: true
+                    },
+                    'rxjs/operator': {
+                      transform: 'rxjs/operator/${member}',
+                      preventFullImport: true,
+                      skipDefaultConversion: true
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        ]
       }, {
         test: /\.css$/,
         use: [
