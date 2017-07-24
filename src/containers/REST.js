@@ -5,17 +5,22 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../actions/rest';
 
 import { Search } from '../components/rest/Search';
+import { Add } from '../components/rest/Add';
+import { Delete } from '../components/rest/Delete';
+import { Edit } from '../components/rest/Edit';
 
 export const REST = ({ rest, actions }) => (
   <div>
     <Search actions={ actions } />
+    <Add actions={ actions } />
 
     <ul>
       {
         rest.map((item, index) => (
           <li key={ item._id }>
-            ({ index + 1 }) { item.text }
-
+            ({ index + 1 }) { item.text } { ' ' }
+            <Delete id={ item._id } actions={ actions } />
+            <Edit id={ item._id } text={ item.text } actions={ actions } />
           </li>
         ))
       }

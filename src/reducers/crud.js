@@ -1,9 +1,9 @@
 import { ADD_ITEM, DELETE_ITEM, EDIT_ITEM, SEARCH_ITEM } from '../constants';
 
 const initial = [
-  { id: 1, primary: 'Angular', accent: 'Ngrx' },
+  { id: 3, primary: 'Angular', accent: 'Ngrx' },
   { id: 2, primary: 'React', accent: 'Redux' },
-  { id: 3, primary: 'Vue', accent: 'Vuex' },
+  { id: 1, primary: 'Vue', accent: 'Vuex' },
 ];
 
 export default (state = initial, action) => {

@@ -1,4 +1,4 @@
-import { SUCCESS, FAILURE, CREATE, READ, UPDATE, DELETE } from '../constants';
+import { SUCCESS, FAILURE } from '../constants';
 
 export default (state = [], action) => {
   const { type, data, error } = action;
@@ -7,15 +7,8 @@ export default (state = [], action) => {
     case SUCCESS:
       return [...data];
     case FAILURE:
-      return error;
-    case CREATE:
-      return;
-    case READ:
-      return [...data];
-    case UPDATE:
-      return;
-    case DELETE:
-      return;
+      console.error(error);
+      return state;
     default:
       return state;
   }
