@@ -2,19 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { Button } from 'semantic-ui-react';
-
 import * as actions from '../actions/rest';
+
+import { Search } from '../components/rest/Search';
 
 export const REST = ({ rest, actions }) => (
   <div>
-    <Button basic color="black" onClick={ actions.onSearch }>Search</Button>
+    <Search actions={ actions } />
 
     <ul>
       {
-        rest.map((item) => (
+        rest.map((item, index) => (
           <li key={ item._id }>
-            { item.text }
+            ({ index + 1 }) { item.text }
 
           </li>
         ))

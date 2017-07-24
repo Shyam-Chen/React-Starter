@@ -17,6 +17,8 @@ export const SEARCH_ITEM = 'SEARCH_ITEM';
 /**
  * @name crud
  */
+export const SUCCESS = 'SUCCESS';
+export const FAILURE = 'FAILURE';
 export const CREATE = 'CREATE';
 export const READ = 'READ';
 export const UPDATE = 'UPDATE';

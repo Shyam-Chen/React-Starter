@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { CREATE, READ, UPDATE, DELETE } from '../constants';
+import { SUCCESS, FAILURE, CREATE, READ, UPDATE, DELETE } from '../constants';
 
 const url = 'https://web-go-demo.herokuapp.com/__/list';
 
@@ -9,12 +9,21 @@ export const onRead = (data) => ({ type: READ, data });
 export const onUpdate = (data) => ({ type: UPDATE, data });
 export const onDelete = (data) => ({ type: DELETE, data });
 
-export const onSearch = () =>
-  dispatch =>
-    axios.get(url)
-      .then(response => dispatch(onRead(response.data)));
+export const onSuccess = data => ({ type: SUCCESS, data });
+export const onFailure = error => ({ type: FAILURE, error });
 
-// axios.get(`${url}?text=${text}`)
+export const onSearch = (text) =>
+  dispatch => {
+    let getList;
+
+    text ? getList = axios.get(`${url}?text=${text}`) : getList = axios.get(url)
+
+    getList
+      .then(response => dispatch(onSuccess(response.data)))
+      .catch(error => dispatch(onFailure(error)));
+    };
+
+
 
 export const onAdd = (text) =>
   dispatch =>
