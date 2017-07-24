@@ -1,6 +1,6 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import ThunkMiddleware from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
 import loggerMiddleware from 'redux-logger';
 
 import counter from './reducers/counter';
@@ -14,9 +14,12 @@ const rootReducer = combineReducers({
   routing: routerReducer
 });
 
-const store = createStore(
-  rootReducer,
-  applyMiddleware(ThunkMiddleware, loggerMiddleware)
-);
-
-export default store;
+export default preloadedState =>
+  createStore(
+    rootReducer,
+    preloadedState,
+    applyMiddleware(
+      thunkMiddleware,
+      loggerMiddleware
+    )
+  );

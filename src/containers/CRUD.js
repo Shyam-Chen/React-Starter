@@ -16,9 +16,9 @@ const CRUD = ({ crud, actions }) => (
 
     <ul>
       {
-        crud.map((item) => (
+        crud.map((item, index) => (
           <li key={ item.id }>
-            { item.primary } - { item.accent } { ' ' }
+            { index + 1 }. { item.primary } - { item.accent } { ' ' }
             <Delete id={ item.id } actions={ actions } />
             <Edit id={ item.id } primary={ item.primary } accent={ item.accent } actions={ actions } />
           </li>

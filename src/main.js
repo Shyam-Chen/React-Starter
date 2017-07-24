@@ -5,12 +5,15 @@ import { Router, Route } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { createBrowserHistory } from 'history';
 
-import store from './root';
+import configureStore from './root';
 import App from './containers/App';
+
+const store = configureStore();
+const history = syncHistoryWithStore(createBrowserHistory(), store);
 
 render(
   <Provider store={ store }>
-    <Router history={ syncHistoryWithStore(createBrowserHistory(), store) }>
+    <Router history={ history }>
       <Route path="/" component={ App } />
     </Router>
   </Provider>,
