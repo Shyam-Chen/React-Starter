@@ -5,7 +5,7 @@ import { Button, Input } from 'semantic-ui-react';
 export const Add = ({ actions }) => {
   let primary, accent;
 
-  const onAdd = (event) => {
+  const onAdd = event => {
     event.preventDefault();
 
     if (primary.inputRef.value && accent.inputRef.value) {
