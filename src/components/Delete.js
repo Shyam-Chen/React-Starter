@@ -6,30 +6,18 @@ export class Delete extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      modalOpen: false
-    };
+    this.state = { modalOpen: false };
 
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
-
-    this.deleteItem = this.deleteItem.bind(this);
   }
 
   handleOpen() {
-    this.setState({
-      modalOpen: true
-    });
+    this.setState({ modalOpen: true });
   }
 
   handleClose() {
-    this.setState({
-      modalOpen: false
-    });
-  }
-
-  deleteItem() {
-    this.props.actions.onDeleteItem(this.props.id);
+    this.setState({ modalOpen: false });
   }
 
   render() {
@@ -51,8 +39,8 @@ export class Delete extends Component {
           <Button basic color="red" onClick={ this.handleClose } inverted>
             <Icon name="remove" /> Cancel
           </Button>
-          <Button color="green" onClick={ this.deleteItem } inverted>
-            <Icon name="checkmark" /> Delete
+          <Button color="green" onClick={ this.props.onDelete } inverted>
+            <Icon name="checkmark" /> Confirm
           </Button>
         </Modal.Actions>
       </Modal>
