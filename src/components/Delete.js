@@ -1,49 +1,48 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import { Button, Modal, Header, Icon } from 'semantic-ui-react';
 
-export class Delete extends Component {
-  constructor(props) {
-    super(props);
+import * as actions from '../actions/crud';
 
-    this.state = { modalOpen: false };
+const Delete = ({ crud, actions }) => {
+  const onModalClose = () => actions.onDeleteModal(false);
 
-    this.handleOpen = this.handleOpen.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-  }
+  const onConfirm = () => {
+    actions.onDeleteItem(crud.deleteData);
+    onModalClose();
+  };
 
-  handleOpen() {
-    this.setState({ modalOpen: true });
-  }
-
-  handleClose() {
-    this.setState({ modalOpen: false });
-  }
-
-  render() {
-    return (
-      <Modal
-        trigger={ <Button basic color="red" onClick={ this.handleOpen }>Delete</Button> }
-        open={ this.state.modalOpen }
-        onClose={ this.handleClose }
-        basic
-        size="small"
-      >
-        <Header icon="delete" content="Delete" />
-        <Modal.Content>
-          <div>
-            Are you sure you want to delete it?
-          </div>
-        </Modal.Content>
-        <Modal.Actions>
-          <Button basic color="red" onClick={ this.handleClose } inverted>
-            <Icon name="remove" /> Cancel
-          </Button>
-          <Button color="green" onClick={ this.props.onDelete } inverted>
-            <Icon name="checkmark" /> Confirm
-          </Button>
-        </Modal.Actions>
-      </Modal>
-    );
-  }
+  return (
+    <Modal
+      open={ crud.modalOpen }
+      onClose={ onModalClose }
+      basic
+      size="small"
+    >
+      <Header icon="delete" content="Delete" />
+      <Modal.Content>
+        <div>
+          Are you sure you want to delete it?
+        </div>
+      </Modal.Content>
+      <Modal.Actions>
+        <Button basic color="red" onClick={ onModalClose } inverted>
+          <Icon name="remove" /> Cancel
+        </Button>
+        <Button color="green" onClick={ onConfirm } inverted>
+          <Icon name="checkmark" /> Confirm
+        </Button>
+      </Modal.Actions>
+    </Modal>
+  );
 }
+
+export default connect(
+  // map state to props
+  ({ crud }) => ({ crud }),
+
+  // map dispatch to props
+  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
+)(Delete);
