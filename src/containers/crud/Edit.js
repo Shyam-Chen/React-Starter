@@ -7,11 +7,11 @@ import { Button, Modal, Header, Icon, Input } from 'semantic-ui-react';
 import * as actions from '../../actions/crud';
 
 const Edit = ({ crud, actions }) => {
+  const { id, primary, accent } = crud.editData;
+
   const onModalClose = () => actions.onEditModal(false);
 
   const onEdit = () => {
-    const { id, primary, accent } = crud.editData;
-
     if (primary && accent) {
       actions.onEditItem(id, primary, accent);
       onModalClose();
@@ -23,13 +23,9 @@ const Edit = ({ crud, actions }) => {
       <Header icon="edit" content="Edit" />
       <Modal.Content>
         <div>
-          <Input value={ crud.editData.primary } onChange={ event => {
-            actions.onSetEdit(crud.editData.id, event.target.value, crud.editData.accent)
-          } } />
+          <Input value={ primary } onChange={ event => actions.onSetEdit(id, event.target.value, accent) } />
           { ' - ' }
-          <Input value={ crud.editData.accent } onChange={ event => {
-            actions.onSetEdit(crud.editData.id, crud.editData.primary, event.target.value)
-          } } />
+          <Input value={ accent } onChange={ event => actions.onSetEdit(id, primary, event.target.value) } />
         </div>
       </Modal.Content>
       <Modal.Actions>

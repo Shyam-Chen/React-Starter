@@ -1,7 +1,8 @@
 import {
-  ADD_ITEM, DELETE_ITEM, EDIT_ITEM, SEARCH_ITEM,
-  DELETE_MODAL, SET_DELETE,
-  EDIT_MODAL, SET_EDIT
+  ADD_ITEM, SET_ADD,
+  SEARCH_ITEM, SET_SEARCH,
+  DELETE_ITEM, DELETE_MODAL, SET_DELETE,
+  EDIT_ITEM, EDIT_MODAL, SET_EDIT,
 } from '../constants';
 
 const initial = {
@@ -10,10 +11,10 @@ const initial = {
     { id: 2, primary: 'React', accent: 'Redux' },
     { id: 1, primary: 'Vue', accent: 'Vuex' },
   ],
-  addData: {},
+  addData: { primary: '', accent: '' },
   editData: {},
   deleteData: 0,
-  searchData: {},
+  searchData: { primary: '', accent: '' },
   modalOpen: false,
   editModalOpen: false
 };
@@ -50,10 +51,13 @@ export default (state = initial, action) => {
         ...state,
         dataset: [...state.dataset.map(item => item.id === id ? { ...item, primary, accent } : item)]
       };
+
+
     case SEARCH_ITEM:
       return {
         ...state,
         dataset: initial.dataset.filter(item => {
+          // console.log(primary, accent);
           const _primary = item.primary.toLowerCase().indexOf(primary.toLowerCase());
           const _accent = item.accent.toLowerCase().indexOf(accent.toLowerCase());
 
@@ -61,7 +65,15 @@ export default (state = initial, action) => {
             return searchResult.push(item);
           }
         })
-      }
+      };
+
+    case SET_SEARCH:
+      state.searchData = { ...state.searchData, primary, accent }
+      return { ...state }
+
+    case SET_ADD:
+      state.addData = { ...state.addData, primary, accent }
+      return { ...state }
 
     case DELETE_MODAL:
       state.modalOpen = modalOpen

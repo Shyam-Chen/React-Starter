@@ -6,7 +6,7 @@ import * as actions from '../actions/rest';
 
 import { Search } from '../components/rest/Search';
 import { Add } from '../components/rest/Add';
-import { Delete } from '../components/Delete';
+// import { Delete } from '../components/Delete';
 import { Edit } from '../components/rest/Edit';
 
 export const REST = ({ rest, actions }) => (
@@ -19,7 +19,7 @@ export const REST = ({ rest, actions }) => (
         rest.map((item, index) => (
           <li key={ item._id }>
             ({ index + 1 }) { item.text } { ' ' }
-            <Delete onDelete={ () => actions.onRemove(item._id) } />
+            {/* <Delete onDelete={ () => actions.onRemove(item._id) } /> */}
             <Edit id={ item._id } text={ item.text } actions={ actions } />
           </li>
         ))

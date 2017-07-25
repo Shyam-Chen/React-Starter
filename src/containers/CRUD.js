@@ -6,15 +6,15 @@ import { Button } from 'semantic-ui-react';
 
 import * as actions from '../actions/crud';
 
-import { Add } from '../components/crud/Add';
-import Delete from '../components/Delete';
-import Edit from '../components/crud/Edit';
-import { Search } from '../components/crud/Search';
+import Add from '../containers/crud/Add';
+import Delete from '../containers/crud/Delete';
+import Edit from '../containers/crud/Edit';
+import Search from '../containers/crud/Search';
 
 const CRUD = ({ crud, actions }) => (
   <div>
-    <Search actions={ actions } />
-    <Add actions={ actions } />
+    <Search />
+    <Add />
 
     <ul>
       {
@@ -42,9 +42,6 @@ const CRUD = ({ crud, actions }) => (
 );
 
 export default connect(
-  // map state to props
   ({ crud }) => ({ crud }),
-
-  // map dispatch to props
   dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(CRUD);
