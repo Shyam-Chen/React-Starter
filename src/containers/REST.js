@@ -6,15 +6,15 @@ import { Button } from 'semantic-ui-react';
 
 import * as actions from '../actions/rest';
 
-import { Search } from '../components/rest/Search';
-import { Add } from '../components/rest/Add';
+import Search from '../containers/rest/Search';
+import Add from '../containers/rest/Add';
 import Delete from '../containers/rest/Delete';
-import { Edit } from '../components/rest/Edit';
+import Edit from '../containers/rest/Edit';
 
 export const REST = ({ rest, actions }) => (
   <div>
-    <Search actions={ actions } />
-    <Add actions={ actions } />
+    <Search />
+    <Add />
 
     <ul>
       {
@@ -25,7 +25,10 @@ export const REST = ({ rest, actions }) => (
               actions.onDeleteModal(true)
               actions.onSetDelete(item._id)
               } }>Delete</Button>
-            <Edit id={ item._id } text={ item.text } actions={ actions } />
+            <Button basic color="blue" onClick={ () => {
+              actions.onEditModal(true)
+              actions.onSetEdit(item._id, item.text)
+            } }>Edit</Button>
           </li>
         ))
       }
@@ -33,6 +36,7 @@ export const REST = ({ rest, actions }) => (
 
     <aside>
       <Delete />
+      <Edit />
     </aside>
   </div>
 );

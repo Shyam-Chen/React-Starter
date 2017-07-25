@@ -27,5 +27,12 @@ export const SET_EDIT = 'SET_EDIT';
 export const SUCCESS = 'SUCCESS';
 export const FAILURE = 'FAILURE';
 
-export const REST_SET_DELETE = 'DELETE';
+export const REST_SET_ADD = 'REST_SET_ADD';
+
+export const REST_SET_DELETE = 'REST_SET_DELETE';
 export const REST_DELETE_MODAL = 'REST_DELETE_MODAL';
+
+export const REST_SET_EDIT = 'REST_SET_EDIT';
+export const REST_EDIT_MODAL = 'REST_EDIT_MODAL';
+
+export const REST_SET_SEARCH = 'REST_SET_SEARCH';
