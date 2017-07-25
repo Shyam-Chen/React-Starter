@@ -1,71 +1,50 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import { Button, Modal, Header, Icon, Input } from 'semantic-ui-react';
 
-export class Edit extends Component {
-  constructor(props) {
-    super(props);
+import * as actions from '../../actions/crud';
 
-    this.state = {
-      modalOpen: false,
+const Edit = ({ crud, actions }) => {
+  const onModalClose = () => actions.onEditModal(false);
 
-      primary: props.primary,
-      accent: props.accent,
-    };
-
-    this.handleOpen = this.handleOpen.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-
-    this.editItem = this.editItem.bind(this);
-  }
-
-  handleOpen() {
-    this.setState({
-      modalOpen: true
-    });
-  }
-
-  handleClose() {
-    this.setState({
-      modalOpen: false
-    });
-  }
-
-  editItem() {
-    const { primary, accent } = this.state;
+  const onEdit = () => {
+    const { id, primary, accent } = crud.editData;
 
     if (primary && accent) {
-      this.props.actions.onEditItem(this.props.id, primary, accent);
-      this.handleClose();
+      actions.onEditItem(id, primary, accent);
+      onModalClose();
     }
-  }
+  };
 
-  render() {
-    return (
-      <Modal
-        trigger={ <Button basic color="blue" onClick={ this.handleOpen }>Edit</Button> }
-        open={ this.state.modalOpen }
-        onClose={ this.handleClose }
-        basic
-        size="small"
-      >
-        <Header icon="edit" content="Edit" />
-        <Modal.Content>
-          <div>
-            <Input value={ this.state.primary } onChange={ event => this.setState({ primary: event.target.value }) } />
-            { ' - ' }
-            <Input value={ this.state.accent } onChange={ event => this.setState({ accent: event.target.value }) } />
-          </div>
-        </Modal.Content>
-        <Modal.Actions>
-          <Button basic color="red" onClick={ this.handleClose } inverted>
-            <Icon name="remove" /> Cancel
-          </Button>
-          <Button color="green" onClick={ this.editItem } inverted>
-            <Icon name="checkmark" /> Save
-          </Button>
-        </Modal.Actions>
-      </Modal>
-    );
-  }
+  return (
+    <Modal open={ crud.editModalOpen } onClose={ onModalClose } basic size="small">
+      <Header icon="edit" content="Edit" />
+      <Modal.Content>
+        <div>
+          <Input value={ crud.editData.primary } onChange={ event => {
+            actions.onSetEdit(crud.editData.id, event.target.value, crud.editData.accent)
+          } } />
+          { ' - ' }
+          <Input value={ crud.editData.accent } onChange={ event => {
+            actions.onSetEdit(crud.editData.id, crud.editData.primary, event.target.value)
+          } } />
+        </div>
+      </Modal.Content>
+      <Modal.Actions>
+        <Button basic color="red" onClick={ onModalClose } inverted>
+          <Icon name="remove" /> Cancel
+        </Button>
+        <Button color="green" onClick={ onEdit } inverted>
+          <Icon name="checkmark" /> Save
+        </Button>
+      </Modal.Actions>
+    </Modal>
+  )
 }
+
+export default connect(
+  ({ crud }) => ({ crud }),
+  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
+)(Edit);

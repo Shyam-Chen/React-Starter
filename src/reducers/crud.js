@@ -1,7 +1,7 @@
 import {
   ADD_ITEM, DELETE_ITEM, EDIT_ITEM, SEARCH_ITEM,
-  MODAL,
-  SET_DELETE
+  DELETE_MODAL, SET_DELETE,
+  EDIT_MODAL, SET_EDIT
 } from '../constants';
 
 const initial = {
@@ -14,11 +14,16 @@ const initial = {
   editData: {},
   deleteData: 0,
   searchData: {},
-  modalOpen: false
+  modalOpen: false,
+  editModalOpen: false
 };
 
 export default (state = initial, action) => {
-  const { type, id, primary, accent, modalOpen } = action;
+  const {
+    type,
+    id, primary, accent,
+    modalOpen, editModalOpen
+  } = action;
 
   const searchResult = [];
 
@@ -58,12 +63,20 @@ export default (state = initial, action) => {
         })
       }
 
-    case MODAL:
+    case DELETE_MODAL:
       state.modalOpen = modalOpen
       return { ...state }
 
     case SET_DELETE:
       state.deleteData = id
+      return { ...state }
+
+    case EDIT_MODAL:
+      state.editModalOpen = editModalOpen
+      return { ...state }
+
+    case SET_EDIT:
+      state.editData = { ...state.editData, id, primary, accent }
       return { ...state }
 
     default:
