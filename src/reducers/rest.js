@@ -5,7 +5,7 @@ export default (state = [], action) => {
 
   switch (type) {
     case SUCCESS:
-      return [...data];
+      return [...data].reverse();
     case FAILURE:
       console.error(error);
       return state;
