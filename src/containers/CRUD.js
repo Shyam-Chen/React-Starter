@@ -19,7 +19,7 @@ const CRUD = ({ crud, actions }) => (
     <ul>
       {
         crud.dataset.map((item, index) => (
-          <li key={ item.id }>
+          <li key={ item.id } style={{ margin: '4px 0' }}>
             ({ index + 1 }) { item.primary } - { item.accent } { ' ' }
             <Button basic color="red" onClick={ () => {
               actions.onDeleteModal(true)

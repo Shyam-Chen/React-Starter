@@ -26,3 +26,6 @@ export const SET_EDIT = 'SET_EDIT';
  */
 export const SUCCESS = 'SUCCESS';
 export const FAILURE = 'FAILURE';
+
+export const REST_SET_DELETE = 'DELETE';
+export const REST_DELETE_MODAL = 'REST_DELETE_MODAL';

@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-import { SUCCESS, FAILURE } from '../constants';
+import {
+  SUCCESS, FAILURE,
+  REST_SET_DELETE, REST_DELETE_MODAL
+} from '../constants';
 
 const url = 'https://web-go-demo.herokuapp.com/__/list';
 
@@ -35,3 +38,6 @@ export const onRemove = (id) =>
     axios.delete(`${url}/${id}`)
       .then(() => dispatch(onSearch()))
       .catch(error => dispatch(onFailure(error)));
+
+export const onSetDelete = (id) => ({ type: REST_SET_DELETE, id });
+export const onDeleteModal = (deleteModalOpen) => ({ type: REST_DELETE_MODAL, deleteModalOpen });

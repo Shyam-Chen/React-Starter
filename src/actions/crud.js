@@ -12,7 +12,7 @@ export const onSearchItem = (primary, accent) => ({ type: SEARCH_ITEM, primary, 
 export const onSetSearch = (primary, accent) => ({ type: SET_SEARCH, primary, accent });
 
 export const onDeleteItem = id => ({ type: DELETE_ITEM, id });
-export const onDeleteModal = (modalOpen) => ({ type: DELETE_MODAL, modalOpen });
+export const onDeleteModal = (deleteModalOpen) => ({ type: DELETE_MODAL, deleteModalOpen });
 export const onSetDelete = (id) => ({ type: SET_DELETE, id });
 
 export const onEditItem = (id, primary, accent) => ({ type: EDIT_ITEM, id, primary, accent });

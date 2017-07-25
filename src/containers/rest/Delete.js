@@ -4,18 +4,18 @@ import { bindActionCreators } from 'redux';
 
 import { Button, Modal, Header, Icon } from 'semantic-ui-react';
 
-import * as actions from '../../actions/crud';
+import * as actions from '../../actions/rest';
 
-const Delete = ({ crud, actions }) => {
+const Delete = ({ rest, actions }) => {
   const onModalClose = () => actions.onDeleteModal(false);
 
   const onConfirm = () => {
-    actions.onDeleteItem(crud.deleteData);
+    actions.onRemove(rest.deleteData);
     onModalClose();
   };
 
   return (
-    <Modal open={ crud.deleteModalOpen } onClose={ onModalClose } basic size="small">
+    <Modal open={ rest.deleteModalOpen } onClose={ onModalClose } basic size="small">
       <Header icon="delete" content="Delete" />
       <Modal.Content>
         <div>
@@ -35,6 +35,6 @@ const Delete = ({ crud, actions }) => {
 }
 
 export default connect(
-  ({ crud }) => ({ crud }),
+  ({ rest }) => ({ rest }),
   dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(Delete);

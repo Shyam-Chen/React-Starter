@@ -15,7 +15,7 @@ const initial = {
   editData: {},
   deleteData: 0,
   searchData: { primary: '', accent: '' },
-  modalOpen: false,
+  deleteModalOpen: false,
   editModalOpen: false
 };
 
@@ -23,7 +23,7 @@ export default (state = initial, action) => {
   const {
     type,
     id, primary, accent,
-    modalOpen, editModalOpen
+    deleteModalOpen, editModalOpen
   } = action;
 
   const searchResult = [];
@@ -76,7 +76,7 @@ export default (state = initial, action) => {
       return { ...state }
 
     case DELETE_MODAL:
-      state.modalOpen = modalOpen
+      state.deleteModalOpen = deleteModalOpen
       return { ...state }
 
     case SET_DELETE:
