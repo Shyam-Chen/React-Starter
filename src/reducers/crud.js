@@ -35,29 +35,18 @@ export default (state = initial, action) => {
         dataset: [
           {
             id: state.dataset.reduce((maxId, item) => Math.max(item.id, maxId), -1) + 1,
-            primary,
-            accent
+            primary, accent
           },
           ...state.dataset
         ]
       };
-    case DELETE_ITEM:
-      return {
-        ...state,
-        dataset: [...state.dataset.filter(item => item.id !== id)]
-      };
-    case EDIT_ITEM:
-      return {
-        ...state,
-        dataset: [...state.dataset.map(item => item.id === id ? { ...item, primary, accent } : item)]
-      };
-
+    case SET_ADD:
+      return { ...state, addData: { ...state.addData, primary, accent } };
 
     case SEARCH_ITEM:
       return {
         ...state,
         dataset: initial.dataset.filter(item => {
-          // console.log(primary, accent);
           const _primary = item.primary.toLowerCase().indexOf(primary.toLowerCase());
           const _accent = item.accent.toLowerCase().indexOf(accent.toLowerCase());
 
@@ -66,30 +55,25 @@ export default (state = initial, action) => {
           }
         })
       };
-
     case SET_SEARCH:
-      state.searchData = { ...state.searchData, primary, accent }
-      return { ...state }
+      return { ...state, searchData: { ...state.searchData, primary, accent } };
 
-    case SET_ADD:
-      state.addData = { ...state.addData, primary, accent }
-      return { ...state }
-
-    case DELETE_MODAL:
-      state.deleteModalOpen = deleteModalOpen
-      return { ...state }
-
-    case SET_DELETE:
-      state.deleteData = id
-      return { ...state }
-
-    case EDIT_MODAL:
-      state.editModalOpen = editModalOpen
-      return { ...state }
-
+    case EDIT_ITEM:
+      return {
+        ...state,
+        dataset: [...state.dataset.map(item => item.id === id ? { ...item, primary, accent } : item)]
+      };
     case SET_EDIT:
-      state.editData = { ...state.editData, id, primary, accent }
-      return { ...state }
+      return { ...state, editData: { ...state.editData, id, primary, accent } };
+    case EDIT_MODAL:
+      return { ...state, editModalOpen };
+
+    case DELETE_ITEM:
+      return { ...state, dataset: [...state.dataset.filter(item => item.id !== id)] };
+    case SET_DELETE:
+      return { ...state, deleteData: id };
+    case DELETE_MODAL:
+      return { ...state, deleteModalOpen };
 
     default:
       return state;

@@ -17,9 +17,6 @@ const Counter = ({ counter, actions }) => (
 );
 
 export default connect(
-  // map state to props
   ({ counter }) => ({ counter }),
-
-  // map dispatch to props
   dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(Counter);
