@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { Button } from 'semantic-ui-react';
+import { List, Button } from 'semantic-ui-react';
 
 import * as actions from '../actions/rest';
 
@@ -11,28 +11,28 @@ import Add from '../containers/rest/Add';
 import Delete from '../containers/rest/Delete';
 import Edit from '../containers/rest/Edit';
 
-export const REST = ({ rest, actions }) => (
+const REST = ({ rest, actions }) => (
   <div>
     <Search />
     <Add />
 
-    <ul>
+    <List>
       {
         rest.dataset.map((item, index) => (
-          <li key={ item._id } style={{ margin: '4px 0' }}>
+          <List.Item key={ item._id }>
             ({ index + 1 }) { item.text } { ' ' }
             <Button basic color="red" onClick={ () => {
-              actions.onDeleteModal(true)
-              actions.onSetDelete(item._id)
+              actions.onDeleteModal(true);
+              actions.onSetDelete(item._id);
               } }>Delete</Button>
             <Button basic color="blue" onClick={ () => {
-              actions.onEditModal(true)
-              actions.onSetEdit(item._id, item.text)
+              actions.onEditModal(true);
+              actions.onSetEdit(item._id, item.text);
             } }>Edit</Button>
-          </li>
+          </List.Item>
         ))
       }
-    </ul>
+    </List>
 
     <aside>
       <Delete />
@@ -40,7 +40,6 @@ export const REST = ({ rest, actions }) => (
     </aside>
   </div>
 );
-
 
 export default connect(
   ({ rest }) => ({ rest }),

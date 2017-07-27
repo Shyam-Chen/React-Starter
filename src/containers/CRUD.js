@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { Button } from 'semantic-ui-react';
+import { List, Button } from 'semantic-ui-react';
 
 import * as actions from '../actions/crud';
 
@@ -16,23 +16,23 @@ const CRUD = ({ crud, actions }) => (
     <Search />
     <Add />
 
-    <ul>
+    <List>
       {
         crud.dataset.map((item, index) => (
-          <li key={ item.id } style={{ margin: '4px 0' }}>
+          <List.Item key={ item.id }>
             ({ index + 1 }) { item.primary } - { item.accent } { ' ' }
             <Button basic color="red" onClick={ () => {
-              actions.onDeleteModal(true)
-              actions.onSetDelete(item.id)
+              actions.onDeleteModal(true);
+              actions.onSetDelete(item.id);
               } }>Delete</Button>
             <Button basic color="blue" onClick={ () => {
-              actions.onEditModal(true)
-              actions.onSetEdit(item.id, item.primary, item.accent)
+              actions.onEditModal(true);
+              actions.onSetEdit(item.id, item.primary, item.accent);
             } }>Edit</Button>
-          </li>
+          </List.Item>
         ))
       }
-    </ul>
+    </List>
 
     <aside>
       <Delete />
