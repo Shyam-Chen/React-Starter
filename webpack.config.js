@@ -33,6 +33,7 @@ module.exports = {
               ],
               plugins: [
                 'transform-runtime',
+                'transform-class-properties',
                 'transform-function-bind',
                 'transform-object-rest-spread',
                 [
