@@ -1,8 +1,14 @@
 import React from 'react';
 
 const Home = () => (
-  <div style={{ backgroundColor: '#3F51B5', color: '#FFFFFF' }}>
-    Home Component
+  <div>
+    <div className="container">Home Component</div>
+    <style jsx>{`
+      .container {
+        background-color: #3F51B5;
+        color: #FFFFFF;
+      }
+    `}</style>
   </div>
 );
 

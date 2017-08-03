@@ -1,13 +1,6 @@
 const { join } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const scss = require('postcss-scss');
-const pimport = require('postcss-import');
-const cssnext = require('postcss-cssnext');
-const rucksack = require('rucksack-css');
-const url = require('postcss-url');
-const cssnano = require('cssnano');
-
 module.exports = {
   context: join(__dirname, 'src'),
   entry: {
@@ -33,6 +26,7 @@ module.exports = {
               ],
               plugins: [
                 'transform-runtime',
+                'styled-jsx/babel',
                 'transform-class-properties',
                 'transform-function-bind',
                 'transform-object-rest-spread',
@@ -59,33 +53,7 @@ module.exports = {
             }
           }
         ]
-      }, {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              parser: scss,
-              plugins: [
-                pimport(),
-                cssnext({ warnForDuplicates: false }),
-                rucksack({ autoprefixer: true }),
-                url(),
-                cssnano()
-              ]
-            }
-          }
-        ]
-      },
+      }
     ]
   },
   plugins: [
