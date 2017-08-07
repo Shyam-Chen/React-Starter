@@ -8,11 +8,11 @@ import * as actions from './actions';
 
 const Counter = ({ counter, actions }) => (
   <div>
-    Clicked: { counter.value } times { ' ' }
-    <Button onClick={ actions.onIncrement }>+</Button>
-    <Button onClick={ actions.onDecrement }>-</Button>
-    <Button onClick={ actions.onIncrementAsync }>+ (Async)</Button>
-    <Button onClick={ actions.onIncrementIfOdd }>+ (If Odd)</Button>
+    Clicked: {counter.value} times {' '}
+    <Button onClick={actions.onIncrement}>+</Button>
+    <Button onClick={actions.onDecrement}>-</Button>
+    <Button onClick={actions.onIncrementAsync}>+ (Async)</Button>
+    <Button onClick={actions.onIncrementIfOdd}>+ (If Odd)</Button>
   </div>
 );
 

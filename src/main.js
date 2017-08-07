@@ -12,9 +12,9 @@ const store = configureStore();
 const history = syncHistoryWithStore(createBrowserHistory(), store);
 
 render(
-  <Provider store={ store }>
-    <Router history={ history }>
-      <Route path="/" component={ App } />
+  <Provider store={store}>
+    <Router history={history}>
+      <Route path="/" component={App} />
     </Router>
   </Provider>,
   document.querySelector('#app')

@@ -7,9 +7,9 @@ import {
 
 const initial = {
   dataset: [
-    { id: 3, primary: 'Angular', accent: 'Ngrx' },
-    { id: 2, primary: 'React', accent: 'Redux' },
-    { id: 1, primary: 'Vue', accent: 'Vuex' },
+    { id: 3, primary: 'Angular', accent: 'Ionic' },
+    { id: 2, primary: 'React', accent: 'React Native' },
+    { id: 1, primary: 'Vue', accent: 'Weex' },
   ],
   addData: { primary: '', accent: '' },
   editData: {},
