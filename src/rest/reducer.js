@@ -1,22 +1,13 @@
 import {
+  INITIAL,
   SUCCESS, FAILURE,
-  REST_SET_ADD,
-  REST_SET_DELETE, REST_DELETE_MODAL,
-  REST_SET_EDIT, REST_EDIT_MODAL,
-  REST_SET_SEARCH
-} from '../constants';
+  SET_ADD,
+  SET_DELETE, DELETE_MODAL,
+  SET_EDIT, EDIT_MODAL,
+  SET_SEARCH
+} from './constants';
 
-const initial = {
-  dataset: [],
-  addData: { text: '' },
-  editData: {},
-  deleteData: 0,
-  searchData: { text: '' },
-  deleteModalOpen: false,
-  editModalOpen: false
-};
-
-export default (state = initial, action) => {
+export default (state = INITIAL, action) => {
   const {
     type,
     data, error,
@@ -31,25 +22,25 @@ export default (state = initial, action) => {
       console.error(error);
       return { ...state };
 
-    case REST_SET_ADD:
+    case SET_ADD:
       state.addData = { ...state.addData, text };
       return { ...state };
 
-    case REST_SET_DELETE:
+    case SET_DELETE:
       state.deleteData = id;
       return { ...state };
-    case REST_DELETE_MODAL:
+    case DELETE_MODAL:
       state.deleteModalOpen = deleteModalOpen;
       return { ...state };
 
-    case REST_SET_EDIT:
+    case SET_EDIT:
       state.editData = { ...state.editData, id, text };
       return { ...state };
-    case REST_EDIT_MODAL:
+    case EDIT_MODAL:
       state.editModalOpen = editModalOpen;
       return { ...state };
 
-    case REST_SET_SEARCH:
+    case SET_SEARCH:
       state.searchData = { ...state.searchData, text };
       return { ...state };
 

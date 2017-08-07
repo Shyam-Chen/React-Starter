@@ -1,25 +1,12 @@
 import {
+  INITIAL,
   ADD_ITEM, SET_ADD,
   SEARCH_ITEM, SET_SEARCH,
-  DELETE_ITEM, DELETE_MODAL, SET_DELETE,
   EDIT_ITEM, EDIT_MODAL, SET_EDIT,
-} from '../constants';
+  DELETE_ITEM, DELETE_MODAL, SET_DELETE
+} from './constants';
 
-const initial = {
-  dataset: [
-    { id: 3, primary: 'Angular', accent: 'Ionic' },
-    { id: 2, primary: 'React', accent: 'React Native' },
-    { id: 1, primary: 'Vue', accent: 'Weex' },
-  ],
-  addData: { primary: '', accent: '' },
-  editData: {},
-  deleteData: 0,
-  searchData: { primary: '', accent: '' },
-  deleteModalOpen: false,
-  editModalOpen: false
-};
-
-export default (state = initial, action) => {
+export default (state = INITIAL, action) => {
   const {
     type,
     id, primary, accent,
@@ -46,7 +33,7 @@ export default (state = initial, action) => {
     case SEARCH_ITEM:
       return {
         ...state,
-        dataset: initial.dataset.filter(item => {
+        dataset: INITIAL.dataset.filter(item => {
           const _primary = item.primary.toLowerCase().indexOf(primary.toLowerCase());
           const _accent = item.accent.toLowerCase().indexOf(accent.toLowerCase());
 

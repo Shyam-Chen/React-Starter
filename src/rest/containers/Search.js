@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import { Button, Input } from 'semantic-ui-react';
 
-import * as actions from '../../actions/rest';
+import * as actions from '../actions';
 
 const Search = ({ rest, actions }) => {
   const { text } = rest.searchData;

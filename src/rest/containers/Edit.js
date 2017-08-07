@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import { Button, Modal, Header, Icon, Input } from 'semantic-ui-react';
 
-import * as actions from '../../actions/rest';
+import * as actions from '../actions';
 
 const Edit = ({ rest, actions }) => {
   const { id, text } = rest.editData;

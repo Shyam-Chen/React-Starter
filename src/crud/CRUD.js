@@ -4,12 +4,12 @@ import { bindActionCreators } from 'redux';
 
 import { List, Button } from 'semantic-ui-react';
 
-import * as actions from '../actions/crud';
+import * as actions from './actions';
 
-import Add from '../containers/crud/Add';
-import Delete from '../containers/crud/Delete';
-import Edit from '../containers/crud/Edit';
-import Search from '../containers/crud/Search';
+import Add from './containers/Add';
+import Delete from './containers/Delete';
+import Edit from './containers/Edit';
+import Search from './containers/Search';
 
 const CRUD = ({ crud, actions }) => (
   <div>
@@ -19,16 +19,16 @@ const CRUD = ({ crud, actions }) => (
     <List>
       {
         crud.dataset.map((item, index) => (
-          <List.Item key={ item.id }>
-            ({ index + 1 }) { item.primary } - { item.accent } { ' ' }
-            <Button basic color="red" onClick={ () => {
+          <List.Item key={item.id}>
+            ({index + 1}) {item.primary} - {item.accent} {' '}
+            <Button basic color="red" onClick={() => {
               actions.onDeleteModal(true);
               actions.onSetDelete(item.id);
-              } }>Delete</Button>
-            <Button basic color="blue" onClick={ () => {
+            }}>Delete</Button>
+            <Button basic color="blue" onClick={() => {
               actions.onEditModal(true);
               actions.onSetEdit(item.id, item.primary, item.accent);
-            } }>Edit</Button>
+            }}>Edit</Button>
           </List.Item>
         ))
       }

@@ -3,11 +3,9 @@ import { routerReducer } from 'react-router-redux';
 import thunkMiddleware from 'redux-thunk';
 import loggerMiddleware from 'redux-logger';
 
-// import counter from './reducers/counter';
 import { counter } from './counter';
-
-import crud from './reducers/crud';
-import rest from './reducers/rest';
+import { crud } from './crud';
+import { rest } from './rest';
 
 const rootReducer = combineReducers({
   counter,

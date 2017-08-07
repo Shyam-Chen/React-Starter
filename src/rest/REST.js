@@ -4,12 +4,12 @@ import { bindActionCreators } from 'redux';
 
 import { List, Button } from 'semantic-ui-react';
 
-import * as actions from '../actions/rest';
+import * as actions from './actions';
 
-import Search from '../containers/rest/Search';
-import Add from '../containers/rest/Add';
-import Delete from '../containers/rest/Delete';
-import Edit from '../containers/rest/Edit';
+import Search from './containers/Search';
+import Add from './containers/Add';
+import Delete from './containers/Delete';
+import Edit from './containers/Edit';
 
 const REST = ({ rest, actions }) => (
   <div>

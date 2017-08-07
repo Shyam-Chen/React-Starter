@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import { Button, Input } from 'semantic-ui-react';
 
-import * as actions from '../../actions/crud';
+import * as actions from '../actions';
 
 const Add = ({ crud, actions }) => {
   const { primary, accent } = crud.addData;
