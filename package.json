@@ -1,14 +1,14 @@
 {
-  "name": "React-Starter-Kit",
+  "name": "React-Fullstack-Starter",
   "version": "1.0.0",
-  "description": "A boilerplate for React and Redux.",
+  "description": "A boilerplate for React, Material, Firebase, Express, Mongoose, and Google Cloud Platform.",
   "scripts": {
     "start": "webpack-dev-server --progress",
     "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shyam-Chen/React-Starter-Kit.git"
+    "url": "git+https://github.com/Shyam-Chen/React-Fullstack-Starter.git"
   },
   "keywords": [
     "React"
@@ -16,9 +16,9 @@
   "author": "Yen-cheng Chen, 陳彥澄",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Shyam-Chen/React-Starter-Kit/issues"
+    "url": "https://github.com/Shyam-Chen/React-Fullstack-Starter/issues"
   },
-  "homepage": "https://github.com/Shyam-Chen/React-Starter-Kit#readme",
+  "homepage": "https://github.com/Shyam-Chen/React-Fullstack-Starter#readme",
   "dependencies": {
     "axios": "0.16.2",
     "d3": "4.10.0",

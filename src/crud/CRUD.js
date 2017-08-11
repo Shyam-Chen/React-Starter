@@ -1,15 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import { List, Button } from 'semantic-ui-react';
 
 import * as actions from './actions';
-
-import Add from './containers/Add';
-import Delete from './containers/Delete';
-import Edit from './containers/Edit';
-import Search from './containers/Search';
+import { Add, Search, Edit, Delete } from './containers';
 
 const CRUD = ({ crud, actions }) => (
   <div>

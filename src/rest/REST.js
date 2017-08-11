@@ -6,10 +6,7 @@ import { List, Button } from 'semantic-ui-react';
 
 import * as actions from './actions';
 
-import Search from './containers/Search';
-import Add from './containers/Add';
-import Delete from './containers/Delete';
-import Edit from './containers/Edit';
+import { Add, Search, Edit, Delete } from './containers';
 
 const REST = ({ rest, actions }) => (
   <div>
