@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 import {
-  SUCCESS, FAILURE,
   API_LIST,
+  SUCCESS, FAILURE,
   SET_ADD,
   SET_DELETE, DELETE_MODAL,
   SET_EDIT, EDIT_MODAL,

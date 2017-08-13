@@ -1,14 +1,18 @@
+export const API_LIST = 'https://web-go-demo.herokuapp.com/__/list';
+
 export const INITIAL = {
   dataset: [],
-  addData: { text: '' },
-  editData: {},
-  deleteData: 0,
-  searchData: { text: '' },
-  deleteModalOpen: false,
-  editModalOpen: false
-};
 
-export const API_LIST = 'https://web-go-demo.herokuapp.com/__/list';
+  addData: { text: '' },
+
+  searchData: { text: '' },
+
+  editData: {},
+  editModalOpen: false,
+
+  deleteData: 0,
+  deleteModalOpen: false
+};
 
 export const SUCCESS = '[REST] SUCCESS';
 export const FAILURE = '[REST] FAILURE';

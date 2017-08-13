@@ -19,8 +19,7 @@ export default (state = INITIAL, action) => {
     case SUCCESS:
       return { ...state, dataset: [...data].reverse() };
     case FAILURE:
-      console.error(error);
-      return { ...state };
+      throw error;
 
     case SET_ADD:
       state.addData = { ...state.addData, text };
