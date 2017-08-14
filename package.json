@@ -1,7 +1,7 @@
 {
   "name": "React-Fullstack-Starter",
   "version": "1.0.0",
-  "description": "A boilerplate for React, Material, Firebase, Express, Mongoose, and Google Cloud Platform.",
+  "description": "A boilerplate for React, Semantic, Express, and Mongoose.",
   "scripts": {
     "start": "webpack-dev-server --progress",
     "test": "jest --coverage"
