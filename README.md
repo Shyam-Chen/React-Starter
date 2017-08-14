@@ -17,5 +17,5 @@ $ npm start
 
 * DataTable
 * GraphQL
-* Production Build
+* Simple Build
 * Simple Server

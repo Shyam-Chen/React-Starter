@@ -4,7 +4,10 @@
   "description": "A boilerplate for React, Semantic, Express, and Mongoose.",
   "scripts": {
     "start": "webpack-dev-server --progress",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "build:app": "webpack -p",
+    "build:backend": "babel src/backend -d dist",
+    "server": "nodemon src/server.js --exec babel-node"
   },
   "repository": {
     "type": "git",
