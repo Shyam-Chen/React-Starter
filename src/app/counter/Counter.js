@@ -13,6 +13,10 @@ const Counter = ({ counter, actions }) => (
     <Button onClick={actions.onDecrement}>-</Button>
     <Button onClick={actions.onIncrementAsync}>+ (Async)</Button>
     <Button onClick={actions.onIncrementIfOdd}>+ (If Odd)</Button>
+
+    <div>
+      <a href="javascript: history.back()" className="ui button teal">Go Back</a>
+    </div>
   </div>
 );
 

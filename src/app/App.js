@@ -1,37 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux'
+import { Container, Header } from 'semantic-ui-react'
 
-import Home from './shared/Home';
-import About from './shared/About';
-
-import configureStore from './root';
-
-import { Counter } from './counter';
-import { CRUD } from './crud';
-import { REST } from './REST';
-
-const store = configureStore();
+import Navigation from './shared/Navigation';
 
 const App = () => (
   <div>
-    <Home />
-    <About />
+    <Container>
+      <div className="header">
+        <Header size="large">React by Example</Header>
+      </div>
 
-    <a href="/home" className="ui button" onClick={() => store.dispatch(push('/home'))}>Home</a>
-    <a href="/about" className="ui button" onClick={() => store.dispatch(push('/about'))}>About</a>
+      <Navigation />
+    </Container>
 
-    <hr />
-
-    <Counter />
-
-    <hr />
-
-    <CRUD />
-
-    <hr />
-
-    <REST />
+    <style jsx>{`
+      .header {
+        margin: 1rem auto;
+      }
+    `}</style>
   </div>
 );
 

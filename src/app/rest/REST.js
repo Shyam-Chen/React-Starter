@@ -35,6 +35,10 @@ const REST = ({ rest, actions }) => (
       <Delete />
       <Edit />
     </aside>
+
+    <div>
+      <a href="javascript: history.back()" className="ui button teal">Go Back</a>
+    </div>
   </div>
 );
 

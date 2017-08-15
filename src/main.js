@@ -7,8 +7,10 @@ import createHistory from 'history/createBrowserHistory'
 
 import configureStore from './app/root';
 import App from './app/App';
-import Home from './app/shared/Home'
-import About from './app/shared/About'
+
+import { Counter } from './app/counter';
+import { CRUD } from './app/crud';
+import { REST } from './app/REST';
 
 const store = configureStore();
 const history = createHistory()
@@ -18,8 +20,9 @@ render(
     <ConnectedRouter history={history}>
       <div>
         <Route exact path="/" component={App} />
-        <Route path="/home" component={Home} />
-        <Route path="/about" component={About} />
+        <Route path="/counter" component={Counter} />
+        <Route path="/crud" component={CRUD} />
+        <Route path="/rest" component={REST} />
       </div>
     </ConnectedRouter>
   </Provider>,
