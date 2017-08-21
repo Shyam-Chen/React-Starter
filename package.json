@@ -1,7 +1,7 @@
 {
   "name": "React-Fullstack-Starter",
   "version": "1.0.0",
-  "description": "A boilerplate for React, Semantic, Express, and Mongoose.",
+  "description": "A boilerplate for React, Material, Express, and Mongoose.",
   "scripts": {
     "start": "webpack-dev-server --progress",
     "test": "jest --coverage",
@@ -27,7 +27,7 @@
     "d3": "4.10.0",
     "immutable": "3.8.1",
     "lodash": "4.17.4",
-    "material-ui": "0.18.7",
+    "material-ui": "1.0.0-beta.6",
     "react": "15.6.1",
     "react-dom": "15.6.1",
     "react-redux": "5.0.6",

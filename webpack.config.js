@@ -38,6 +38,10 @@ module.exports = {
                 'transform-object-rest-spread',
                 [
                   'transform-imports', {
+                    'material-ui': {
+                      transform: 'material-ui/${member}',
+                      preventFullImport: true
+                    },
                     'rxjs': {
                       transform: 'rxjs/${member}',
                       preventFullImport: true,

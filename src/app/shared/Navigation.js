@@ -1,5 +1,6 @@
 import React from 'react';
 import { push } from 'react-router-redux';
+import { Button } from 'material-ui';
 
 import configureStore from '../root';
 
@@ -7,9 +8,9 @@ const store = configureStore();
 
 const Navigation = () => (
   <div>
-    <a href="/counter" className="ui button" onClick={() => store.dispatch(push('/counter'))}>Counter</a>
-    <a href="/crud" className="ui button" onClick={() => store.dispatch(push('/crud'))}>CRUD</a>
-    <a href="/rest" className="ui button" onClick={() => store.dispatch(push('/rest'))}>REST</a>
+    <Button raised href="/counter" onClick={() => store.dispatch(push('/counter'))}>Counter</Button>
+    <Button raised href="/crud" onClick={() => store.dispatch(push('/crud'))}>CRUD</Button>
+    <Button raised href="/rest" onClick={() => store.dispatch(push('/rest'))}>REST</Button>
   </div>
 );
 
