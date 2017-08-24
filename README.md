@@ -16,7 +16,7 @@ $ npm start
 ## TODO List
 
 * GraphQL
-* DataTable
+* Pagination
 * Simple Build
 * Simple Server
 * Simple Test

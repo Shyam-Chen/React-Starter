@@ -11,6 +11,7 @@ import App from './app/App';
 import { Counter } from './app/counter';
 import { CRUD } from './app/crud';
 import { REST } from './app/REST';
+import { GraphQL } from './app/GraphQL';
 
 const store = configureStore();
 const history = createHistory()
@@ -23,6 +24,7 @@ render(
         <Route path="/counter" component={Counter} />
         <Route path="/crud" component={CRUD} />
         <Route path="/rest" component={REST} />
+        <Route path="/graphql" component={GraphQL} />
       </div>
     </ConnectedRouter>
   </Provider>,

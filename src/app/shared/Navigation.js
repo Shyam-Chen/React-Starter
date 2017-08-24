@@ -11,6 +11,7 @@ const Navigation = () => (
     <Button raised href="/counter" onClick={() => store.dispatch(push('/counter'))}>Counter</Button>
     <Button raised href="/crud" onClick={() => store.dispatch(push('/crud'))}>CRUD</Button>
     <Button raised href="/rest" onClick={() => store.dispatch(push('/rest'))}>REST</Button>
+    <Button raised href="/graphql" onClick={() => store.dispatch(push('/graphql'))}>GraphQL</Button>
   </div>
 );
 
