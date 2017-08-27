@@ -1,37 +1,38 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-import { Button, Input } from 'semantic-ui-react';
+import { TextField, Button } from 'material-ui';
 
 import * as actions from '../actions';
 
-const Add = ({ crud, actions }) => {
-  const { primary, accent } = crud.addData;
-
-  const onAdd = () => {
-    if (primary && accent) {
-      actions.onAddItem(primary, accent);
-      actions.onSetAdd('', '');
-    }
-  };
-
-  return (
+const Add = ({ crud: { addData: { primary, accent } }, actions }) => (
+  <div>
     <div>
-      <div>
-        <Input value={ primary } onChange={ event => {
-          actions.onSetAdd(event.target.value, accent)
-        } } />
-        { ' - ' }
-        <Input value={ accent } onChange={ event => {
-          actions.onSetAdd(primary, event.target.value)
-        } } />
-        { ' ' }
-        <Button basic color="black" onClick={ onAdd }>Add</Button>
-      </div>
+      <TextField
+        value={primary}
+        onChange={event => actions.onSetAdd(event.target.value, accent)}
+      />
+      {' - '}
+      <TextField
+        value={accent}
+        onChange={event => actions.onSetAdd(primary, event.target.value)}
+      />
+      {' '}
+      <Button
+        raised
+        color="primary"
+        onClick={() => {
+          if (primary && accent) {
+            actions.onAddItem(primary, accent);
+            actions.onSetAdd('', '');
+          }
+        }}
+      >
+        Add
+      </Button>
     </div>
-  );
-}
+  </div>
+);
 
 export default connect(
   ({ crud }) => ({ crud }),

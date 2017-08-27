@@ -8,10 +8,10 @@ const store = configureStore();
 
 const Navigation = () => (
   <div>
-    <Button raised href="/counter" onClick={() => store.dispatch(push('/counter'))}>Counter</Button>
-    <Button raised href="/crud" onClick={() => store.dispatch(push('/crud'))}>CRUD</Button>
-    <Button raised href="/rest" onClick={() => store.dispatch(push('/rest'))}>REST</Button>
-    <Button raised href="/graphql" onClick={() => store.dispatch(push('/graphql'))}>GraphQL</Button>
+    <Button raised color="primary" href="/counter" onClick={() => store.dispatch(push('/counter'))}>Counter</Button> {' '}
+    <Button raised color="primary" href="/crud" onClick={() => store.dispatch(push('/crud'))}>CRUD</Button> {' '}
+    <Button raised color="primary" href="/rest" onClick={() => store.dispatch(push('/rest'))}>REST</Button> {' '}
+    <Button raised color="primary" href="/graphql" onClick={() => store.dispatch(push('/graphql'))}>GraphQL</Button> {' '}
   </div>
 );
 

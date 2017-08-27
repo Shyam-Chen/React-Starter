@@ -1,7 +1,6 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
 import { List, Button } from 'semantic-ui-react';
 
 import * as actions from './actions';
