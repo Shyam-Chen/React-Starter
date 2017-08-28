@@ -37,6 +37,11 @@ module.exports = {
                 'transform-function-bind',
                 'transform-object-rest-spread',
                 [
+                  'babel-plugin-root-import', {
+                    'rootPathSuffix': 'src/app'
+                  }
+                ],
+                [
                   'transform-imports', {
                     'material-ui': {
                       transform: 'material-ui/${member}',

@@ -3,7 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Paper, Table, Button } from 'material-ui';
 import { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
-// import { List } from 'semantic-ui-react';
+
+import GoBack from '~/shared/GoBack';
 
 import * as actions from './actions';
 import { Add, Search, Edit, Delete } from './containers';
@@ -54,9 +55,7 @@ const CRUD = ({ crud, actions }) => (
       <Edit />
     </aside>
 
-    <div className="back">
-      <Button raised href="javascript: history.back()">Go Back</Button>
-    </div>
+    <GoBack />
 
     <style jsx>{`
       .container {
@@ -66,12 +65,6 @@ const CRUD = ({ crud, actions }) => (
       .table {
         max-width: 30rem;
         margin: .5rem 0;
-      }
-
-      .back {
-        position: absolute;
-        right: 1rem;
-        bottom: 1rem;
       }
     `}</style>
   </div>

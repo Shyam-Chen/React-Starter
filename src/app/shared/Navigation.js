@@ -2,7 +2,7 @@ import React from 'react';
 import { push } from 'react-router-redux';
 import { Button } from 'material-ui';
 
-import configureStore from '../root';
+import configureStore from '~/root';
 
 const store = configureStore();
 

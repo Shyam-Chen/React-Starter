@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import { List, Button } from 'semantic-ui-react';
 
-import * as actions from './actions';
+import GoBack from '~/shared/GoBack';
 
+import * as actions from './actions';
 import { Add, Search, Edit, Delete } from './containers';
 
 const REST = ({ rest, actions }) => (
@@ -36,9 +36,7 @@ const REST = ({ rest, actions }) => (
       <Edit />
     </aside>
 
-    <div>
-      <a href="javascript: history.back()" className="ui button teal">Go Back</a>
-    </div>
+    <GoBack />
   </div>
 );
 

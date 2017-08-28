@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Typography } from 'material-ui';
 
-import Navigation from './shared/Navigation';
+import Navigation from '~/shared/Navigation';
 
 const App = () => (
   <div>
