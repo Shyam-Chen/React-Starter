@@ -1,22 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Container, Header } from 'semantic-ui-react';
+import { Typography } from 'material-ui';
 
 import Navigation from './shared/Navigation';
 
 const App = () => (
   <div>
-    <Container>
-      <div className="header">
-        <Header size="large">React by Example</Header>
-      </div>
+    <div className="container">
+      <Typography type="headline" component="h3">
+        React by Example
+      </Typography>
 
       <Navigation />
-    </Container>
+    </div>
 
     <style jsx>{`
-      .header {
-        margin: 1rem auto;
+      .container {
+        padding: 1rem;
       }
     `}</style>
   </div>

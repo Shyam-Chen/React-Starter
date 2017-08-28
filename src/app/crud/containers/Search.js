@@ -6,7 +6,7 @@ import { TextField, Button } from 'material-ui';
 import * as actions from '../actions';
 
 const Search = ({ crud: { searchData: { primary, accent } }, actions }) => (
-  <div>
+  <div className="container">
     <TextField
       value={primary}
       onChange={event => actions.onSetSearch(event.target.value, accent)}
@@ -27,6 +27,12 @@ const Search = ({ crud: { searchData: { primary, accent } }, actions }) => (
     >
       Search
     </Button>
+
+    <style jsx>{`
+      .container {
+        padding: .5rem 0;
+      }
+    `}</style>
   </div>
 );
 

@@ -1,42 +1,79 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { List, Button } from 'semantic-ui-react';
+import { Paper, Table, Button } from 'material-ui';
+import { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+// import { List } from 'semantic-ui-react';
 
 import * as actions from './actions';
 import { Add, Search, Edit, Delete } from './containers';
 
 const CRUD = ({ crud, actions }) => (
-  <div>
+  <div className="container">
     <Search />
     <Add />
 
-    <List>
-      {
-        crud.dataset.map((item, index) => (
-          <List.Item key={item.id}>
-            ({index + 1}) {item.primary} - {item.accent} {' '}
-            <Button basic color="red" onClick={() => {
-              actions.onDeleteModal(true);
-              actions.onSetDelete(item.id);
-            }}>Delete</Button>
-            <Button basic color="blue" onClick={() => {
-              actions.onEditModal(true);
-              actions.onSetEdit(item.id, item.primary, item.accent);
-            }}>Edit</Button>
-          </List.Item>
-        ))
-      }
-    </List>
+    <div className="table">
+      <Paper elevation={2}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Item</TableCell>
+              <TableCell>Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {
+              crud.dataset.map(item => (
+                <TableRow key={item.id}>
+                  <TableCell>{item.primary} - {item.accent}</TableCell>
+                  <TableCell>
+                    <Button color="accent" onClick={() => {
+                      actions.onDeleteModal(true);
+                      actions.onSetDelete(item.id);
+                    }}>
+                      Delete
+                    </Button>
+                    <Button color="primary" onClick={() => {
+                      actions.onEditModal(true);
+                      actions.onSetEdit(item.id, item.primary, item.accent);
+                    }}>
+                      Edit
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))
+            }
+          </TableBody>
+        </Table>
+      </Paper>
+    </div>
 
     <aside>
       <Delete />
       <Edit />
     </aside>
 
-    <div>
-      <a href="javascript: history.back()" className="ui button teal">Go Back</a>
+    <div className="back">
+      <Button raised href="javascript: history.back()">Go Back</Button>
     </div>
+
+    <style jsx>{`
+      .container {
+        padding: 1rem;
+      }
+
+      .table {
+        max-width: 30rem;
+        margin: .5rem 0;
+      }
+
+      .back {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+      }
+    `}</style>
   </div>
 );
 
