@@ -7,7 +7,7 @@ module.exports = {
     main: './main.js'
   },
   output: {
-    path: join(__dirname, 'dist'),
+    path: join(__dirname, 'build'),
     filename: '[name].js'
   },
   module: {
@@ -78,7 +78,7 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: join(__dirname, 'dist'),
+    contentBase: join(__dirname, 'build'),
     historyApiFallback: true,
     inline: true,
     port: 8000,
