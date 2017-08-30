@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-import { Button, Modal, Header, Icon } from 'semantic-ui-react';
+import { Dialog, Button } from 'material-ui';
+import { DialogActions, DialogContent, DialogContentText, DialogTitle } from 'material-ui/Dialog';
 
 import * as actions from '../actions';
 
@@ -15,22 +15,23 @@ const Delete = ({ crud, actions }) => {
   };
 
   return (
-    <Modal open={ crud.deleteModalOpen } onClose={ onModalClose } basic size="small">
-      <Header icon="delete" content="Delete" />
-      <Modal.Content>
-        <div>
+    <Dialog open={crud.deleteModalOpen} onRequestClose={onModalClose}>
+      <DialogTitle>
+      </DialogTitle>
+      <DialogContent>
+        <DialogContentText>
           Are you sure you want to delete it?
-        </div>
-      </Modal.Content>
-      <Modal.Actions>
-        <Button basic color="red" onClick={ onModalClose } inverted>
-          <Icon name="remove" /> Cancel
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={onModalClose} color="accent">
+          Cancel
         </Button>
-        <Button color="green" onClick={ onConfirm } inverted>
-          <Icon name="checkmark" /> Confirm
+        <Button onClick={onConfirm} color="primary">
+          Confirm
         </Button>
-      </Modal.Actions>
-    </Modal>
+      </DialogActions>
+    </Dialog>
   );
 }
 
