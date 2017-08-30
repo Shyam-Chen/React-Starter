@@ -4,13 +4,15 @@ import { connect } from 'react-redux';
 import { Paper, Table, Button } from 'material-ui';
 import { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 
-import GoBack from '~/shared/GoBack';
+import Navigation from '~/shared/Navigation';
 
 import * as actions from './actions';
 import { Add, Search, Edit, Delete } from './containers';
 
 const CRUD = ({ crud, actions }) => (
   <div className="container">
+    <Navigation />
+
     <Search />
     <Add />
 
@@ -54,8 +56,6 @@ const CRUD = ({ crud, actions }) => (
       <Delete />
       <Edit />
     </aside>
-
-    <GoBack />
 
     <style jsx>{`
       .container {

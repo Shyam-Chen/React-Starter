@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Typography, Button } from 'material-ui';
 
-import GoBack from '~/shared/GoBack';
+import Navigation from '~/shared/Navigation';
 
 import * as actions from './actions';
 
 const Counter = ({ counter, actions }) => (
   <div className="container">
+    <Navigation />
+
     <Typography type="headline" component="h3">
       Clicked: {counter.value} times
     </Typography>
@@ -18,8 +20,6 @@ const Counter = ({ counter, actions }) => (
       <Button raised color="accent" onClick={actions.onIncrementAsync}>Increment (Async)</Button> {' '}
       <Button raised color="accent" onClick={actions.onIncrementIfOdd}>Increment (If Odd)</Button> {' '}
     </Typography>
-
-    <GoBack />
 
     <style jsx>{`
       .container {

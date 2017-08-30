@@ -1,18 +1,40 @@
 import React from 'react';
-import { push } from 'react-router-redux';
-import { Button } from 'material-ui';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { routerActions } from 'react-router-redux'
+import { Typography, Button, Divider } from 'material-ui';
+import { withRouter } from 'react-router-dom';
 
-import configureStore from '~/root';
-
-const store = configureStore();
-
-const Navigation = () => (
+const Navigation = ({ actions }) => (
   <div>
-    <Button raised color="primary" href="/counter" onClick={() => store.dispatch(push('/counter'))}>Counter</Button> {' '}
-    <Button raised color="primary" href="/crud" onClick={() => store.dispatch(push('/crud'))}>CRUD</Button> {' '}
-    <Button raised color="primary" href="/rest" onClick={() => store.dispatch(push('/rest'))}>REST</Button> {' '}
-    <Button raised color="primary" href="/graphql" onClick={() => store.dispatch(push('/graphql'))}>GraphQL</Button> {' '}
+    <div className="header">
+      <Typography type="headline" component="h3">
+        React by Example
+      </Typography>
+    </div>
+
+    <Button raised color="primary" href="/counter" onClick={() => actions.push('/counter')}>Counter</Button> {' '}
+    <Button raised color="primary" href="/crud" onClick={() => actions.push('/crud')}>CRUD</Button> {' '}
+    <Button raised color="primary" href="/rest" onClick={() => actions.push('/rest')}>REST</Button> {' '}
+    <Button raised color="primary" href="/graphql" onClick={() => actions.push('/graphql')}>GraphQL</Button> {' '}
+
+    <div className="divider">
+      <Divider />
+    </div>
+
+    <style jsx>{`
+      .header {
+        margin: .5rem 0;
+      }
+
+      .divider {
+        margin: 1rem 0;
+      }
+    `}</style>
   </div>
 );
 
-export default Navigation;
+export default withRouter(connect(
+  ({ router }) => ({ router }),
+  dispatch => ({ actions: bindActionCreators(routerActions, dispatch) })
+)(Navigation));

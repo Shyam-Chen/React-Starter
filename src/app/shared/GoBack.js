@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from 'material-ui';
 
-const GoBack = () => (
+const GoBack = ({ history }) => (
   <div className="container">
-    <Button raised href="javascript: history.back()">Go Back</Button>
+    <Button raised href="/" onClick={() => history.push('/')}>Go Back</Button>
 
     <style jsx>{`
       .container {
