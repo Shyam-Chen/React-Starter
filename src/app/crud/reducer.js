@@ -1,68 +1,74 @@
+import { handleActions } from 'redux-actions';
+
 import {
   INITIAL,
-  ADD_ITEM, SET_ADD,
+  ADD_ITEM,
   SEARCH_ITEM, SET_SEARCH,
   EDIT_ITEM, EDIT_MODAL, SET_EDIT,
-  DELETE_ITEM, DELETE_MODAL, SET_DELETE
+  DELETE_ITEM, DELETE_MODAL, SET_DELETE,
+  SET_DATA
 } from './constants';
 
-export default (state = INITIAL, action) => {
-  const {
-    type,
-    id, primary, accent,
-    deleteModalOpen, editModalOpen
-  } = action;
+export default handleActions({
+  [ADD_ITEM](state, { primary, accent }) {
+    return {
+      ...state,
+      dataset: [
+        {
+          id: state.dataset.reduce((maxId, item) => Math.max(item.id, maxId), -1) + 1,
+          primary, accent
+        },
+        ...state.dataset
+      ]
+    };
+  },
+  // [SET_ADD](state, { primary, accent }) {
+  //   return { ...state, addData: { ...state.addData, primary, accent } };
+  // },
 
-  const searchResult = [];
+  [SEARCH_ITEM](state, { primary, accent }) {
+    const searchResult = [];
 
-  switch (type) {
-    case ADD_ITEM:
-      return {
-        ...state,
-        dataset: [
-          {
-            id: state.dataset.reduce((maxId, item) => Math.max(item.id, maxId), -1) + 1,
-            primary, accent
-          },
-          ...state.dataset
-        ]
-      };
-    case SET_ADD:
-      return { ...state, addData: { ...state.addData, primary, accent } };
+    return {
+      ...state,
+      dataset: INITIAL.dataset.filter(item => {
+        const _primary = item.primary.toLowerCase().indexOf(primary.toLowerCase());
+        const _accent = item.accent.toLowerCase().indexOf(accent.toLowerCase());
 
-    case SEARCH_ITEM:
-      return {
-        ...state,
-        dataset: INITIAL.dataset.filter(item => {
-          const _primary = item.primary.toLowerCase().indexOf(primary.toLowerCase());
-          const _accent = item.accent.toLowerCase().indexOf(accent.toLowerCase());
+        if(_primary !== -1 && _accent !== -1) {
+          return searchResult.push(item);
+        }
+      })
+    };
+  },
+  [SET_SEARCH](state, { primary, accent }) {
+    return { ...state, searchData: { ...state.searchData, primary, accent } };
+  },
 
-          if(_primary !== -1 && _accent !== -1) {
-            return searchResult.push(item);
-          }
-        })
-      };
-    case SET_SEARCH:
-      return { ...state, searchData: { ...state.searchData, primary, accent } };
+  [EDIT_ITEM](state, { id, primary, accent }) {
+    return {
+      ...state,
+      dataset: [...state.dataset.map(item => item.id === id ? { ...item, primary, accent } : item)]
+    };
+  },
+  [SET_EDIT](state, { id, primary, accent }) {
+    return { ...state, editData: { ...state.editData, id, primary, accent } };
+  },
+  [EDIT_MODAL](state, { editModalOpen }) {
+    return { ...state, editModalOpen };
+  },
 
-    case EDIT_ITEM:
-      return {
-        ...state,
-        dataset: [...state.dataset.map(item => item.id === id ? { ...item, primary, accent } : item)]
-      };
-    case SET_EDIT:
-      return { ...state, editData: { ...state.editData, id, primary, accent } };
-    case EDIT_MODAL:
-      return { ...state, editModalOpen };
+  [DELETE_ITEM](state, { id }) {
+    return { ...state, dataset: [...state.dataset.filter(item => item.id !== id)] };
+  },
+  [SET_DELETE](state, { id }) {
+    return { ...state, deleteData: id };
+  },
+  [DELETE_MODAL](state, { deleteModalOpen }) {
+    return { ...state, deleteModalOpen };
+  },
 
-    case DELETE_ITEM:
-      return { ...state, dataset: [...state.dataset.filter(item => item.id !== id)] };
-    case SET_DELETE:
-      return { ...state, deleteData: id };
-    case DELETE_MODAL:
-      return { ...state, deleteModalOpen };
-
-    default:
-      return state;
+  [SET_DATA](state, { data }) {
+    return { ...state, ...data };
   }
-}
+}, INITIAL);

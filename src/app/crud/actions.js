@@ -1,12 +1,13 @@
 import {
-  ADD_ITEM, SET_ADD,
+  ADD_ITEM,
   SEARCH_ITEM, SET_SEARCH,
   EDIT_ITEM, EDIT_MODAL, SET_EDIT,
-  DELETE_ITEM, DELETE_MODAL, SET_DELETE
+  DELETE_ITEM, DELETE_MODAL, SET_DELETE,
+  SET_DATA
 } from './constants';
 
 export const onAddItem = (primary, accent) => ({ type: ADD_ITEM, primary, accent });
-export const onSetAdd = (primary, accent) => ({ type: SET_ADD, primary, accent });
+// export const onSetAdd = (primary, accent) => ({ type: SET_ADD, primary, accent });
 
 export const onSearchItem = (primary, accent) => ({ type: SEARCH_ITEM, primary, accent });
 export const onSetSearch = (primary, accent) => ({ type: SET_SEARCH, primary, accent });
@@ -18,3 +19,5 @@ export const onSetDelete = id => ({ type: SET_DELETE, id });
 export const onEditItem = (id, primary, accent) => ({ type: EDIT_ITEM, id, primary, accent });
 export const onEditModal = (editModalOpen) => ({ type: EDIT_MODAL, editModalOpen });
 export const onSetEdit = (id, primary, accent) => ({ type: SET_EDIT, id, primary, accent });
+
+export const onSetData = data => ({ type: SET_DATA, data });
