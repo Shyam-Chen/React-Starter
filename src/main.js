@@ -1,32 +1,20 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Route } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 // import { render } from 'react-snapshot';
 
 import configureStore from './app/root';
-import App from './app/App';
-
-import { Counter } from './app/counter';
-import { CRUD } from './app/crud';
-import { REST } from './app/REST';
-import { GraphQL } from './app/GraphQL';
+import Routes from './app/Routes';
 
 const store = configureStore();
-const history = createHistory()
+const history = createHistory();
 
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <div>
-        <Route exact path="/" component={App} />
-        <Route path="/counter" component={Counter} />
-        <Route path="/crud" component={CRUD} />
-        <Route path="/rest" component={REST} />
-        <Route path="/graphql" component={GraphQL} />
-      </div>
+      <Routes />
     </ConnectedRouter>
   </Provider>,
   document.querySelector('#app')

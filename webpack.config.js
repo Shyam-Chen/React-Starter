@@ -37,9 +37,12 @@ module.exports = {
                 'transform-function-bind',
                 'transform-object-rest-spread',
                 [
-                  'babel-plugin-root-import', {
-                    'rootPathSuffix': 'src/app'
-                  }
+                  'babel-plugin-root-import', [
+                    {
+                      rootPathPrefix: '~',
+                      rootPathSuffix: 'src/app'
+                    }
+                  ]
                 ],
                 [
                   'transform-imports', {
