@@ -6,7 +6,7 @@ import App from './App';
 import { Counter } from './counter';
 import { CRUD } from './crud';
 import { REST } from './REST';
-import { GraphQL } from './GraphQL';
+import { GraphQL } from './graphql';
 
 const Routes = () => (
   <div>

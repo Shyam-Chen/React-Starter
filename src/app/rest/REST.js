@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { List, Button } from 'semantic-ui-react';
 
-import GoBack from '~/shared/GoBack';
+import Navigation from '~/shared/Navigation';
 
 import * as actions from './actions';
 import { Add, Search, Edit, Delete } from './containers';
 
 const REST = ({ rest, actions }) => (
-  <div>
+  <div className="container">
+    <Navigation />
+
     <Search />
     <Add />
 
@@ -36,7 +38,16 @@ const REST = ({ rest, actions }) => (
       <Edit />
     </aside>
 
-    <GoBack />
+    <style jsx>{`
+      .container {
+        padding: 1rem;
+      }
+
+      .table {
+        max-width: 30rem;
+        margin: .5rem 0;
+      }
+    `}</style>
   </div>
 );
 

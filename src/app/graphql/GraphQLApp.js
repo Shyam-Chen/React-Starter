@@ -2,11 +2,14 @@ import React from 'react';
 import { gql, graphql } from 'react-apollo';
 import { Paper } from 'material-ui';
 
-function GraphQLApp({ data: { list } }) {
-  console.log(list);
+import Navigation from '~/shared/Navigation';
+
+const GraphQLApp = ({ data: { list } }) => {
 
   return (
-    <div>
+    <div className="container">
+      <Navigation />
+
       <Paper>
         {
           list
@@ -19,9 +22,20 @@ function GraphQLApp({ data: { list } }) {
                   ))
                 }
               </ul>
-            : void 0
+            : <p>Loading ...</p>
         }
       </Paper>
+
+      <style jsx>{`
+        .container {
+          padding: 1rem;
+        }
+
+        .table {
+          max-width: 30rem;
+          margin: .5rem 0;
+        }
+      `}</style>
     </div>
   );
 }
