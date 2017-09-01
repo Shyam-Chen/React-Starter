@@ -15,9 +15,21 @@ $ npm start
 
 ## TODO List
 
-* GraphQL
-* Data Table
-* Form Controls
-* Simple Build
-* Simple Server
-* Simple Test
+* Examples
+  * GraphQL
+    * ...
+  * Data Table
+  * Form Controls
+  * D3
+    * ...
+  * Three
+    * ...
+* Dev/Prod Mode
+* Server
+* Tests
+  * Unit Tests
+  * E2E Tests
+* CI/CD
+  * Circle
+  * Docker
+  * Heroku
