@@ -17,6 +17,8 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
+          //   loader: 'react-hot-loader/webpack',
+          // }, {
             loader: 'babel-loader',
             options: {
               babelrc: false,
@@ -82,9 +84,12 @@ module.exports = {
   ],
   devServer: {
     contentBase: join(__dirname, 'build'),
+    // disableHostCheck: true,
     historyApiFallback: true,
+    // host: '0.0.0.0',
+    // hot: true,
     inline: true,
-    port: 8000,
+    port: 8000
   },
-  devtool: 'source-map',
+  devtool: 'source-map'
 };
