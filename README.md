@@ -1,4 +1,4 @@
-# React Fullstack Starter [![Build Status](https://circleci.com/gh/Shyam-Chen/React-Fullstack-Starter.png?circle-token=d6:b6:a6:26:4d:44:4c:67:99:20:79:07:b0:a0:36:fe)](https://circleci.com/gh/Shyam-Chen/React-Fullstack-Starter)
+# React Fullstack Starter [![Build Status](https://circleci.com/gh/Shyam-Chen/React-Fullstack-Starter.png)](https://circleci.com/gh/Shyam-Chen/React-Fullstack-Starter)
 
 A boilerplate for React, Material, Express, and Mongoose.
 
