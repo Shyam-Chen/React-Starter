@@ -5298,7 +5298,7 @@ next@^3.0.3:
     write-file-webpack-plugin "4.1.0"
     xss-filters "1.2.7"
 
-nightwatch@^0.9.16:
+nightwatch@0.9.16:
   version "0.9.16"
   resolved "https://registry.yarnpkg.com/nightwatch/-/nightwatch-0.9.16.tgz#c4ac3ec711b0ff047c3dca9c6557365ee236519f"
   dependencies:
@@ -6640,7 +6640,7 @@ select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
 
-selenium-standalone@^6.8.0:
+selenium-standalone@6.8.0:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/selenium-standalone/-/selenium-standalone-6.8.0.tgz#b76cb3f0045c0cc225632dca6e0a8b9807c3d3be"
   dependencies:

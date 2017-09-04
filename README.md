@@ -1,4 +1,4 @@
-# React Fullstack Starter
+# React Fullstack Starter [![Build Status](https://circleci.com/gh/Shyam-Chen/React-Fullstack-Starter.png?circle-token=d6:b6:a6:26:4d:44:4c:67:99:20:79:07:b0:a0:36:fe)](https://circleci.com/gh/Shyam-Chen/React-Fullstack-Starter)
 
 A boilerplate for React, Material, Express, and Mongoose.
 
@@ -15,21 +15,25 @@ $ npm start
 
 ## TODO List
 
-* Examples
-  * GraphQL
-    * ...
+* Examples:
   * Data Table
   * Form Controls
-  * D3
-    * ...
-  * Three
-    * ...
-* Dev/Prod Mode
-* Server
-* Tests
+  * Authorization
+  * GraphQL
+    * CRUD
+    * Pagination
+    * Authorization
+  * Pie Chart
+    * SVG (D3)
+    * Canvas (D3)
+    * WebGL (Three)
+* Build:
+  * Dev/Prod Mode
+* Test:
   * Unit Tests
   * E2E Tests
-* CI/CD
+* Deploy:
   * Circle
   * Docker
+  * Firebase
   * Heroku

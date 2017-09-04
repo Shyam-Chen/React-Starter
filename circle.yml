@@ -23,14 +23,14 @@ jobs:
       - run:
           name: Test application
           command: |
-            docker-compose exec app yarn prod
+            # docker-compose exec app yarn prod
             docker-compose exec app yarn lint
-            docker-compose exec app yarn unit
-            docker-compose exec app yarn e2e
+            # docker-compose exec app yarn unit
+            # docker-compose exec app yarn e2e
 
-      - deploy:
-          name: Deploy application
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-
-            fi
+      # - deploy:
+      #     name: Deploy application
+      #     command: |
+      #       if [ "${CIRCLE_BRANCH}" == "master" ]; then
+      #
+      #       fi
