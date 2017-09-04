@@ -7,7 +7,10 @@
     "test": "jest --coverage",
     "build": "webpack -p && react-snapshot",
     "build:backend": "babel src/backend -d dist",
-    "server": "nodemon src/server.js --exec babel-node"
+    "server": "nodemon src/server.js --exec babel-node",
+    "lint": "eslint src",
+    "unit": "jest --coverage",
+    "e2e": "node"
   },
   "repository": {
     "type": "git",
@@ -24,7 +27,7 @@
   "homepage": "https://github.com/Shyam-Chen/React-Fullstack-Starter#readme",
   "dependencies": {
     "axios": "0.16.2",
-    "d3": "4.10.0",
+    "d3": "4.10.2",
     "immutable": "3.8.1",
     "lodash": "4.17.4",
     "material-ui": "1.0.0-beta.6",
@@ -41,7 +44,8 @@
     "redux-observable": "0.16.0",
     "redux-thunk": "2.2.0",
     "rxjs": "5.4.3",
-    "semantic-ui-react": "0.71.4"
+    "semantic-ui-react": "0.72.0",
+    "styled-components": "2.1.2"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
@@ -57,16 +61,18 @@
     "babel-preset-env": "1.6.0",
     "babel-preset-react": "6.24.1",
     "enzyme": "2.9.1",
-    "eslint": "4.5.0",
-    "eslint-plugin-react": "7.2.1",
+    "eslint": "4.6.1",
+    "eslint-plugin-react": "7.3.0",
     "gulp": "3.9.1",
     "gulp-util": "3.0.8",
     "html-webpack-plugin": "2.30.1",
     "jest": "20.0.4",
+    "nightwatch": "0.9.16",
     "react-hot-loader": "3.0.0-beta.7",
     "react-snapshot": "1.2.0",
     "react-test-renderer": "15.6.1",
     "regenerator-runtime": "0.11.0",
+    "selenium-standalone": "6.8.0",
     "styled-jsx": "1.0.10",
     "webpack": "3.5.5",
     "webpack-dev-server": "2.7.1",
