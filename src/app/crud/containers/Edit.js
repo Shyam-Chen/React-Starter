@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { Dialog, TextField, Button } from 'material-ui';
 import { DialogActions, DialogContent, DialogContentText, DialogTitle } from 'material-ui/Dialog';
 

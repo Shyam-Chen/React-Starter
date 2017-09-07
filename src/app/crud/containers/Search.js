@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { TextField, Button } from 'material-ui';
 
 import * as actions from '../actions';
@@ -26,10 +26,9 @@ const Search = ({ crud: { searchData }, actions }) => {
       {' '}
       <Button
         raised
-        color="primary"
-        onClick={() => {
-          actions.onSearchItem(primary, accent);
-          actions.onSetData({ searchData: { primary: '', accent: '' } });
+        onClick={async () => {
+          await actions.onSearchItem(primary, accent);
+          await actions.onSetData({ searchData: { primary: '', accent: '' } });
         }}
       >
         Search

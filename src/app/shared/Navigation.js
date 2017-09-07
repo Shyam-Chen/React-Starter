@@ -13,10 +13,23 @@ const Navigation = ({ actions }) => (
       </Typography>
     </div>
 
-    <Button raised color="primary" href="/counter" onClick={() => actions.push('/counter')}>Counter</Button> {' '}
-    <Button raised color="primary" href="/crud" onClick={() => actions.push('/crud')}>CRUD</Button> {' '}
-    <Button raised color="primary" href="/rest" onClick={() => actions.push('/rest')}>REST</Button> {' '}
-    <Button raised color="primary" href="/graphql" onClick={() => actions.push('/graphql')}>GraphQL</Button> {' '}
+    <div className="button-group">
+      <div className="button">
+        <Button raised href="/counter" onClick={() => actions.push('/counter')}>Counter</Button>
+      </div>
+
+      <div className="button">
+        <Button raised href="/crud" onClick={() => actions.push('/crud')}>CRUD</Button>
+      </div>
+
+      <div className="button">
+        <Button raised href="/rest" onClick={() => actions.push('/rest')}>REST</Button>
+      </div>
+
+      <div className="button">
+        <Button raised href="/graphql" onClick={() => actions.push('/graphql')}>GraphQL</Button>
+      </div>
+    </div>
 
     <div className="divider">
       <Divider />
@@ -25,6 +38,14 @@ const Navigation = ({ actions }) => (
     <style jsx>{`
       .header {
         margin: .5rem 0;
+      }
+
+      .button-group {
+        display: inline-flex;
+      }
+
+      .button:not(:last-child) {
+        margin-right: .5rem;
       }
 
       .divider {

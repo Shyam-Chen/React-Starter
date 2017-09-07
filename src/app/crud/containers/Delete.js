@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { Dialog, Button } from 'material-ui';
 import { DialogActions, DialogContent, DialogContentText, DialogTitle } from 'material-ui/Dialog';
 
@@ -25,7 +25,7 @@ const Delete = ({ crud: { deleteData }, actions }) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={onDialogClose} color="accent">Cancel</Button>
+        <Button color="accent" onClick={onDialogClose}>Cancel</Button>
         <Button
           color="primary"
           onClick={async () => {
