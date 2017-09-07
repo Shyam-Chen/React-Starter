@@ -1,7 +1,5 @@
 import React from 'react';
-import { ApolloProvider } from 'react-apollo';
-
-import { ApolloClient, createNetworkInterface } from 'react-apollo';
+import { ApolloClient, createNetworkInterface, ApolloProvider } from 'react-apollo';
 
 import GraphQLApp from './GraphQLApp';
 

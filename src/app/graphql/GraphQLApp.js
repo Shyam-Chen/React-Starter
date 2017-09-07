@@ -1,6 +1,9 @@
 import React from 'react';
+// import { bindActionCreators } from 'redux';
+// import { connect } from 'react-redux';
 import { gql, graphql } from 'react-apollo';
-import { Paper } from 'material-ui';
+import { TextField, Paper, Button } from 'material-ui';
+import { LinearProgress } from 'material-ui/Progress';
 
 import Navigation from '~/shared/Navigation';
 
@@ -10,6 +13,8 @@ const GraphQLApp = ({ data: { list } }) => {
     <div className="container">
       <Navigation />
 
+      <TextField />
+
       <Paper>
         {
           list
@@ -18,11 +23,15 @@ const GraphQLApp = ({ data: { list } }) => {
                   list.map(item => (
                     <li key={item._id}>
                       {item.text}
+                      <Button>Delete</Button>
+                      <Button>Edit</Button>
                     </li>
                   ))
                 }
               </ul>
-            : <p>Loading ...</p>
+            : <div className="progress">
+                <LinearProgress />
+              </div>
         }
       </Paper>
 
@@ -33,6 +42,10 @@ const GraphQLApp = ({ data: { list } }) => {
 
         .table {
           max-width: 30rem;
+          margin: .5rem 0;
+        }
+
+        .progress {
           margin: .5rem 0;
         }
       `}</style>
@@ -48,3 +61,7 @@ export default graphql(gql`
     }
   }
 `)(GraphQLApp);
+
+// export default connect(
+//
+// )(GraphQLApp);

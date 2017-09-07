@@ -12,15 +12,7 @@ export const INITIAL = {
 };
 
 export const ADD_ITEM = '[CRUD] ADD_ITEM';
-
 export const SEARCH_ITEM = '[CRUD] SEARCH_ITEM';
-
 export const EDIT_ITEM = '[CRUD] EDIT_ITEM';
-export const EDIT_MODAL = '[CRUD] EDIT_MODAL';
-export const SET_EDIT = '[CRUD] SET_EDIT';
-
 export const DELETE_ITEM = '[CRUD] DELETE_ITEM';
-export const DELETE_MODAL = '[CRUD] DELETE_MODAL';
-export const SET_DELETE = '[CRUD] SET_DELETE';
-
 export const SET_DATA = '[CRUD] SET_DATA';
