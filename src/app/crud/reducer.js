@@ -1,13 +1,6 @@
 import { handleActions } from 'redux-actions';
 
-import {
-  INITIAL,
-  ADD_ITEM,
-  SEARCH_ITEM, SET_SEARCH,
-  EDIT_ITEM, EDIT_MODAL, SET_EDIT,
-  DELETE_ITEM, DELETE_MODAL, SET_DELETE,
-  SET_DATA
-} from './constants';
+import { INITIAL, ADD_ITEM, SEARCH_ITEM, EDIT_ITEM, DELETE_ITEM, SET_DATA } from './constants';
 
 export default handleActions({
   [ADD_ITEM](state, { primary, accent }) {
@@ -22,10 +15,6 @@ export default handleActions({
       ]
     };
   },
-  // [SET_ADD](state, { primary, accent }) {
-  //   return { ...state, addData: { ...state.addData, primary, accent } };
-  // },
-
   [SEARCH_ITEM](state, { primary, accent }) {
     const searchResult = [];
 
@@ -41,33 +30,15 @@ export default handleActions({
       })
     };
   },
-  [SET_SEARCH](state, { primary, accent }) {
-    return { ...state, searchData: { ...state.searchData, primary, accent } };
-  },
-
   [EDIT_ITEM](state, { id, primary, accent }) {
     return {
       ...state,
       dataset: [...state.dataset.map(item => item.id === id ? { ...item, primary, accent } : item)]
     };
   },
-  [SET_EDIT](state, { id, primary, accent }) {
-    return { ...state, editData: { ...state.editData, id, primary, accent } };
-  },
-  [EDIT_MODAL](state, { editModalOpen }) {
-    return { ...state, editModalOpen };
-  },
-
   [DELETE_ITEM](state, { id }) {
     return { ...state, dataset: [...state.dataset.filter(item => item.id !== id)] };
   },
-  [SET_DELETE](state, { id }) {
-    return { ...state, deleteData: id };
-  },
-  [DELETE_MODAL](state, { deleteModalOpen }) {
-    return { ...state, deleteModalOpen };
-  },
-
   [SET_DATA](state, { data }) {
     return { ...state, ...data };
   }

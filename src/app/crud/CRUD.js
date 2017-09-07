@@ -9,66 +9,79 @@ import Navigation from '~/shared/Navigation';
 import * as actions from './actions';
 import { Add, Search, Edit, Delete } from './containers';
 
-const CRUD = ({ crud, actions }) => (
-  <div className="container">
-    <Navigation />
+const CRUD = ({ crud, actions }) => {
+  const { dataset, deleteData, editData } = crud;
 
-    <Search />
-    <Add />
+  return (
+    <div className="container">
+      <Navigation />
 
-    <div className="table">
-      <Paper elevation={2}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Item</TableCell>
-              <TableCell>Actions</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {
-              crud.dataset.map(item => (
-                <TableRow key={item.id}>
-                  <TableCell>{item.primary} - {item.accent}</TableCell>
-                  <TableCell>
-                    <Button color="accent" onClick={() => {
-                      actions.onDeleteModal(true);
-                      actions.onSetDelete(item.id);
-                    }}>
-                      Delete
-                    </Button>
-                    <Button color="primary" onClick={() => {
-                      actions.onEditModal(true);
-                      actions.onSetEdit(item.id, item.primary, item.accent);
-                    }}>
-                      Edit
-                    </Button>
-                  </TableCell>
-                </TableRow>
-              ))
-            }
-          </TableBody>
-        </Table>
-      </Paper>
+      <Search />
+      <Add />
+
+      <div className="table">
+        <Paper elevation={2}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Item</TableCell>
+                <TableCell>Actions</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {
+                dataset.length !== 0
+                  ? dataset.map(({ id, primary, accent }) => (
+                      <TableRow key={id} hover>
+                        <TableCell>{primary} - {accent}</TableCell>
+                        <TableCell>
+                          <Button
+                            color="accent"
+                            onClick={() => {
+                              actions.onSetData({
+                                deleteData: { ...deleteData, id, dialog: true }
+                              });
+                            }}
+                          >
+                            Delete
+                          </Button>
+                          <Button color="primary" onClick={() => {
+                            actions.onSetData({
+                              editData: { ...editData, id, primary, accent, dialog: true }
+                            });
+                          }}>
+                            Edit
+                          </Button>
+                        </TableCell>
+                      </TableRow>
+                    ))
+                  : <TableRow>
+                      <TableCell colspan="2">No data available</TableCell>
+                    </TableRow>
+              }
+            </TableBody>
+          </Table>
+        </Paper>
+      </div>
+
+      <aside>
+        <Delete />
+        <Edit />
+      </aside>
+
+      <style jsx>{`
+        .container {
+          padding: 1rem;
+        }
+
+        .table {
+          max-width: 30rem;
+          margin: .5rem 0;
+        }
+      `}</style>
     </div>
-
-    <aside>
-      <Delete />
-      <Edit />
-    </aside>
-
-    <style jsx>{`
-      .container {
-        padding: 1rem;
-      }
-
-      .table {
-        max-width: 30rem;
-        margin: .5rem 0;
-      }
-    `}</style>
-  </div>
-);
+  );
+};
 
 export default connect(
   ({ crud }) => ({ crud }),

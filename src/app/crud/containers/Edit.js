@@ -6,40 +6,51 @@ import { DialogActions, DialogContent, DialogContentText, DialogTitle } from 'ma
 
 import * as actions from '../actions';
 
-const Edit = ({ crud, actions }) => {
-  const { id, primary, accent } = crud.editData;
+const Edit = ({ crud: { editData }, actions }) => {
+  const { id, primary, accent, dialog } = editData;
 
-  const onModalClose = () => actions.onEditModal(false);
-
-  const onEdit = () => {
-    if (primary && accent) {
-      actions.onEditItem(id, primary, accent);
-      onModalClose();
-    }
+  const onModalClose = () => {
+    actions.onSetData({
+      editData: { ...editData, dialog: false }
+    });
   };
 
   return (
-    <Dialog open={crud.editModalOpen} onRequestClose={onModalClose}>
+    <Dialog open={dialog} onRequestClose={onModalClose}>
       <DialogTitle>
       </DialogTitle>
       <DialogContent>
         <DialogContentText>
           <TextField
             value={primary}
-            onChange={event => actions.onSetEdit(id, event.target.value, accent)}
+            onChange={event => {
+              actions.onSetData({
+                editData: { ...editData, primary: event.target.value }
+              })
+            }}
           />
           { ' - ' }
           <TextField
             value={accent}
-            onChange={event => actions.onSetEdit(id, primary, event.target.value)}
+            onChange={event => {
+              actions.onSetData({
+                editData: { ...editData, accent: event.target.value }
+              })
+            }}
           />
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={onModalClose} color="accent">
-          Cancel
-        </Button>
-        <Button onClick={onEdit} color="primary">
+        <Button color="accent" onClick={onModalClose}>Cancel</Button>
+        <Button
+          color="primary"
+          onClick={async () => {
+            if (primary && accent) {
+              await actions.onEditItem(id, primary, accent);
+              await onModalClose();
+            }
+          }}
+        >
           Save
         </Button>
       </DialogActions>

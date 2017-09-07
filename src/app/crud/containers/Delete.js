@@ -6,16 +6,17 @@ import { DialogActions, DialogContent, DialogContentText, DialogTitle } from 'ma
 
 import * as actions from '../actions';
 
-const Delete = ({ crud, actions }) => {
-  const onModalClose = () => actions.onDeleteModal(false);
+const Delete = ({ crud: { deleteData }, actions }) => {
+  const { id, dialog } = deleteData;
 
-  const onConfirm = () => {
-    actions.onDeleteItem(crud.deleteData);
-    onModalClose();
+  const onDialogClose = () => {
+    actions.onSetData({
+      deleteData: { ...deleteData, dialog: false }
+    });
   };
 
   return (
-    <Dialog open={crud.deleteModalOpen} onRequestClose={onModalClose}>
+    <Dialog open={dialog} onRequestClose={onDialogClose}>
       <DialogTitle>
       </DialogTitle>
       <DialogContent>
@@ -24,10 +25,14 @@ const Delete = ({ crud, actions }) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={onModalClose} color="accent">
-          Cancel
-        </Button>
-        <Button onClick={onConfirm} color="primary">
+        <Button onClick={onDialogClose} color="accent">Cancel</Button>
+        <Button
+          color="primary"
+          onClick={async () => {
+            await actions.onDeleteItem(id);
+            await onDialogClose();
+          }}
+        >
           Confirm
         </Button>
       </DialogActions>
