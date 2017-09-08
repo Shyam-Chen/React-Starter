@@ -1,29 +1,34 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import { Button, Input } from 'semantic-ui-react';
 
 import * as actions from '../actions';
 
-const Add = ({ rest, actions }) => {
-  const { text } = rest.addData;
-
-  const onAdd = () => {
-    if (text) {
-      actions.onAdd(text);
-      actions.onSetAdd('');
-    }
-  };
+const Add = ({ rest: { addData }, actions }) => {
+  const { text } = addData;
 
   return (
     <div>
       <div>
         <Input value={ text } onChange={ event => {
+          // actions
           actions.onSetAdd(event.target.value)
         } } />
         { ' ' }
-        <Button basic color="black" onClick={ onAdd }>Add</Button>
+        <Button
+          basic
+          color="black"
+          onClick={() => {
+            if (text) {
+              actions.onAdd(text);
+              actions.onSetAdd('');
+            }
+          }}
+        >
+          Add
+        </Button>
       </div>
     </div>
   );

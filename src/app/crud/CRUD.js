@@ -30,7 +30,7 @@ const CRUD = ({ crud, actions }) => {
             </TableHead>
             <TableBody>
               {
-                dataset.length !== 0
+                dataset.length
                   ? dataset.map(({ id, primary, accent }) => (
                       <TableRow key={id} hover>
                         <TableCell>{primary} - {accent}</TableCell>

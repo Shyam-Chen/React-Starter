@@ -1,49 +1,46 @@
+import { handleActions } from 'redux-actions';
+
 import {
   INITIAL,
   SUCCESS, FAILURE,
   SET_ADD,
   SET_DELETE, DELETE_MODAL,
   SET_EDIT, EDIT_MODAL,
-  SET_SEARCH
+  SET_SEARCH,
+  SET_DATA
 } from './constants';
 
-export default (state = INITIAL, action) => {
-  const {
-    type,
-    data, error,
-    id, text,
-    deleteModalOpen, editModalOpen
-  } = action;
+export default handleActions({
+  [SUCCESS](state, { data }) {
+    return { ...state, dataset: [...data].reverse() };
+  },
+  [FAILURE](state, { error }) {
+    throw error;
+  },
 
-  switch (type) {
-    case SUCCESS:
-      return { ...state, dataset: [...data].reverse() };
-    case FAILURE:
-      throw error;
+  [SET_ADD](state, { text }) {
+    return { ...state, addData: { ...state.addData, text } };
+  },
 
-    case SET_ADD:
-      state.addData = { ...state.addData, text };
-      return { ...state };
+  [SET_DELETE](state, { id }) {
+    return { ...state, deleteData: id };
+  },
+  [DELETE_MODAL](state, { deleteModalOpen }) {
+    return { ...state, deleteModalOpen };
+  },
 
-    case SET_DELETE:
-      state.deleteData = id;
-      return { ...state };
-    case DELETE_MODAL:
-      state.deleteModalOpen = deleteModalOpen;
-      return { ...state };
+  [SET_EDIT](state, { id, text }) {
+    return { ...state, editData: { ...state.editData, id, text } };
+  },
+  [EDIT_MODAL](state, { editModalOpen }) {
+    return { ...state, editModalOpen };
+  },
 
-    case SET_EDIT:
-      state.editData = { ...state.editData, id, text };
-      return { ...state };
-    case EDIT_MODAL:
-      state.editModalOpen = editModalOpen;
-      return { ...state };
+  [SET_SEARCH](state, { text }) {
+    return { ...state, searchData: { ...state.searchData, text } };
+  },
 
-    case SET_SEARCH:
-      state.searchData = { ...state.searchData, text };
-      return { ...state };
-
-    default:
-      return state;
+  [SET_DATA](state, { data }) {
+    return { ...state, ...data };
   }
-};
+}, INITIAL);

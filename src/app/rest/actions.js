@@ -6,7 +6,8 @@ import {
   SET_ADD,
   SET_DELETE, DELETE_MODAL,
   SET_EDIT, EDIT_MODAL,
-  SET_SEARCH
+  SET_SEARCH,
+  SET_DATA
 } from './constants';
 
 export const onSuccess = data => ({ type: SUCCESS, data });
@@ -39,14 +40,12 @@ export const onSetEdit = (id, text) => ({ type: SET_EDIT, id, text });
 export const onEditModal = editModalOpen => ({ type: EDIT_MODAL, editModalOpen });
 
 export const onSearch = text =>
-  dispatch => {
-    let getList;
-
-    text ? getList = axios.get(`${API_LIST}?text=${text}`) : getList = axios.get(API_LIST);
-
-    getList
+  dispatch =>
+    axios.get(text ? `${API_LIST}?text=${text}` : API_LIST)
       .then(response => dispatch(onSuccess(response.data)))
       .catch(error => dispatch(onFailure(error)));
-    };
 
 export const onSetSearch = text => ({ type: SET_SEARCH, text });
+
+
+export const onSetData = data => ({ type: SET_DATA, data });

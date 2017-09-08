@@ -11,7 +11,9 @@ export const INITIAL = {
   editModalOpen: false,
 
   deleteData: 0,
-  deleteModalOpen: false
+  deleteModalOpen: false,
+
+  loading: false
 };
 
 export const SUCCESS = '[REST] SUCCESS';
@@ -26,3 +28,5 @@ export const SET_EDIT = '[REST] SET_EDIT';
 export const EDIT_MODAL = '[REST] EDIT_MODAL';
 
 export const SET_SEARCH = '[REST] SET_SEARCH';
+
+export const SET_DATA = '[REST] SET_DATA';

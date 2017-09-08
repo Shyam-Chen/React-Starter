@@ -9,18 +9,23 @@ import * as actions from '../actions';
 const Search = ({ rest, actions }) => {
   const { text } = rest.searchData;
 
-  const onSearch = () => {
-    actions.onSearch(text);
-    actions.onSetSearch('');
-  };
-
   return (
     <div>
       <Input value={ text } onChange={ event => {
         actions.onSetSearch(event.target.value);
       } } />
       { ' ' }
-      <Button basic color="black" onClick={ onSearch }>Search</Button>
+      <Button
+        basic
+        color="black"
+        onClick={async () => {
+          // await actions.onSetData({ loading: true })
+          await actions.onSearch(text);
+          await actions.onSetSearch('');
+        }}
+      >
+        Search
+      </Button>
     </div>
   );
 };
