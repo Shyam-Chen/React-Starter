@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { List } from 'semantic-ui-react';
 import { Button } from 'material-ui';
 import { CircularProgress } from 'material-ui/Progress';
 
@@ -20,10 +19,10 @@ const REST = ({ rest, actions }) => {
       <Search />
       <Add />
 
-      <List>
+      <ul>
         {
           dataset.map(({ _id, text }, index) => (
-            <List.Item key={_id}>
+            <li key={_id}>
               ({ index + 1 }) { text } { ' ' }
               <Button
                 color="accent"
@@ -45,10 +44,10 @@ const REST = ({ rest, actions }) => {
               >
                 Edit
               </Button>
-            </List.Item>
+            </li>
           ))
         }
-      </List>
+      </ul>
 
       <div className="progress" style={{ display: loading ? '' : 'none' }}>
         <CircularProgress />

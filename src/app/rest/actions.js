@@ -11,10 +11,11 @@ export const onAdd = text =>
       .then(() => dispatch(onSearch()))
       .catch(error => dispatch(onFailure(error)));
 
-export const onRemove = id =>
+export const onSearch = text =>
   dispatch =>
-    axios.delete(`${API_LIST}/${id}`)
-      .then(() => dispatch(onSearch()))
+    axios.get(text ? `${API_LIST}?text=${text}` : API_LIST)
+      .then(response => dispatch(onSuccess(response.data)))
+      .then(() => dispatch(onSetData({ loading: false })))
       .catch(error => dispatch(onFailure(error)));
 
 export const onSave = (id, text) =>
@@ -23,11 +24,10 @@ export const onSave = (id, text) =>
       .then(() => dispatch(onSearch()))
       .catch(error => dispatch(onFailure(error)));
 
-export const onSearch = text =>
+export const onRemove = id =>
   dispatch =>
-    axios.get(text ? `${API_LIST}?text=${text}` : API_LIST)
-      .then(response => dispatch(onSuccess(response.data)))
-      .then(() => dispatch(onSetData({ loading: false })))
+    axios.delete(`${API_LIST}/${id}`)
+      .then(() => dispatch(onSearch()))
       .catch(error => dispatch(onFailure(error)));
 
 export const onSetData = data => ({ type: SET_DATA, data });
