@@ -1,31 +1,38 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-import { Button, Input } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { TextField, Button } from 'material-ui';
 
 import * as actions from '../actions';
 
-const Search = ({ rest, actions }) => {
-  const { text } = rest.searchData;
+const Search = ({ rest: { searchData }, actions }) => {
+  const { text } = searchData;
 
   return (
-    <div>
-      <Input value={ text } onChange={ event => {
-        actions.onSetSearch(event.target.value);
-      } } />
+    <div className="container">
+      <TextField
+        value={text}
+        onChange={event => actions.onSetData({
+          searchData: { ...searchData, text: event.target.value }
+        })}
+      />
       { ' ' }
       <Button
-        basic
-        color="black"
+        raised
         onClick={async () => {
-          // await actions.onSetData({ loading: true })
+          await actions.onSetData({ loading: true })
           await actions.onSearch(text);
-          await actions.onSetSearch('');
+          await actions.onSetData({ searchData: { text: '' } });
         }}
       >
         Search
       </Button>
+
+      <style jsx>{`
+        .container {
+          padding: .5rem 0;
+        }
+      `}</style>
     </div>
   );
 };

@@ -15,12 +15,12 @@ $ npm start
 
 ## TODO List
 
+* Router
 * Examples:
   * Data Table
   * Form Controls
   * Authorization
   * GraphQL
-    * CRUD
     * Pagination
     * Authorization
   * Pie Chart

@@ -2,23 +2,21 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Dialog, Button } from 'material-ui';
-import { DialogActions, DialogContent, DialogContentText, DialogTitle } from 'material-ui/Dialog';
+import { DialogTitle, DialogContent, DialogContentText, DialogActions } from 'material-ui/Dialog';
 
 import * as actions from '../actions';
 
 const Delete = ({ crud: { deleteData }, actions }) => {
   const { id, dialog } = deleteData;
 
-  const onDialogClose = () => {
+  const onDialogClose = () =>
     actions.onSetData({
       deleteData: { ...deleteData, dialog: false }
     });
-  };
 
   return (
     <Dialog open={dialog} onRequestClose={onDialogClose}>
-      <DialogTitle>
-      </DialogTitle>
+      <DialogTitle></DialogTitle>
       <DialogContent>
         <DialogContentText>
           Are you sure you want to delete it?

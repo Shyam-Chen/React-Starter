@@ -1,36 +1,40 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-import { Button, Modal, Header, Icon } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { Dialog, Button } from 'material-ui';
+import { DialogTitle, DialogContent, DialogContentText, DialogActions } from 'material-ui/Dialog';
 
 import * as actions from '../actions';
 
-const Delete = ({ rest, actions }) => {
-  const onModalClose = () => actions.onDeleteModal(false);
+const Delete = ({ rest: { deleteData }, actions }) => {
+  const { _id, dialog } = deleteData;
 
-  const onConfirm = () => {
-    actions.onRemove(rest.deleteData);
-    onModalClose();
-  };
+  const onDialogClose = () =>
+    actions.onSetData({
+      deleteData: { ...deleteData, dialog: false }
+    });
 
   return (
-    <Modal open={ rest.deleteModalOpen } onClose={ onModalClose } basic size="small">
-      <Header icon="delete" content="Delete" />
-      <Modal.Content>
-        <div>
+    <Dialog open={dialog} onRequestClose={onDialogClose}>
+      <DialogTitle></DialogTitle>
+      <DialogContent>
+        <DialogContentText>
           Are you sure you want to delete it?
-        </div>
-      </Modal.Content>
-      <Modal.Actions>
-        <Button basic color="red" onClick={ onModalClose } inverted>
-          <Icon name="remove" /> Cancel
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button color="accent" onClick={onDialogClose}>Cancel</Button>
+        <Button
+          color="primary"
+          onClick={async () => {
+            await actions.onRemove(_id);
+            await onDialogClose();
+          }}
+        >
+          Confirm
         </Button>
-        <Button color="green" onClick={ onConfirm } inverted>
-          <Icon name="checkmark" /> Confirm
-        </Button>
-      </Modal.Actions>
-    </Modal>
+      </DialogActions>
+    </Dialog>
   );
 }
 

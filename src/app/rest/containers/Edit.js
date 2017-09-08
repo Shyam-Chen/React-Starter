@@ -1,40 +1,46 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-import { Button, Modal, Header, Icon, Input } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { Dialog, TextField, Button } from 'material-ui';
+import { DialogTitle, DialogContent, DialogContentText, DialogActions } from 'material-ui/Dialog';
 
 import * as actions from '../actions';
 
-const Edit = ({ rest, actions }) => {
-  const { id, text } = rest.editData;
+const Edit = ({ rest: { editData }, actions }) => {
+  const { _id, text, dialog } = editData;
 
-  const onModalClose = () => actions.onEditModal(false);
-
-  const onEdit = () => {
-    if (text) {
-      actions.onSave(id, text);
-      onModalClose();
-    }
-  };
+  const onDialogClose = () =>
+    actions.onSetData({
+      editData: { ...editData, dialog: false }
+    });
 
   return (
-    <Modal open={ rest.editModalOpen } onClose={ onModalClose } basic size="small">
-      <Header icon="edit" content="Edit" />
-      <Modal.Content>
-        <div>
-          <Input value={ text } onChange={ event => actions.onSetEdit(id, event.target.value) } />
-        </div>
-      </Modal.Content>
-      <Modal.Actions>
-        <Button basic color="red" onClick={ onModalClose } inverted>
-          <Icon name="remove" /> Cancel
+    <Dialog open={dialog} onRequestClose={onDialogClose}>
+      <DialogTitle></DialogTitle>
+      <DialogContent>
+        <DialogContentText>
+          <TextField
+            value={text}
+            onChange={event =>
+              actions.onSetData({
+                editData: { ...editData, text: event.target.value }
+              })
+            }
+          />
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={onDialogClose}>Cancel</Button>
+        <Button onClick={async () => {
+          if (text) {
+            await actions.onSave(_id, text);
+            await onDialogClose();
+          }
+        }}>
+          Save
         </Button>
-        <Button color="green" onClick={ onEdit } inverted>
-          <Icon name="checkmark" /> Save
-        </Button>
-      </Modal.Actions>
-    </Modal>
+      </DialogActions>
+    </Dialog>
   )
 }
 

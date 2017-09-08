@@ -2,23 +2,22 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Dialog, TextField, Button } from 'material-ui';
-import { DialogActions, DialogContent, DialogContentText, DialogTitle } from 'material-ui/Dialog';
+import { DialogTitle, DialogContent, DialogContentText, DialogActions } from 'material-ui/Dialog';
 
 import * as actions from '../actions';
 
 const Edit = ({ crud: { editData }, actions }) => {
   const { id, primary, accent, dialog } = editData;
 
-  const onModalClose = () => {
+  const onDialogClose = () => {
     actions.onSetData({
       editData: { ...editData, dialog: false }
     });
   };
 
   return (
-    <Dialog open={dialog} onRequestClose={onModalClose}>
-      <DialogTitle>
-      </DialogTitle>
+    <Dialog open={dialog} onRequestClose={onDialogClose}>
+      <DialogTitle></DialogTitle>
       <DialogContent>
         <DialogContentText>
           <TextField
@@ -41,13 +40,13 @@ const Edit = ({ crud: { editData }, actions }) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button color="accent" onClick={onModalClose}>Cancel</Button>
+        <Button color="accent" onClick={onDialogClose}>Cancel</Button>
         <Button
           color="primary"
           onClick={async () => {
             if (primary && accent) {
               await actions.onEditItem(id, primary, accent);
-              await onModalClose();
+              await onDialogClose();
             }
           }}
         >

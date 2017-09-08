@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { List, Button } from 'semantic-ui-react';
+import { List } from 'semantic-ui-react';
+import { Button } from 'material-ui';
 import { CircularProgress } from 'material-ui/Progress';
 
 import Navigation from '~/shared/Navigation';
@@ -10,7 +11,7 @@ import * as actions from './actions';
 import { Add, Search, Edit, Delete } from './containers';
 
 const REST = ({ rest, actions }) => {
-
+  const { dataset, deleteData, editData, loading } = rest;
 
   return (
     <div className="container">
@@ -21,23 +22,35 @@ const REST = ({ rest, actions }) => {
 
       <List>
         {
-          rest.dataset.map((item, index) => (
-            <List.Item key={ item._id }>
-              ({ index + 1 }) { item.text } { ' ' }
-              <Button basic color="red" onClick={ () => {
-                actions.onDeleteModal(true);
-                actions.onSetDelete(item._id);
-                } }>Delete</Button>
-              <Button basic color="blue" onClick={ () => {
-                actions.onEditModal(true);
-                actions.onSetEdit(item._id, item.text);
-              } }>Edit</Button>
+          dataset.map(({ _id, text }, index) => (
+            <List.Item key={_id}>
+              ({ index + 1 }) { text } { ' ' }
+              <Button
+                color="accent"
+                onClick={() =>
+                  actions.onSetData({
+                    deleteData: { ...deleteData, _id, dialog: true }
+                  })
+                }
+              >
+                Delete
+              </Button>
+              <Button
+                color="primary"
+                onClick={() =>
+                  actions.onSetData({
+                    editData: { ...editData, _id, text, dialog: true }
+                  })
+                }
+              >
+                Edit
+              </Button>
             </List.Item>
           ))
         }
       </List>
 
-      <div className="progress" style={{ display: rest.loading ? '' : 'none' }}>
+      <div className="progress" style={{ display: loading ? '' : 'none' }}>
         <CircularProgress />
       </div>
 
@@ -58,6 +71,7 @@ const REST = ({ rest, actions }) => {
 
         .progress {
           position: absolute;
+          position: fixed;
           top: 0;
           left: 0;
           background: rgba(225, 225, 255, .7);

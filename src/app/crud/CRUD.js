@@ -37,19 +37,22 @@ const CRUD = ({ crud, actions }) => {
                         <TableCell>
                           <Button
                             color="accent"
-                            onClick={() => {
+                            onClick={() =>
                               actions.onSetData({
                                 deleteData: { ...deleteData, id, dialog: true }
-                              });
-                            }}
+                              })
+                            }
                           >
                             Delete
                           </Button>
-                          <Button color="primary" onClick={() => {
-                            actions.onSetData({
-                              editData: { ...editData, id, primary, accent, dialog: true }
-                            });
-                          }}>
+                          <Button
+                            color="primary"
+                            onClick={() => {
+                              actions.onSetData({
+                                editData: { ...editData, id, primary, accent, dialog: true }
+                              });
+                            }}
+                          >
                             Edit
                           </Button>
                         </TableCell>

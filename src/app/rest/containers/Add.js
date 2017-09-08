@@ -1,8 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
-import { Button, Input } from 'semantic-ui-react';
+import { TextField, Button } from 'material-ui';
 
 import * as actions from '../actions';
 
@@ -10,26 +9,31 @@ const Add = ({ rest: { addData }, actions }) => {
   const { text } = addData;
 
   return (
-    <div>
-      <div>
-        <Input value={ text } onChange={ event => {
-          // actions
-          actions.onSetAdd(event.target.value)
-        } } />
-        { ' ' }
-        <Button
-          basic
-          color="black"
-          onClick={() => {
-            if (text) {
-              actions.onAdd(text);
-              actions.onSetAdd('');
-            }
-          }}
-        >
-          Add
-        </Button>
-      </div>
+    <div className="container">
+      <TextField
+        value={text}
+        onChange={event => actions.onSetData({
+          addData: { ...addData, text: event.target.value }
+        })}
+      />
+      { ' ' }
+      <Button
+        raised
+        onClick={async () => {
+          if (text) {
+            await actions.onAdd(text);
+            await actions.onSetData({ addData: { text: '' } });
+          }
+        }}
+      >
+        Add
+      </Button>
+
+      <style jsx>{`
+        .container {
+          padding: .5rem 0;
+        }
+      `}</style>
     </div>
   );
 }
