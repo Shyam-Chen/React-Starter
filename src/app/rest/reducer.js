@@ -7,7 +7,7 @@ export default handleActions({
     return { ...state, dataset: [...data].reverse() };
   },
   [FAILURE](state, { error }) {
-    throw error;
+    console.error(error.message);
   },
   [SET_DATA](state, { data }) {
     return { ...state, ...data };
