@@ -15,7 +15,6 @@ $ npm start
 
 ## TODO List
 
-* MobX
 * Router
 * Examples:
   * Data Table

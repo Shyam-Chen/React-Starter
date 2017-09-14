@@ -6,7 +6,7 @@ import createHistory from 'history/createBrowserHistory';
 // import { render } from 'react-snapshot';
 // import { AppContainer } from 'react-hot-loader';
 
-import configureStore from './app/root';
+import configureStore from './app/store';
 import Routes from './app/Routes';
 
 const store = configureStore();

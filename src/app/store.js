@@ -7,13 +7,15 @@ import createHistory from 'history/createBrowserHistory'
 import { counter } from './counter';
 import { crud } from './crud';
 import { rest } from './rest';
+import { dataTable } from './data-table';
 
-const history = createHistory()
+const history = createHistory();
 
 const rootReducer = combineReducers({
   counter,
   crud,
   rest,
+  dataTable,
   router: routerReducer
 });
 

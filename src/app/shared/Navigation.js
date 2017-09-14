@@ -30,6 +30,10 @@ const Navigation = ({ actions }) => (
       <div className="button">
         <Button raised href="/graphql" onClick={() => actions.push('/graphql')}>GraphQL</Button>
       </div>
+
+      <div className="button">
+        <Button raised href="/data-table" onClick={() => actions.push('/data-table')}>Data Table</Button>
+      </div>
     </div>
 
     <div className="divider">

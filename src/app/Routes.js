@@ -7,6 +7,7 @@ import { Counter } from './counter';
 import { CRUD } from './crud';
 import { REST } from './rest';
 import { GraphQL } from './graphql';
+import { DataTable } from './data-table';
 
 const Routes = () => (
   <div>
@@ -15,6 +16,7 @@ const Routes = () => (
     <Route path="/crud" component={CRUD} />
     <Route path="/rest" component={REST} />
     <Route path="/graphql" component={GraphQL} />
+    <Route path="/data-table" component={DataTable} />
   </div>
 );
 
