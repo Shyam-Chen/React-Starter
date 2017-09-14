@@ -1,9 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { /* Link , */ withRouter } from 'react-router-dom';
 import { routerActions } from 'react-router-redux'
 import { Typography, Button, Divider } from 'material-ui';
-import { withRouter } from 'react-router-dom';
 
 const Navigation = ({ actions }) => (
   <div>
@@ -15,6 +15,7 @@ const Navigation = ({ actions }) => (
 
     <div className="button-group">
       <div className="button">
+        {/* <Link to="/counter" onClick={() => actions.push('/counter')}>Counter</Link> */}
         <Button raised href="/counter" onClick={() => actions.push('/counter')}>Counter</Button>
       </div>
 
