@@ -56,13 +56,13 @@ const DataTable = () => {
         </Table>
       </Paper>
 
-    <style jsx>{`
-      .container {
-        padding: 1rem;
-      }
-    `}</style>
-  </div>
-);
+      <style jsx>{`
+        .container {
+          padding: 1rem;
+        }
+      `}</style>
+    </div>
+  );
 };
 
 export default connect(

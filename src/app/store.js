@@ -8,6 +8,7 @@ import { counter } from './counter';
 import { crud } from './crud';
 import { rest } from './rest';
 import { dataTable } from './data-table';
+import { formControls } from './form-controls';
 
 const history = createHistory();
 
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   crud,
   rest,
   dataTable,
+  formControls,
   router: routerReducer
 });
 

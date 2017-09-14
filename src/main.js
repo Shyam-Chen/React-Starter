@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 // import { AppContainer } from 'react-hot-loader';
 
 import configureStore from './app/store';
@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'production') {
 
 render(
   <Provider store={configureStore()}>
-    <ConnectedRouter history={createHistory()}>
+    <ConnectedRouter history={createBrowserHistory()}>
       <Routes />
     </ConnectedRouter>
   </Provider>,

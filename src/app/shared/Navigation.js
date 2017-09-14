@@ -34,6 +34,10 @@ const Navigation = ({ actions }) => (
       <div className="button">
         <Button raised href="/data-table" onClick={() => actions.push('/data-table')}>Data Table</Button>
       </div>
+
+      <div className="button">
+        <Button raised href="/form-controls" onClick={() => actions.push('/form-controls')}>Form Controls</Button>
+      </div>
     </div>
 
     <div className="divider">
