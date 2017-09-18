@@ -15,10 +15,10 @@ const Counter = ({ counter, actions }) => (
       Clicked: {counter.value} times
     </Typography>
     <Typography type="body1" component="p">
-      <Button raised color="primary" onClick={actions.onIncrement}>Increment</Button> {' '}
-      <Button raised color="primary" onClick={actions.onDecrement}>Decrement</Button> {' '}
-      <Button raised color="accent" onClick={actions.onIncrementAsync}>Increment (Async)</Button> {' '}
-      <Button raised color="accent" onClick={actions.onIncrementIfOdd}>Increment (If Odd)</Button> {' '}
+      <Button raised color="primary" onClick={actions.increment}>Increment</Button> {' '}
+      <Button raised color="primary" onClick={actions.decrement}>Decrement</Button> {' '}
+      <Button raised color="accent" onClick={actions.incrementAsync}>Increment (Async)</Button> {' '}
+      <Button raised color="accent" onClick={actions.incrementIfOdd}>Increment (If Odd)</Button> {' '}
     </Typography>
 
     <style jsx>{`

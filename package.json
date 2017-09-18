@@ -45,6 +45,7 @@
     "redux-logger": "3.0.6",
     "redux-observable": "0.16.0",
     "redux-thunk": "2.2.0",
+    "reselect": "3.0.1",
     "rxjs": "5.4.3",
     "styled-components": "2.1.2"
   },

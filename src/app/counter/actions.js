@@ -1,17 +1,17 @@
 import { INCREMENT, DECREMENT } from './constants';
 
-export const onIncrement = () => ({ type: INCREMENT });
-export const onDecrement = () => ({ type: DECREMENT });
+export const increment = () => ({ type: INCREMENT });
+export const decrement = () => ({ type: DECREMENT });
 
-export const onIncrementAsync = () =>
+export const incrementAsync = () =>
   dispatch =>
-    setTimeout(() => dispatch(onIncrement()), 1000);
+    setTimeout(() => dispatch(increment()), 1000);
 
-export const onIncrementIfOdd = () =>
+export const incrementIfOdd = () =>
   (dispatch, getState) => {
     const { counter } = getState();
 
     if (counter.value % 2 === 1) {
-      dispatch(onIncrement());
+      dispatch(increment());
     }
   };
