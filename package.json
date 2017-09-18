@@ -10,7 +10,8 @@
     "server": "nodemon src/server.js --exec babel-node",
     "lint": "eslint src",
     "unit": "jest --coverage",
-    "e2e": "node tools/nightwatch/runner.js"
+    "e2e": "node tools/nightwatch/runner.js",
+    "deploy": "firebase deploy"
   },
   "repository": {
     "type": "git",
@@ -66,6 +67,7 @@
     "enzyme": "2.9.1",
     "eslint": "4.6.1",
     "eslint-plugin-react": "7.3.0",
+    "firebase-tools": "^3.11.0",
     "gulp": "3.9.1",
     "gulp-util": "3.0.8",
     "html-webpack-plugin": "2.30.1",
