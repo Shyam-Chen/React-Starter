@@ -21,6 +21,7 @@ const Add = ({ rest: { addData }, actions }) => {
         raised
         onClick={async () => {
           if (text) {
+            await actions.onSetData({ loading: true });
             await actions.onAdd(text);
             await actions.onSetData({ addData: { text: '' } });
           }

@@ -1,8 +1,9 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { routerReducer, routerMiddleware } from 'react-router-redux';
+import { routerReducer as router, routerMiddleware } from 'react-router-redux';
 import thunkMiddleware from 'redux-thunk';
+import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import loggerMiddleware from 'redux-logger';
-import createHistory from 'history/createBrowserHistory'
+import { createBrowserHistory } from 'history';
 
 import { counter } from './counter';
 import { crud } from './crud';
@@ -10,7 +11,9 @@ import { rest } from './rest';
 import { dataTable } from './data-table';
 import { formControls } from './form-controls';
 
-const history = createHistory();
+const rootEpic = combineEpics(
+  // ...
+);
 
 const rootReducer = combineReducers({
   counter,
@@ -18,7 +21,7 @@ const rootReducer = combineReducers({
   rest,
   dataTable,
   formControls,
-  router: routerReducer
+  router
 });
 
 export default preloadedState =>
@@ -26,8 +29,9 @@ export default preloadedState =>
     rootReducer,
     preloadedState,
     applyMiddleware(
-      routerMiddleware(history),
+      routerMiddleware(createBrowserHistory()),
       thunkMiddleware,
+      createEpicMiddleware(rootEpic),
       loggerMiddleware
     )
   );

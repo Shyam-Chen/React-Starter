@@ -33,8 +33,9 @@ const Edit = ({ rest: { editData }, actions }) => {
         <Button onClick={onDialogClose}>Cancel</Button>
         <Button onClick={async () => {
           if (text) {
-            await actions.onSave(_id, text);
             await onDialogClose();
+            await actions.onSetData({ loading: true });
+            await actions.onSave(_id, text);
           }
         }}>
           Save

@@ -20,7 +20,7 @@ const Search = ({ rest: { searchData }, actions }) => {
       <Button
         raised
         onClick={async () => {
-          await actions.onSetData({ loading: true })
+          await actions.onSetData({ loading: true });
           await actions.onSearch(text);
           await actions.onSetData({ searchData: { text: '' } });
         }}

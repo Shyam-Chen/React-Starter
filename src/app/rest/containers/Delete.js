@@ -27,8 +27,9 @@ const Delete = ({ rest: { deleteData }, actions }) => {
         <Button
           color="primary"
           onClick={async () => {
-            await actions.onRemove(_id);
             await onDialogClose();
+            await actions.onSetData({ loading: true });
+            await actions.onRemove(_id);
           }}
         >
           Confirm
