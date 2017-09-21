@@ -6,7 +6,7 @@
     "start": "webpack-dev-server --progress",
     "test": "jest --coverage",
     "build": "cross-env NODE_ENV=production webpack -p && react-snapshot",
-    "build:backend": "babel src/backend -d dist",
+    "build:backend": "babel src/server.js -d dist",
     "server": "nodemon src/server.js --exec babel-node",
     "lint": "eslint src",
     "unit": "jest --coverage",
