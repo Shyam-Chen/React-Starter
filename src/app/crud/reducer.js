@@ -9,7 +9,8 @@ export default handleActions({
       dataset: [
         {
           id: state.dataset.reduce((maxId, item) => Math.max(item.id, maxId), -1) + 1,
-          primary, accent
+          primary,
+          accent
         },
         ...state.dataset
       ]
@@ -24,7 +25,7 @@ export default handleActions({
         const _primary = item.primary.toLowerCase().indexOf(primary.toLowerCase());
         const _accent = item.accent.toLowerCase().indexOf(accent.toLowerCase());
 
-        if(_primary !== -1 && _accent !== -1) {
+        if (_primary !== -1 && _accent !== -1) {
           return searchResult.push(item);
         }
       })
@@ -37,7 +38,10 @@ export default handleActions({
     };
   },
   [DELETE_ITEM](state, { id }) {
-    return { ...state, dataset: [...state.dataset.filter(item => item.id !== id)] };
+    return {
+      ...state,
+      dataset: [...state.dataset.filter(item => item.id !== id)]
+    };
   },
   [SET_DATA](state, { data }) {
     return { ...state, ...data };

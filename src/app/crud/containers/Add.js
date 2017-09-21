@@ -12,14 +12,14 @@ const Add = ({ crud: { addData }, actions }) => {
     <div className="container">
       <TextField
         value={primary}
-        onChange={event => actions.onSetData({
+        onChange={event => actions.setData({
           addData: { ...addData, primary: event.target.value }
         })}
       />
       {' - '}
       <TextField
         value={accent}
-        onChange={event => actions.onSetData({
+        onChange={event => actions.setData({
           addData: { ...addData, accent: event.target.value }
         })}
       />
@@ -28,8 +28,8 @@ const Add = ({ crud: { addData }, actions }) => {
         raised
         onClick={async () => {
           if (primary && accent) {
-            await actions.onAddItem(primary, accent);
-            await actions.onSetData({ addData: { primary: '', accent: '' } });
+            await actions.addItem(primary, accent);
+            await actions.setData({ addData: { primary: '', accent: '' } });
           }
         }}
       >

@@ -38,7 +38,7 @@ const CRUD = ({ crud, actions }) => {
                           <Button
                             color="accent"
                             onClick={() =>
-                              actions.onSetData({
+                              actions.setData({
                                 deleteData: { ...deleteData, id, dialog: true }
                               })
                             }
@@ -48,7 +48,7 @@ const CRUD = ({ crud, actions }) => {
                           <Button
                             color="primary"
                             onClick={() => {
-                              actions.onSetData({
+                              actions.setData({
                                 editData: { ...editData, id, primary, accent, dialog: true }
                               });
                             }}

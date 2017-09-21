@@ -12,14 +12,14 @@ const Search = ({ crud: { searchData }, actions }) => {
     <div className="container">
       <TextField
         value={primary}
-        onChange={event => actions.onSetData({
+        onChange={event => actions.setData({
           searchData: { ...searchData, primary: event.target.value }
         })}
       />
       {' - '}
       <TextField
         value={accent}
-        onChange={event => actions.onSetData({
+        onChange={event => actions.setData({
           searchData: { ...searchData, accent: event.target.value }
         })}
       />
@@ -27,8 +27,8 @@ const Search = ({ crud: { searchData }, actions }) => {
       <Button
         raised
         onClick={async () => {
-          await actions.onSearchItem(primary, accent);
-          await actions.onSetData({ searchData: { primary: '', accent: '' } });
+          await actions.searchItem(primary, accent);
+          await actions.setData({ searchData: { primary: '', accent: '' } });
         }}
       >
         Search

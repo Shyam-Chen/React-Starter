@@ -10,7 +10,7 @@ const Delete = ({ crud: { deleteData }, actions }) => {
   const { id, dialog } = deleteData;
 
   const onDialogClose = () =>
-    actions.onSetData({
+    actions.setData({
       deleteData: { ...deleteData, dialog: false }
     });
 
@@ -27,8 +27,8 @@ const Delete = ({ crud: { deleteData }, actions }) => {
         <Button
           color="primary"
           onClick={async () => {
-            await actions.onDeleteItem(id);
             await onDialogClose();
+            await actions.deleteItem(id);
           }}
         >
           Confirm

@@ -9,11 +9,10 @@ import * as actions from '../actions';
 const Edit = ({ crud: { editData }, actions }) => {
   const { id, primary, accent, dialog } = editData;
 
-  const onDialogClose = () => {
-    actions.onSetData({
+  const onDialogClose = () =>
+    actions.setData({
       editData: { ...editData, dialog: false }
     });
-  };
 
   return (
     <Dialog open={dialog} onRequestClose={onDialogClose}>
@@ -23,7 +22,7 @@ const Edit = ({ crud: { editData }, actions }) => {
           <TextField
             value={primary}
             onChange={event => {
-              actions.onSetData({
+              actions.setData({
                 editData: { ...editData, primary: event.target.value }
               })
             }}
@@ -32,7 +31,7 @@ const Edit = ({ crud: { editData }, actions }) => {
           <TextField
             value={accent}
             onChange={event => {
-              actions.onSetData({
+              actions.setData({
                 editData: { ...editData, accent: event.target.value }
               })
             }}
@@ -45,8 +44,8 @@ const Edit = ({ crud: { editData }, actions }) => {
           color="primary"
           onClick={async () => {
             if (primary && accent) {
-              await actions.onEditItem(id, primary, accent);
               await onDialogClose();
+              await actions.editItem(id, primary, accent);
             }
           }}
         >
