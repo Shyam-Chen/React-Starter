@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     path: join(__dirname, 'build'),
-    filename: '[name].js'
+    filename: '[name].[hash].js'
   },
   module: {
     rules: [
