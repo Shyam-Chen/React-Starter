@@ -18,18 +18,20 @@ $ npm start
 
 ## TODO List
 
-* Router
 * Examples:
+  * Router
   * Data Table
   * Form Controls
   * Authorization
   * GraphQL
+    * Query & Mutation
     * Pagination
     * Authorization
-  * Pie Chart
-    * SVG (D3)
-    * Canvas (D3)
-    * WebGL (Three)
+  * Chat
+  * Data Chart
+    * SVG (D3 + Immutable)
+    * Canvas (D3 + Immutable)
+    * WebGL (Three + Immutable)
 * Build:
   * Dev/Prod Mode
 * Test:
