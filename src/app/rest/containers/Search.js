@@ -12,17 +12,19 @@ const Search = ({ rest: { searchData }, actions }) => {
     <div className="container">
       <TextField
         value={text}
-        onChange={event => actions.onSetData({
-          searchData: { ...searchData, text: event.target.value }
-        })}
+        onChange={event =>
+          actions.setData({
+            searchData: { ...searchData, text: event.target.value }
+          })
+        }
       />
       { ' ' }
       <Button
         raised
         onClick={async () => {
-          await actions.onSetData({ loading: true });
-          await actions.onSearch(text);
-          await actions.onSetData({ searchData: { text: '' } });
+          await actions.setData({ loading: true });
+          await actions.searchItem(text);
+          await actions.setData({ searchData: { text: '' } });
         }}
       >
         Search

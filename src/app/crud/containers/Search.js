@@ -12,16 +12,20 @@ const Search = ({ crud: { searchData }, actions }) => {
     <div className="container">
       <TextField
         value={primary}
-        onChange={event => actions.setData({
-          searchData: { ...searchData, primary: event.target.value }
-        })}
+        onChange={event =>
+          actions.setData({
+            searchData: { ...searchData, primary: event.target.value }
+          })
+        }
       />
       {' - '}
       <TextField
         value={accent}
-        onChange={event => actions.setData({
-          searchData: { ...searchData, accent: event.target.value }
-        })}
+        onChange={event =>
+          actions.setData({
+            searchData: { ...searchData, accent: event.target.value }
+          })
+        }
       />
       {' '}
       <Button

@@ -15,4 +15,5 @@ export const ADD_ITEM = '[CRUD] ADD_ITEM';
 export const SEARCH_ITEM = '[CRUD] SEARCH_ITEM';
 export const EDIT_ITEM = '[CRUD] EDIT_ITEM';
 export const DELETE_ITEM = '[CRUD] DELETE_ITEM';
+
 export const SET_DATA = '[CRUD] SET_DATA';

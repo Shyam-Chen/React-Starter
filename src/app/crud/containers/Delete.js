@@ -36,7 +36,7 @@ const Delete = ({ crud: { deleteData }, actions }) => {
       </DialogActions>
     </Dialog>
   );
-}
+};
 
 export default connect(
   ({ crud }) => ({ crud }),

@@ -12,18 +12,20 @@ const Add = ({ rest: { addData }, actions }) => {
     <div className="container">
       <TextField
         value={text}
-        onChange={event => actions.onSetData({
-          addData: { ...addData, text: event.target.value }
-        })}
+        onChange={event =>
+          actions.setData({
+            addData: { ...addData, text: event.target.value }
+          })
+        }
       />
       { ' ' }
       <Button
         raised
         onClick={async () => {
           if (text) {
-            await actions.onSetData({ loading: true });
-            await actions.onAdd(text);
-            await actions.onSetData({ addData: { text: '' } });
+            await actions.setData({ loading: true });
+            await actions.addItem(text);
+            await actions.setData({ addData: { text: '' } });
           }
         }}
       >
@@ -37,7 +39,7 @@ const Add = ({ rest: { addData }, actions }) => {
       `}</style>
     </div>
   );
-}
+};
 
 export default connect(
   ({ rest }) => ({ rest }),

@@ -10,7 +10,7 @@ const Delete = ({ rest: { deleteData }, actions }) => {
   const { _id, dialog } = deleteData;
 
   const onDialogClose = () =>
-    actions.onSetData({
+    actions.setData({
       deleteData: { ...deleteData, dialog: false }
     });
 
@@ -28,8 +28,8 @@ const Delete = ({ rest: { deleteData }, actions }) => {
           color="primary"
           onClick={async () => {
             await onDialogClose();
-            await actions.onSetData({ loading: true });
-            await actions.onRemove(_id);
+            await actions.setData({ loading: true });
+            await actions.deleteItem(_id);
           }}
         >
           Confirm
@@ -37,7 +37,7 @@ const Delete = ({ rest: { deleteData }, actions }) => {
       </DialogActions>
     </Dialog>
   );
-}
+};
 
 export default connect(
   ({ rest }) => ({ rest }),

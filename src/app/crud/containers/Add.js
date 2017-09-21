@@ -12,16 +12,20 @@ const Add = ({ crud: { addData }, actions }) => {
     <div className="container">
       <TextField
         value={primary}
-        onChange={event => actions.setData({
-          addData: { ...addData, primary: event.target.value }
-        })}
+        onChange={event =>
+          actions.setData({
+            addData: { ...addData, primary: event.target.value }
+          })
+        }
       />
       {' - '}
       <TextField
         value={accent}
-        onChange={event => actions.setData({
-          addData: { ...addData, accent: event.target.value }
-        })}
+        onChange={event =>
+          actions.setData({
+            addData: { ...addData, accent: event.target.value }
+          })
+        }
       />
       {' '}
       <Button

@@ -27,7 +27,7 @@ const REST = ({ rest, actions }) => {
               <Button
                 color="accent"
                 onClick={() =>
-                  actions.onSetData({
+                  actions.setData({
                     deleteData: { ...deleteData, _id, dialog: true }
                   })
                 }
@@ -37,7 +37,7 @@ const REST = ({ rest, actions }) => {
               <Button
                 color="primary"
                 onClick={() =>
-                  actions.onSetData({
+                  actions.setData({
                     editData: { ...editData, _id, text, dialog: true }
                   })
                 }

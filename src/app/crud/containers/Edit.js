@@ -21,20 +21,20 @@ const Edit = ({ crud: { editData }, actions }) => {
         <DialogContentText>
           <TextField
             value={primary}
-            onChange={event => {
+            onChange={event =>
               actions.setData({
                 editData: { ...editData, primary: event.target.value }
               })
-            }}
+            }
           />
           { ' - ' }
           <TextField
             value={accent}
-            onChange={event => {
+            onChange={event =>
               actions.setData({
                 editData: { ...editData, accent: event.target.value }
               })
-            }}
+            }
           />
         </DialogContentText>
       </DialogContent>

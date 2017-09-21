@@ -10,7 +10,7 @@ const Edit = ({ rest: { editData }, actions }) => {
   const { _id, text, dialog } = editData;
 
   const onDialogClose = () =>
-    actions.onSetData({
+    actions.setData({
       editData: { ...editData, dialog: false }
     });
 
@@ -22,7 +22,7 @@ const Edit = ({ rest: { editData }, actions }) => {
           <TextField
             value={text}
             onChange={event =>
-              actions.onSetData({
+              actions.setData({
                 editData: { ...editData, text: event.target.value }
               })
             }
@@ -34,16 +34,16 @@ const Edit = ({ rest: { editData }, actions }) => {
         <Button onClick={async () => {
           if (text) {
             await onDialogClose();
-            await actions.onSetData({ loading: true });
-            await actions.onSave(_id, text);
+            await actions.setData({ loading: true });
+            await actions.editItem(_id, text);
           }
         }}>
           Save
         </Button>
       </DialogActions>
     </Dialog>
-  )
-}
+  );
+};
 
 export default connect(
   ({ rest }) => ({ rest }),
