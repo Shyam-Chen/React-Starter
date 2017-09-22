@@ -5,14 +5,14 @@ import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import loggerMiddleware from 'redux-logger';
 import { createBrowserHistory } from 'history';
 
-import { counter } from './counter';
+import { counter, counterEpic } from './counter';
 import { crud } from './crud';
 import { rest } from './rest';
 import { dataTable } from './data-table';
 import { formControls } from './form-controls';
 
 const rootEpic = combineEpics(
-  // ...
+  counterEpic
 );
 
 const rootReducer = combineReducers({
