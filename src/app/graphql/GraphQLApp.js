@@ -53,6 +53,25 @@ const GraphQLApp = ({ data: { list } }) => {
   );
 }
 
+
+export const getList = graphql(gql`
+  {
+    list {
+      _id
+      text
+    }
+  }
+`)(GraphQLApp);
+
+export const searchList = graphql(gql`
+  {
+    list(text: "a") {
+      _id
+      text
+    }
+  }
+`)(GraphQLApp);
+
 export default graphql(gql`
   {
     list {
