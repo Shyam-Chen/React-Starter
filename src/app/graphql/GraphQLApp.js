@@ -7,24 +7,42 @@ import { LinearProgress } from 'material-ui/Progress';
 
 import Navigation from '~/shared/Navigation';
 
-const GraphQLApp = ({ data: { list } }) => {
+const GraphQLApp = ({ data: { loading, error, list } }) => {
+  if (error) console.error(error);
 
   return (
     <div className="container">
       <Navigation />
 
-      <TextField />
+      <TextField
+        // value={text}
+        // onChange={event => {}}
+      />
+      { ' ' }
+      <Button
+        raised
+        // onClick={() => {}}
+      >
+        Search
+      </Button>
 
       <Paper>
         {
-          list
+          !loading
             ? <ul>
                 {
                   list.map(item => (
                     <li key={item._id}>
                       {item.text}
-                      <Button>Delete</Button>
-                      <Button>Edit</Button>
+                      <Button
+                        color="accent"
+                        onClick={() => {
+                          console.log('Delete');
+                        }}
+                      >
+                        Delete
+                      </Button>
+                      <Button color="primary">Edit</Button>
                     </li>
                   ))
                 }
