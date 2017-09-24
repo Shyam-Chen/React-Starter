@@ -12,7 +12,7 @@ const Counter = ({ counter, actions }) => (
     <Navigation />
 
     <Typography type="headline" component="h3">
-      Clicked: {counter.value} times
+      Clicked: {counter.value} times, value is {counter.value % 2 === 0 ? 'even' : 'odd'}.
     </Typography>
     <Typography type="body1" component="p">
       <Button raised color="primary" onClick={actions.increment}>Increment</Button> {' '}
