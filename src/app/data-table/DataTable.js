@@ -27,7 +27,7 @@ const DataTable = () => {
     <div className="container">
       <Navigation />
 
-      <p>TODO: API</p>
+      <p>TODO: RESTful API</p>
 
       <Paper>
         <Table>
@@ -53,6 +53,11 @@ const DataTable = () => {
               ))
             }
           </TableBody>
+          <tfoot>
+            <tr>
+              <td>TODO: Pagination</td>
+            </tr>
+          </tfoot>
         </Table>
       </Paper>
 

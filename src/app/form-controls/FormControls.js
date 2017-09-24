@@ -1,23 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Paper, Select, Input } from 'material-ui';
+import { Paper, Select, Input, Checkbox } from 'material-ui';
 import { InputLabel } from 'material-ui/Input';
 import { MenuItem } from 'material-ui/Menu';
-import { FormControl } from 'material-ui/Form';
+import { FormControl, FormGroup, FormControlLabel } from 'material-ui/Form';
 
 import Navigation from '~/shared/Navigation';
 
 import * as actions from './actions';
 
 const FormControls = ({ formControls, actions }) => {
-  const { age } = formControls;
+  const { age, frameworks } = formControls;
 
   return (
     <div className="container">
       <Navigation />
 
-      <p>TODO: API</p>
+      <p>TODO: RESTful API</p>
 
       <Paper>
         <form className="container">
@@ -34,6 +34,39 @@ const FormControls = ({ formControls, actions }) => {
               <MenuItem value={30}>Thirty</MenuItem>
             </Select>
           </FormControl>
+
+          <FormGroup row>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={frameworks.angular}
+                  onChange={(event, checked) => actions.onSetData({ frameworks: { ...frameworks, angular: checked } })}
+                  value="angular"
+                />
+              }
+              label="Angular"
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={frameworks.react}
+                  onChange={(event, checked) => actions.onSetData({ frameworks: { ...frameworks, react: checked } })}
+                  value="react"
+                />
+              }
+              label="React"
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={frameworks.vue}
+                  onChange={(event, checked) => actions.onSetData({ frameworks: { ...frameworks, vue: checked } })}
+                  value="vue"
+                />
+              }
+              label="Vue"
+            />
+          </FormGroup>
         </form>
       </Paper>
 
