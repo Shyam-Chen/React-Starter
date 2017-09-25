@@ -3,22 +3,62 @@ export const INITIAL = {
   age: '',
 
   // multiple select
-  countries: [],
+  countries: [
+    'Taiwan',
+    'Japan',
+    'Korea',
+    'China',
+    'Singapore',
+    'United States',
+    'Canada',
+    'Germany',
+    'France',
+    'Spain',
+    'Netherlands',
+    'United Kingdom'
+  ],
 
   // nested select
+  animals: [
+    {
+      category: 'Cat',
+      variety: [
+        'British Shorthair',
+        'Persian',
+        'Ragdoll',
+        'Sphynx',
+        'Exotic Shorthair',
+        'Scottish Fold'
+      ]
+    }, {
+      category: 'Dog',
+      variety: [
+        'German Shepherd',
+        'Labrador Retriever',
+        'Beagle',
+        'Bulldog',
+        'Golden Retriever',
+        'Great Dane',
+        'Poodle'
+      ]
+    }
+  ],
 
   // checkboxes
   frameworks: {
     angular: false,
     react: true,
     vue: false
-  }
+  },
 
   // radio buttons
+  gender: '',
 
   // switches
+  iPhoneX: true,
 
   // slider
+  kilometers: 0,
 
   // autocomplete
 
