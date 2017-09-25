@@ -3081,9 +3081,9 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-plugin-react@7.3.0:
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.3.0.tgz#ca9368da36f733fbdc05718ae4e91f778f38e344"
+eslint-plugin-react@7.4.0:
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.4.0.tgz#300a95861b9729c087d362dd64abcc351a74364a"
   dependencies:
     doctrine "^2.0.0"
     has "^1.0.1"
@@ -3405,7 +3405,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.9:
+fbjs@^0.8.1, fbjs@^0.8.9:
   version "0.8.12"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.12.tgz#10b5d92f76d45575fd63a217d4ea02bea2f8ed04"
   dependencies:
@@ -6042,9 +6042,9 @@ map-cache@^0.2.0:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/map-cache/-/map-cache-0.2.2.tgz#c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf"
 
-material-ui@1.0.0-beta.11:
-  version "1.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-1.0.0-beta.11.tgz#f05c475e0e9a1818f1414c5878e4da110b4e9ef4"
+material-ui@1.0.0-beta.12:
+  version "1.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-1.0.0-beta.12.tgz#41fe1c317df9835cc690d60102026214c8a8494e"
   dependencies:
     babel-runtime "^6.26.0"
     brcast "^3.0.1"
@@ -6060,10 +6060,10 @@ material-ui@1.0.0-beta.11:
     react-event-listener "^0.5.0"
     react-jss "^7.1.0"
     react-popper "^0.7.2"
-    react-scrollbar-size "^2.0.0"
+    react-scrollbar-size "^2.0.1"
     react-transition-group "^2.2.0"
     recompose "^0.24.0"
-    scroll "^2.0.0"
+    scroll "^2.0.1"
     warning "^3.0.0"
 
 media-typer@0.3.0:
@@ -6388,9 +6388,9 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
-nock@9.0.18:
-  version "9.0.18"
-  resolved "https://registry.yarnpkg.com/nock/-/nock-9.0.18.tgz#814b6af376b8399d1bbcbaa17f1a458c653a719b"
+nock@9.0.20:
+  version "9.0.20"
+  resolved "https://registry.yarnpkg.com/nock/-/nock-9.0.20.tgz#a5a38d2a88836e5064bcfe4750f1890aeffc79b1"
   dependencies:
     chai ">=1.9.2 <4.0.0"
     debug "^2.2.0"
@@ -7111,7 +7111,7 @@ prompt@1.0.0:
     utile "0.3.x"
     winston "2.1.x"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -7304,7 +7304,16 @@ react-deep-force-update@^2.0.1:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-2.1.0.tgz#1c5f36ea96bcbf411605ec063f36c568ea4df86c"
 
-react-dom@15.6.1, react-dom@^15.3.0:
+react-dom@16.0.0-rc.3:
+  version "16.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.0.0-rc.3.tgz#bd4e4d2abd464df5149a062b45fe796bbb804c2c"
+  dependencies:
+    fbjs "^0.8.9"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.0"
+    prop-types "^15.5.6"
+
+react-dom@^15.3.0:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
   dependencies:
@@ -7312,15 +7321,6 @@ react-dom@15.6.1, react-dom@^15.3.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.10"
-
-react-event-listener@^0.4.5:
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/react-event-listener/-/react-event-listener-0.4.5.tgz#e3e895a0970cf14ee8f890113af68197abf3d0b1"
-  dependencies:
-    babel-runtime "^6.20.0"
-    fbjs "^0.8.4"
-    prop-types "^15.5.4"
-    warning "^3.0.0"
 
 react-event-listener@^0.5.0:
   version "0.5.0"
@@ -7420,13 +7420,13 @@ react-router@^4.1.1:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-scrollbar-size@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-scrollbar-size/-/react-scrollbar-size-2.0.0.tgz#611215f4105db28f1f56ccace627c3fce137a2f3"
+react-scrollbar-size@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-scrollbar-size/-/react-scrollbar-size-2.0.1.tgz#fc13631d27efc93d7a1f40383b375dc449ebfac4"
   dependencies:
     babel-runtime "^6.23.0"
     prop-types "^15.5.10"
-    react-event-listener "^0.4.5"
+    react-event-listener "^0.5.0"
 
 react-snapshot@1.2.0:
   version "1.2.0"
@@ -7459,7 +7459,16 @@ react-transition-group@^2.2.0:
     prop-types "^15.5.8"
     warning "^3.0.0"
 
-react@15.6.1, react@^15.3.0, react@^15.5.4:
+react@16.0.0-rc.3:
+  version "16.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.0.0-rc.3.tgz#4a9df996326ba7185903d9fbed3149765e237e26"
+  dependencies:
+    fbjs "^0.8.9"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.0"
+    prop-types "^15.5.6"
+
+react@^15.3.0, react@^15.5.4:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"
   dependencies:
@@ -8010,9 +8019,9 @@ sax@^1.2.1:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-scroll@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/scroll/-/scroll-2.0.0.tgz#55cba0d84eb845d98fe3579a801e5722a6a3a81f"
+scroll@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/scroll/-/scroll-2.0.1.tgz#b4c7d27e8bcf3ae8a58a042f27268ae3f55f9ccd"
   dependencies:
     rafl "~1.2.1"
 
@@ -8020,9 +8029,9 @@ select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
 
-selenium-standalone@6.8.0:
-  version "6.8.0"
-  resolved "https://registry.yarnpkg.com/selenium-standalone/-/selenium-standalone-6.8.0.tgz#b76cb3f0045c0cc225632dca6e0a8b9807c3d3be"
+selenium-standalone@6.9.0:
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/selenium-standalone/-/selenium-standalone-6.9.0.tgz#5805f403c82b48b4e136d8a97f1832aad7852bd5"
   dependencies:
     async "^2.1.4"
     commander "^2.9.0"
@@ -8554,7 +8563,7 @@ stylis@^3.2.1:
   version "3.2.15"
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.2.15.tgz#1800f829fdf3cf0d647ae6cdb5fb70a1fd81c3e2"
 
-subscriptions-transport-ws@^0.9.0:
+subscriptions-transport-ws@0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/subscriptions-transport-ws/-/subscriptions-transport-ws-0.9.0.tgz#3dedd96a8fd01e63bdaf855c2ca0dcc68a87102e"
   dependencies:
