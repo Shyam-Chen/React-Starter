@@ -33,7 +33,7 @@ const DataTable = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
+              <TableCell>Dessert (100g) TODO: Sorting</TableCell>
               <TableCell numeric>Calories</TableCell>
               <TableCell numeric>Fat (g)</TableCell>
               <TableCell numeric>Carbs (g)</TableCell>

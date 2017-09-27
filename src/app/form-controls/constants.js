@@ -65,6 +65,10 @@ export const INITIAL = {
   // datepicker
 
   // timepicker
+
+  // colorpicker
+
+  // file upload
 };
 
 export const SET_DATA = '[Form Controls] SET_DATA';
