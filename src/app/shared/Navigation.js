@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import { routerActions } from 'react-router-redux';
 import { Typography, Button, Divider } from 'material-ui';
 
-const Navigation = ({ actions }) => (
+const Navigation = ({ router, actions }) => (
   <div>
     <div className="header">
       <Typography type="headline" component="h3">
-        React by Example
+        React by Example, location: <span className="location">{router.location.pathname}</span>
       </Typography>
     </div>
 
@@ -46,7 +46,11 @@ const Navigation = ({ actions }) => (
 
     <style jsx>{`
       .header {
-        margin: .5rem 0;
+        margin: 0 0 .5rem 0;
+      }
+
+      .location {
+        color: #E91E63;
       }
 
       .button-group {

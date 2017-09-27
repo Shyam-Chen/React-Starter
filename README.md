@@ -18,12 +18,12 @@ $ npm start
 ## TODO List
 
 * Examples:
-  * Router
-  * Data Table
-  * Form Controls
+  * Router (Learning)
+  * Data Table (WIP)
+  * Form Controls (WIP)
   * Authorization
   * GraphQL
-    * Query & Mutation
+    * Query & Mutation (Thinking)
     * Pagination
     * Authorization
   * Chat
@@ -31,9 +31,16 @@ $ npm start
     * SVG (D3 + Immutable)
     * Canvas (D3 + Immutable)
     * WebGL (Three + Immutable)
+  * Internationalization
+  * Google Analytics
+  * Service Workers
 * Build:
+  * Hot Module Replacement
   * Dev/Prod Mode
+  * Prerender
+  * Server-side Rendering
 * Test:
+  * Flow Types
   * Unit Tests
   * E2E Tests
 * Deploy:
