@@ -8,11 +8,11 @@ import configureStore from './app/store';
 import Routes from './app/Routes';
 
 let render;
-if (process.env.NODE_ENV === 'production') {
-  render = require('react-snapshot').render;
-} else {
+// if (process.env.NODE_ENV === 'production') {
+//   render = require('react-snapshot').render;
+// } else {
   render = require('react-dom').render;
-}
+// }
 
 render(
   <Provider store={configureStore()}>
