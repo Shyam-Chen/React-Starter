@@ -1,7 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { /* Link , */ withRouter } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { routerActions } from 'react-router-redux';
 import { Typography, Button, Divider } from 'material-ui';
 
@@ -15,7 +15,7 @@ const Navigation = ({ actions }) => (
 
     <div className="button-group">
       <div className="button">
-        {/* <Link to="/counter" onClick={() => actions.push('/counter')}>Counter</Link> */}
+        {/* <Link to="/counter">Counter</Link> */}
         <Button raised href="/counter" onClick={() => actions.push('/counter')}>Counter</Button>
       </div>
 
@@ -64,7 +64,7 @@ const Navigation = ({ actions }) => (
   </div>
 );
 
-export default withRouter(connect(
+export default connect(
   ({ router }) => ({ router }),
   dispatch => ({ actions: bindActionCreators(routerActions, dispatch) })
-)(Navigation));
+)(Navigation);
