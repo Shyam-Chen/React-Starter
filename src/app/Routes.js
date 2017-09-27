@@ -9,6 +9,7 @@ import { REST } from './rest';
 import { GraphQL } from './graphql';
 import { DataTable } from './data-table';
 import { FormControls } from './form-controls';
+// import { NotFound } from './not-found';
 
 const Routes = () => (
   <div>
@@ -19,6 +20,7 @@ const Routes = () => (
     <Route path="/graphql" component={GraphQL} />
     <Route path="/data-table" component={DataTable} />
     <Route path="/form-controls" component={FormControls} />
+    {/* <Route path="*" component={NotFound} /> */}
   </div>
 );
 

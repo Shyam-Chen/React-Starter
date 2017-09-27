@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { /* Link , */ withRouter } from 'react-router-dom';
-import { routerActions } from 'react-router-redux'
+import { routerActions } from 'react-router-redux';
 import { Typography, Button, Divider } from 'material-ui';
 
 const Navigation = ({ actions }) => (

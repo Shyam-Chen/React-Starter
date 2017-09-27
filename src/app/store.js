@@ -3,7 +3,6 @@ import { routerReducer as router, routerMiddleware } from 'react-router-redux';
 import thunkMiddleware from 'redux-thunk';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import loggerMiddleware from 'redux-logger';
-import { createBrowserHistory } from 'history';
 
 import { counter, counterEpic } from './counter';
 import { crud } from './crud';
@@ -24,12 +23,12 @@ const rootReducer = combineReducers({
   router
 });
 
-export default preloadedState =>
+export default (history, preloadedState = {}) =>
   createStore(
     rootReducer,
     preloadedState,
     applyMiddleware(
-      routerMiddleware(createBrowserHistory()),
+      routerMiddleware(history),
       thunkMiddleware,
       createEpicMiddleware(rootEpic),
       loggerMiddleware
