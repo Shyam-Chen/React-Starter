@@ -27,13 +27,13 @@ const DataTable = () => {
     <div className="container">
       <Navigation />
 
-      <p>TODO: RESTful API</p>
+      <p>TODO: RESTful API, Sorting</p>
 
       <Paper>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Dessert (100g) TODO: Sorting</TableCell>
+              <TableCell>Dessert (100g)</TableCell>
               <TableCell numeric>Calories</TableCell>
               <TableCell numeric>Fat (g)</TableCell>
               <TableCell numeric>Carbs (g)</TableCell>
