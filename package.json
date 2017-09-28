@@ -29,6 +29,7 @@
   "homepage": "https://github.com/Shyam-Chen/React-Fullstack-Starter#readme",
   "dependencies": {
     "axios": "0.16.2",
+    "classnames": "2.2.5",
     "d3": "4.10.2",
     "immutable": "3.8.1",
     "lodash": "4.17.4",

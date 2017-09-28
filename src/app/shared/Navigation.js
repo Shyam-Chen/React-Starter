@@ -2,7 +2,9 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { routerActions } from 'react-router-redux';
-import { Typography, Button, Divider } from 'material-ui';
+import { Typography, Divider } from 'material-ui';
+
+import VariantRaisedButton from '~/shared/VariantRaisedButton';
 
 const Navigation = ({ router, actions }) => (
   <div>
@@ -14,27 +16,27 @@ const Navigation = ({ router, actions }) => (
 
     <div className="button-group">
       <div className="button">
-        <Button raised href="/counter" onClick={() => actions.push('/counter')}>Counter</Button>
+        <VariantRaisedButton variant="teal" text="Counter" href="/counter" onClick={() => actions.push('/counter')} />
       </div>
 
       <div className="button">
-        <Button raised href="/crud" onClick={() => actions.push('/crud')}>CRUD</Button>
+        <VariantRaisedButton variant="teal" text="CRUD" href="/crud" onClick={() => actions.push('/crud')} />
       </div>
 
       <div className="button">
-        <Button raised href="/rest" onClick={() => actions.push('/rest')}>REST</Button>
+        <VariantRaisedButton variant="teal" text="REST" href="/rest" onClick={() => actions.push('/rest')} />
       </div>
 
       <div className="button">
-        <Button raised href="/graphql" onClick={() => actions.push('/graphql')}>GraphQL</Button>
+        <VariantRaisedButton variant="teal" text="GraphQL" href="/graphql" onClick={() => actions.push('/graphql')} />
       </div>
 
       <div className="button">
-        <Button raised href="/data-table" onClick={() => actions.push('/data-table')}>Data Table</Button>
+        <VariantRaisedButton variant="teal" text="Data Table" href="/data-table" onClick={() => actions.push('/data-table')} />
       </div>
 
       <div className="button">
-        <Button raised href="/form-controls" onClick={() => actions.push('/form-controls')}>Form Controls</Button>
+        <VariantRaisedButton variant="teal" text="Form Controls" href="/form-controls" onClick={() => actions.push('/form-controls')} />
       </div>
     </div>
 
