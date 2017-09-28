@@ -1,4 +1,4 @@
 import CRUD from './CRUD';
-import crud from './reducer';
+import crudReducer from './reducer';
 
-export { CRUD, crud };
+export { CRUD, crudReducer };

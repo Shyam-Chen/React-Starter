@@ -1,4 +1,4 @@
 import REST from './REST';
-import rest from './reducer';
+import restReducer from './reducer';
 
-export { REST, rest };
+export { REST, restReducer };

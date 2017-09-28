@@ -5,10 +5,10 @@ import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import loggerMiddleware from 'redux-logger';
 
 import { counterEpic, counterReducer } from './counter';
-import { crud } from './crud';
-import { rest } from './rest';
-import { dataTable } from './data-table';
-import { formControls } from './form-controls';
+import { crudReducer } from './crud';
+import { restReducer } from './rest';
+import { dataTableReducer } from './data-table';
+import { formControlsReducer } from './form-controls';
 
 const rootEpic = combineEpics(
   counterEpic
@@ -16,10 +16,10 @@ const rootEpic = combineEpics(
 
 const rootReducer = combineReducers({
   counter: counterReducer,
-  crud,
-  rest,
-  dataTable,
-  formControls,
+  crud: crudReducer,
+  rest: restReducer,
+  dataTable: dataTableReducer,
+  formControls: formControlsReducer,
   router: routerReducer
 });
 
