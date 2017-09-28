@@ -18,6 +18,7 @@ const Counter = ({ counter, actions }) => (
       <Button raised color="primary" onClick={actions.increment}>Increment</Button> {' '}
       <Button raised color="primary" onClick={actions.decrement}>Decrement</Button> {' '}
       <Button raised color="accent" onClick={actions.incrementAsync}>Increment (Async)</Button> {' '}
+      <Button raised color="accent" onClick={actions.decrementAsync}>Decrement (Async)</Button> {' '}
       <Button raised color="accent" onClick={actions.incrementIfOdd}>Increment (If Odd)</Button> {' '}
       <Button raised color="accent" onClick={actions.incrementIfEven}>Increment (If Even)</Button> {' '}
     </Typography>
