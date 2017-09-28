@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Typography, Button } from 'material-ui';
 
 import Navigation from '~/shared/Navigation';
+import RaisedButton from '~/shared/RaisedButton';
 
 import * as actions from './actions';
 
@@ -19,8 +20,8 @@ const Counter = ({ counter, actions }) => (
       <Button raised color="primary" onClick={actions.decrement}>Decrement</Button> {' '}
       <Button raised color="accent" onClick={actions.incrementAsync}>Increment (Async)</Button> {' '}
       <Button raised color="accent" onClick={actions.decrementAsync}>Decrement (Async)</Button> {' '}
-      <Button raised color="accent" onClick={actions.incrementIfOdd}>Increment (If Odd)</Button> {' '}
-      <Button raised color="accent" onClick={actions.incrementIfEven}>Increment (If Even)</Button> {' '}
+      <RaisedButton text="Increment (If Odd)" onClick={actions.incrementIfOdd} /> {' '}
+      <RaisedButton text="Increment (If Even)" onClick={actions.incrementIfEven} /> {' '}
     </Typography>
 
     <style jsx>{`
