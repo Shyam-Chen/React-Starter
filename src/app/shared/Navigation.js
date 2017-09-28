@@ -1,11 +1,10 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
 import { routerActions } from 'react-router-redux';
 import { Typography, Button, Divider } from 'material-ui';
 
-const Navigation = ({ router, /* actions */ }) => (
+const Navigation = ({ router, actions }) => (
   <div>
     <div className="header">
       <Typography type="headline" component="h3">
@@ -15,34 +14,27 @@ const Navigation = ({ router, /* actions */ }) => (
 
     <div className="button-group">
       <div className="button">
-        {/* <Link to="/counter">Counter</Link> */}
-        {/* <Button raised href="/counter" onClick={() => actions.push('/counter')}>Counter</Button> */}
-        <Button raised href="/counter">Counter</Button>
+        <Button raised href="/counter" onClick={() => actions.push('/counter')}>Counter</Button>
       </div>
 
       <div className="button">
-        {/* <Button raised href="/crud" onClick={() => actions.push('/crud')}>CRUD</Button> */}
-        <Button raised href="/crud">CRUD</Button>
+        <Button raised href="/crud" onClick={() => actions.push('/crud')}>CRUD</Button>
       </div>
 
       <div className="button">
-        {/* <Button raised href="/rest" onClick={() => actions.push('/rest')}>REST</Button> */}
-        <Button raised href="/rest">REST</Button>
+        <Button raised href="/rest" onClick={() => actions.push('/rest')}>REST</Button>
       </div>
 
       <div className="button">
-        {/* <Button raised href="/graphql" onClick={() => actions.push('/graphql')}>GraphQL</Button> */}
-        <Button raised href="/graphql">GraphQL</Button>
+        <Button raised href="/graphql" onClick={() => actions.push('/graphql')}>GraphQL</Button>
       </div>
 
       <div className="button">
-        {/* <Button raised href="/data-table" onClick={() => actions.push('/data-table')}>Data Table</Button> */}
-        <Button raised href="/data-table">Data Table</Button>
+        <Button raised href="/data-table" onClick={() => actions.push('/data-table')}>Data Table</Button>
       </div>
 
       <div className="button">
-        {/* <Button raised href="/form-controls" onClick={() => actions.push('/form-controls')}>Form Controls</Button> */}
-        <Button raised href="/form-controls">Form Controls</Button>
+        <Button raised href="/form-controls" onClick={() => actions.push('/form-controls')}>Form Controls</Button>
       </div>
     </div>
 

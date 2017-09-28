@@ -23,10 +23,10 @@ const rootReducer = combineReducers({
   router
 });
 
-export default (history, preloadedState = {}) =>
+export default (history, /* preloadedState */) =>
   createStore(
     rootReducer,
-    preloadedState,
+    // preloadedState,
     applyMiddleware(
       routerMiddleware(history),
       thunkMiddleware,
