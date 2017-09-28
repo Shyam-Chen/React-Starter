@@ -7,9 +7,9 @@ import { createBrowserHistory } from 'history';
 import configureStore from './app/store';
 import Routes from './app/Routes';
 
-// const initialState = window.__INITIAL_STATE__;
+const initialState = window.__INITIAL_STATE__;
 const history = createBrowserHistory();
-const store = configureStore(history);
+const store = configureStore(history, initialState);
 
 let render;
 // if (process.env.NODE_ENV === 'production') {
