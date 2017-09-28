@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Typography, Button } from 'material-ui';
 
 import Navigation from '~/shared/Navigation';
-import VariantRaisedButton from '~/shared/VariantRaisedButton';
+import VariantButton from '~/shared/VariantButton';
 
 import * as actions from './actions';
 
@@ -34,8 +34,8 @@ const Counter = ({ counter, actions }) => (
 
     <div className="typography">
       <Typography type="body1" component="p">
-        <VariantRaisedButton variant="deepPurple" text="Increment (If Odd)" onClick={actions.incrementIfOdd} /> {' '}
-        <VariantRaisedButton variant="deepPurple" text="Increment (If Even)" onClick={actions.incrementIfEven} />
+        <VariantButton raised variant="deepPurple" text="Increment (If Odd)" onClick={actions.incrementIfOdd} /> {' '}
+        <VariantButton raised variant="deepPurple" text="Increment (If Even)" onClick={actions.incrementIfEven} />
       </Typography>
     </div>
 

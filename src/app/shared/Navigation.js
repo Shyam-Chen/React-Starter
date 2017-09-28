@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { routerActions } from 'react-router-redux';
 import { Typography, Divider } from 'material-ui';
 
-import VariantRaisedButton from '~/shared/VariantRaisedButton';
+import VariantButton from '~/shared/VariantButton';
 
 const Navigation = ({ router, actions }) => (
   <div>
@@ -16,27 +16,27 @@ const Navigation = ({ router, actions }) => (
 
     <div className="button-group">
       <div className="button">
-        <VariantRaisedButton variant="teal" text="Counter" href="/counter" onClick={() => actions.push('/counter')} />
+        <VariantButton raised variant="teal" text="Counter" href="/counter" onClick={() => actions.push('/counter')} />
       </div>
 
       <div className="button">
-        <VariantRaisedButton variant="teal" text="CRUD" href="/crud" onClick={() => actions.push('/crud')} />
+        <VariantButton raised variant="teal" text="CRUD" href="/crud" onClick={() => actions.push('/crud')} />
       </div>
 
       <div className="button">
-        <VariantRaisedButton variant="teal" text="REST" href="/rest" onClick={() => actions.push('/rest')} />
+        <VariantButton raised variant="teal" text="REST" href="/rest" onClick={() => actions.push('/rest')} />
       </div>
 
       <div className="button">
-        <VariantRaisedButton variant="teal" text="GraphQL" href="/graphql" onClick={() => actions.push('/graphql')} />
+        <VariantButton raised variant="teal" text="GraphQL" href="/graphql" onClick={() => actions.push('/graphql')} />
       </div>
 
       <div className="button">
-        <VariantRaisedButton variant="teal" text="Data Table" href="/data-table" onClick={() => actions.push('/data-table')} />
+        <VariantButton raised variant="teal" text="Data Table" href="/data-table" onClick={() => actions.push('/data-table')} />
       </div>
 
       <div className="button">
-        <VariantRaisedButton variant="teal" text="Form Controls" href="/form-controls" onClick={() => actions.push('/form-controls')} />
+        <VariantButton raised variant="teal" text="Form Controls" href="/form-controls" onClick={() => actions.push('/form-controls')} />
       </div>
     </div>
 

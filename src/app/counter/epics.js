@@ -4,7 +4,7 @@ import { delay, filter, map } from 'rxjs/operator';
 import { DECREMENT_ASYNC, INCREMENT_IF_EVEN } from './constants';
 import { increment, decrement } from './actions';
 
-const decrementAsyncEpic = (action$) =>
+const decrementAsyncEpic = action$ =>
   action$.ofType(DECREMENT_ASYNC)
     ::delay(1000)
     ::map(decrement);
