@@ -22,7 +22,7 @@ const styles = theme => {
 
   const { white, black } = theme.palette.common;
 
-  return ({
+  return {
     root: {},
 
     raisedRed: raisedTheme(white, red),
@@ -59,75 +59,40 @@ const styles = theme => {
     flatDeepOrange: flatTheme(deepOrange),
     flatBrown: flatTheme(brown),
     flatGrey: flatTheme(grey),
-    flatBlueGrey: flatTheme(blueGrey),
-  });
+    flatBlueGrey: flatTheme(blueGrey)
+  };
 };
 
-const VariantRaisedButton = ({ raised, classes, variant, className, text, ...other }) => {
-  if (raised) {
-    return (
-      <Button
-        raised={raised}
-        className={classNames(
-          classes.root,
-          {
-            [classes.raisedRed]: variant === 'red',
-            [classes.raisedPurple]: variant === 'purple',
-            [classes.raisedDeepPurple]: variant === 'deepPurple',
-            [classes.raisedBlue]: variant === 'blue',
-            [classes.raisedLightBlue]: variant === 'lightBlue',
-            [classes.raisedCyan]: variant === 'cyan',
-            [classes.raisedTeal]: variant === 'teal',
-            [classes.raisedGreen]: variant === 'green',
-            [classes.raisedLightGreen]: variant === 'lightGreen',
-            [classes.raisedLime]: variant === 'lime',
-            [classes.raisedYellow]: variant === 'yellow',
-            [classes.raisedAmber]: variant === 'amber',
-            [classes.raisedOrange]: variant === 'orange',
-            [classes.raisedDeepOrange]: variant === 'deepOrange',
-            [classes.raisedBrown]: variant === 'brown',
-            [classes.raisedGrey]: variant === 'grey',
-            [classes.raisedBlueGrey]: variant === 'blueGrey'
-          },
-          className,
-        )}
-        {...other}
-      >
-        {text}
-      </Button>
-    );
-  } else {
-    return (
-      <Button
-        className={classNames(
-          classes.root,
-          {
-            [classes.flatRed]: variant === 'red',
-            [classes.flatPurple]: variant === 'purple',
-            [classes.flatDeepPurple]: variant === 'deepPurple',
-            [classes.flatBlue]: variant === 'blue',
-            [classes.flatLightBlue]: variant === 'lightBlue',
-            [classes.flatCyan]: variant === 'cyan',
-            [classes.flatTeal]: variant === 'teal',
-            [classes.flatGreen]: variant === 'green',
-            [classes.flatLightGreen]: variant === 'lightGreen',
-            [classes.flatLime]: variant === 'lime',
-            [classes.flatYellow]: variant === 'yellow',
-            [classes.flatAmber]: variant === 'amber',
-            [classes.flatOrange]: variant === 'orange',
-            [classes.flatDeepOrange]: variant === 'deepOrange',
-            [classes.flatBrown]: variant === 'brown',
-            [classes.flatGrey]: variant === 'grey',
-            [classes.flatBlueGrey]: variant === 'blueGrey'
-          },
-          className,
-        )}
-        {...other}
-      >
-        {text}
-      </Button>
-    );
-  }
-};
+const VariantButton = ({ raised, classes, variant, className, text, ...other }) => (
+  <Button
+    raised={raised}
+    className={classNames(
+      classes.root,
+      {
+        [raised ? classes.raisedRed : classes.flatRed]: variant === 'red',
+        [raised ? classes.raisedPurple : classes.flatPurple]: variant === 'purple',
+        [raised ? classes.raisedDeepPurple : classes.flatDeepPurple]: variant === 'deepPurple',
+        [raised ? classes.raisedBlue : classes.flatBlue]: variant === 'blue',
+        [raised ? classes.raisedLightBlue : classes.flatLightBlue]: variant === 'lightBlue',
+        [raised ? classes.raisedCyan : classes.flatCyan]: variant === 'cyan',
+        [raised ? classes.raisedTeal : classes.flatTeal]: variant === 'teal',
+        [raised ? classes.raisedGreen : classes.flatGreen]: variant === 'green',
+        [raised ? classes.raisedLightGreen : classes.flatLightGreen]: variant === 'lightGreen',
+        [raised ? classes.raisedLime : classes.flatLime]: variant === 'lime',
+        [raised ? classes.raisedYellow : classes.flatYellow]: variant === 'yellow',
+        [raised ? classes.raisedAmber : classes.flatAmber]: variant === 'amber',
+        [raised ? classes.raisedOrange : classes.flatOrange]: variant === 'orange',
+        [raised ? classes.raisedDeepOrange : classes.flatDeepOrange]: variant === 'deepOrange',
+        [raised ? classes.raisedBrown : classes.flatBrown]: variant === 'brown',
+        [raised ? classes.raisedGrey : classes.flatGrey]: variant === 'grey',
+        [raised ? classes.raisedBlueGrey : classes.flatBlueGrey]: variant === 'blueGrey'
+      },
+      className
+    )}
+    {...other}
+  >
+    {text}
+  </Button>
+);
 
-export default withStyles(styles)(VariantRaisedButton);
+export default withStyles(styles)(VariantButton);
