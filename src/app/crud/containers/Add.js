@@ -1,7 +1,9 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { TextField, Button } from 'material-ui';
+import { TextField } from 'material-ui';
+
+import VariantButton from '~/shared/VariantButton';
 
 import * as actions from '../actions';
 
@@ -28,17 +30,17 @@ const Add = ({ crud: { addData }, actions }) => {
         }
       />
       {' '}
-      <Button
+      <VariantButton
         raised
+        variant="blue"
+        text="Add"
         onClick={async () => {
           if (primary && accent) {
             await actions.addItem(primary, accent);
             await actions.setData({ addData: { primary: '', accent: '' } });
           }
         }}
-      >
-        Add
-      </Button>
+      />
 
       <style jsx>{`
         .container {

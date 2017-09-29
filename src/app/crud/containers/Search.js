@@ -1,7 +1,9 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { TextField, Button } from 'material-ui';
+import { TextField } from 'material-ui';
+
+import VariantButton from '~/shared/VariantButton';
 
 import * as actions from '../actions';
 
@@ -28,15 +30,15 @@ const Search = ({ crud: { searchData }, actions }) => {
         }
       />
       {' '}
-      <Button
+      <VariantButton
         raised
+        variant="blue"
+        text="Search"
         onClick={async () => {
           await actions.searchItem(primary, accent);
           await actions.setData({ searchData: { primary: '', accent: '' } });
         }}
-      >
-        Search
-      </Button>
+      />
 
       <style jsx>{`
         .container {
