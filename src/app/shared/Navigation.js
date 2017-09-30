@@ -2,17 +2,22 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { routerActions } from 'react-router-redux';
-import { Typography, Divider } from 'material-ui';
+import { AppBar, Toolbar, IconButton, Icon, Typography, Divider } from 'material-ui';
 
 import VariantButton from '~/shared/VariantButton';
 
 const Navigation = ({ router, actions }) => (
   <div>
-    <div className="header">
-      <Typography type="headline" component="h3">
-        React by Example, location: <span className="location">{router.location.pathname}</span>
-      </Typography>
-    </div>
+    <AppBar>
+      <Toolbar>
+        <IconButton color="contrast" aria-label="Menu">
+          <Icon>toys</Icon>
+        </IconButton>
+        <Typography type="title" color="inherit">
+          React by Example, location: <span className="location">{router.location.pathname}</span>.
+        </Typography>
+      </Toolbar>
+    </AppBar>
 
     <div className="button-group">
       <div className="button">
@@ -45,16 +50,13 @@ const Navigation = ({ router, actions }) => (
     </div>
 
     <style jsx>{`
-      .header {
-        margin: 0 0 .5rem 0;
-      }
-
       .location {
-        color: #E91E63;
+        color: #F48FB1;
       }
 
       .button-group {
         display: inline-flex;
+        margin-top: 64px;
       }
 
       .button:not(:last-child) {
