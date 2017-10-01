@@ -41,7 +41,7 @@ $ npm start
   * Server-side Rendering
 * Test:
   * Flow Types
-  * Unit Tests
+  * Unit Tests (Integration with Webpack and Jest)
   * E2E Tests
 * Deploy:
   * Circle
