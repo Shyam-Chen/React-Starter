@@ -36,7 +36,7 @@ const Counter = ({ counter, actions, evenOrOdd }) => (
     <div className="typography">
       <Typography type="body1" component="p">
         <VariantButton raised variant="deepPurple" text="Increment (If Odd)" onClick={actions.incrementIfOdd} /> {' '}
-        <VariantButton raised variant="deepPurple" text="Increment (If Even)" onClick={actions.incrementIfEven} />
+        <VariantButton raised variant="deepPurple" text="Decrement (If Even)" onClick={actions.decrementIfEven} />
       </Typography>
     </div>
 
