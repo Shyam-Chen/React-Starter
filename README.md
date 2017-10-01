@@ -37,8 +37,6 @@ $ npm start
 * Build:
   * Hot Module Replacement
   * Dev/Prod Mode
-  * Prerender
-  * Server-side Rendering
 * Test:
   * Flow Types
   * Unit Tests (Integration with Webpack and Jest)
@@ -46,5 +44,5 @@ $ npm start
 * Deploy:
   * Circle
   * Docker
-  * Firebase
-  * Heroku
+  * Firebase (Prerenders)
+  * Heroku (Server-side Rendering)
