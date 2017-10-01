@@ -1,6 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { routerActions } from 'react-router-redux';
 import { AppBar, Toolbar, IconButton, Icon, Typography } from 'material-ui';
 
@@ -15,9 +16,11 @@ const Navigation = ({ router, actions }) => (
             ? <IconButton color="contrast" aria-label="Menu">
                 <Icon>toys</Icon>
               </IconButton>
-            : <IconButton color="contrast" href="/" onClick={() => actions.push('/')} aria-label="Menu">
-                <Icon>arrow_back</Icon>
-              </IconButton>
+            : <Link to="/" onClick={() => actions.push('/')} style={{ textDecoration: 'none' }}>
+                <IconButton color="contrast" >
+                  <Icon>arrow_back</Icon>
+                </IconButton>
+              </Link>
         }
         <Typography type="title" color="inherit">
           React by Example, location: <span className="location">{router.location.pathname}</span>.
@@ -27,30 +30,30 @@ const Navigation = ({ router, actions }) => (
 
     {
       router.location.pathname === '/'
-        ? <div className="button-group">
-            <div className="button">
-              <VariantButton raised variant="teal" text="Counter" href="/counter" onClick={() => actions.push('/counter')} />
-            </div>
+        ? <div className="buttons">
+            <Link to="/counter" onClick={() => actions.push('/counter')} style={{ textDecoration: 'none', marginRight: '.5rem' }}>
+              <VariantButton raised variant="teal" text="Counter" />
+            </Link>
 
-            <div className="button">
-              <VariantButton raised variant="teal" text="CRUD" href="/crud" onClick={() => actions.push('/crud')} />
-            </div>
+            <Link to="/crud" onClick={() => actions.push('/crud')} style={{ textDecoration: 'none', marginRight: '.5rem' }}>
+              <VariantButton raised variant="teal" text="CRUD" />
+            </Link>
 
-            <div className="button">
-              <VariantButton raised variant="teal" text="REST" href="/rest" onClick={() => actions.push('/rest')} />
-            </div>
+            <Link to="/rest" onClick={() => actions.push('/rest')} style={{ textDecoration: 'none', marginRight: '.5rem' }}>
+              <VariantButton raised variant="teal" text="REST" />
+            </Link>
 
-            <div className="button">
-              <VariantButton raised variant="teal" text="GraphQL" href="/graphql" onClick={() => actions.push('/graphql')} />
-            </div>
+            <Link to="/graphql" onClick={() => actions.push('/graphql')} style={{ textDecoration: 'none', marginRight: '.5rem' }}>
+              <VariantButton raised variant="teal" text="GraphQL" />
+            </Link>
 
-            <div className="button">
-              <VariantButton raised variant="teal" text="Data Table" href="/data-table" onClick={() => actions.push('/data-table')} />
-            </div>
+            <Link to="/data-table" onClick={() => actions.push('/data-table')} style={{ textDecoration: 'none', marginRight: '.5rem' }}>
+              <VariantButton raised variant="teal" text="Data Table" />
+            </Link>
 
-            <div className="button">
-              <VariantButton raised variant="teal" text="Form Controls" href="/form-controls" onClick={() => actions.push('/form-controls')} />
-            </div>
+            <Link to="/form-controls" onClick={() => actions.push('/form-controls')} style={{ textDecoration: 'none' }}>
+              <VariantButton raised variant="teal" text="Form Controls" />
+            </Link>
           </div>
         : void 0
     }
@@ -64,13 +67,9 @@ const Navigation = ({ router, actions }) => (
         color: #F48FB1;
       }
 
-      .button-group {
+      .buttons {
         display: inline-flex;
         margin-top: 64px;
-      }
-
-      .button:not(:last-child) {
-        margin-right: .5rem;
       }
     `}</style>
   </div>

@@ -18,7 +18,6 @@ $ npm start
 ## TODO List
 
 * Examples:
-  * Router (Learning)
   * Data Table (WIP)
   * Form Controls (WIP)
   * Authorization

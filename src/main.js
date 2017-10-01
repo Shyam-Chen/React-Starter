@@ -5,7 +5,7 @@ import { createBrowserHistory } from 'history';
 // import { AppContainer } from 'react-hot-loader';
 
 import configureStore from './app/store';
-import Routes from './app/Routes';
+import Router from './app/Router';
 
 const initialState = window.__INITIAL_STATE__;
 const history = createBrowserHistory();
@@ -21,7 +21,7 @@ let render;
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Routes />
+      <Router />
     </ConnectedRouter>
   </Provider>,
   document.querySelector('#app')

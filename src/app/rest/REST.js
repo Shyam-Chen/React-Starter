@@ -79,7 +79,7 @@ const REST = ({ rest, actions }) => {
           display: flex;
           justify-content: center;
           align-items: center;
-          z-index: 10;
+          z-index: 1111;
         }
       `}</style>
     </div>
