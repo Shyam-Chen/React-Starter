@@ -10,11 +10,13 @@ import { RadioGroup } from 'material-ui/Radio';
 import Navigation from '~/shared/Navigation';
 
 import * as actions from './actions';
+import { listOfVariety } from './selectors';
 
-const FormControls = ({ formControls, actions }) => {
+const FormControls = ({ formControls, actions, listOfVariety }) => {
   const {
-    age,
+    age, listOfage,
     countries, listOfCountries,
+    category, variety, animals,
     frameworks,
     gender,
     autoplay
@@ -38,9 +40,11 @@ const FormControls = ({ formControls, actions }) => {
                 input={<Input id="age" style={{ width: '7rem' }} />}
               >
                 <MenuItem value=""><em>None</em></MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                {
+                  listOfage.map(({ value, label }, index) => (
+                    <MenuItem key={index} value={value}>{label}</MenuItem>
+                  ))
+                }
               </Select>
             </FormControl>
           </div>
@@ -52,7 +56,7 @@ const FormControls = ({ formControls, actions }) => {
               <Select
                 multiple
                 value={countries}
-                onChange={event => actions.setData({ countries: event.target.value })}
+                onChange={event => actions.setData({ countries: event.target.value, category: '' })}
                 input={<Input id="countries" style={{ width: '15rem' }} />}
               >
                 {
@@ -62,6 +66,48 @@ const FormControls = ({ formControls, actions }) => {
                 }
               </Select>
             </FormControl>
+          </div>
+
+          <div className="row">
+            {/* nested select */}
+            <FormControl component="fieldset">
+              <FormLabel component="legend">Animals</FormLabel>
+            <FormGroup row>
+              <FormControl>
+                <InputLabel htmlFor="category">Category</InputLabel>
+                <Select
+                  value={category}
+                  onChange={event => actions.setData({ category: event.target.value })}
+                  input={<Input id="category" style={{ width: '7rem' }} />}
+                >
+                  <MenuItem value=""><em>None</em></MenuItem>
+                  {
+                    animals.map(({ category }, index) => (
+                      <MenuItem key={index} value={category}>{category}</MenuItem>
+                    ))
+                  }
+                </Select>
+              </FormControl>
+
+              <FormControl style={{ marginLeft: '1rem' }} disabled={!category}>
+                <InputLabel htmlFor="variety">Variety</InputLabel>
+                <Select
+                  value={variety}
+                  onChange={event => actions.setData({ variety: event.target.value })}
+                  input={<Input id="variety" style={{ width: '7rem' }} />}
+                >
+                  <MenuItem value=""><em>None</em></MenuItem>
+                  {
+                    listOfVariety.length
+                      ? listOfVariety[0]['variety'].map((item, index) => (
+                          <MenuItem key={index} value={item}>{item}</MenuItem>
+                        ))
+                      : void 0
+                  }
+                </Select>
+              </FormControl>
+            </FormGroup>
+          </FormControl>
           </div>
 
           <div className="row">
@@ -141,7 +187,7 @@ const FormControls = ({ formControls, actions }) => {
         }
 
         .row {
-          padding: .5rem;
+          padding: .66rem;
         }
       `}</style>
     </div>
@@ -149,6 +195,6 @@ const FormControls = ({ formControls, actions }) => {
 };
 
 export default connect(
-  ({ formControls }) => ({ formControls }),
+  ({ formControls }) => ({ formControls, listOfVariety: listOfVariety(formControls) }),
   dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(FormControls);
