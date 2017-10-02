@@ -17,7 +17,7 @@ const FormControls = ({ formControls, actions }) => {
     countries, listOfCountries,
     frameworks,
     gender,
-    iPhoneX
+    autoplay
   } = formControls;
 
   return (
@@ -34,7 +34,7 @@ const FormControls = ({ formControls, actions }) => {
               <InputLabel htmlFor="age">Age</InputLabel>
               <Select
                 value={age}
-                onChange={event => actions.onSetData({ age: event.target.value })}
+                onChange={event => actions.setData({ age: event.target.value })}
                 input={<Input id="age" style={{ width: '7rem' }} />}
               >
                 <MenuItem value=""><em>None</em></MenuItem>
@@ -52,7 +52,7 @@ const FormControls = ({ formControls, actions }) => {
               <Select
                 multiple
                 value={countries}
-                onChange={event => actions.onSetData({ countries: event.target.value })}
+                onChange={event => actions.setData({ countries: event.target.value })}
                 input={<Input id="countries" style={{ width: '15rem' }} />}
               >
                 {
@@ -73,7 +73,7 @@ const FormControls = ({ formControls, actions }) => {
                   control={
                     <Checkbox
                       checked={frameworks.angular}
-                      onChange={(event, checked) => actions.onSetData({ frameworks: { ...frameworks, angular: checked } })}
+                      onChange={(event, checked) => actions.setData({ frameworks: { ...frameworks, angular: checked } })}
                       value="angular"
                     />
                   }
@@ -83,7 +83,7 @@ const FormControls = ({ formControls, actions }) => {
                   control={
                     <Checkbox
                       checked={frameworks.react}
-                      onChange={(event, checked) => actions.onSetData({ frameworks: { ...frameworks, react: checked } })}
+                      onChange={(event, checked) => actions.setData({ frameworks: { ...frameworks, react: checked } })}
                       value="react"
                     />
                   }
@@ -93,7 +93,7 @@ const FormControls = ({ formControls, actions }) => {
                   control={
                     <Checkbox
                       checked={frameworks.vue}
-                      onChange={(event, checked) => actions.onSetData({ frameworks: { ...frameworks, vue: checked } })}
+                      onChange={(event, checked) => actions.setData({ frameworks: { ...frameworks, vue: checked } })}
                       value="vue"
                     />
                   }
@@ -112,7 +112,7 @@ const FormControls = ({ formControls, actions }) => {
                 aria-label="gender"
                 name="gender"
                 value={gender}
-                onChange={(event, value) => actions.onSetData({ gender: value })}
+                onChange={(event, value) => actions.setData({ gender: value })}
               >
                 <FormControlLabel value="male" control={<Radio />} label="Male" />
                 <FormControlLabel value="female" control={<Radio />} label="Female" />
@@ -124,11 +124,11 @@ const FormControls = ({ formControls, actions }) => {
           <div className="row">
             {/* switch */}
             <FormControl component="fieldset">
-              <FormLabel component="legend">iPhoneX</FormLabel>
+              <FormLabel component="legend">Autoplay</FormLabel>
               <Switch
-                checked={iPhoneX}
-                onChange={(event, checked) => actions.onSetData({ iPhoneX: checked })}
-                aria-label="iPhoneX"
+                checked={autoplay}
+                onChange={(event, checked) => actions.setData({ autoplay: checked })}
+                aria-label="Autoplay"
               />
             </FormControl>
           </div>

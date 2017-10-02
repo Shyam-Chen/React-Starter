@@ -56,7 +56,7 @@ export const INITIAL = {
   gender: '',
 
   // switch
-  iPhoneX: false,
+  autoplay: false,
 
   // slider
   kilometers: 0,

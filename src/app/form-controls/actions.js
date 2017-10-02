@@ -1,3 +1,3 @@
 import { SET_DATA } from './constants';
 
-export const onSetData = data => ({ type: SET_DATA, data });
+export const setData = data => ({ type: SET_DATA, data });
