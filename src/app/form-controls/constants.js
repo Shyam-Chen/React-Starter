@@ -1,9 +1,10 @@
 export const INITIAL = {
-  // simple select
+  // select
   age: '',
 
   // multiple select
-  countries: [
+  countries: [],
+  listOfCountries: [
     'Taiwan',
     'Japan',
     'Korea',
@@ -47,15 +48,15 @@ export const INITIAL = {
   // checkboxes
   frameworks: {
     angular: false,
-    react: true,
+    react: false,
     vue: false
   },
 
   // radio buttons
   gender: '',
 
-  // switches
-  iPhoneX: true,
+  // switch
+  iPhoneX: false,
 
   // slider
   kilometers: 0,
@@ -63,6 +64,8 @@ export const INITIAL = {
   // autocomplete
 
   // datepicker
+
+  // datepicker with range
 
   // timepicker
 
