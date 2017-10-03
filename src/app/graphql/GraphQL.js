@@ -7,7 +7,9 @@ import Navigation from '~/shared/Navigation';
 
 import * as actions from './actions';
 
-const GraphQL = ({ graphql: { dataset }, actions }) => {
+const GraphQL = ({ graphql: { dataset, searchData }, actions }) => {
+  const { text } = searchData;
+
   return (
     <div className="container">
       <Navigation />
@@ -15,14 +17,19 @@ const GraphQL = ({ graphql: { dataset }, actions }) => {
       <p>WIP</p>
 
       <TextField
-        // value={text}
-        // onChange={event => {}}
+        value={text}
+        onChange={event =>
+          actions.setData({
+            searchData: { ...searchData, text: event.target.value }
+          })
+        }
       />
       { ' ' }
       <Button
         raised
         onClick={() => {
-          actions.searchItem()
+          actions.searchItem(text);
+          actions.setData({ searchData: { text: '' } });
         }}
       >
         Search

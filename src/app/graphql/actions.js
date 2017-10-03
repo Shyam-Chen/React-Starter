@@ -5,17 +5,10 @@ import { CLIENT, SUCCESS, FAILURE, SET_DATA } from './constants';
 export const success = data => ({ type: SUCCESS, data });
 export const failure = error => ({ type: FAILURE, error });
 
-export const searchItem = () =>
+export const searchItem = text =>
   dispatch =>
     CLIENT.query({
-        query: gql`
-          {
-            list {
-              _id
-              text
-            }
-          }
-        `
+        query: text ? gql`{ list(text: "${text}") { _id text } }` : gql`{ list { _id text } }`
       })
       .then(response => dispatch(success(response.data)));
 
