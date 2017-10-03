@@ -77,7 +77,7 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
                 <InputLabel htmlFor="category">Category</InputLabel>
                 <Select
                   value={category}
-                  onChange={event => actions.setData({ category: event.target.value })}
+                  onChange={event => actions.setData({ category: event.target.value, variety: '' })}
                   input={<Input id="category" style={{ width: '7rem' }} />}
                 >
                   <MenuItem value=""><em>None</em></MenuItem>
@@ -170,12 +170,14 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
           <div className="row">
             {/* switch */}
             <FormControl component="fieldset">
-              <FormLabel component="legend">Autoplay</FormLabel>
-              <Switch
-                checked={autoplay}
-                onChange={(event, checked) => actions.setData({ autoplay: checked })}
-                aria-label="Autoplay"
-              />
+              <FormGroup row>
+                <FormLabel component="legend" style={{ alignSelf: 'center' }}>Autoplay</FormLabel>
+                <Switch
+                  checked={autoplay}
+                  onChange={(event, checked) => actions.setData({ autoplay: checked })}
+                  aria-label="Autoplay"
+                />
+              </FormGroup>
             </FormControl>
           </div>
         </form>
@@ -188,6 +190,8 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
 
         .row {
           padding: .66rem;
+          display: flex;
+          flex-direction: row;
         }
       `}</style>
     </div>
