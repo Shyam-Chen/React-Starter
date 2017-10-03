@@ -8,7 +8,11 @@ export const CLIENT = new ApolloClient({
 
 export const INITIAL = {
   dataset: [],
+  addData: { text: '' },
   searchData: { text: '' },
+  editData: { _id: 0, text: '', dialog: false },
+  deleteData: { _id: 0, dialog: false },
+  loading: false
 };
 
 export const SUCCESS = '[GraphQL] SUCCESS';

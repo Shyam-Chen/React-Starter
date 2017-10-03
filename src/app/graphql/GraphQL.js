@@ -1,60 +1,59 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { TextField, Paper, Button } from 'material-ui';
+import { Paper, Button } from 'material-ui';
 
 import Navigation from '~/shared/Navigation';
 
 import * as actions from './actions';
+import { Add, Search, Edit, Delete } from './containers';
 
-const GraphQL = ({ graphql: { dataset, searchData }, actions }) => {
-  const { text } = searchData;
+const GraphQL = ({ graphql, actions }) => {
+  const { dataset, deleteData, editData/* , loading */ } = graphql;
 
   return (
     <div className="container">
       <Navigation />
 
-      <p>WIP</p>
+      <p>[Bug]</p>
 
-      <TextField
-        value={text}
-        onChange={event =>
-          actions.setData({
-            searchData: { ...searchData, text: event.target.value }
-          })
-        }
-      />
-      { ' ' }
-      <Button
-        raised
-        onClick={() => {
-          actions.searchItem(text);
-          actions.setData({ searchData: { text: '' } });
-        }}
-      >
-        Search
-      </Button>
+      <Search />
+      <Add />
 
       <Paper>
         <ul>
           {
-            dataset.map(item => (
-              <li key={item._id}>
-                {item.text}
+            dataset.map(({ _id, text }) => (
+              <li key={_id}>
+                {text}
                 <Button
                   color="accent"
-                  onClick={() => {
-                    console.log('Delete');
-                  }}
+                  onClick={() =>
+                    actions.setData({
+                      deleteData: { ...deleteData, _id, dialog: true }
+                    })
+                  }
                 >
                   Delete
                 </Button>
-                <Button color="primary">Edit</Button>
+                <Button
+                  color="primary"
+                  onClick={() => {
+                    actions.setData({
+                      editData: { ...editData, _id, text, dialog: true }
+                    });
+                  }}
+                >
+                  Edit
+                </Button>
               </li>
             ))
           }
         </ul>
       </Paper>
+
+      <Edit />
+      <Delete />
 
       <style jsx>{`
         .container {
