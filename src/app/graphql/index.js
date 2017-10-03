@@ -1,3 +1,4 @@
 import GraphQL from './GraphQL';
+import graphqlReducer from './reducer';
 
-export { GraphQL };
+export { GraphQL, graphqlReducer };

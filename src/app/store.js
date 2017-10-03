@@ -7,7 +7,7 @@ import loggerMiddleware from 'redux-logger';
 import { counterEpic, counterReducer } from '~/counter';
 import { crudReducer } from '~/crud';
 import { restReducer } from '~/rest';
-import graphqlQueryMutation from '~/graphql/query-mutation/reducer';
+import { graphqlReducer } from '~/graphql';
 import { dataTableReducer } from '~/data-table';
 import { formControlsReducer } from '~/form-controls';
 
@@ -26,7 +26,7 @@ const rootReducer = combineReducers({
   counter: counterReducer,
   crud: crudReducer,
   rest: restReducer,
-  graphqlQueryMutation,
+  graphql: graphqlReducer,
   dataTable: dataTableReducer,
   formControls: formControlsReducer
 });

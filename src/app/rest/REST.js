@@ -60,7 +60,7 @@ const REST = ({ rest, actions }) => {
                       </TableRow>
                     ))
                   : <TableRow>
-                      <TableCell colspan="2">No data available</TableCell>
+                      <TableCell colSpan="2">No data available</TableCell>
                     </TableRow>
               }
             </TableBody>
