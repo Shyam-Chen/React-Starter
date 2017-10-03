@@ -1,8 +1,8 @@
 import React from 'react';
-import classNames from 'classnames';
 import { Button } from 'material-ui';
 import { withStyles } from 'material-ui/styles';
 import { red, purple, deepPurple, blue, lightBlue, cyan, teal, green, lightGreen, lime, yellow, amber, orange, deepOrange, brown, grey, blueGrey } from 'material-ui/colors';
+import classNames from 'classnames';
 
 const styles = theme => {
   const raisedTheme = (color, background) => ({

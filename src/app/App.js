@@ -1,7 +1,10 @@
 import React from 'react';
+// import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Navigation from '~/shared/Navigation';
+
+// import * as actions from './actions';
 
 const App = () => (
   <div>
@@ -17,4 +20,7 @@ const App = () => (
   </div>
 );
 
-export default connect()(App);
+export default connect(
+  // ({ app }) => ({ app }),
+  // dispatch => ({ actions: bindActionCreators(actions, dispatch) })
+)(App);

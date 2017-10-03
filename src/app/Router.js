@@ -2,14 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import { Counter } from '~/counter';
+import { CRUD } from '~/crud';
+import { REST } from '~/rest';
+import { GraphQL } from '~/graphql';
+import { DataTable } from '~/data-table';
+import { FormControls } from '~/form-controls';
+import { NotFound } from '~/not-found';
+
 import App from './App';
-import { Counter } from './counter';
-import { CRUD } from './crud';
-import { REST } from './rest';
-import { GraphQL } from './graphql';
-import { DataTable } from './data-table';
-import { FormControls } from './form-controls';
-import { NotFound } from './not-found';
 
 const Router = () => (
   <div>

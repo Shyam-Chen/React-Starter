@@ -30,7 +30,8 @@ module.exports = {
                     }
                   }
                 ],
-                'react'
+                'react',
+                'flow'
               ],
               plugins: [
                 'transform-runtime',

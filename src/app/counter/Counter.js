@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { Typography, Button } from 'material-ui';
 
 import Navigation from '~/shared/Navigation';
