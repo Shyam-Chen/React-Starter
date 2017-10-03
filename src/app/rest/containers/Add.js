@@ -1,7 +1,9 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { TextField, Button } from 'material-ui';
+import { TextField } from 'material-ui';
+
+import VariantButton from '~/shared/VariantButton';
 
 import * as actions from '../actions';
 
@@ -19,8 +21,10 @@ const Add = ({ rest: { addData }, actions }) => {
         }
       />
       { ' ' }
-      <Button
+      <VariantButton
         raised
+        variant="blue"
+        text="Add"
         onClick={async () => {
           if (text) {
             await actions.setData({ loading: true });
@@ -28,9 +32,7 @@ const Add = ({ rest: { addData }, actions }) => {
             await actions.setData({ addData: { text: '' } });
           }
         }}
-      >
-        Add
-      </Button>
+      />
 
       <style jsx>{`
         .container {

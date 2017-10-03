@@ -1,7 +1,8 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Button } from 'material-ui';
+import { Paper, Table, Button } from 'material-ui';
+import { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import { CircularProgress } from 'material-ui/Progress';
 
 import Navigation from '~/shared/Navigation';
@@ -19,43 +20,61 @@ const REST = ({ rest, actions }) => {
       <Search />
       <Add />
 
-      <ul>
-        {
-          dataset.map(({ _id, text }, index) => (
-            <li key={_id}>
-              ({ index + 1 }) { text } { ' ' }
-              <Button
-                color="accent"
-                onClick={() =>
-                  actions.setData({
-                    deleteData: { ...deleteData, _id, dialog: true }
-                  })
-                }
-              >
-                Delete
-              </Button>
-              <Button
-                color="primary"
-                onClick={() =>
-                  actions.setData({
-                    editData: { ...editData, _id, text, dialog: true }
-                  })
-                }
-              >
-                Edit
-              </Button>
-            </li>
-          ))
-        }
-      </ul>
-
-      <div className="progress" style={{ display: loading ? '' : 'none' }}>
-        <CircularProgress />
+      <div className="table">
+        <Paper elevation={2}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Text</TableCell>
+                <TableCell>Actions</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {
+                dataset.length
+                  ? dataset.map(({ _id, text }) => (
+                      <TableRow key={_id} hover>
+                        <TableCell>{text}</TableCell>
+                        <TableCell>
+                          <Button
+                            color="accent"
+                            onClick={() =>
+                              actions.setData({
+                                deleteData: { ...deleteData, _id, dialog: true }
+                              })
+                            }
+                          >
+                            Delete
+                          </Button>
+                          <Button
+                            color="primary"
+                            onClick={() => {
+                              actions.setData({
+                                editData: { ...editData, _id, text, dialog: true }
+                              });
+                            }}
+                          >
+                            Edit
+                          </Button>
+                        </TableCell>
+                      </TableRow>
+                    ))
+                  : <TableRow>
+                      <TableCell colspan="2">No data available</TableCell>
+                    </TableRow>
+              }
+            </TableBody>
+          </Table>
+        </Paper>
       </div>
 
       <aside>
         <Delete />
         <Edit />
+
+        <div className="progress" style={{ display: loading ? '' : 'none' }}>
+          <CircularProgress />
+        </div>
       </aside>
 
       <style jsx>{`
