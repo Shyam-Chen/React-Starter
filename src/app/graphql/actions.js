@@ -9,7 +9,7 @@ export const addItem = text =>
   dispatch =>
     CLIENT.mutate({
       mutation: gql`
-        mutation {
+        mutation List {
           addText(text: "${text}") { _id text }
         }
       `
@@ -22,17 +22,17 @@ export const searchItem = text =>
     CLIENT.query({
         query: text
           ? gql`
-              query {
+              query List {
                 list(text: "${text}") { _id text }
               }
             `
           : gql`
-              query {
+              query List {
                 list { _id text }
               }
             `
       })
-      .then(response => dispatch(success(response.data)))
+      .then(response => dispatch(success(response.data['list'])))
       .then(() => dispatch(setData({ loading: false })))
       .catch(error => dispatch(failure(error)));
 
@@ -40,7 +40,7 @@ export const editItem = (id, text) =>
   dispatch =>
     CLIENT.mutate({
       mutation: gql`
-        mutation {
+        mutation List {
           updateText(_id: "${id}", text: "${text}") { _id text }
         }
       `
@@ -52,7 +52,7 @@ export const deleteItem = id =>
   dispatch =>
     CLIENT.mutate({
       mutation: gql`
-        mutation {
+        mutation List {
           deleteText(_id: "${id}") { _id text }
         }
       `

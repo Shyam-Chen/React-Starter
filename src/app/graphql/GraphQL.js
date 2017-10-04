@@ -16,7 +16,7 @@ const GraphQL = ({ graphql, actions }) => {
     <div className="container">
       <Navigation />
 
-      <p>[Bug]</p>
+      <p>[Bug] Can not search again</p>
 
       <Search />
       <Add />
