@@ -11,16 +11,16 @@ import { graphqlReducer } from '~/graphql';
 import { dataTableReducer } from '~/data-table';
 import { formControlsReducer } from '~/form-controls';
 
-// import appEpic from './epics';
-// import appReducer from './reducer';
+import appEpic from './epics';
+import appReducer from './reducer';
 
 const rootEpic = combineEpics(
-  // appEpic,
+  appEpic,
   counterEpic
 );
 
 const rootReducer = combineReducers({
-  // app: appReducer,
+  app: appReducer,
   router: routerReducer,
 
   counter: counterReducer,
