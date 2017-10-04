@@ -18,14 +18,10 @@ $ npm start
 ## TODO List
 
 * Examples:
-  * Data Table (WIP)
-  * Form Controls (WIP)
-  * Authorization
-  * GraphQL
-    * Query & Mutation (Thinking)
-    * Pagination
-    * Authorization
-  * Chat
+  * Data Table
+  * Form Controls
+  * Authorization (JWT, Google, Facebook, & Twitter)
+  * Chat (Socket.IO)
   * Data Chart
     * SVG (D3 + Immutable)
     * Canvas (D3 + Immutable)
@@ -45,3 +41,9 @@ $ npm start
   * Docker
   * Firebase (Prerenders)
   * Heroku (Server-side Rendering)
+
+## Known Issues
+
+* [Bug] The previous page needs to be clicked twice to execute
+* [Bug] GraphQL Query can't search again
+* [Bug] Nested routes not working
