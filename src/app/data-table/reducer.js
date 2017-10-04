@@ -1,5 +1,9 @@
 import { handleActions } from 'redux-actions';
 
-import { INITIAL } from './constants';
+import { INITIAL, SET_DATA } from './constants';
 
-export default handleActions({}, INITIAL);
+export default handleActions({
+  [SET_DATA](state, { data }) {
+    return { ...state, ...data };
+  }
+}, INITIAL);
