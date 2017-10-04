@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Paper, Button } from 'material-ui';
+import { CircularProgress } from 'material-ui/Progress';
 
 import Navigation from '~/shared/Navigation';
 
@@ -9,7 +10,7 @@ import * as actions from './actions';
 import { Add, Search, Edit, Delete } from './containers';
 
 const GraphQL = ({ graphql, actions }) => {
-  const { dataset, deleteData, editData/* , loading */ } = graphql;
+  const { dataset, deleteData, editData, loading } = graphql;
 
   return (
     <div className="container">
@@ -55,6 +56,10 @@ const GraphQL = ({ graphql, actions }) => {
       <Edit />
       <Delete />
 
+      <div className="progress" style={{ display: loading ? '' : 'none' }}>
+        <CircularProgress color="accent" />
+      </div>
+
       <style jsx>{`
         .container {
           padding: 1rem;
@@ -66,7 +71,17 @@ const GraphQL = ({ graphql, actions }) => {
         }
 
         .progress {
-          margin: .5rem 0;
+          position: absolute;
+          position: fixed;
+          top: 0;
+          left: 0;
+          background: rgba(255, 255, 255, .7);
+          height: 100vh;
+          width: 100vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1111;
         }
       `}</style>
     </div>
