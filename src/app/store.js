@@ -8,8 +8,8 @@ import { counterEpic, counterReducer } from '~/counter';
 import { crudReducer } from '~/crud';
 import { restReducer } from '~/rest';
 import { graphqlReducer } from '~/graphql';
-import { dataTableReducer } from '~/data-table';
 import { formControlsReducer } from '~/form-controls';
+import { dataTableReducer } from '~/data-table';
 
 import appEpic from './epics';
 import appReducer from './reducer';
@@ -27,8 +27,8 @@ const rootReducer = combineReducers({
   crud: crudReducer,
   rest: restReducer,
   graphql: graphqlReducer,
-  dataTable: dataTableReducer,
-  formControls: formControlsReducer
+  formControls: formControlsReducer,
+  dataTable: dataTableReducer
 });
 
 export default (history, preloadedState = {}) =>

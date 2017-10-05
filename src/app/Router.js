@@ -6,8 +6,8 @@ import { Counter } from '~/counter';
 import { CRUD } from '~/crud';
 import { REST } from '~/rest';
 import { GraphQL } from '~/graphql';
-import { DataTable } from '~/data-table';
 import { FormControls } from '~/form-controls';
+import { DataTable } from '~/data-table';
 import { NotFound } from '~/not-found';
 
 import App from './App';
@@ -21,8 +21,8 @@ const Router = () => (
         <Route path="/crud" component={CRUD} />
         <Route path="/rest" component={REST} />
         <Route path="/graphql" component={GraphQL} />
-        <Route path="/data-table" component={DataTable} />
         <Route path="/form-controls" component={FormControls} />
+        <Route path="/data-table" component={DataTable} />
         <Route path="*" component={NotFound} />
       </Switch>
     </BrowserRouter>

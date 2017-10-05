@@ -18,15 +18,14 @@ $ npm start
 ## TODO List
 
 * Examples:
-  * Data Table
   * Form Controls
+  * Data Table
   * Authorization (JWT, Google, Facebook, & Twitter)
-  * Chat (Socket.IO)
-  * Data Chart
-    * SVG (D3 + Immutable)
-    * Canvas (D3 + Immutable)
-    * WebGL (Three + Immutable)
   * Internationalization
+  * Data Chart
+    * SVG & Canvas (D3 + Immutable)
+    * WebGL (Three + Immutable)
+  * WebSockets (Socket.IO)
   * Google Analytics
   * Service Workers
 * Build:
@@ -39,7 +38,7 @@ $ npm start
 * Deploy:
   * Circle
   * Docker
-  * Firebase (Prerenders)
+  * Firebase (Prerender)
   * Heroku (Server-side Rendering)
 
 ## Known Issues

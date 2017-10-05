@@ -54,12 +54,12 @@ const Navigation = ({ router, actions }) => {
                 <VariantButton raised variant="teal" text="GraphQL" />
               </Link>
               {'　'}
-              <Link to="/data-table" onClick={() => actions.push('/data-table')} style={inlineStyles.link}>
-                <VariantButton raised variant="teal" text="Data Table" />
-              </Link>
-              {'　'}
               <Link to="/form-controls" onClick={() => actions.push('/form-controls')} style={inlineStyles.link}>
                 <VariantButton raised variant="teal" text="Form Controls" />
+              </Link>
+              {'　'}
+              <Link to="/data-table" onClick={() => actions.push('/data-table')} style={inlineStyles.link}>
+                <VariantButton raised variant="teal" text="Data Table" />
               </Link>
             </div>
           : void 0
