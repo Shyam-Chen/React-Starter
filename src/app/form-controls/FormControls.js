@@ -26,8 +26,6 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
     <div className="container">
       <Navigation />
 
-      <p>TODO: RESTful API</p>
-
       <Paper>
         <form className="container">
           <div className="row">
