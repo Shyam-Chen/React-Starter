@@ -11,7 +11,12 @@ import * as actions from './actions';
 import { Add, Search, Edit, Delete } from './containers';
 
 const REST = ({ rest, actions }) => {
-  const { dataset, deleteData, editData, loading } = rest;
+  const { dataset, deleteData, editData, loading, /* initial */ } = rest;
+
+  // if (!initial) {
+  //   actions.setData({ loading: true, initial: true });
+  //   actions.searchItem();
+  // }
 
   return (
     <div className="container">
