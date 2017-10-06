@@ -16,6 +16,31 @@ const Authorization = () => {
 
       <div>TODO: Authorization Page</div>
 
+      <div>
+        <TextField
+          label="Email"
+          margin="normal"
+          // value={value}
+          // onChange={event => actions.setData({ })}
+        />
+
+        <TextField
+          label="Password"
+          margin="normal"
+          // value={value}
+          // onChange={event => actions.setData({ })}
+        />
+
+        <VariantButton
+          raised
+          variant="blue"
+          text="Sign up"
+          // onClick={async () => {
+          //   await actions.setData({ });
+          // }}
+        />
+      </div>
+
       <TextField
         label="Email"
         margin="normal"
@@ -39,29 +64,41 @@ const Authorization = () => {
         // }}
       />
 
-      <VariantButton
-        raised
-        text="Sign in with Google"
-        // onClick={async () => {
-        //   await actions.setData({ });
-        // }}
-      />
+      <div>
+        <VariantButton
+          raised
+          variant="red"
+          icon="google"
+          text="Sign in with Google"
+          // onClick={async () => {
+          //   await actions.setData({ });
+          // }}
+        />
+      </div>
 
-      <VariantButton
-        raised
-        text="Sign in with Facebook"
-        // onClick={async () => {
-        //   await actions.setData({ });
-        // }}
-      />
+      <div>
+        <VariantButton
+          raised
+          variant="indigo"
+          icon="facebook-official"
+          text="Sign in with Facebook"
+          // onClick={async () => {
+          //   await actions.setData({ });
+          // }}
+        />
+      </div>
 
-      <VariantButton
-        raised
-        text="Sign in with Twitter"
-        // onClick={async () => {
-        //   await actions.setData({ });
-        // }}
-      />
+      <div>
+        <VariantButton
+          raised
+          variant="blue"
+          icon="twitter"
+          text="Sign in with Twitter"
+          // onClick={async () => {
+          //   await actions.setData({ });
+          // }}
+        />
+      </div>
     </div>
   );
 };

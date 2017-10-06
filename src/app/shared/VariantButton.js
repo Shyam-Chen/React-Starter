@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'material-ui';
 import { withStyles } from 'material-ui/styles';
-import { red, purple, deepPurple, blue, lightBlue, cyan, teal, green, lightGreen, lime, yellow, amber, orange, deepOrange, brown, grey, blueGrey } from 'material-ui/colors';
+import { red, pink, purple, deepPurple, indigo, blue, lightBlue, cyan, teal, green, lightGreen, lime, yellow, amber, orange, deepOrange, brown, grey, blueGrey } from 'material-ui/colors';
 import classNames from 'classnames';
 
 const styles = theme => {
@@ -26,8 +26,10 @@ const styles = theme => {
     root: {},
 
     raisedRed: raisedTheme(white, red),
+    raisedPink: raisedTheme(white, pink),
     raisedPurple: raisedTheme(white, purple),
     raisedDeepPurple: raisedTheme(white, deepPurple),
+    raisedIndigo: raisedTheme(white, indigo),
     raisedBlue: raisedTheme(white, blue),
     raisedLightBlue: raisedTheme(black, lightBlue),
     raisedCyan: raisedTheme(black, cyan),
@@ -44,8 +46,10 @@ const styles = theme => {
     raisedBlueGrey: raisedTheme(white, blueGrey),
 
     flatRed: flatTheme(red),
+    flatPink: flatTheme(pink),
     flatPurple: flatTheme(purple),
     flatDeepPurple: flatTheme(deepPurple),
+    flatIndigo: flatTheme(indigo),
     flatBlue: flatTheme(blue),
     flatLightBlue: flatTheme(lightBlue),
     flatCyan: flatTheme(cyan),
@@ -63,15 +67,17 @@ const styles = theme => {
   };
 };
 
-const VariantButton = ({ raised, classes, variant, className, text, ...other }) => (
+const VariantButton = ({ raised, classes, variant, className, icon, text, ...other }) => (
   <Button
     raised={raised}
     className={classNames(
       classes.root,
       {
         [raised ? classes.raisedRed : classes.flatRed]: variant === 'red',
+        [raised ? classes.raisedPink : classes.flatPink]: variant === 'pink',
         [raised ? classes.raisedPurple : classes.flatPurple]: variant === 'purple',
         [raised ? classes.raisedDeepPurple : classes.flatDeepPurple]: variant === 'deepPurple',
+        [raised ? classes.raisedIndigo : classes.flatIndigo]: variant === 'indigo',
         [raised ? classes.raisedBlue : classes.flatBlue]: variant === 'blue',
         [raised ? classes.raisedLightBlue : classes.flatLightBlue]: variant === 'lightBlue',
         [raised ? classes.raisedCyan : classes.flatCyan]: variant === 'cyan',
@@ -91,6 +97,11 @@ const VariantButton = ({ raised, classes, variant, className, text, ...other }) 
     )}
     {...other}
   >
+    {
+      icon
+        ? <i className={classNames('fa', `fa-${icon}`)} aria-hidden="true" style={{ marginRight: '1rem' }}></i>
+        : void 0
+    }
     {text}
   </Button>
 );

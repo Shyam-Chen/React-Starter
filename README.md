@@ -21,7 +21,7 @@ $ npm start
   * Form Controls
   * Data Table
   * Authorization
-  * Internationalization
+  * Internationalization (React Intl)
   * Data Chart
     * SVG & Canvas (D3 + Immutable)
     * WebGL (Three + Immutable)
