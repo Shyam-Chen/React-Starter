@@ -20,7 +20,7 @@ $ npm start
 * Examples:
   * Form Controls
   * Data Table
-  * Authorization (JWT, Google, Facebook, & Twitter)
+  * Authorization
   * Internationalization
   * Data Chart
     * SVG & Canvas (D3 + Immutable)
