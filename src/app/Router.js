@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { Counter } from '~/counter';
@@ -8,6 +7,7 @@ import { REST } from '~/rest';
 import { GraphQL } from '~/graphql';
 import { FormControls } from '~/form-controls';
 import { DataTable } from '~/data-table';
+import { Authorization } from '~/authorization';
 import { NotFound } from '~/not-found';
 
 import App from './App';
@@ -23,10 +23,11 @@ const Router = () => (
         <Route path="/graphql" component={GraphQL} />
         <Route path="/form-controls" component={FormControls} />
         <Route path="/data-table" component={DataTable} />
+        <Route path="/authorization" component={Authorization} />
         <Route path="*" component={NotFound} />
       </Switch>
     </BrowserRouter>
   </div>
 );
 
-export default connect()(Router);
+export default Router;

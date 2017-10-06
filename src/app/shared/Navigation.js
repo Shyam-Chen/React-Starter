@@ -61,6 +61,12 @@ const Navigation = ({ router, actions }) => {
               <Link to="/data-table" onClick={() => actions.push('/data-table')} style={inlineStyles.link}>
                 <VariantButton raised variant="teal" text="Data Table" />
               </Link>
+              {'　'}
+              <Link to="/authorization" onClick={() => actions.push('/authorization')} style={inlineStyles.link}>
+                <VariantButton raised variant="teal" text="Authorization" />
+              </Link>
+
+              <div>BUG: actions.goBack() can not return directly to the previous page</div>
             </div>
           : void 0
       }

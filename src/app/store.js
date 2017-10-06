@@ -10,6 +10,7 @@ import { restReducer } from '~/rest';
 import { graphqlReducer } from '~/graphql';
 import { formControlsReducer } from '~/form-controls';
 import { dataTableReducer } from '~/data-table';
+import { authorizationReducer } from '~/authorization';
 
 import appEpic from './epics';
 import appReducer from './reducer';
@@ -28,7 +29,8 @@ const rootReducer = combineReducers({
   rest: restReducer,
   graphql: graphqlReducer,
   formControls: formControlsReducer,
-  dataTable: dataTableReducer
+  dataTable: dataTableReducer,
+  authorization: authorizationReducer
 });
 
 export default (history, preloadedState = {}) =>

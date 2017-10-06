@@ -14,6 +14,8 @@ const DataTable = ({ dataTable: { foodNutrients, rowsPerPage, page } }) => {
     <div className="container">
       <Navigation />
 
+      <div>Work in Progress</div>
+
       <Paper>
         <Toolbar>
           <div style={{ flex: '0 0 auto' }}>

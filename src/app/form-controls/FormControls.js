@@ -26,6 +26,8 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
     <div className="container">
       <Navigation />
 
+      <div>Work in Progress</div>
+
       <Paper>
         <form className="container">
           <div className="row">

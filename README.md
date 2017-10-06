@@ -40,9 +40,3 @@ $ npm start
   * Docker
   * Firebase (Prerender)
   * Heroku (Server-side Rendering)
-
-## Known Issues
-
-* [Bug] The previous page needs to be clicked twice to execute
-* [Bug] GraphQL Query can't search again
-* [Bug] Nested routes not working
