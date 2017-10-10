@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { TextField } from 'material-ui';
 
 import Navigation from '~/shared/Navigation';
-import VariantButton from '~/shared/VariantButton';
+import Button from '~/shared/Button';
 
 import * as actions from './actions';
 
@@ -31,14 +31,15 @@ const Authorization = () => {
           // onChange={event => actions.setData({ })}
         />
 
-        <VariantButton
+        <Button
           raised
-          variant="blue"
-          text="Sign up"
+          color="blue"
           // onClick={async () => {
           //   await actions.setData({ });
           // }}
-        />
+        >
+          Sign up
+        </Button>
       </div>
 
       <TextField
@@ -55,49 +56,53 @@ const Authorization = () => {
         // onChange={event => actions.setData({ })}
       />
 
-      <VariantButton
+      <Button
         raised
-        variant="blue"
-        text="Log in"
+        color="blue"
         // onClick={async () => {
         //   await actions.setData({ });
         // }}
-      />
+      >
+        Log in
+      </Button>
 
       <div>
-        <VariantButton
+        <Button
           raised
-          variant="red"
-          icon="google"
-          text="Sign in with Google"
+          color="red"
           // onClick={async () => {
           //   await actions.setData({ });
           // }}
-        />
+        >
+          <i className="fa fa-google" aria-hidden="true" style={{ marginRight: '1rem' }}></i>
+          Sign in with Google
+        </Button>
       </div>
 
       <div>
-        <VariantButton
+        <Button
           raised
-          variant="indigo"
-          icon="facebook-official"
-          text="Sign in with Facebook"
+          color="indigo"
           // onClick={async () => {
           //   await actions.setData({ });
           // }}
-        />
+        >
+          <i className="fa fa-facebook-official" aria-hidden="true" style={{ marginRight: '1rem' }}></i>
+          Sign in with Facebook
+        </Button>
       </div>
 
       <div>
-        <VariantButton
+        <Button
           raised
-          variant="blue"
-          icon="twitter"
-          text="Sign in with Twitter"
+          color="blue"
           // onClick={async () => {
           //   await actions.setData({ });
           // }}
-        />
+        >
+          <i className="fa fa-twitter" aria-hidden="true" style={{ marginRight: '1rem' }}></i>
+          Sign in with Twitter
+        </Button>
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Typography, Button } from 'material-ui';
+import { Typography } from 'material-ui';
 
 import Navigation from '~/shared/Navigation';
-import VariantButton from '~/shared/VariantButton';
+import Button from '~/shared/Button';
 
 import * as actions from './actions';
 import { evenOrOdd } from './selectors';
@@ -21,22 +21,22 @@ const Counter = ({ counter, actions, evenOrOdd }) => (
 
     <div className="typography">
       <Typography type="body1" component="p">
-        <Button raised color="primary" onClick={actions.increment}>Increment</Button> {' '}
-        <Button raised color="primary" onClick={actions.decrement}>Decrement</Button>
+        <Button raised color="indigo" onClick={actions.increment}>Increment</Button> {' '}
+        <Button raised color="indigo" onClick={actions.decrement}>Decrement</Button>
       </Typography>
     </div>
 
     <div className="typography">
       <Typography type="body1" component="p">
-        <Button raised color="accent" onClick={actions.incrementAsync}>Increment (Async)</Button> {' '}
-        <Button raised color="accent" onClick={actions.decrementAsync}>Decrement (Async)</Button>
+        <Button raised color="pink" onClick={actions.incrementAsync}>Increment (Async)</Button> {' '}
+        <Button raised color="pink" onClick={actions.decrementAsync}>Decrement (Async)</Button>
       </Typography>
     </div>
 
     <div className="typography">
       <Typography type="body1" component="p">
-        <VariantButton raised variant="deepPurple" text="Increment (If Odd)" onClick={actions.incrementIfOdd} /> {' '}
-        <VariantButton raised variant="deepPurple" text="Decrement (If Even)" onClick={actions.decrementIfEven} />
+        <Button raised color="deepPurple" onClick={actions.incrementIfOdd}>Increment (If Odd)</Button> {' '}
+        <Button raised color="deepPurple" onClick={actions.decrementIfEven}>Decrement (If Even)</Button>
       </Typography>
     </div>
 

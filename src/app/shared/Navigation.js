@@ -1,36 +1,30 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { routerActions } from 'react-router-redux';
 import { AppBar, Toolbar, IconButton, Icon, Typography } from 'material-ui';
 
-import VariantButton from '~/shared/VariantButton';
+import Link from '~/shared/Link';
+import Button from '~/shared/Button';
 
-const Navigation = (/* { router, actions } */) => {
-  const inlineStyles = {
-    link: { textDecoration: 'none' }
-  };
+const Navigation = () => {
 
   return (
     <div>
       <AppBar>
         <Toolbar>
           {
-            // router.location.pathname === '/'
             location.pathname === '/'
               ? <IconButton color="contrast" aria-label="Menu">
                   <Icon>toys</Icon>
                 </IconButton>
-              : // <Link to="" onClick={() => actions.goBack()} style={inlineStyles.link}>
-                <Link to="" onClick={() => history.back()} style={inlineStyles.link}>
-                  <IconButton color="contrast" >
+              : <Link to="" onClick={() => history.back()}>
+                  <IconButton color="contrast">
                     <Icon>arrow_back</Icon>
                   </IconButton>
                 </Link>
           }
           <Typography type="title" color="inherit">
-            {/* React by Example, location: <span className="location">{router.location.pathname}</span>. */}
             React by Example, location: <span className="location">{location.pathname}</span>.
           </Typography>
         </Toolbar>
@@ -39,42 +33,34 @@ const Navigation = (/* { router, actions } */) => {
       <div className="filling"></div>
 
       {
-        // router.location.pathname === '/'
         location.pathname === '/'
           ? <div className="buttons">
-              {/* <Link to="/counter" onClick={() => actions.push('/counter')} style={inlineStyles.link}> */}
-              <Link to="/counter" style={inlineStyles.link}>
-                <VariantButton raised variant="teal" text="Counter" />
+              <Link to="/counter">
+                <Button raised color="teal">Counter</Button>
               </Link>
               {'　'}
-              {/* <Link to="/crud" onClick={() => actions.push('/crud')} style={inlineStyles.link}> */}
-              <Link to="/crud" style={inlineStyles.link}>
-                <VariantButton raised variant="teal" text="CRUD" />
+              <Link to="/crud">
+                <Button raised color="teal">CRUD</Button>
               </Link>
               {'　'}
-              {/* <Link to="/rest" onClick={() => actions.push('/rest')} style={inlineStyles.link}> */}
-              <Link to="/rest" style={inlineStyles.link}>
-                <VariantButton raised variant="teal" text="REST" />
+              <Link to="/rest">
+                <Button raised color="teal">REST</Button>
               </Link>
               {'　'}
-              {/* <Link to="/graphql" onClick={() => actions.push('/graphql')} style={inlineStyles.link}> */}
-              <Link to="/graphql" style={inlineStyles.link}>
-                <VariantButton raised variant="teal" text="GraphQL" />
+              <Link to="/graphql">
+                <Button raised color="teal">GraphQL</Button>
               </Link>
               {'　'}
-              {/* <Link to="/form-controls" onClick={() => actions.push('/form-controls')} style={inlineStyles.link}> */}
-              <Link to="/form-controls" style={inlineStyles.link}>
-                <VariantButton raised variant="teal" text="Form Controls" />
+              <Link to="/form-controls">
+                <Button raised color="teal">Form Controls</Button>
               </Link>
               {'　'}
-              {/* <Link to="/data-table" onClick={() => actions.push('/data-table')} style={inlineStyles.link}> */}
-              <Link to="/data-table" style={inlineStyles.link}>
-                <VariantButton raised variant="teal" text="Data Table" />
+              <Link to="/data-table">
+                <Button raised color="teal">Data Table</Button>
               </Link>
               {'　'}
-              {/* <Link to="/authorization" onClick={() => actions.push('/authorization')} style={inlineStyles.link}> */}
-              <Link to="/authorization" style={inlineStyles.link}>
-                <VariantButton raised variant="teal" text="Authorization" />
+              <Link to="/authorization">
+                <Button raised color="teal">Authorization</Button>
               </Link>
             </div>
           : void 0

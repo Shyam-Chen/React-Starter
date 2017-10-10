@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { TextField } from 'material-ui';
 
-import VariantButton from '~/shared/VariantButton';
+import Button from '~/shared/Button';
 
 import * as actions from '../actions';
 
@@ -21,10 +21,9 @@ const Add = ({ graphql: { addData }, actions }) => {
         }
       />
       { ' ' }
-      <VariantButton
+      <Button
         raised
-        variant="blue"
-        text="Add"
+        color="blue"
         onClick={async () => {
           if (text) {
             await actions.setData({ loading: true });
@@ -32,7 +31,9 @@ const Add = ({ graphql: { addData }, actions }) => {
             await actions.setData({ addData: { text: '' } });
           }
         }}
-      />
+      >
+        Add
+      </Button>
 
       <style jsx>{`
         .container {

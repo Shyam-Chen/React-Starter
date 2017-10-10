@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { TextField } from 'material-ui';
 
-import VariantButton from '~/shared/VariantButton';
+import Button from '~/shared/Button';
 
 import * as actions from '../actions';
 
@@ -21,16 +21,17 @@ const Search = ({ graphql: { searchData }, actions }) => {
         }
       />
       { ' ' }
-      <VariantButton
+      <Button
         raised
-        variant="blue"
-        text="Search"
+        color="blue"
         onClick={async () => {
           await actions.setData({ loading: true });
           await actions.searchItem(text);
           await actions.setData({ searchData: { text: '' } });
         }}
-      />
+      >
+        Search
+      </Button>
 
       <style jsx>{`
         .container {
