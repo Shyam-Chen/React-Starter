@@ -1,11 +1,12 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Paper, Table, Button } from 'material-ui';
+import { Paper, Table } from 'material-ui';
 import { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import { CircularProgress } from 'material-ui/Progress';
 
 import Navigation from '~/shared/Navigation';
+import Button from '~/shared/Button';
 
 import * as actions from './actions';
 import { Add, Search, Edit, Delete } from './containers';
@@ -42,7 +43,7 @@ const REST = ({ rest, actions }) => {
                         <TableCell>{text}</TableCell>
                         <TableCell>
                           <Button
-                            color="accent"
+                            color="red"
                             onClick={() =>
                               actions.setData({
                                 deleteData: { ...deleteData, _id, dialog: true }
@@ -52,7 +53,7 @@ const REST = ({ rest, actions }) => {
                             Delete
                           </Button>
                           <Button
-                            color="primary"
+                            color="indigo"
                             onClick={() => {
                               actions.setData({
                                 editData: { ...editData, _id, text, dialog: true }

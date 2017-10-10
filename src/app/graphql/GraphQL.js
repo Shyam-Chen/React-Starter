@@ -1,10 +1,11 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Paper, Button } from 'material-ui';
+import { Paper } from 'material-ui';
 import { CircularProgress } from 'material-ui/Progress';
 
 import Navigation from '~/shared/Navigation';
+import Button from '~/shared/Button';
 
 import * as actions from './actions';
 import { Add, Search, Edit, Delete } from './containers';
@@ -28,7 +29,7 @@ const GraphQL = ({ graphql, actions }) => {
               <li key={_id}>
                 {text}
                 <Button
-                  color="accent"
+                  color="red"
                   onClick={() =>
                     actions.setData({
                       deleteData: { ...deleteData, _id, dialog: true }
@@ -38,7 +39,7 @@ const GraphQL = ({ graphql, actions }) => {
                   Delete
                 </Button>
                 <Button
-                  color="primary"
+                  color="indigo"
                   onClick={() => {
                     actions.setData({
                       editData: { ...editData, _id, text, dialog: true }

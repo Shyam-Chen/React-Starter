@@ -1,8 +1,10 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Dialog, TextField, Button } from 'material-ui';
+import { Dialog, TextField } from 'material-ui';
 import { DialogTitle, DialogContent, DialogContentText, DialogActions } from 'material-ui/Dialog';
+
+import Button from '~/shared/Button';
 
 import * as actions from '../actions';
 
@@ -30,14 +32,17 @@ const Edit = ({ rest: { editData }, actions }) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={onDialogClose}>Cancel</Button>
-        <Button onClick={async () => {
-          if (text) {
-            await onDialogClose();
-            await actions.setData({ loading: true });
-            await actions.editItem(_id, text);
-          }
-        }}>
+        <Button color="red" onClick={onDialogClose}>Cancel</Button>
+        <Button
+          color="green"
+          onClick={async () => {
+            if (text) {
+              await onDialogClose();
+              await actions.setData({ loading: true });
+              await actions.editItem(_id, text);
+            }
+          }}
+        >
           Save
         </Button>
       </DialogActions>

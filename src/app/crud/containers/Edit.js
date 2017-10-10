@@ -1,8 +1,10 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Dialog, TextField, Button } from 'material-ui';
+import { Dialog, TextField } from 'material-ui';
 import { DialogTitle, DialogContent, DialogContentText, DialogActions } from 'material-ui/Dialog';
+
+import Button from '~/shared/Button';
 
 import * as actions from '../actions';
 
@@ -27,7 +29,7 @@ const Edit = ({ crud: { editData }, actions }) => {
               })
             }
           />
-          { ' - ' }
+          {' - '}
           <TextField
             value={accent}
             onChange={event =>
@@ -39,9 +41,9 @@ const Edit = ({ crud: { editData }, actions }) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button color="accent" onClick={onDialogClose}>Cancel</Button>
+        <Button color="red" onClick={onDialogClose}>Cancel</Button>
         <Button
-          color="primary"
+          color="green"
           onClick={async () => {
             if (primary && accent) {
               await onDialogClose();

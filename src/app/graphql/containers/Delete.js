@@ -1,8 +1,10 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Dialog, Button } from 'material-ui';
+import { Dialog } from 'material-ui';
 import { DialogTitle, DialogContent, DialogContentText, DialogActions } from 'material-ui/Dialog';
+
+import Button from '~/shared/Button';
 
 import * as actions from '../actions';
 
@@ -23,9 +25,9 @@ const Delete = ({ graphql: { deleteData }, actions }) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button color="accent" onClick={onDialogClose}>Cancel</Button>
+        <Button color="green" onClick={onDialogClose}>Cancel</Button>
         <Button
-          color="primary"
+          color="red"
           onClick={async () => {
             await onDialogClose();
             await actions.setData({ loading: true });
