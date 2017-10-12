@@ -36,6 +36,10 @@ jobs:
       #     name: Test application - E2E
       #     command: docker-compose exec app yarn e2e
 
+      - run:
+          name: Test coverage integration
+          command: docker-compose exec app yarn codecov -- --token=${CODECOV_TOKEN}
+
       - deploy:
           name: Deploy application - Firebase
           command: docker-compose exec app yarn deploy -- --token ${FIREBASE_TOKEN}
