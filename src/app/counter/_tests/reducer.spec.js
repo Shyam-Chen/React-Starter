@@ -1,5 +1,5 @@
-import { INCREMENT, DECREMENT } from './constants';
-import counter from './reducer';
+import { INCREMENT, DECREMENT } from '../constants';
+import counter from '../reducer';
 
 describe('Counter', () => {
   describe('reducer', () => {
