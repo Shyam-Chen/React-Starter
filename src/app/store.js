@@ -3,7 +3,7 @@ import { routerReducer, routerMiddleware } from 'react-router-redux';
 import thunkMiddleware from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
-import loggerMiddleware from 'redux-logger';
+import { createLogger } from 'redux-logger';
 
 import { counterEpic, counterReducer, watchCounter } from '~/counter';
 import { crudReducer } from '~/crud';
@@ -51,7 +51,7 @@ export default (history, preloadedState = {}) => {
       thunkMiddleware,
       createEpicMiddleware(rootEpic),
       sagaMiddleware,
-      loggerMiddleware
+      createLogger({ diff: true })
     )
   );
 

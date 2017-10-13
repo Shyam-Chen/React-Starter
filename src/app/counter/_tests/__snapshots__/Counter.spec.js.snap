@@ -1,0 +1,1124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter should render initial component 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    actions={
+        Object {
+            "decrement": [Function],
+            "decrementAsync": [Function],
+            "decrementIfEven": [Function],
+            "increment": [Function],
+            "incrementAsync": [Function],
+            "incrementAsync2": [Function],
+            "incrementIfOdd": [Function],
+          }
+    }
+    counter={
+        Object {
+            "value": 0,
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Connect(Navigation) />,
+        <div
+          className="typography"
+          data-jsx={1263694829}
+>
+          <withStyles(Typography)
+                    component="h3"
+                    type="headline"
+          >
+                    Clicked: 
+                    0
+                     times, value is 
+                    .
+          </withStyles(Typography)>
+</div>,
+        <div
+          className="typography"
+          data-jsx={1263694829}
+>
+          <withStyles(Typography)
+                    component="p"
+                    type="body1"
+          >
+                    <withStyles(Component)
+                              color="indigo"
+                              onClick={[Function]}
+                              raised={true}
+                    >
+                              Increment
+                    </withStyles(Component)>
+                     
+                     
+                    <withStyles(Component)
+                              color="indigo"
+                              onClick={[Function]}
+                              raised={true}
+                    >
+                              Decrement
+                    </withStyles(Component)>
+          </withStyles(Typography)>
+</div>,
+        <div
+          className="typography"
+          data-jsx={1263694829}
+>
+          <withStyles(Typography)
+                    component="p"
+                    type="body1"
+          >
+                    <withStyles(Component)
+                              color="pink"
+                              onClick={[Function]}
+                              raised={true}
+                    >
+                              Increment (Async)
+                    </withStyles(Component)>
+                     
+                     
+                    <withStyles(Component)
+                              color="pink"
+                              onClick={[Function]}
+                              raised={true}
+                    >
+                              Decrement (Async)
+                    </withStyles(Component)>
+          </withStyles(Typography)>
+</div>,
+        <div
+          className="typography"
+          data-jsx={1263694829}
+>
+          <withStyles(Typography)
+                    component="p"
+                    type="body1"
+          >
+                    <withStyles(Component)
+                              color="deepPurple"
+                              onClick={[Function]}
+                              raised={true}
+                    >
+                              Increment (If Odd)
+                    </withStyles(Component)>
+                     
+                     
+                    <withStyles(Component)
+                              color="deepPurple"
+                              onClick={[Function]}
+                              raised={true}
+                    >
+                              Decrement (If Even)
+                    </withStyles(Component)>
+          </withStyles(Typography)>
+</div>,
+        <div
+          className="typography"
+          data-jsx={1263694829}
+>
+          <withStyles(Typography)
+                    component="p"
+                    type="body1"
+          >
+                    <withStyles(Component)
+                              color="pink"
+                              onClick={[Function]}
+                              raised={true}
+                    >
+                              Increment (Async 2)
+                    </withStyles(Component)>
+                     
+                     
+          </withStyles(Typography)>
+</div>,
+        <_class
+          css=".container[data-jsx=\\"1263694829\\"]{padding:1rem}.typography[data-jsx=\\"1263694829\\"]{padding:.25rem 0}"
+          styleId={1263694829}
+/>,
+      ],
+      "className": "container",
+      "data-jsx": 1263694829,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": <withStyles(Typography)
+            component="h3"
+            type="headline"
+>
+            Clicked: 
+            0
+             times, value is 
+            .
+</withStyles(Typography)>,
+          "className": "typography",
+          "data-jsx": 1263694829,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              "Clicked: ",
+              0,
+              " times, value is ",
+              undefined,
+              ".",
+            ],
+            "component": "h3",
+            "type": "headline",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Clicked: ",
+            0,
+            " times, value is ",
+            undefined,
+            ".",
+          ],
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": <withStyles(Typography)
+            component="p"
+            type="body1"
+>
+            <withStyles(Component)
+                        color="indigo"
+                        onClick={[Function]}
+                        raised={true}
+            >
+                        Increment
+            </withStyles(Component)>
+             
+             
+            <withStyles(Component)
+                        color="indigo"
+                        onClick={[Function]}
+                        raised={true}
+            >
+                        Decrement
+            </withStyles(Component)>
+</withStyles(Typography)>,
+          "className": "typography",
+          "data-jsx": 1263694829,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <withStyles(Component)
+                color="indigo"
+                onClick={[Function]}
+                raised={true}
+>
+                Increment
+</withStyles(Component)>,
+              " ",
+              " ",
+              <withStyles(Component)
+                color="indigo"
+                onClick={[Function]}
+                raised={true}
+>
+                Decrement
+</withStyles(Component)>,
+            ],
+            "component": "p",
+            "type": "body1",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Increment",
+                "color": "indigo",
+                "onClick": [Function],
+                "raised": true,
+              },
+              "ref": null,
+              "rendered": "Increment",
+              "type": [Function],
+            },
+            " ",
+            " ",
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Decrement",
+                "color": "indigo",
+                "onClick": [Function],
+                "raised": true,
+              },
+              "ref": null,
+              "rendered": "Decrement",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": <withStyles(Typography)
+            component="p"
+            type="body1"
+>
+            <withStyles(Component)
+                        color="pink"
+                        onClick={[Function]}
+                        raised={true}
+            >
+                        Increment (Async)
+            </withStyles(Component)>
+             
+             
+            <withStyles(Component)
+                        color="pink"
+                        onClick={[Function]}
+                        raised={true}
+            >
+                        Decrement (Async)
+            </withStyles(Component)>
+</withStyles(Typography)>,
+          "className": "typography",
+          "data-jsx": 1263694829,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <withStyles(Component)
+                color="pink"
+                onClick={[Function]}
+                raised={true}
+>
+                Increment (Async)
+</withStyles(Component)>,
+              " ",
+              " ",
+              <withStyles(Component)
+                color="pink"
+                onClick={[Function]}
+                raised={true}
+>
+                Decrement (Async)
+</withStyles(Component)>,
+            ],
+            "component": "p",
+            "type": "body1",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Increment (Async)",
+                "color": "pink",
+                "onClick": [Function],
+                "raised": true,
+              },
+              "ref": null,
+              "rendered": "Increment (Async)",
+              "type": [Function],
+            },
+            " ",
+            " ",
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Decrement (Async)",
+                "color": "pink",
+                "onClick": [Function],
+                "raised": true,
+              },
+              "ref": null,
+              "rendered": "Decrement (Async)",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": <withStyles(Typography)
+            component="p"
+            type="body1"
+>
+            <withStyles(Component)
+                        color="deepPurple"
+                        onClick={[Function]}
+                        raised={true}
+            >
+                        Increment (If Odd)
+            </withStyles(Component)>
+             
+             
+            <withStyles(Component)
+                        color="deepPurple"
+                        onClick={[Function]}
+                        raised={true}
+            >
+                        Decrement (If Even)
+            </withStyles(Component)>
+</withStyles(Typography)>,
+          "className": "typography",
+          "data-jsx": 1263694829,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <withStyles(Component)
+                color="deepPurple"
+                onClick={[Function]}
+                raised={true}
+>
+                Increment (If Odd)
+</withStyles(Component)>,
+              " ",
+              " ",
+              <withStyles(Component)
+                color="deepPurple"
+                onClick={[Function]}
+                raised={true}
+>
+                Decrement (If Even)
+</withStyles(Component)>,
+            ],
+            "component": "p",
+            "type": "body1",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Increment (If Odd)",
+                "color": "deepPurple",
+                "onClick": [Function],
+                "raised": true,
+              },
+              "ref": null,
+              "rendered": "Increment (If Odd)",
+              "type": [Function],
+            },
+            " ",
+            " ",
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Decrement (If Even)",
+                "color": "deepPurple",
+                "onClick": [Function],
+                "raised": true,
+              },
+              "ref": null,
+              "rendered": "Decrement (If Even)",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": <withStyles(Typography)
+            component="p"
+            type="body1"
+>
+            <withStyles(Component)
+                        color="pink"
+                        onClick={[Function]}
+                        raised={true}
+            >
+                        Increment (Async 2)
+            </withStyles(Component)>
+             
+             
+</withStyles(Typography)>,
+          "className": "typography",
+          "data-jsx": 1263694829,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <withStyles(Component)
+                color="pink"
+                onClick={[Function]}
+                raised={true}
+>
+                Increment (Async 2)
+</withStyles(Component)>,
+              " ",
+              " ",
+            ],
+            "component": "p",
+            "type": "body1",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Increment (Async 2)",
+                "color": "pink",
+                "onClick": [Function],
+                "raised": true,
+              },
+              "ref": null,
+              "rendered": "Increment (Async 2)",
+              "type": [Function],
+            },
+            " ",
+            " ",
+          ],
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "css": ".container[data-jsx=\\"1263694829\\"]{padding:1rem}.typography[data-jsx=\\"1263694829\\"]{padding:.25rem 0}",
+          "styleId": 1263694829,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Connect(Navigation) />,
+          <div
+            className="typography"
+            data-jsx={1263694829}
+>
+            <withStyles(Typography)
+                        component="h3"
+                        type="headline"
+            >
+                        Clicked: 
+                        0
+                         times, value is 
+                        .
+            </withStyles(Typography)>
+</div>,
+          <div
+            className="typography"
+            data-jsx={1263694829}
+>
+            <withStyles(Typography)
+                        component="p"
+                        type="body1"
+            >
+                        <withStyles(Component)
+                                    color="indigo"
+                                    onClick={[Function]}
+                                    raised={true}
+                        >
+                                    Increment
+                        </withStyles(Component)>
+                         
+                         
+                        <withStyles(Component)
+                                    color="indigo"
+                                    onClick={[Function]}
+                                    raised={true}
+                        >
+                                    Decrement
+                        </withStyles(Component)>
+            </withStyles(Typography)>
+</div>,
+          <div
+            className="typography"
+            data-jsx={1263694829}
+>
+            <withStyles(Typography)
+                        component="p"
+                        type="body1"
+            >
+                        <withStyles(Component)
+                                    color="pink"
+                                    onClick={[Function]}
+                                    raised={true}
+                        >
+                                    Increment (Async)
+                        </withStyles(Component)>
+                         
+                         
+                        <withStyles(Component)
+                                    color="pink"
+                                    onClick={[Function]}
+                                    raised={true}
+                        >
+                                    Decrement (Async)
+                        </withStyles(Component)>
+            </withStyles(Typography)>
+</div>,
+          <div
+            className="typography"
+            data-jsx={1263694829}
+>
+            <withStyles(Typography)
+                        component="p"
+                        type="body1"
+            >
+                        <withStyles(Component)
+                                    color="deepPurple"
+                                    onClick={[Function]}
+                                    raised={true}
+                        >
+                                    Increment (If Odd)
+                        </withStyles(Component)>
+                         
+                         
+                        <withStyles(Component)
+                                    color="deepPurple"
+                                    onClick={[Function]}
+                                    raised={true}
+                        >
+                                    Decrement (If Even)
+                        </withStyles(Component)>
+            </withStyles(Typography)>
+</div>,
+          <div
+            className="typography"
+            data-jsx={1263694829}
+>
+            <withStyles(Typography)
+                        component="p"
+                        type="body1"
+            >
+                        <withStyles(Component)
+                                    color="pink"
+                                    onClick={[Function]}
+                                    raised={true}
+                        >
+                                    Increment (Async 2)
+                        </withStyles(Component)>
+                         
+                         
+            </withStyles(Typography)>
+</div>,
+          <_class
+            css=".container[data-jsx=\\"1263694829\\"]{padding:1rem}.typography[data-jsx=\\"1263694829\\"]{padding:.25rem 0}"
+            styleId={1263694829}
+/>,
+        ],
+        "className": "container",
+        "data-jsx": 1263694829,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": <withStyles(Typography)
+              component="h3"
+              type="headline"
+>
+              Clicked: 
+              0
+               times, value is 
+              .
+</withStyles(Typography)>,
+            "className": "typography",
+            "data-jsx": 1263694829,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                "Clicked: ",
+                0,
+                " times, value is ",
+                undefined,
+                ".",
+              ],
+              "component": "h3",
+              "type": "headline",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Clicked: ",
+              0,
+              " times, value is ",
+              undefined,
+              ".",
+            ],
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": <withStyles(Typography)
+              component="p"
+              type="body1"
+>
+              <withStyles(Component)
+                            color="indigo"
+                            onClick={[Function]}
+                            raised={true}
+              >
+                            Increment
+              </withStyles(Component)>
+               
+               
+              <withStyles(Component)
+                            color="indigo"
+                            onClick={[Function]}
+                            raised={true}
+              >
+                            Decrement
+              </withStyles(Component)>
+</withStyles(Typography)>,
+            "className": "typography",
+            "data-jsx": 1263694829,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <withStyles(Component)
+                  color="indigo"
+                  onClick={[Function]}
+                  raised={true}
+>
+                  Increment
+</withStyles(Component)>,
+                " ",
+                " ",
+                <withStyles(Component)
+                  color="indigo"
+                  onClick={[Function]}
+                  raised={true}
+>
+                  Decrement
+</withStyles(Component)>,
+              ],
+              "component": "p",
+              "type": "body1",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Increment",
+                  "color": "indigo",
+                  "onClick": [Function],
+                  "raised": true,
+                },
+                "ref": null,
+                "rendered": "Increment",
+                "type": [Function],
+              },
+              " ",
+              " ",
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Decrement",
+                  "color": "indigo",
+                  "onClick": [Function],
+                  "raised": true,
+                },
+                "ref": null,
+                "rendered": "Decrement",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": <withStyles(Typography)
+              component="p"
+              type="body1"
+>
+              <withStyles(Component)
+                            color="pink"
+                            onClick={[Function]}
+                            raised={true}
+              >
+                            Increment (Async)
+              </withStyles(Component)>
+               
+               
+              <withStyles(Component)
+                            color="pink"
+                            onClick={[Function]}
+                            raised={true}
+              >
+                            Decrement (Async)
+              </withStyles(Component)>
+</withStyles(Typography)>,
+            "className": "typography",
+            "data-jsx": 1263694829,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <withStyles(Component)
+                  color="pink"
+                  onClick={[Function]}
+                  raised={true}
+>
+                  Increment (Async)
+</withStyles(Component)>,
+                " ",
+                " ",
+                <withStyles(Component)
+                  color="pink"
+                  onClick={[Function]}
+                  raised={true}
+>
+                  Decrement (Async)
+</withStyles(Component)>,
+              ],
+              "component": "p",
+              "type": "body1",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Increment (Async)",
+                  "color": "pink",
+                  "onClick": [Function],
+                  "raised": true,
+                },
+                "ref": null,
+                "rendered": "Increment (Async)",
+                "type": [Function],
+              },
+              " ",
+              " ",
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Decrement (Async)",
+                  "color": "pink",
+                  "onClick": [Function],
+                  "raised": true,
+                },
+                "ref": null,
+                "rendered": "Decrement (Async)",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": <withStyles(Typography)
+              component="p"
+              type="body1"
+>
+              <withStyles(Component)
+                            color="deepPurple"
+                            onClick={[Function]}
+                            raised={true}
+              >
+                            Increment (If Odd)
+              </withStyles(Component)>
+               
+               
+              <withStyles(Component)
+                            color="deepPurple"
+                            onClick={[Function]}
+                            raised={true}
+              >
+                            Decrement (If Even)
+              </withStyles(Component)>
+</withStyles(Typography)>,
+            "className": "typography",
+            "data-jsx": 1263694829,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <withStyles(Component)
+                  color="deepPurple"
+                  onClick={[Function]}
+                  raised={true}
+>
+                  Increment (If Odd)
+</withStyles(Component)>,
+                " ",
+                " ",
+                <withStyles(Component)
+                  color="deepPurple"
+                  onClick={[Function]}
+                  raised={true}
+>
+                  Decrement (If Even)
+</withStyles(Component)>,
+              ],
+              "component": "p",
+              "type": "body1",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Increment (If Odd)",
+                  "color": "deepPurple",
+                  "onClick": [Function],
+                  "raised": true,
+                },
+                "ref": null,
+                "rendered": "Increment (If Odd)",
+                "type": [Function],
+              },
+              " ",
+              " ",
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Decrement (If Even)",
+                  "color": "deepPurple",
+                  "onClick": [Function],
+                  "raised": true,
+                },
+                "ref": null,
+                "rendered": "Decrement (If Even)",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": <withStyles(Typography)
+              component="p"
+              type="body1"
+>
+              <withStyles(Component)
+                            color="pink"
+                            onClick={[Function]}
+                            raised={true}
+              >
+                            Increment (Async 2)
+              </withStyles(Component)>
+               
+               
+</withStyles(Typography)>,
+            "className": "typography",
+            "data-jsx": 1263694829,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <withStyles(Component)
+                  color="pink"
+                  onClick={[Function]}
+                  raised={true}
+>
+                  Increment (Async 2)
+</withStyles(Component)>,
+                " ",
+                " ",
+              ],
+              "component": "p",
+              "type": "body1",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Increment (Async 2)",
+                  "color": "pink",
+                  "onClick": [Function],
+                  "raised": true,
+                },
+                "ref": null,
+                "rendered": "Increment (Async 2)",
+                "type": [Function],
+              },
+              " ",
+              " ",
+            ],
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "css": ".container[data-jsx=\\"1263694829\\"]{padding:1rem}.typography[data-jsx=\\"1263694829\\"]{padding:.25rem 0}",
+            "styleId": 1263694829,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

@@ -9,7 +9,7 @@ import Button from '~/shared/Button';
 import * as actions from './actions';
 import { evenOrOdd } from './selectors';
 
-const Counter = ({ counter, actions, evenOrOdd }) => (
+export const Counter = ({ counter, actions, evenOrOdd }) => (
   <div className="container">
     <Navigation />
 
