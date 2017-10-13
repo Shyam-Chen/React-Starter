@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, DECREMENT_ASYNC, DECREMENT_IF_EVEN } from './constants';
+import { INCREMENT, DECREMENT, DECREMENT_ASYNC, DECREMENT_IF_EVEN, INCREMENT_ASYNC } from './constants';
 
 export const increment = () => ({ type: INCREMENT });
 export const decrement = () => ({ type: DECREMENT });
@@ -18,3 +18,5 @@ export const incrementIfOdd = () =>
 
 export const decrementAsync = () => ({ type: DECREMENT_ASYNC });
 export const decrementIfEven = () => ({ type: DECREMENT_IF_EVEN });
+
+export const incrementAsync2 = () => ({ type: INCREMENT_ASYNC });

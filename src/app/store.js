@@ -1,10 +1,11 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import thunkMiddleware from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import loggerMiddleware from 'redux-logger';
 
-import { counterEpic, counterReducer } from '~/counter';
+import { counterEpic, counterReducer, watchCounter } from '~/counter';
 import { crudReducer } from '~/crud';
 import { restReducer } from '~/rest';
 import { graphqlReducer } from '~/graphql';
@@ -33,14 +34,28 @@ const rootReducer = combineReducers({
   authorization: authorizationReducer
 });
 
-export default (history, preloadedState = {}) =>
-  createStore(
+const rootSaga = function* () {
+  yield [
+    watchCounter()
+  ]
+};
+
+export default (history, preloadedState = {}) => {
+  const sagaMiddleware = createSagaMiddleware();
+
+  const store = createStore(
     rootReducer,
     preloadedState,
     applyMiddleware(
       routerMiddleware(history),
       thunkMiddleware,
       createEpicMiddleware(rootEpic),
+      sagaMiddleware,
       loggerMiddleware
     )
   );
+
+  sagaMiddleware.run(rootSaga);
+
+  return store;
+};

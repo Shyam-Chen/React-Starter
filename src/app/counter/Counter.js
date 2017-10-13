@@ -40,6 +40,13 @@ const Counter = ({ counter, actions, evenOrOdd }) => (
       </Typography>
     </div>
 
+    <div className="typography">
+      <Typography type="body1" component="p">
+        <Button raised color="pink" onClick={actions.incrementAsync2}>Increment (Async 2)</Button> {' '}
+        {/* <Button raised color="pink" onClick={actions.decrementAsync}>Decrement (Async)</Button> */}
+      </Typography>
+    </div>
+
     <style jsx>{`
       .container {
         padding: 1rem;
