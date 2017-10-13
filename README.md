@@ -20,26 +20,17 @@ $ npm start
 
 ## TODO List
 
-* Examples:
-  * Form Controls
-  * Data Table
-  * Authorization
-  * Internationalization (React Intl)
-  * Data Chart
-    * SVG & Canvas (D3 + Immutable)
-    * WebGL (Three + Immutable)
-  * WebSockets (Socket.IO)
-  * Google Analytics
-  * Service Workers
-* Build:
-  * Hot Module Replacement
-  * Dev/Prod Mode
-* Test:
-  * Flow Types
-  * Unit Tests (Integration with Webpack and Jest)
-  * E2E Tests
-* Deploy:
-  * Circle
-  * Docker
-  * Firebase (Prerender)
-  * Heroku (Server-side Rendering)
+* Form Controls
+* Data Table
+* Authorization
+* Internationalization (React Intl)
+* Data Chart
+  * SVG & Canvas (D3 + Immutable)
+  * WebGL (Three + Immutable)
+* WebSockets (Socket.IO)
+* Google Analytics
+* Service Workers
+* Hot Module Replacement
+* Flow Types
+* Prerender
+* Server-side Rendering

@@ -7,10 +7,7 @@ import bodyParser from 'body-parser';
 import history from 'express-history-api-fallback';
 
 const app = express();
-
-const root = process.env.NODE_ENV === 'production'
-  ? join(__dirname, '/')
-  : join(__dirname, 'build');
+const root = join(__dirname, 'build');
 
 app.set('port', (process.env.PORT || 3000));
 
