@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter actions should create an action to handle the value 1`] = `
+Object {
+  "type": "[Counter] INCREMENT",
+}
+`;
+
+exports[`Counter actions should create an action to handle the value 2`] = `
+Object {
+  "type": "[Counter] DECREMENT",
+}
+`;
