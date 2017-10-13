@@ -4,12 +4,12 @@ import { delay, filter, map } from 'rxjs/operator';
 import { DECREMENT_ASYNC, DECREMENT_IF_EVEN } from './constants';
 import { decrement } from './actions';
 
-const decrementAsyncEpic = action$ =>
+export const decrementAsyncEpic = action$ =>
   action$.ofType(DECREMENT_ASYNC)
     ::delay(1000)
     ::map(decrement);
 
-const decrementIfEvenEpic = (action$, store) =>
+export const decrementIfEvenEpic = (action$, store) =>
   action$.ofType(DECREMENT_IF_EVEN)
     ::filter(() => store.getState().counter.value % 2 === 0)
     ::map(decrement);

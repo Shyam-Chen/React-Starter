@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter sagas should call get increment 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "type": "[Counter] INCREMENT",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
