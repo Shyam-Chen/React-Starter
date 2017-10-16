@@ -22,23 +22,25 @@ export const Counter = ({ counter, actions, evenOrOdd }) => (
     <div className="typography">
       <Typography type="body1" component="p">
         <Button raised color="indigo" onClick={actions.increment}>Increment</Button> {' '}
-        <Button raised color="indigo" onClick={actions.decrement}>Decrement</Button> {' '}
-        <Button raised color="indigo" onClick={actions.reset}>Reset</Button>
+        <Button raised color="pink" onClick={actions.decrement}>Decrement</Button> {' '}
+        <Button raised color="deepPurple" onClick={actions.reset}>Reset</Button>
       </Typography>
     </div>
 
     <div className="typography">
       <Typography type="body1" component="p">
-        <Button raised color="pink" onClick={actions.incrementAsync}>Increment (Async)</Button> {' '}
+        <Button raised color="indigo" onClick={actions.incrementAsync}>Increment (Async)</Button> {' '}
         <Button raised color="pink" onClick={actions.decrementAsync}>Decrement (Async)</Button> {' '}
-        <Button raised color="pink" onClick={actions.resetAsync}>Reset (Async)</Button>
+        <Button raised color="deepPurple" onClick={actions.resetAsync}>Reset (Async)</Button>
       </Typography>
     </div>
 
     <div className="typography">
       <Typography type="body1" component="p">
-        <Button raised color="deepPurple" onClick={actions.incrementIfOdd}>Increment (If Odd)</Button> {' '}
-        <Button raised color="deepPurple" onClick={actions.decrementIfEven}>Decrement (If Even)</Button>
+        <Button raised color="indigo" onClick={actions.incrementIfOdd}>Increment (If Odd)</Button> {' '}
+        <Button raised color="pink" onClick={actions.decrementIfEven}>Decrement (If Even)</Button> {' '}
+        <Button raised color="deepPurple" onClick={actions.resetIfOdd}>Reset (If Odd)</Button> {' '}
+        <Button raised color="deepPurple" onClick={actions.resetIfEven}>Reset (If Even)</Button>
       </Typography>
     </div>
 

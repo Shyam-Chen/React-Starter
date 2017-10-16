@@ -37,7 +37,7 @@ const rootReducer = combineReducers({
   authorization: authorizationReducer
 });
 
-const rootSaga = function* () {
+const rootSaga = function *() {
   yield all([
     watchCounter()
   ]);
