@@ -1,7 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Paper, Select, Input, Radio, Checkbox, Switch } from 'material-ui';
+import { Paper, Typography, Select, Input, Radio, Checkbox, Switch } from 'material-ui';
 import { InputLabel } from 'material-ui/Input';
 import { MenuItem } from 'material-ui/Menu';
 import { FormControl, FormGroup, FormControlLabel, FormLabel } from 'material-ui/Form';
@@ -11,6 +11,7 @@ import Navigation from '~/shared/Navigation';
 
 import * as actions from './actions';
 import { listOfVariety } from './selectors';
+import WithReduxForm from './containers/WithReduxForm';
 
 const FormControls = ({ formControls, actions, listOfVariety }) => {
   const {
@@ -26,9 +27,11 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
     <div className="container">
       <Navigation />
 
-      <div>Work in Progress</div>
-
       <Paper>
+        <Typography type="title" gutterBottom style={{ padding: '1rem 1rem 0' }}>
+          Just Redux
+        </Typography>
+
         <form className="container">
           <div className="row">
             {/* select */}
@@ -182,6 +185,8 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
           </div>
         </form>
       </Paper>
+
+      <WithReduxForm />
 
       <style jsx>{`
         .container {
