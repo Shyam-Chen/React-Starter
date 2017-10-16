@@ -2,7 +2,9 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import thunkMiddleware from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
+import { all } from 'redux-saga/effects';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
+import { reducer as formReducer } from 'redux-form';
 import { createLogger } from 'redux-logger';
 
 import { counterEpic, counterReducer, watchCounter } from '~/counter';
@@ -24,6 +26,7 @@ const rootEpic = combineEpics(
 const rootReducer = combineReducers({
   app: appReducer,
   router: routerReducer,
+  form: formReducer,
 
   counter: counterReducer,
   crud: crudReducer,
@@ -35,9 +38,9 @@ const rootReducer = combineReducers({
 });
 
 const rootSaga = function* () {
-  yield [
+  yield all([
     watchCounter()
-  ]
+  ]);
 };
 
 export default (history, preloadedState = {}) => {

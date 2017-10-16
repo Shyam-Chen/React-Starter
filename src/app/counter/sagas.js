@@ -1,13 +1,19 @@
 import { delay } from 'redux-saga';
-import { put, takeEvery } from 'redux-saga/effects';
+import { put, takeEvery, all } from 'redux-saga/effects';
 
-import { INCREMENT, INCREMENT_ASYNC } from './constants';
+import { RESET, RESET_ASYNC } from './constants';
 
-export function* incrementAsync2() {
+export function* resetAsync() {
   yield delay(1000);
-  yield put({ type: INCREMENT });
+  yield put({ type: RESET });
+}
+
+export function* watchResetAsync() {
+  yield takeEvery(RESET_ASYNC, resetAsync);
 }
 
 export default function* () {
-  yield takeEvery(INCREMENT_ASYNC, incrementAsync2);
+  yield all([
+    watchResetAsync()
+  ]);
 }
