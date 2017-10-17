@@ -73,7 +73,7 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
               <Select
                 multiple
                 value={countries}
-                onChange={event => actions.setData({ countries: event.target.value, category: '' })}
+                onChange={event => actions.setData({ countries: event.target.value })}
                 input={<Input id="countries" style={{ width: '15rem' }} />}
               >
                 {
