@@ -18,7 +18,7 @@ export const Navigation = () => {
               ? <IconButton color="contrast" aria-label="Menu">
                   <Icon>toys</Icon>
                 </IconButton>
-              : <Link to="" onClick={() => history.back()}>
+              : <Link to="/">
                   <IconButton color="contrast">
                     <Icon>arrow_back</Icon>
                   </IconButton>

@@ -43,7 +43,7 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
                 onChange={event => actions.setData({ name: event.target.value })}
               />
             </FormControl>
-            <div style={{ alignSelf: 'flex-end', margin: '0 0 .5rem .5rem' }}>{name}</div>
+            <div className="outputs">{name}</div>
           </div>
 
           <div className="row">
@@ -63,6 +63,7 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
                 }
               </Select>
             </FormControl>
+            <div className="outputs">{age}</div>
           </div>
 
           <div className="row">
@@ -82,48 +83,50 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
                 }
               </Select>
             </FormControl>
+            <div className="outputs">{countries.join(', ')}</div>
           </div>
 
           <div className="row">
             {/* nested select */}
             <FormControl component="fieldset">
               <FormLabel component="legend">Animals</FormLabel>
-            <FormGroup row>
-              <FormControl>
-                <InputLabel htmlFor="category">Category</InputLabel>
-                <Select
-                  value={category}
-                  onChange={event => actions.setData({ category: event.target.value, variety: '' })}
-                  input={<Input id="category" style={{ width: '7rem' }} />}
-                >
-                  <MenuItem value=""><em>None</em></MenuItem>
-                  {
-                    animals.map(({ category }, index) => (
-                      <MenuItem key={index} value={category}>{category}</MenuItem>
-                    ))
-                  }
-                </Select>
-              </FormControl>
+              <FormGroup row>
+                <FormControl>
+                  <InputLabel htmlFor="category">Category</InputLabel>
+                  <Select
+                    value={category}
+                    onChange={event => actions.setData({ category: event.target.value, variety: '' })}
+                    input={<Input id="category" style={{ width: '7rem' }} />}
+                  >
+                    <MenuItem value=""><em>None</em></MenuItem>
+                    {
+                      animals.map(({ category }, index) => (
+                        <MenuItem key={index} value={category}>{category}</MenuItem>
+                      ))
+                    }
+                  </Select>
+                </FormControl>
 
-              <FormControl style={{ marginLeft: '1rem' }} disabled={!category}>
-                <InputLabel htmlFor="variety">Variety</InputLabel>
-                <Select
-                  value={variety}
-                  onChange={event => actions.setData({ variety: event.target.value })}
-                  input={<Input id="variety" style={{ width: '7rem' }} />}
-                >
-                  <MenuItem value=""><em>None</em></MenuItem>
-                  {
-                    listOfVariety.length
-                      ? listOfVariety[0]['variety'].map((item, index) => (
-                          <MenuItem key={index} value={item}>{item}</MenuItem>
-                        ))
-                      : void 0
-                  }
-                </Select>
-              </FormControl>
-            </FormGroup>
-          </FormControl>
+                <FormControl style={{ marginLeft: '1rem' }} disabled={!category}>
+                  <InputLabel htmlFor="variety">Variety</InputLabel>
+                  <Select
+                    value={variety}
+                    onChange={event => actions.setData({ variety: event.target.value })}
+                    input={<Input id="variety" style={{ width: '7rem' }} />}
+                  >
+                    <MenuItem value=""><em>None</em></MenuItem>
+                    {
+                      listOfVariety.length
+                        ? listOfVariety[0]['variety'].map((item, index) => (
+                            <MenuItem key={index} value={item}>{item}</MenuItem>
+                          ))
+                        : void 0
+                    }
+                  </Select>
+                </FormControl>
+              </FormGroup>
+            </FormControl>
+            <div className="outputs">{category} {variety ? `- ${variety}` : ''}</div>
           </div>
 
           <div className="row">
@@ -163,6 +166,11 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
                 />
               </FormGroup>
             </FormControl>
+            <div className="outputs" style={{ padding: '0 0 .5rem' }}>
+              {frameworks.angular ? 'Angular' : ''} {' '}
+              {frameworks.react ? 'React' : ''} {' '}
+              {frameworks.vue ? 'Vue' : ''}
+            </div>
           </div>
 
           <div className="row">
@@ -181,6 +189,9 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
                 <FormControlLabel value="other" control={<Radio />} label="Other" />
               </RadioGroup>
             </FormControl>
+            <div className="outputs" style={{ padding: '0 0 .5rem' }}>
+              {gender.charAt(0).toUpperCase() + gender.slice(1)}
+            </div>
           </div>
 
           <div className="row">
@@ -195,6 +206,13 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
                 />
               </FormGroup>
             </FormControl>
+            <div className="outputs" style={{ padding: '0 0 .5rem' }}>
+              {autoplay ? 'True' : ''}
+            </div>
+          </div>
+
+          <div className="row">
+            ...
           </div>
         </form>
       </Paper>
@@ -210,6 +228,12 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
           padding: .66rem;
           display: flex;
           flex-direction: row;
+        }
+
+        .outputs {
+          align-self: flex-end;
+          margin: 0 0 .5rem .5rem;
+          color: #3F51B5;
         }
       `}</style>
     </div>

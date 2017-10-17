@@ -20,15 +20,23 @@ let WithReduxForm = ({ name }) => {
         <Typography type="title" gutterBottom style={{ padding: '1rem 1rem 0' }}>
           With Redux Form
         </Typography>
+
         <form className="form">
-          <Field name="name" component={renderTextField} type="text" label="Name" />
-          <span style={{ marginLeft: '.5rem' }}>{name}</span>
+          <div className="row">
+            {/* input */}
+            <Field name="name" component={renderTextField} type="text" label="Name" />
+            <span className="outputs">{name}</span>
+          </div>
+
+          <div className="row">
+            ...
+          </div>
         </form>
       </Paper>
 
       <style jsx>{`
         .container {
-          margin: 2.5rem 0;
+          margin: 2rem 0;
         }
 
         .form {
@@ -39,6 +47,12 @@ let WithReduxForm = ({ name }) => {
           padding: .66rem;
           display: flex;
           flex-direction: row;
+        }
+
+        .outputs {
+          align-self: flex-end;
+          margin: 0 0 .5rem .5rem;
+          color: #3F51B5;
         }
       `}</style>
     </div>
