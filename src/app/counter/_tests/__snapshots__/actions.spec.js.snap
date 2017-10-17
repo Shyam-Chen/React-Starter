@@ -11,3 +11,9 @@ Object {
   "type": "[Counter] DECREMENT",
 }
 `;
+
+exports[`Counter actions should create an action to handle the value 3`] = `
+Object {
+  "type": "[Counter] RESET",
+}
+`;

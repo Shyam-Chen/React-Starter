@@ -1,4 +1,4 @@
-import { INITIAL, INCREMENT, DECREMENT } from '../constants';
+import { INITIAL, INCREMENT, DECREMENT, RESET } from '../constants';
 import counter from '../reducer';
 
 describe('Counter', () => {
@@ -13,6 +13,12 @@ describe('Counter', () => {
 
     it('should handle DECREMENT action', () => {
       expect(counter({ value: 1 }, { type: DECREMENT })).toEqual({ value: 0 });
+    });
+
+    it('should handle DECREMENT action', () => {
+      expect(counter({ value: 1 }, { type: RESET })).toEqual({ value: 0 });
+      expect(counter({ value: 0 }, { type: RESET })).toEqual({ value: 0 });
+      expect(counter({ value: -1 }, { type: RESET })).toEqual({ value: 0 });
     });
   });
 });

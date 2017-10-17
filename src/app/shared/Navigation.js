@@ -7,7 +7,7 @@ import { AppBar, Toolbar, IconButton, Icon, Typography } from 'material-ui';
 import Link from '~/shared/Link';
 import Button from '~/shared/Button';
 
-const Navigation = () => {
+export const Navigation = () => {
 
   return (
     <div>

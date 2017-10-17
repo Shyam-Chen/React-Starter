@@ -5,6 +5,7 @@ describe('Counter', () => {
     it('should create an action to handle the value', () => {
       expect(actions.increment()).toMatchSnapshot();
       expect(actions.decrement()).toMatchSnapshot();
+      expect(actions.reset()).toMatchSnapshot();
     });
   });
 });

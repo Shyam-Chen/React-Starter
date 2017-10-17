@@ -1,12 +1,15 @@
+import { put } from 'redux-saga/effects';
+
+import { RESET } from '../constants';
 import { resetAsync } from '../sagas';
 
 describe('Counter', () => {
   describe('sagas', () => {
-    it('should call get reset', () => {
+    it('should call resetAsync to get reset', () => {
       const generator = resetAsync();
       generator.next();
-      const putResult = generator.next();
-      expect(putResult).toMatchSnapshot();
+      const result = generator.next();
+      expect(result.value).toEqual(put({ type: RESET }));
     });
   });
 });
