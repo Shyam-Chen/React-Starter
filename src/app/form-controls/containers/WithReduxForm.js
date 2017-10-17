@@ -5,10 +5,14 @@ import { Field, reduxForm, formValueSelector } from 'redux-form';
 import { Paper, Typography, TextField } from 'material-ui';
 
 const renderTextField = ({ input, meta, ...other }) => (
-  <TextField {...input} {...meta} {...other} />
+  <TextField
+    {...input}
+    helperText={meta.touched && meta.error}
+    {...other}
+  />
 );
 
-let WithReduxForm = ({ handleSubmit, name }) => {
+let WithReduxForm = ({ name }) => {
 
   return (
     <div className="container">
@@ -16,7 +20,7 @@ let WithReduxForm = ({ handleSubmit, name }) => {
         <Typography type="title" gutterBottom style={{ padding: '1rem 1rem 0' }}>
           With Redux Form
         </Typography>
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form">
           <Field name="name" component={renderTextField} type="text" label="Name" />
           <span style={{ marginLeft: '.5rem' }}>{name}</span>
         </form>
