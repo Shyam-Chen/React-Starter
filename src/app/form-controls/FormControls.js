@@ -1,7 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Paper, Typography, Select, Input, Radio, Checkbox, Switch } from 'material-ui';
+import { Paper, Typography, TextField, Select, Input, Radio, Checkbox, Switch } from 'material-ui';
 import { InputLabel } from 'material-ui/Input';
 import { MenuItem } from 'material-ui/Menu';
 import { FormControl, FormGroup, FormControlLabel, FormLabel } from 'material-ui/Form';
@@ -15,6 +15,7 @@ import WithReduxForm from './containers/WithReduxForm';
 
 const FormControls = ({ formControls, actions, listOfVariety }) => {
   const {
+    name,
     age, listOfage,
     countries, listOfCountries,
     category, variety, animals,
@@ -33,6 +34,18 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
         </Typography>
 
         <form className="container">
+          <div className="row">
+            {/* input */}
+            <FormControl>
+              <TextField
+                label="Name"
+                value={name}
+                onChange={event => actions.setData({ name: event.target.value })}
+              />
+            </FormControl>
+            <div style={{ alignSelf: 'flex-end', margin: '0 0 .5rem .5rem' }}>{name}</div>
+          </div>
+
           <div className="row">
             {/* select */}
             <FormControl>

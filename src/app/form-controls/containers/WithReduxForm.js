@@ -1,25 +1,14 @@
 import React from 'react';
 // import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
-import { Paper, Typography } from 'material-ui';
-import { TextField } from 'material-ui';
+import { Field, reduxForm, formValueSelector } from 'redux-form';
+import { Paper, Typography, TextField } from 'material-ui';
 
-const renderTextField = ({
-  input,
-  label,
-  meta,
-  ...custom
-}) => (
-  <TextField
-    {...input}
-    {...label}
-    {...meta}
-    {...custom}
-  />
-)
+const renderTextField = ({ input, meta, ...other }) => (
+  <TextField {...input} {...meta} {...other} />
+);
 
-let WithReduxForm = ({ handleSubmit }) => {
+let WithReduxForm = ({ handleSubmit, name }) => {
 
   return (
     <div className="container">
@@ -27,8 +16,9 @@ let WithReduxForm = ({ handleSubmit }) => {
         <Typography type="title" gutterBottom style={{ padding: '1rem 1rem 0' }}>
           With Redux Form
         </Typography>
-        <form className="form" onSubmit={ handleSubmit }>
-          <Field name="Text" component={renderTextField} type="text" />
+        <form className="form" onSubmit={handleSubmit}>
+          <Field name="name" component={renderTextField} type="text" label="Name" />
+          <span style={{ marginLeft: '.5rem' }}>{name}</span>
         </form>
       </Paper>
 
@@ -48,14 +38,16 @@ let WithReduxForm = ({ handleSubmit }) => {
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-WithReduxForm = reduxForm({
-  form: 'contact'
-})(WithReduxForm)
+WithReduxForm = reduxForm({ form: 'example' })(WithReduxForm);
+
+const selector = formValueSelector('example');
 
 export default connect(
-  // ({ form }) => ({ form }),
+  state => ({
+    name: selector(state, 'name')
+  }),
   // dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(WithReduxForm);

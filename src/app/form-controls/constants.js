@@ -1,4 +1,7 @@
 export const INITIAL = {
+  // input
+  name: '',
+
   // select
   age: '',
   listOfage: [
