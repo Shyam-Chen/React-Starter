@@ -20,7 +20,7 @@ const Add = ({ rest: { addData }, actions }) => {
           })
         }
       />
-      { ' ' }
+      {' '}
       <Button
         raised
         color="blue"
@@ -33,6 +33,34 @@ const Add = ({ rest: { addData }, actions }) => {
         }}
       >
         Add
+      </Button>
+      {' '}
+      <Button
+        raised
+        color="teal"
+        onClick={async () => {
+          if (text) {
+            await actions.setData({ loading: true });
+            await actions.addItem(text);
+            await actions.setData({ addData: { text: '' } });
+          }
+        }}
+      >
+        Add (With Saga)
+      </Button>
+      {' '}
+      <Button
+        raised
+        color="purple"
+        onClick={async () => {
+          if (text) {
+            await actions.setData({ loading: true });
+            await actions.addItem(text);
+            await actions.setData({ addData: { text: '' } });
+          }
+        }}
+      >
+        Add (With Observable)
       </Button>
 
       <style jsx>{`

@@ -20,7 +20,7 @@ const Search = ({ rest: { searchData }, actions }) => {
           })
         }
       />
-      { ' ' }
+      {' '}
       <Button
         raised
         color="blue"

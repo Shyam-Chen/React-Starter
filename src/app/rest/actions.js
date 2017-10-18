@@ -1,9 +1,17 @@
 import axios from 'axios';
 
-import { API_LIST, SUCCESS, FAILURE, SET_DATA } from './constants';
+import {
+  API_LIST, SUCCESS, FAILURE, SET_DATA,
+  ADD_ITEM_EPIC, SEARCH_ITEM_EPIC, EDIT_ITEM_EPIC, DELETE_ITEM_EPIC,
+  ADD_ITEM_SAGA, SEARCH_ITEM_SAGA, EDIT_ITEM_SAGA, DELETE_ITEM_SAGA
+} from './constants';
 
 export const success = data => ({ type: SUCCESS, data });
 export const failure = error => ({ type: FAILURE, error });
+
+/**
+ * @name Thunk
+ */
 
 export const addItem = text =>
   dispatch =>
@@ -30,4 +38,27 @@ export const deleteItem = id =>
       .then(() => dispatch(searchItem()))
       .catch(error => dispatch(failure(error)));
 
+/**
+ * @name Observable
+ */
+
+export const addItemObservable = text => ({ type: ADD_ITEM_EPIC, text });
+export const searchItemObservable = () => ({ type: SEARCH_ITEM_EPIC });
+export const editItemObservable = () => ({ type: EDIT_ITEM_EPIC });
+export const deleteItemObservable = () => ({ type: DELETE_ITEM_EPIC });
+
+/**
+ * @name Saga
+ */
+
+export const addItemSaga = () => ({ type: ADD_ITEM_SAGA });
+export const searchItemSaga = () => ({ type: SEARCH_ITEM_SAGA });
+export const editItemSaga = () => ({ type: EDIT_ITEM_SAGA });
+export const deleteItemSaga = () => ({ type: DELETE_ITEM_SAGA });
+
+/**
+ * @name setting
+ * @param {any} data - set data
+ * @return {object} - action creator
+ */
 export const setData = data => ({ type: SET_DATA, data });
