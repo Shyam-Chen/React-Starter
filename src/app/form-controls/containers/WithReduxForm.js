@@ -1,5 +1,4 @@
 import React from 'react';
-// import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
 import { Paper, Typography, TextField, Select, Input } from 'material-ui';
@@ -138,6 +137,5 @@ export default connect(
     name: selector(state, 'name'),
     age: selector(state, 'age'),
     countries: selector(state, 'countries')
-  }),
-  // dispatch => ({ actions: bindActionCreators(actions, dispatch) })
+  })
 )(WithReduxForm);
