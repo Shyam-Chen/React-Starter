@@ -2,7 +2,12 @@ import React from 'react';
 // import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
-import { Paper, Typography, TextField } from 'material-ui';
+import { Paper, Typography, TextField, Select, Input } from 'material-ui';
+import { InputLabel } from 'material-ui/Input';
+import { FormControl } from 'material-ui/Form';
+import { MenuItem } from 'material-ui/Menu';
+
+import { INITIAL } from '../constants';
 
 const renderTextField = ({ input, meta, ...other }) => (
   <TextField
@@ -12,7 +17,29 @@ const renderTextField = ({ input, meta, ...other }) => (
   />
 );
 
-let WithReduxForm = ({ name }) => {
+const renderSelect = ({ input, label, meta: { touched, error }, list, ...other }) => (
+  <div>
+    <div>
+      <InputLabel htmlFor={label}>{label}</InputLabel>
+      <Select
+        {...input}
+        {...other}
+        input={<Input id={label} style={{ width: '7rem' }} />}
+      >
+        <MenuItem value=""><em>None</em></MenuItem>
+        {
+          list.map(({ value, label }, index) => (
+            <MenuItem key={index} value={value}>{label}</MenuItem>
+          ))
+        }
+      </Select>
+    </div>
+
+    {touched && error && <div style={{ color: '#F44336' }}>{error}</div>}
+  </div>
+);
+
+let WithReduxForm = ({ name, age }) => {
 
   return (
     <div className="container">
@@ -24,8 +51,18 @@ let WithReduxForm = ({ name }) => {
         <form className="form">
           <div className="row">
             {/* input */}
-            <Field name="name" component={renderTextField} type="text" label="Name" />
-            <span className="outputs">{name}</span>
+            <FormControl>
+              <Field name="name" component={renderTextField} label="Name" />
+            </FormControl>
+            <div className="outputs">{name}</div>
+          </div>
+
+          <div className="row">
+            {/* select */}
+            <FormControl>
+              <Field name="age" component={renderSelect} label="Age" list={INITIAL['listOfage']} />
+            </FormControl>
+            <div className="outputs">{age}</div>
           </div>
 
           <div className="row">
@@ -65,7 +102,8 @@ const selector = formValueSelector('example');
 
 export default connect(
   state => ({
-    name: selector(state, 'name')
+    name: selector(state, 'name'),
+    age: selector(state, 'age')
   }),
   // dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(WithReduxForm);
