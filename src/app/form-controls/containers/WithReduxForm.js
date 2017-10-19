@@ -9,11 +9,13 @@ import { MenuItem } from 'material-ui/Menu';
 import { INITIAL } from '../constants';
 
 const renderTextField = ({ input, meta: { touched, error }, ...other }) => (
-  <TextField
-    {...input}
-    {...other}
-    helperText={touched && error && <div style={{ color: '#F44336' }}>{error}</div>}
-  />
+  <div>
+    <div>
+      <TextField {...input} {...other} />
+    </div>
+
+    {touched && error && <div style={{ color: '#F44336' }}>{error}</div>}
+  </div>
 );
 
 const renderSelect = ({ input, label, meta: { touched, error }, list, ...other }) => (
@@ -46,7 +48,7 @@ const renderMultipleSelect = ({ input, label, meta: { touched, error }, list, ..
         {...input}
         {...other}
         multiple
-        value={[]}
+        value={input.value || []}
         input={<Input id={label} style={{ width: '15rem' }} />}
       >
         <MenuItem value=""><em>None</em></MenuItem>
@@ -93,8 +95,7 @@ let WithReduxForm = ({ name, age, countries }) => {
             <FormControl>
               <Field name="countries" component={renderMultipleSelect} label="Countries" list={INITIAL['listOfCountries']} />
             </FormControl>
-            <div className="outputs">{countries}</div>
-            <div style={{ alignSelf: 'flex-end', margin: '0 0 .5rem .5rem', color: '#F44336' }}>Not Yet</div>
+            <div className="outputs">{countries ? countries.join(', ') : countries}</div>
           </div>
 
           <div className="row">
