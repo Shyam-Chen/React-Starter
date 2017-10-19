@@ -41,12 +41,12 @@ const Add = ({ rest: { addData }, actions }) => {
         onClick={async () => {
           if (text) {
             await actions.setData({ loading: true });
-            await actions.addItem(text);
+            await actions.addItemSaga(text);
             await actions.setData({ addData: { text: '' } });
           }
         }}
       >
-        Add (With Saga, not yet)
+        Add (With Saga)
       </Button>
       {' '}
       <Button
@@ -55,12 +55,12 @@ const Add = ({ rest: { addData }, actions }) => {
         onClick={async () => {
           if (text) {
             await actions.setData({ loading: true });
-            await actions.addItem(text);
+            await actions.addItemObservable(text);
             await actions.setData({ addData: { text: '' } });
           }
         }}
       >
-        Add (With Observable, not yet)
+        Add (With Observable)
       </Button>
 
       <style jsx>{`
