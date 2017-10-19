@@ -52,7 +52,7 @@ export const deleteItemObservable = () => ({ type: DELETE_ITEM_EPIC });
  */
 
 export const addItemSaga = () => ({ type: ADD_ITEM_SAGA });
-export const searchItemSaga = () => ({ type: SEARCH_ITEM_SAGA });
+export const searchItemSaga = text => ({ type: SEARCH_ITEM_SAGA, text });
 export const editItemSaga = () => ({ type: EDIT_ITEM_SAGA });
 export const deleteItemSaga = () => ({ type: DELETE_ITEM_SAGA });
 

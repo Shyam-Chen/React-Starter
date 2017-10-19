@@ -9,7 +9,7 @@ import { createLogger } from 'redux-logger';
 
 import { counterEpic, counterReducer, watchCounter } from '~/counter';
 import { crudReducer } from '~/crud';
-import { restReducer } from '~/rest';
+import { restReducer, watchRest } from '~/rest';
 import { graphqlReducer } from '~/graphql';
 import { formControlsReducer } from '~/form-controls';
 import { dataTableReducer } from '~/data-table';
@@ -39,7 +39,8 @@ const rootReducer = combineReducers({
 
 const rootSaga = function *() {
   yield all([
-    watchCounter()
+    watchCounter(),
+    watchRest()
   ]);
 };
 

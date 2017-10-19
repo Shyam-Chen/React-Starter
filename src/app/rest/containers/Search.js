@@ -32,6 +32,30 @@ const Search = ({ rest: { searchData }, actions }) => {
       >
         Search
       </Button>
+      {' '}
+      <Button
+        raised
+        color="teal"
+        onClick={async () => {
+          await actions.setData({ loading: true });
+          await actions.searchItemSaga(text);
+          await actions.setData({ searchData: { text: '' } });
+        }}
+      >
+        Search (With Saga)
+      </Button>
+      {' '}
+      <Button
+        raised
+        color="purple"
+        onClick={async () => {
+          await actions.setData({ loading: true });
+          await actions.searchItem(text);
+          await actions.setData({ searchData: { text: '' } });
+        }}
+      >
+        Search (With Observable, not yet)
+      </Button>
 
       <style jsx>{`
         .container {
