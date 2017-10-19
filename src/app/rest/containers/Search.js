@@ -50,11 +50,11 @@ const Search = ({ rest: { searchData }, actions }) => {
         color="purple"
         onClick={async () => {
           await actions.setData({ loading: true });
-          await actions.searchItem(text);
+          await actions.searchItemObservable(text);
           await actions.setData({ searchData: { text: '' } });
         }}
       >
-        Search (With Observable, not yet)
+        Search (With Observable)
       </Button>
 
       <style jsx>{`

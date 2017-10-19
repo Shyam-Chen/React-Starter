@@ -43,7 +43,7 @@ export const deleteItem = id =>
  */
 
 export const addItemObservable = text => ({ type: ADD_ITEM_EPIC, text });
-export const searchItemObservable = () => ({ type: SEARCH_ITEM_EPIC });
+export const searchItemObservable = text => ({ type: SEARCH_ITEM_EPIC, text });
 export const editItemObservable = () => ({ type: EDIT_ITEM_EPIC });
 export const deleteItemObservable = () => ({ type: DELETE_ITEM_EPIC });
 

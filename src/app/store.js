@@ -9,7 +9,7 @@ import { createLogger } from 'redux-logger';
 
 import { counterEpic, counterReducer, watchCounter } from '~/counter';
 import { crudReducer } from '~/crud';
-import { restReducer, watchRest } from '~/rest';
+import { restEpic, restReducer, watchRest } from '~/rest';
 import { graphqlReducer } from '~/graphql';
 import { formControlsReducer } from '~/form-controls';
 import { dataTableReducer } from '~/data-table';
@@ -20,7 +20,9 @@ import appReducer from './reducer';
 
 const rootEpic = combineEpics(
   appEpic,
-  counterEpic
+
+  counterEpic,
+  restEpic
 );
 
 const rootReducer = combineReducers({
