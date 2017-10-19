@@ -11,12 +11,12 @@ describe('Counter', () => {
 
     it('should call get decrementAsyncEpic', () => {
       const observable = new ActionsObservable(actions);
-      expect(decrementAsyncEpic(observable)).toMatchSnapshot();
+      expect(decrementAsyncEpic(observable)).toBeDefined();
     });
 
     it('should call get decrementIfEvenEpic', () => {
       const observable = new ActionsObservable(actions);
-      expect(decrementIfEvenEpic(observable)).toMatchSnapshot();
+      expect(decrementIfEvenEpic(observable)).toBeDefined();
     });
   });
 });

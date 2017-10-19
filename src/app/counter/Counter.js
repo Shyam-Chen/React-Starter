@@ -37,10 +37,17 @@ export const Counter = ({ counter, actions, evenOrOdd }) => (
 
     <div className="typography">
       <Typography type="body1" component="p">
-        <Button raised color="indigo" onClick={actions.incrementIfOdd}>Increment (If Odd)</Button> {' '}
+        <Button raised color="indigo" onClick={actions.incrementIfEven}>Increment (If Even)</Button> {' '}
         <Button raised color="pink" onClick={actions.decrementIfEven}>Decrement (If Even)</Button> {' '}
-        <Button raised color="deepPurple" onClick={actions.resetIfOdd}>Reset (If Odd)</Button> {' '}
         <Button raised color="deepPurple" onClick={actions.resetIfEven}>Reset (If Even)</Button>
+      </Typography>
+    </div>
+
+    <div className="typography">
+      <Typography type="body1" component="p">
+        <Button raised color="indigo" onClick={actions.incrementIfOdd}>Increment (If Odd)</Button> {' '}
+        <Button raised color="pink" onClick={actions.decrementIfOdd}>Decrement (If Odd)</Button> {' '}
+        <Button raised color="deepPurple" onClick={actions.resetIfOdd}>Reset (If Odd)</Button>
       </Typography>
     </div>
 

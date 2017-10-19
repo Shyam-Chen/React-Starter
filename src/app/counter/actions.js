@@ -1,4 +1,8 @@
-import { INCREMENT, DECREMENT, RESET, DECREMENT_ASYNC, DECREMENT_IF_EVEN, RESET_ASYNC, RESET_IF_ODD, RESET_IF_EVEN } from './constants';
+import {
+  INCREMENT, DECREMENT, RESET,
+  DECREMENT_ASYNC, DECREMENT_IF_EVEN, DECREMENT_IF_ODD,
+  RESET_ASYNC, RESET_IF_EVEN, RESET_IF_ODD
+} from './constants';
 
 /**
  * @name action-creators
@@ -16,6 +20,15 @@ export const incrementAsync = () =>
   dispatch =>
     setTimeout(() => dispatch(increment()), 1000);
 
+export const incrementIfEven = () =>
+  (dispatch, getState) => {
+    const { counter } = getState();
+
+    if (counter.value % 2 === 0) {
+      dispatch(increment());
+    }
+  };
+
 export const incrementIfOdd = () =>
   (dispatch, getState) => {
     const { counter } = getState();
@@ -31,11 +44,12 @@ export const incrementIfOdd = () =>
 
 export const decrementAsync = () => ({ type: DECREMENT_ASYNC });
 export const decrementIfEven = () => ({ type: DECREMENT_IF_EVEN });
+export const decrementIfOdd = () => ({ type: DECREMENT_IF_ODD });
 
 /**
  * @name Saga
  */
 
 export const resetAsync = () => ({ type: RESET_ASYNC });
-export const resetIfOdd = () => ({ type: RESET_IF_ODD });
 export const resetIfEven = () => ({ type: RESET_IF_EVEN });
+export const resetIfOdd = () => ({ type: RESET_IF_ODD });
