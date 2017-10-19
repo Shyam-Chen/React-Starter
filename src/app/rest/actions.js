@@ -6,8 +6,14 @@ import {
   ADD_ITEM_SAGA, SEARCH_ITEM_SAGA, EDIT_ITEM_SAGA, DELETE_ITEM_SAGA
 } from './constants';
 
+/**
+ * @name action-creators
+ */
+
 export const success = data => ({ type: SUCCESS, data });
 export const failure = error => ({ type: FAILURE, error });
+
+export const setData = data => ({ type: SET_DATA, data });
 
 /**
  * @name Thunk
@@ -55,10 +61,3 @@ export const addItemSaga = text => ({ type: ADD_ITEM_SAGA, text });
 export const searchItemSaga = text => ({ type: SEARCH_ITEM_SAGA, text });
 export const editItemSaga = () => ({ type: EDIT_ITEM_SAGA });
 export const deleteItemSaga = () => ({ type: DELETE_ITEM_SAGA });
-
-/**
- * @name setting
- * @param {any} data - set data
- * @return {object} - action creator
- */
-export const setData = data => ({ type: SET_DATA, data });

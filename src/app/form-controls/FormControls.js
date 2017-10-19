@@ -207,7 +207,7 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
               </FormGroup>
             </FormControl>
             <div className="outputs" style={{ padding: '0 0 .5rem' }}>
-              {autoplay ? 'True' : ''}
+              {autoplay ? `${autoplay}`.charAt(0).toUpperCase() + `${autoplay}`.slice(1) : ''}
             </div>
           </div>
 

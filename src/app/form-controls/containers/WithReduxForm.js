@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
-import { Paper, Typography, TextField, Select, Input } from 'material-ui';
+import { Paper, Typography, TextField, Select, Input, Switch } from 'material-ui';
 import { InputLabel } from 'material-ui/Input';
-import { FormControl } from 'material-ui/Form';
+import { FormControl, FormGroup, FormLabel } from 'material-ui/Form';
 import { MenuItem } from 'material-ui/Menu';
 
 import { INITIAL } from '../constants';
+
+/**
+ * @name render - rendering component
+ */
 
 const renderTextField = ({ input, meta: { touched, error }, ...other }) => (
   <div>
@@ -64,7 +68,27 @@ const renderMultipleSelect = ({ input, label, meta: { touched, error }, list, ..
   </div>
 );
 
-let WithReduxForm = ({ name, age, countries }) => {
+const renderSwitch = ({ input, label, meta: { touched, error }, ...other }) => (
+  <div>
+    <div>
+      <FormGroup row>
+        <FormLabel component="legend" style={{ alignSelf: 'center' }}>{label}</FormLabel>
+        <Switch
+          {...input}
+          {...other}
+        />
+      </FormGroup>
+    </div>
+
+    {touched && error && <div style={{ color: '#F44336' }}>{error}</div>}
+  </div>
+);
+
+/**
+ * @name Component
+ */
+
+let WithReduxForm = ({ selector }) => {
 
   return (
     <div className="container">
@@ -79,7 +103,7 @@ let WithReduxForm = ({ name, age, countries }) => {
             <FormControl>
               <Field name="name" component={renderTextField} label="Name" />
             </FormControl>
-            <div className="outputs">{name}</div>
+            <div className="outputs">{selector('name')}</div>
           </div>
 
           <div className="row">
@@ -87,7 +111,7 @@ let WithReduxForm = ({ name, age, countries }) => {
             <FormControl>
               <Field name="age" component={renderSelect} label="Age" list={INITIAL['listOfage']} />
             </FormControl>
-            <div className="outputs">{age}</div>
+            <div className="outputs">{selector('age')}</div>
           </div>
 
           <div className="row">
@@ -95,7 +119,17 @@ let WithReduxForm = ({ name, age, countries }) => {
             <FormControl>
               <Field name="countries" component={renderMultipleSelect} label="Countries" list={INITIAL['listOfCountries']} />
             </FormControl>
-            <div className="outputs">{countries ? countries.join(', ') : countries}</div>
+            <div className="outputs">{selector('countries') ? selector('countries').join(', ') : selector('countries')}</div>
+          </div>
+
+          <div className="row">
+            {/* switch */}
+            <FormControl component="fieldset">
+              <Field name="autoplay" component={renderSwitch} label="Autoplay" />
+            </FormControl>
+            <div className="outputs" style={{ padding: '0 0 .5rem' }}>
+              {selector('autoplay') ? `${selector('autoplay')}`.charAt(0).toUpperCase() + `${selector('autoplay')}`.slice(1) : ''}
+            </div>
           </div>
 
           <div className="row">
@@ -135,8 +169,6 @@ const selector = formValueSelector('example');
 
 export default connect(
   state => ({
-    name: selector(state, 'name'),
-    age: selector(state, 'age'),
-    countries: selector(state, 'countries')
+    selector: field => selector(state, field)
   })
 )(WithReduxForm);

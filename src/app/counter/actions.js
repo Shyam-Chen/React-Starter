@@ -1,8 +1,16 @@
 import { INCREMENT, DECREMENT, RESET, DECREMENT_ASYNC, DECREMENT_IF_EVEN, RESET_ASYNC, RESET_IF_ODD, RESET_IF_EVEN } from './constants';
 
+/**
+ * @name action-creators
+ */
+
 export const increment = () => ({ type: INCREMENT });
 export const decrement = () => ({ type: DECREMENT });
 export const reset = () => ({ type: RESET });
+
+/**
+ * @name Thunk
+ */
 
 export const incrementAsync = () =>
   dispatch =>
@@ -17,8 +25,16 @@ export const incrementIfOdd = () =>
     }
   };
 
+/**
+ * @name Observable
+ */
+
 export const decrementAsync = () => ({ type: DECREMENT_ASYNC });
 export const decrementIfEven = () => ({ type: DECREMENT_IF_EVEN });
+
+/**
+ * @name Saga
+ */
 
 export const resetAsync = () => ({ type: RESET_ASYNC });
 export const resetIfOdd = () => ({ type: RESET_IF_ODD });
