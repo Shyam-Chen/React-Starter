@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
-import { Paper, Typography, TextField, Select, Input, Switch } from 'material-ui';
+import { Paper, Typography, TextField, Select, Input, Radio, Switch } from 'material-ui';
 import { InputLabel } from 'material-ui/Input';
-import { FormControl, FormGroup, FormLabel } from 'material-ui/Form';
+import { FormControl, FormGroup, FormControlLabel, FormLabel } from 'material-ui/Form';
 import { MenuItem } from 'material-ui/Menu';
+import { RadioGroup } from 'material-ui/Radio';
 
 import { INITIAL } from '../constants';
 
@@ -12,7 +13,7 @@ import { INITIAL } from '../constants';
  * @name render - rendering component
  */
 
-const renderTextField = ({ input, meta: { touched, error }, ...other }) => (
+const renderInput = ({ input, meta: { touched, error }, ...other }) => (
   <div>
     <div>
       <TextField {...input} {...other} />
@@ -68,6 +69,27 @@ const renderMultipleSelect = ({ input, label, meta: { touched, error }, list, ..
   </div>
 );
 
+const renderRadioButtons = ({ input, meta: { touched, error }, ...other }) => (
+  <div>
+    <div>
+      <FormLabel component="legend">Gender</FormLabel>
+      <RadioGroup
+        {...input}
+        {...other}
+        style={{ display: 'flex', flexDirection: 'row' }}
+        aria-label="gender"
+        name="gender"
+      >
+        <FormControlLabel value="male" control={<Radio />} label="Male" />
+        <FormControlLabel value="female" control={<Radio />} label="Female" />
+        <FormControlLabel value="other" control={<Radio />} label="Other" />
+      </RadioGroup>
+    </div>
+
+    {touched && error && <div style={{ color: '#F44336' }}>{error}</div>}
+  </div>
+);
+
 const renderSwitch = ({ input, label, meta: { touched, error }, ...other }) => (
   <div>
     <div>
@@ -101,7 +123,7 @@ let WithReduxForm = ({ selector }) => {
           <div className="row">
             {/* input */}
             <FormControl>
-              <Field name="name" component={renderTextField} label="Name" />
+              <Field name="name" component={renderInput} label="Name" />
             </FormControl>
             <div className="outputs">{selector('name')}</div>
           </div>
@@ -120,6 +142,16 @@ let WithReduxForm = ({ selector }) => {
               <Field name="countries" component={renderMultipleSelect} label="Countries" list={INITIAL['listOfCountries']} />
             </FormControl>
             <div className="outputs">{selector('countries') ? selector('countries').join(', ') : selector('countries')}</div>
+          </div>
+
+          <div className="row">
+            {/* radio buttons */}
+            <FormControl component="fieldset">
+              <Field name="gender" component={renderRadioButtons} />
+            </FormControl>
+            <div className="outputs" style={{ padding: '0 0 .5rem' }}>
+              {selector('gender') ? `${selector('gender')}`.charAt(0).toUpperCase() + `${selector('gender')}`.slice(1) : ''}
+            </div>
           </div>
 
           <div className="row">
