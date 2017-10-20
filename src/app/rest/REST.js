@@ -1,7 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Paper, Table } from 'material-ui';
+import { Paper, Toolbar, Table } from 'material-ui';
 import { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import { CircularProgress } from 'material-ui/Progress';
 
@@ -9,9 +9,10 @@ import Navigation from '~/shared/Navigation';
 import Button from '~/shared/Button';
 
 import * as actions from './actions';
+import { total } from './selectors';
 import { Add, Search, Edit, Delete } from './containers';
 
-const REST = ({ rest, actions }) => {
+const REST = ({ rest, total, actions }) => {
   const { dataset, deleteData, editData, loading, /* initial */ } = rest;
 
   // if (!initial) {
@@ -28,6 +29,11 @@ const REST = ({ rest, actions }) => {
 
       <div className="table">
         <Paper elevation={2}>
+          <Toolbar>
+            <div style={{ flex: '0 0 auto' }}>
+              Total: {total}
+            </div>
+          </Toolbar>
           <Table>
             <TableHead>
               <TableRow>
@@ -112,6 +118,6 @@ const REST = ({ rest, actions }) => {
 };
 
 export default connect(
-  ({ rest }) => ({ rest }),
+  ({ rest }) => ({ rest, total: total(rest) }),
   dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(REST);
