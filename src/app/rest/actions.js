@@ -50,8 +50,8 @@ export const deleteItem = id =>
 
 export const addItemObservable = text => ({ type: ADD_ITEM_EPIC, text });
 export const searchItemObservable = text => ({ type: SEARCH_ITEM_EPIC, text });
-export const editItemObservable = () => ({ type: EDIT_ITEM_EPIC });
-export const deleteItemObservable = () => ({ type: DELETE_ITEM_EPIC });
+export const editItemObservable = (id, text) => ({ type: EDIT_ITEM_EPIC, id, text });
+export const deleteItemObservable = id => ({ type: DELETE_ITEM_EPIC, id });
 
 /**
  * @name Saga
@@ -59,5 +59,5 @@ export const deleteItemObservable = () => ({ type: DELETE_ITEM_EPIC });
 
 export const addItemSaga = text => ({ type: ADD_ITEM_SAGA, text });
 export const searchItemSaga = text => ({ type: SEARCH_ITEM_SAGA, text });
-export const editItemSaga = () => ({ type: EDIT_ITEM_SAGA });
-export const deleteItemSaga = () => ({ type: DELETE_ITEM_SAGA });
+export const editItemSaga = (id, text) => ({ type: EDIT_ITEM_SAGA, id, text });
+export const deleteItemSaga = id => ({ type: DELETE_ITEM_SAGA, id });

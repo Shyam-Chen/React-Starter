@@ -1,7 +1,7 @@
 import { put, takeEvery, all } from 'redux-saga/effects';
 import axios from 'axios';
 
-import { API_LIST, ADD_ITEM_SAGA, SEARCH_ITEM_SAGA } from './constants';
+import { API_LIST, ADD_ITEM_SAGA, SEARCH_ITEM_SAGA, DELETE_ITEM_SAGA } from './constants';
 import { success, searchItemSaga, setData } from './actions';
 
 export function *effectAddItemSaga({ text }) {
@@ -23,9 +23,19 @@ export function *watchSearchItemSaga() {
   yield takeEvery(SEARCH_ITEM_SAGA, effectSearchItemSaga);
 }
 
+export function *effectDeleteItemSaga({ id }) {
+  yield axios.delete(`${API_LIST}/${id}`);
+  yield put(searchItemSaga());
+}
+
+export function *watchDeleteItemSaga() {
+  yield takeEvery(DELETE_ITEM_SAGA, effectDeleteItemSaga);
+}
+
 export default function *() {
   yield all([
     watchAddItemSaga(),
-    watchSearchItemSaga()
+    watchSearchItemSaga(),
+    watchDeleteItemSaga()
   ]);
 }
