@@ -17,6 +17,7 @@ import { authorizationReducer } from '~/authorization';
 
 import appEpic from './epics';
 import appReducer from './reducer';
+import watchApp from './sagas';
 
 const rootEpic = combineEpics(
   appEpic,
@@ -41,6 +42,8 @@ const rootReducer = combineReducers({
 
 const rootSaga = function *() {
   yield all([
+    watchApp(),
+
     watchCounter(),
     watchRest()
   ]);

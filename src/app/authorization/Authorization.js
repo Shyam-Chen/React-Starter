@@ -14,7 +14,7 @@ const Authorization = () => {
     <div>
       <Navigation />
 
-      <div>TODO: Authorization Page</div>
+      <div>TODO: API Designing (REST & GraphQL)</div>
 
       <div>
         <TextField
