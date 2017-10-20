@@ -15,10 +15,7 @@ export function *watchResetAsync() {
 
 export function *resetIfEven() {
   const { value } = yield select(({ counter }) => counter);
-
-  if (value % 2 === 0) {
-    yield put(reset());
-  }
+  if (value % 2 === 0) yield put(reset());
 }
 
 export function *watchResetIfEven() {
@@ -27,10 +24,7 @@ export function *watchResetIfEven() {
 
 export function *resetIfOdd() {
   const { value } = yield select(({ counter }) => counter);
-
-  if (Math.abs(value % 2) === 1) {
-    yield put(reset());
-  }
+  if (Math.abs(value % 2) === 1) yield put(reset());
 }
 
 export function *watchResetIfOdd() {

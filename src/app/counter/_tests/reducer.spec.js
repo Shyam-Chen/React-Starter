@@ -15,7 +15,7 @@ describe('Counter', () => {
       expect(counter({ value: 1 }, { type: DECREMENT })).toEqual({ value: 0 });
     });
 
-    it('should handle DECREMENT action', () => {
+    it('should handle RESET action', () => {
       expect(counter({ value: 1 }, { type: RESET })).toEqual({ value: 0 });
       expect(counter({ value: 0 }, { type: RESET })).toEqual({ value: 0 });
       expect(counter({ value: -1 }, { type: RESET })).toEqual({ value: 0 });

@@ -21,22 +21,16 @@ export const incrementAsync = () =>
     setTimeout(() => dispatch(increment()), 1000);
 
 export const incrementIfEven = () =>
-  (dispatch, getState) => {
-    const { counter } = getState();
-
-    if (counter.value % 2 === 0) {
-      dispatch(increment());
-    }
-  };
+  (dispatch, getState) =>
+    getState().counter.value % 2 === 0
+      ? dispatch(increment())
+      : void 0;
 
 export const incrementIfOdd = () =>
-  (dispatch, getState) => {
-    const { counter } = getState();
-
-    if (Math.abs(counter.value % 2) === 1) {
-      dispatch(increment());
-    }
-  };
+  (dispatch, getState) =>
+    Math.abs(getState().counter.value % 2) === 1
+      ? dispatch(increment())
+      : void 0;
 
 /**
  * @name Observable
