@@ -34,7 +34,8 @@ const Edit = ({ rest: { editData }, actions }) => {
       <DialogActions>
         <Button color="red" onClick={onDialogClose}>Cancel</Button>
         <Button
-          color="green"
+          raised
+          color="teal"
           onClick={async () => {
             if (text) {
               await onDialogClose();
@@ -44,6 +45,32 @@ const Edit = ({ rest: { editData }, actions }) => {
           }}
         >
           Save
+        </Button>
+        <Button
+          raised
+          color="teal"
+          onClick={async () => {
+            if (text) {
+              await onDialogClose();
+              await actions.setData({ loading: true });
+              await actions.editItemSaga(_id, text);
+            }
+          }}
+        >
+          Save (Saga)
+        </Button>
+        <Button
+          raised
+          color="teal"
+          onClick={async () => {
+            if (text) {
+              await onDialogClose();
+              await actions.setData({ loading: true });
+              await actions.editItemObservable(_id, text);
+            }
+          }}
+        >
+          Save (Observable)
         </Button>
       </DialogActions>
     </Dialog>

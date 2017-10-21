@@ -4,7 +4,7 @@ import { fromPromise, concat, of } from 'rxjs/observable';
 import { map, mergeMap, switchMap } from 'rxjs/operator';
 import axios from 'axios';
 
-import { API_LIST, ADD_ITEM_EPIC, SEARCH_ITEM_EPIC, DELETE_ITEM_EPIC } from './constants';
+import { API_LIST, ADD_ITEM_EPIC, SEARCH_ITEM_EPIC, EDIT_ITEM_EPIC, DELETE_ITEM_EPIC } from './constants';
 import { success, searchItemObservable, setData } from './actions';
 
 export const addItemEpic = action$ =>
@@ -28,6 +28,15 @@ export const searchItemEpic = action$ =>
       )
     );
 
+export const editItemEpic = action$ =>
+  action$.ofType(EDIT_ITEM_EPIC)
+    ::mergeMap(({ id, text }) =>
+      Observable::fromPromise(
+        axios.put(`${API_LIST}/${id}`, { text })
+      )
+    )
+    ::map(() => searchItemObservable());
+
 export const deleteItemEpic = action$ =>
   action$.ofType(DELETE_ITEM_EPIC)
     ::mergeMap(({ id }) =>
@@ -40,5 +49,6 @@ export const deleteItemEpic = action$ =>
 export default combineEpics(
   addItemEpic,
   searchItemEpic,
+  editItemEpic,
   deleteItemEpic
 );

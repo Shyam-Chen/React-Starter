@@ -42,7 +42,7 @@ const Search = ({ rest: { searchData }, actions }) => {
           await actions.setData({ searchData: { text: '' } });
         }}
       >
-        Search (With Saga)
+        Search (Saga)
       </Button>
       {' '}
       <Button
@@ -54,7 +54,7 @@ const Search = ({ rest: { searchData }, actions }) => {
           await actions.setData({ searchData: { text: '' } });
         }}
       >
-        Search (With Observable)
+        Search (Observable)
       </Button>
 
       <style jsx>{`

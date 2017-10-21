@@ -20,11 +20,6 @@ $ npm start
 
 ## TODO List
 
-* REST & GraphQL
-  * Authorization
-  * Pagination
-* Form Controls
-* Data Table
 * Internationalization (React Intl)
 * Data Chart
   * SVG & Canvas (D3 + Immutable)

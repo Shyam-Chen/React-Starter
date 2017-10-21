@@ -28,7 +28,7 @@ const Delete = ({ rest: { deleteData }, actions }) => {
         <Button color="green" onClick={onDialogClose}>Cancel</Button>
         <Button
           raised
-          color="red"
+          color="pink"
           onClick={async () => {
             await onDialogClose();
             await actions.setData({ loading: true });
@@ -39,25 +39,25 @@ const Delete = ({ rest: { deleteData }, actions }) => {
         </Button>
         <Button
           raised
-          color="red"
+          color="pink"
           onClick={async () => {
             await onDialogClose();
             await actions.setData({ loading: true });
             await actions.deleteItemSaga(_id);
           }}
         >
-          Confirm (With Saga)
+          Confirm (Saga)
         </Button>
         <Button
           raised
-          color="red"
+          color="pink"
           onClick={async () => {
             await onDialogClose();
             await actions.setData({ loading: true });
             await actions.deleteItemObservable(_id);
           }}
         >
-          Confirm (With Observable)
+          Confirm (Observable)
         </Button>
       </DialogActions>
     </Dialog>

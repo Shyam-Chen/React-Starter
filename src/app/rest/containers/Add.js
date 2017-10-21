@@ -46,7 +46,7 @@ const Add = ({ rest: { addData }, actions }) => {
           }
         }}
       >
-        Add (With Saga)
+        Add (Saga)
       </Button>
       {' '}
       <Button
@@ -60,7 +60,7 @@ const Add = ({ rest: { addData }, actions }) => {
           }
         }}
       >
-        Add (With Observable)
+        Add (Observable)
       </Button>
 
       <style jsx>{`
