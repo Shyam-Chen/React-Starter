@@ -1,7 +1,15 @@
 import React from 'react';
 import { Button } from 'material-ui';
 import { withStyles } from 'material-ui/styles';
-import { red, pink, purple, deepPurple, indigo, blue, lightBlue, cyan, teal, green, lightGreen, lime, yellow, amber, orange, deepOrange, brown, grey, blueGrey } from 'material-ui/colors';
+import {
+  red, pink, purple,
+  deepPurple, indigo, blue,
+  lightBlue, cyan, teal,
+  green, lightGreen, lime,
+  yellow, amber, orange,
+  deepOrange, brown, grey,
+  blueGrey
+} from 'material-ui/colors';
 import classNames from 'classnames';
 
 export default withStyles(
