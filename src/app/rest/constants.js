@@ -1,8 +1,18 @@
 import { API_URL } from '~/constants';
 
+export interface State {
+  dataset?: Array<{ _id: string, text: string }>;
+  addData?: Object;
+  searchData?: Object;
+  editData?: Object;
+  deleteData?: Object;
+  loading?: boolean;
+  initial?: boolean;
+}
+
 export const API_LIST = `${API_URL}/__/list`;
 
-export const INITIAL = {
+export const INITIAL: State = {
   dataset: [],
   addData: { text: '' },
   searchData: { text: '' },

@@ -27,6 +27,5 @@ $ npm start
 * WebSockets (Socket.IO)
 * Service Workers
 * Hot Module Replacement
-* Flow Types
 * Prerender
 * Server-side Rendering

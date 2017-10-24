@@ -10,11 +10,12 @@
     "backend": "babel server.js -d build",
     "serve": "cross-env NODE_ENV=production node build/server.js",
     "server": "nodemon server.js --exec babel-node",
-    "lint": "eslint src",
+    "lint": "eslint src && flow",
     "unit": "jest --coverage",
     "e2e": "gulp e2e",
     "deploy": "firebase deploy",
     "gulp": "gulp",
+    "flow": "flow",
     "codecov": "codecov"
   },
   "repository": {

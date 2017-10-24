@@ -47,7 +47,6 @@
     "yield-star-spacing": ["error", "after"],
 
     // React
-    "react/prop-types": "off",
-    "react/display-name": "off"
+    "react/prop-types": "off"
   }
 }
