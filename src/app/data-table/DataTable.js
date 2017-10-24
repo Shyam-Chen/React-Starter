@@ -16,10 +16,10 @@ const DataTable = ({ dataTable: { foodNutrients, rowsPerPage, page } }) => {
 
       <div>Work in Progress</div>
 
-      <Paper>
+      <Paper style={{ maxWidth: '45rem' }}>
         <Toolbar>
           <div style={{ flex: '0 0 auto' }}>
-            Nutrition
+            Personnel information
           </div>
           <div style={{ flex: '1 1 100%' }}></div>
           <div>
@@ -43,15 +43,11 @@ const DataTable = ({ dataTable: { foodNutrients, rowsPerPage, page } }) => {
                   // onChange={onSelectAllClick}
                 />
               </TableCell>
-              <TableCell>Dessert</TableCell>
-              <TableCell numeric>Measure</TableCell>
-              <TableCell numeric>Grams</TableCell>
-              <TableCell numeric>Calories</TableCell>
-              <TableCell numeric>Protein</TableCell>
-              <TableCell numeric>Carb.</TableCell>
-              <TableCell numeric>Fiber</TableCell>
-              <TableCell numeric>Fat</TableCell>
-              <TableCell numeric>Sat. fat</TableCell>
+              <TableCell>ID</TableCell>
+              <TableCell numeric>Name</TableCell>
+              <TableCell numeric>Symbol</TableCell>
+              <TableCell numeric>Color</TableCell>
+              <TableCell numeric>Progress</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -61,15 +57,11 @@ const DataTable = ({ dataTable: { foodNutrients, rowsPerPage, page } }) => {
                   <TableCell padding="checkbox">
                     <Checkbox checked={false} />
                   </TableCell>
-                  <TableCell>{item.dessert}</TableCell>
-                  <TableCell numeric>{item.measure}</TableCell>
-                  <TableCell numeric>{item.grams}</TableCell>
-                  <TableCell numeric>{item.calories}</TableCell>
-                  <TableCell numeric>{item.protein}</TableCell>
-                  <TableCell numeric>{item.carb}</TableCell>
-                  <TableCell numeric>{item.fiber}</TableCell>
-                  <TableCell numeric>{item.fat}</TableCell>
-                  <TableCell numeric>{item.satFat}</TableCell>
+                  <TableCell>{item.id}</TableCell>
+                  <TableCell numeric>{item.name}</TableCell>
+                  <TableCell numeric>{item.symbol}</TableCell>
+                  <TableCell numeric>{item.color}</TableCell>
+                  <TableCell numeric>{item.progress}</TableCell>
                 </TableRow>
               ))
             }
@@ -78,6 +70,7 @@ const DataTable = ({ dataTable: { foodNutrients, rowsPerPage, page } }) => {
             <TablePagination
               count={foodNutrients.length}
               rowsPerPage={rowsPerPage}
+              rowsPerPageOptions={[5, 10, 20]}
               page={page}
               // onChangePage={handleChangePage}
               // onChangeRowsPerPage={handleChangeRowsPerPage}
