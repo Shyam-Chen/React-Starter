@@ -1,7 +1,6 @@
 import { join } from 'path';
 import express from 'express';
 import redis from 'redis';
-import socket from 'socket.io';
 import bluebird from 'bluebird';
 import compression from 'compression';
 import cors from 'cors';
@@ -11,9 +10,9 @@ import history from 'express-history-api-fallback';
 
 const app = express();
 
-app.set('port', (process.env.PORT || 3000));
-app.set('redis-port', (process.env.REDIS_PORT || 6379));
-app.set('redis-host', (process.env.REDIS_HOST || '127.0.0.1'));
+app.set('port', process.env.PORT || 3000);
+app.set('redis-port', process.env.REDIS_PORT || 6379);
+app.set('redis-host', process.env.REDIS_HOST || '127.0.0.1');
 app.set('redis-key', process.env.REDIS_KEY);
 
 bluebird.promisifyAll(redis.RedisClient.prototype);
@@ -44,13 +43,6 @@ app.use(history('index.html', { root }));
 const api = app.listen(app.get('port'), (): void => {
   console.log('App: Bootstrap Succeeded.');
   console.log(`Port: ${app.get('port')}.`);
-});
-
-const io = socket.listen(api);
-
-io.on('connection', socket => {
-  console.log('WS: Establish a connection.');
-  socket.on('disconnect', () => console.log('WS: Disconnected.'));
 });
 
 export default api;

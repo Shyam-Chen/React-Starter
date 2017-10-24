@@ -25,7 +25,6 @@ $ npm start
   * SVG & Canvas (D3 + Immutable)
   * WebGL (Three + Immutable)
 * WebSockets (Socket.IO)
-* Google Analytics
 * Service Workers
 * Hot Module Replacement
 * Flow Types
