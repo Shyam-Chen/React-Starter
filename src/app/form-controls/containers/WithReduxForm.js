@@ -56,7 +56,6 @@ const renderMultipleSelect = ({ input, label, meta: { touched, error }, list, ..
         value={input.value || []}
         input={<Input id={label} style={{ width: '15rem' }} />}
       >
-        <MenuItem value=""><em>None</em></MenuItem>
         {
           list.map((item, index) => (
             <MenuItem key={index} value={item}>{item}</MenuItem>
@@ -197,10 +196,6 @@ let WithReduxForm = ({ selector }) => {
 
 WithReduxForm = reduxForm({ form: 'example' })(WithReduxForm);
 
-const selector = formValueSelector('example');
-
 export default connect(
-  state => ({
-    selector: field => selector(state, field)
-  })
+  state => ({ selector: field => formValueSelector('example')(state, field) })
 )(WithReduxForm);
