@@ -1,6 +1,6 @@
-// import { createSelector } from 'reselect';
+import { createSelector } from 'reselect';
 
-// export const NAME = createSelector(
-//   app => app,
-//   app => ...
-// );
+export const NAME = createSelector(
+  app => app,
+  app => app
+);

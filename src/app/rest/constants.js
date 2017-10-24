@@ -1,4 +1,6 @@
-export const API_LIST = 'https://web-go-demo.herokuapp.com/__/list';
+import { API_URL } from '~/constants';
+
+export const API_LIST = `${API_URL}/__/list`;
 
 export const INITIAL = {
   dataset: [],

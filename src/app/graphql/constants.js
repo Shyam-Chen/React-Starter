@@ -1,8 +1,10 @@
 import { ApolloClient, createNetworkInterface } from 'react-apollo';
 
+import { API_URL } from '~/constants';
+
 export const CLIENT = new ApolloClient({
   networkInterface: createNetworkInterface({
-    uri: 'https://web-go-demo.herokuapp.com/__/graphql'
+    uri: `${API_URL}/__/graphql`
   })
 });
 
