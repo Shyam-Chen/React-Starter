@@ -13,7 +13,11 @@ import { INITIAL } from '../constants';
  * @name render - rendering component
  */
 
-const renderInput = ({ input, meta: { touched, error }, ...other }) => (
+const renderInput = ({ input, ...other }) => (
+  <TextField {...input} {...other} />
+);
+
+const renderInputValidation = ({ input, meta: { touched, error }, ...other }) => (
   <div>
     <TextField
       required
@@ -28,7 +32,7 @@ const renderInput = ({ input, meta: { touched, error }, ...other }) => (
   </div>
 );
 
-const renderSelect = ({ input, label, meta: { touched, error }, list, ...other }) => (
+const renderSelect = ({ input, label, list, ...other }) => (
   <div>
     <InputLabel htmlFor={label}>{label}</InputLabel>
     <Select
@@ -43,14 +47,10 @@ const renderSelect = ({ input, label, meta: { touched, error }, list, ...other }
         ))
       }
     </Select>
-    {
-      touched && error &&
-      <FormHelperText error={!!(touched && error)}>{error}</FormHelperText>
-    }
   </div>
 );
 
-const renderMultipleSelect = ({ input, label, meta: { touched, error }, list, ...other }) => (
+const renderMultipleSelect = ({ input, label, list, ...other }) => (
   <div>
     <InputLabel htmlFor={label}>{label}</InputLabel>
     <Select
@@ -66,14 +66,10 @@ const renderMultipleSelect = ({ input, label, meta: { touched, error }, list, ..
         ))
       }
     </Select>
-    {
-      touched && error &&
-      <FormHelperText error={!!(touched && error)}>{error}</FormHelperText>
-    }
   </div>
 );
 
-const renderRadioButtons = ({ input, meta: { touched, error }, ...other }) => (
+const renderRadioButtons = ({ input, ...other }) => (
   <div>
     <FormLabel component="legend">Gender</FormLabel>
     <RadioGroup
@@ -87,28 +83,14 @@ const renderRadioButtons = ({ input, meta: { touched, error }, ...other }) => (
       <FormControlLabel value="female" control={<Radio />} label="Female" />
       <FormControlLabel value="other" control={<Radio />} label="Other" />
     </RadioGroup>
-    {
-      touched && error &&
-      <FormHelperText error={!!(touched && error)}>{error}</FormHelperText>
-    }
   </div>
 );
 
-const renderSwitch = ({ input, label, meta: { touched, error }, ...other }) => (
-  <div>
-    <FormGroup row>
-      <FormLabel component="legend" style={{ alignSelf: 'center' }}>{label}</FormLabel>
-      <Switch
-        value={String(input.value)}
-        {...input}
-        {...other}
-      />
-    </FormGroup>
-    {
-      touched && error &&
-      <FormHelperText error={!!(touched && error)}>{error}</FormHelperText>
-    }
-  </div>
+const renderSwitch = ({ input, ...other }) => (
+  <FormGroup row>
+    <FormLabel component="legend" style={{ alignSelf: 'center' }}>Autoplay</FormLabel>
+    <Switch {...input} {...other} />
+  </FormGroup>
 );
 
 /**
@@ -145,7 +127,15 @@ let WithReduxForm = ({ selector }) => {
           <div className="row">
             {/* input */}
             <FormControl>
-              <Field name="name" component={renderInput} label="Name" />
+              <Field name="nickname" component={renderInput} label="Nickname" />
+            </FormControl>
+            <div className="outputs">{selector('nickname')}</div>
+          </div>
+
+          <div className="row">
+            {/* input validation */}
+            <FormControl>
+              <Field name="name" component={renderInputValidation} label="Name" />
             </FormControl>
             <div className="outputs">{selector('name')}</div>
           </div>

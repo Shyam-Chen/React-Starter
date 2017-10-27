@@ -15,6 +15,7 @@ import WithReduxForm from './containers/WithReduxForm';
 
 const FormControls = ({ formControls, actions, listOfVariety }) => {
   const {
+    nickname,
     name, nameTouch, nameError,
     age, listOfage,
     countries, listOfCountries,
@@ -36,6 +37,18 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
         <form className="container">
           <div className="row">
             {/* input */}
+            <FormControl>
+              <TextField
+                label="Nickname"
+                value={nickname}
+                onChange={event => actions.setData({ nickname: event.target.value })}
+              />
+            </FormControl>
+            <div className="outputs">{nickname}</div>
+          </div>
+
+          <div className="row">
+            {/* input validation */}
             <FormControl>
               <TextField
                 required

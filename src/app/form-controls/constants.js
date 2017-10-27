@@ -1,5 +1,8 @@
 export const INITIAL = {
   // input
+  nickname: '',
+
+  // Input validation
   name: '',
   nameTouch: false,
   nameError: false,
