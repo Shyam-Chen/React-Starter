@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
 import { Paper, Typography, TextField, Select, Input, Radio, Switch } from 'material-ui';
 import { InputLabel } from 'material-ui/Input';
-import { FormControl, FormGroup, FormControlLabel, FormLabel } from 'material-ui/Form';
+import { FormControl, FormGroup, FormControlLabel, FormLabel, FormHelperText } from 'material-ui/Form';
 import { MenuItem } from 'material-ui/Menu';
 import { RadioGroup } from 'material-ui/Radio';
 
@@ -15,95 +15,118 @@ import { INITIAL } from '../constants';
 
 const renderInput = ({ input, meta: { touched, error }, ...other }) => (
   <div>
-    <div>
-      <TextField {...input} {...other} />
-    </div>
-
-    {touched && error && <div style={{ color: '#F44336' }}>{error}</div>}
+    <TextField
+      required
+      error={!!(touched && error)}
+      {...input}
+      {...other}
+    />
+    {
+      touched && error &&
+      <FormHelperText error={!!(touched && error)}>{error}</FormHelperText>
+    }
   </div>
 );
 
 const renderSelect = ({ input, label, meta: { touched, error }, list, ...other }) => (
   <div>
-    <div>
-      <InputLabel htmlFor={label}>{label}</InputLabel>
-      <Select
-        {...input}
-        {...other}
-        input={<Input id={label} style={{ width: '7rem' }} />}
-      >
-        <MenuItem value=""><em>None</em></MenuItem>
-        {
-          list.map(({ value, label }, index) => (
-            <MenuItem key={index} value={value}>{label}</MenuItem>
-          ))
-        }
-      </Select>
-    </div>
-
-    {touched && error && <div style={{ color: '#F44336' }}>{error}</div>}
+    <InputLabel htmlFor={label}>{label}</InputLabel>
+    <Select
+      {...input}
+      {...other}
+      input={<Input id={label} style={{ width: '7rem' }} />}
+    >
+      <MenuItem value=""><em>None</em></MenuItem>
+      {
+        list.map(({ value, label }, index) => (
+          <MenuItem key={index} value={value}>{label}</MenuItem>
+        ))
+      }
+    </Select>
+    {
+      touched && error &&
+      <FormHelperText error={!!(touched && error)}>{error}</FormHelperText>
+    }
   </div>
 );
 
 const renderMultipleSelect = ({ input, label, meta: { touched, error }, list, ...other }) => (
   <div>
-    <div>
-      <InputLabel htmlFor={label}>{label}</InputLabel>
-      <Select
-        {...input}
-        {...other}
-        multiple
-        value={input.value || []}
-        input={<Input id={label} style={{ width: '15rem' }} />}
-      >
-        {
-          list.map((item, index) => (
-            <MenuItem key={index} value={item}>{item}</MenuItem>
-          ))
-        }
-      </Select>
-    </div>
-
-    {touched && error && <div style={{ color: '#F44336' }}>{error}</div>}
+    <InputLabel htmlFor={label}>{label}</InputLabel>
+    <Select
+      {...input}
+      {...other}
+      multiple
+      value={input.value || []}
+      input={<Input id={label} style={{ width: '15rem' }} />}
+    >
+      {
+        list.map((item, index) => (
+          <MenuItem key={index} value={item}>{item}</MenuItem>
+        ))
+      }
+    </Select>
+    {
+      touched && error &&
+      <FormHelperText error={!!(touched && error)}>{error}</FormHelperText>
+    }
   </div>
 );
 
 const renderRadioButtons = ({ input, meta: { touched, error }, ...other }) => (
   <div>
-    <div>
-      <FormLabel component="legend">Gender</FormLabel>
-      <RadioGroup
-        {...input}
-        {...other}
-        style={{ display: 'flex', flexDirection: 'row' }}
-        aria-label="gender"
-        name="gender"
-      >
-        <FormControlLabel value="male" control={<Radio />} label="Male" />
-        <FormControlLabel value="female" control={<Radio />} label="Female" />
-        <FormControlLabel value="other" control={<Radio />} label="Other" />
-      </RadioGroup>
-    </div>
-
-    {touched && error && <div style={{ color: '#F44336' }}>{error}</div>}
+    <FormLabel component="legend">Gender</FormLabel>
+    <RadioGroup
+      {...input}
+      {...other}
+      style={{ display: 'flex', flexDirection: 'row' }}
+      aria-label="gender"
+      name="gender"
+    >
+      <FormControlLabel value="male" control={<Radio />} label="Male" />
+      <FormControlLabel value="female" control={<Radio />} label="Female" />
+      <FormControlLabel value="other" control={<Radio />} label="Other" />
+    </RadioGroup>
+    {
+      touched && error &&
+      <FormHelperText error={!!(touched && error)}>{error}</FormHelperText>
+    }
   </div>
 );
 
 const renderSwitch = ({ input, label, meta: { touched, error }, ...other }) => (
   <div>
-    <div>
-      <FormGroup row>
-        <FormLabel component="legend" style={{ alignSelf: 'center' }}>{label}</FormLabel>
-        <Switch
-          {...input}
-          {...other}
-        />
-      </FormGroup>
-    </div>
-
-    {touched && error && <div style={{ color: '#F44336' }}>{error}</div>}
+    <FormGroup row>
+      <FormLabel component="legend" style={{ alignSelf: 'center' }}>{label}</FormLabel>
+      <Switch
+        value={String(input.value)}
+        {...input}
+        {...other}
+      />
+    </FormGroup>
+    {
+      touched && error &&
+      <FormHelperText error={!!(touched && error)}>{error}</FormHelperText>
+    }
   </div>
 );
+
+/**
+ * @name validate - form validation
+ */
+
+const validate = ({ name }) => {
+  const errors = {};
+
+  // input
+  if (!name) {
+    errors.name = 'Required';
+  } else if (name.length > 15) {
+    errors.name = 'Must be 20 characters or less';
+  }
+
+  return errors;
+};
 
 /**
  * @name Component
@@ -194,7 +217,7 @@ let WithReduxForm = ({ selector }) => {
   );
 };
 
-WithReduxForm = reduxForm({ form: 'example' })(WithReduxForm);
+WithReduxForm = reduxForm({ form: 'example', validate })(WithReduxForm);
 
 export default connect(
   state => ({ selector: field => formValueSelector('example')(state, field) })
