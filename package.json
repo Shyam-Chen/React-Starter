@@ -10,12 +10,13 @@
     "backend": "babel server.js -d build",
     "serve": "cross-env NODE_ENV=production node build/server.js",
     "server": "nodemon server.js --exec babel-node",
-    "lint": "eslint src && flow",
+    "lint": "eslint src",
     "unit": "jest --coverage",
     "e2e": "gulp e2e",
     "deploy": "firebase deploy",
     "gulp": "gulp",
     "flow": "flow",
+    "typed": "flow-typed install",
     "codecov": "codecov"
   },
   "repository": {
@@ -95,6 +96,7 @@
     "file-loader": "1.1.5",
     "firebase-tools": "3.13.1",
     "flow-bin": "0.57.2",
+    "flow-typed": "2.2.1",
     "gulp": "3.9.1",
     "gulp-protractor": "4.1.0",
     "gulp-util": "3.0.8",
