@@ -1,6 +1,8 @@
 export const INITIAL = {
   // input
   name: '',
+  nameTouch: false,
+  nameError: false,
 
   // select
   age: '',

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Paper, Typography, TextField, Select, Input, Radio, Checkbox, Switch } from 'material-ui';
 import { InputLabel } from 'material-ui/Input';
 import { MenuItem } from 'material-ui/Menu';
-import { FormControl, FormGroup, FormControlLabel, FormLabel } from 'material-ui/Form';
+import { FormControl, FormGroup, FormControlLabel, FormLabel, FormHelperText } from 'material-ui/Form';
 import { RadioGroup } from 'material-ui/Radio';
 
 import Navigation from '~/shared/Navigation';
@@ -15,7 +15,7 @@ import WithReduxForm from './containers/WithReduxForm';
 
 const FormControls = ({ formControls, actions, listOfVariety }) => {
   const {
-    name,
+    name, nameTouch, nameError,
     age, listOfage,
     countries, listOfCountries,
     category, variety, animals,
@@ -38,10 +38,22 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
             {/* input */}
             <FormControl>
               <TextField
+                required
                 label="Name"
                 value={name}
+                error={(nameTouch && nameError && (name === '')) || (name.length > 15)}
                 onChange={event => actions.setData({ name: event.target.value })}
+                onFocus={() => actions.setData({ nameTouch: true })}
+                onBlur={() => actions.setData({ nameError: name === '' })}
               />
+              {
+                nameTouch && nameError && (name === '') &&
+                <FormHelperText error={nameTouch && nameError && (name === '')}>Required</FormHelperText>
+              }
+              {
+                (name.length > 15) &&
+                <FormHelperText error={name.length > 15}>Must be 15 characters or less</FormHelperText>
+              }
             </FormControl>
             <div className="outputs">{name}</div>
           </div>

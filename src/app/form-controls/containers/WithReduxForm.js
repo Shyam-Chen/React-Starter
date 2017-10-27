@@ -122,7 +122,7 @@ const validate = ({ name }) => {
   if (!name) {
     errors.name = 'Required';
   } else if (name.length > 15) {
-    errors.name = 'Must be 20 characters or less';
+    errors.name = 'Must be 15 characters or less';
   }
 
   return errors;
