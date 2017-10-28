@@ -33,37 +33,36 @@ export const _Navigation = () => {
       <div className="filling"></div>
 
       {
-        location.pathname === '/'
-          ? <div className="buttons">
-              <Link to="/counter">
-                <Button raised color="teal">Counter</Button>
-              </Link>
-              {'　'}
-              <Link to="/crud">
-                <Button raised color="teal">CRUD</Button>
-              </Link>
-              {'　'}
-              <Link to="/rest">
-                <Button raised color="teal">REST</Button>
-              </Link>
-              {'　'}
-              <Link to="/graphql">
-                <Button raised color="teal">GraphQL</Button>
-              </Link>
-              {'　'}
-              <Link to="/form-controls">
-                <Button raised color="teal">Form Controls</Button>
-              </Link>
-              {'　'}
-              <Link to="/data-table">
-                <Button raised color="teal">Data Table</Button>
-              </Link>
-              {'　'}
-              <Link to="/authorization">
-                <Button raised color="teal">Authorization</Button>
-              </Link>
-            </div>
-          : void 0
+        location.pathname === '/' &&
+        <div className="buttons">
+          <Link to="/counter">
+            <Button raised color="teal">Counter</Button>
+          </Link>
+          {'　'}
+          <Link to="/crud">
+            <Button raised color="teal">CRUD</Button>
+          </Link>
+          {'　'}
+          <Link to="/rest">
+            <Button raised color="teal">REST</Button>
+          </Link>
+          {'　'}
+          <Link to="/graphql">
+            <Button raised color="teal">GraphQL</Button>
+          </Link>
+          {'　'}
+          <Link to="/form-controls">
+            <Button raised color="teal">Form Controls</Button>
+          </Link>
+          {'　'}
+          <Link to="/data-table">
+            <Button raised color="teal">Data Table</Button>
+          </Link>
+          {'　'}
+          <Link to="/authorization">
+            <Button raised color="teal">Authorization</Button>
+          </Link>
+        </div>
       }
 
       <style jsx>{`

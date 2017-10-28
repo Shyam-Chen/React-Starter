@@ -136,11 +136,10 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
                   >
                     <MenuItem value=""><em>None</em></MenuItem>
                     {
-                      listOfVariety.length
-                        ? listOfVariety[0]['variety'].map((item, index) => (
-                            <MenuItem key={index} value={item}>{item}</MenuItem>
-                          ))
-                        : void 0
+                      listOfVariety.length &&
+                      listOfVariety[0]['variety'].map((item, index) => (
+                        <MenuItem key={index} value={item}>{item}</MenuItem>
+                      ))
                     }
                   </Select>
                 </FormControl>
