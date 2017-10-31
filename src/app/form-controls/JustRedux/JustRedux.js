@@ -8,12 +8,12 @@ import { FormControl, FormGroup, FormControlLabel, FormLabel, FormHelperText } f
 import { RadioGroup } from 'material-ui/Radio';
 
 import * as actions from '../actions';
-import { listOfVariety } from '../selectors';
+import { nameError, listOfVariety } from '../selectors';
 
-const FormControls = ({ formControls, actions, listOfVariety }) => {
+const FormControls = ({ formControls, actions, nameError, listOfVariety }) => {
   const {
     nickname,
-    name, nameTouch, nameError,
+    name, nameTouched,
     age, listOfage,
     countries, listOfCountries,
     category, variety, animals,
@@ -49,18 +49,17 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
                 required
                 label="Name"
                 value={name}
-                error={(nameTouch && nameError && (name === '')) || (name.length > 15)}
+                error={nameTouched && nameError}
                 onChange={event => actions.setData({ name: event.target.value })}
-                onFocus={() => actions.setData({ nameTouch: true })}
-                onBlur={() => actions.setData({ nameError: name === '' })}
+                onBlur={() => actions.setData({ nameTouched: true })}
               />
               {
-                nameTouch && nameError && (name === '') &&
-                <FormHelperText error={nameTouch && nameError && (name === '')}>Required</FormHelperText>
+                nameTouched && nameError && (name === '') &&
+                <FormHelperText error={nameTouched && nameError && (name === '')}>Required</FormHelperText>
               }
               {
-                (name.length > 15) &&
-                <FormHelperText error={name.length > 15}>Must be 15 characters or less</FormHelperText>
+                nameTouched && nameError && (name.length > 15) &&
+                <FormHelperText error={nameTouched && nameError && (name.length > 15)}>Must be 15 characters or less</FormHelperText>
               }
             </FormControl>
             <div className="outputs">{name}</div>
@@ -258,6 +257,10 @@ const FormControls = ({ formControls, actions, listOfVariety }) => {
 };
 
 export default connect(
-  ({ formControls }) => ({ formControls, listOfVariety: listOfVariety(formControls) }),
+  ({ formControls }) => ({
+    formControls,
+    nameError: nameError(formControls),
+    listOfVariety: listOfVariety(formControls)
+  }),
   dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(FormControls);

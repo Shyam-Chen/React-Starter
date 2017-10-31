@@ -4,8 +4,7 @@ export const INITIAL = {
 
   // Input validation
   name: '',
-  nameTouch: false,
-  nameError: false,
+  nameTouched: false,
 
   // select
   age: '',
