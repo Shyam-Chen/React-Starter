@@ -44,7 +44,7 @@ const Edit = ({ rest: { editData }, actions }) => {
             }
           }}
         >
-          Save
+          Save (Thunk)
         </Button>
         <Button
           raised

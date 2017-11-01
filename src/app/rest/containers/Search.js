@@ -30,7 +30,7 @@ const Search = ({ rest: { searchData }, actions }) => {
           await actions.setData({ searchData: { text: '' } });
         }}
       >
-        Search
+        Search (Thunk)
       </Button>
       {' '}
       <Button

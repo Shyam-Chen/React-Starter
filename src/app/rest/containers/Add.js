@@ -32,7 +32,7 @@ const Add = ({ rest: { addData }, actions }) => {
           }
         }}
       >
-        Add
+        Add (Thunk)
       </Button>
       {' '}
       <Button

@@ -35,7 +35,7 @@ const Delete = ({ rest: { deleteData }, actions }) => {
             await actions.deleteItem(_id);
           }}
         >
-          Confirm
+          Confirm (Thunk)
         </Button>
         <Button
           raised
