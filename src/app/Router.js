@@ -8,7 +8,8 @@ import { GraphQL } from '~/graphql';
 import { FormControls } from '~/form-controls';
 import { DataTable } from '~/data-table';
 import { Authorization } from '~/authorization';
-import { NotFound } from '~/not-found';
+
+import NotFound from '~/shared/NotFound';
 
 import App from './App';
 

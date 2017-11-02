@@ -1,3 +1,5 @@
+// @flow
+
 import {
   INCREMENT, DECREMENT, RESET,
   DECREMENT_ASYNC, DECREMENT_IF_EVEN, DECREMENT_IF_ODD,
@@ -21,11 +23,11 @@ export const incrementAsync = () =>
     setTimeout(() => dispatch(increment()), 1000);
 
 export const incrementIfEven = () =>
-  (dispatch, getState) =>
+  (dispatch, getState): boolean | Object =>
     getState().counter.value % 2 === 0 && dispatch(increment());
 
 export const incrementIfOdd = () =>
-  (dispatch, getState) =>
+  (dispatch, getState): boolean | Object =>
     Math.abs(getState().counter.value % 2) === 1 && dispatch(increment());
 
 /**

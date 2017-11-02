@@ -7,19 +7,21 @@ export const failure = error => ({ type: FAILURE, error });
 
 export const addItem = text =>
   dispatch =>
-    CLIENT.mutate({
-      mutation: gql`
-        mutation List {
-          addText(text: "${text}") { _id text }
-        }
-      `
-  })
-  .then(() => dispatch(searchItem()))
-  .catch(error => dispatch(failure(error)));
+    CLIENT
+      .mutate({
+        mutation: gql`
+          mutation List {
+            addText(text: "${text}") { _id text }
+          }
+        `
+      })
+      .then(() => dispatch(searchItem()))
+      .catch(error => dispatch(failure(error)));
 
 export const searchItem = text =>
   dispatch =>
-    CLIENT.query({
+    CLIENT
+      .query({
         query: text
           ? gql`
               query List {
@@ -38,26 +40,28 @@ export const searchItem = text =>
 
 export const editItem = (id, text) =>
   dispatch =>
-    CLIENT.mutate({
-      mutation: gql`
-        mutation List {
-          updateText(_id: "${id}", text: "${text}") { _id text }
-        }
-      `
-  })
-  .then(() => dispatch(searchItem()))
-  .catch(error => dispatch(failure(error)));
+    CLIENT
+      .mutate({
+        mutation: gql`
+          mutation List {
+            updateText(_id: "${id}", text: "${text}") { _id text }
+          }
+        `
+      })
+      .then(() => dispatch(searchItem()))
+      .catch(error => dispatch(failure(error)));
 
 export const deleteItem = id =>
   dispatch =>
-    CLIENT.mutate({
-      mutation: gql`
-        mutation List {
-          deleteText(_id: "${id}") { _id text }
-        }
-      `
-  })
-  .then(() => dispatch(searchItem()))
-  .catch(error => dispatch(failure(error)));
+    CLIENT
+      .mutate({
+        mutation: gql`
+          mutation List {
+            deleteText(_id: "${id}") { _id text }
+          }
+        `
+      })
+      .then(() => dispatch(searchItem()))
+      .catch(error => dispatch(failure(error)));
 
 export const setData = data => ({ type: SET_DATA, data });
