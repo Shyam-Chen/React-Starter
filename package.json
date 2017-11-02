@@ -44,7 +44,7 @@
     "immutable": "4.0.0-rc.9",
     "intl": "1.2.5",
     "lodash": "4.17.4",
-    "material-ui": "1.0.0-beta.18",
+    "material-ui": "1.0.0-beta.19",
     "morgan": "1.9.0",
     "react": "15.6.1",
     "react-apollo": "1.4.16",
@@ -61,7 +61,7 @@
     "redux-actions": "2.2.1",
     "redux-form": "7.1.2",
     "redux-logger": "3.0.6",
-    "redux-observable": "0.16.0",
+    "redux-observable": "0.17.0",
     "redux-saga": "0.16.0",
     "redux-thunk": "2.2.0",
     "reselect": "3.0.1",
@@ -69,7 +69,7 @@
     "socket.io-client": "2.0.4",
     "styled-components": "2.2.3",
     "subscriptions-transport-ws": "0.9.1",
-    "three": "0.87.1"
+    "three": "0.88.0"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
