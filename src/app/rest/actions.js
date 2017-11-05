@@ -28,7 +28,7 @@ export const addItem = text =>
 export const searchItem = text =>
   dispatch =>
     axios.get(text ? `${API_LIST}?text=${text}` : API_LIST)
-      .then(response => dispatch(success(response.data)))
+      .then(({ data }) => dispatch(success(data)))
       .then(() => dispatch(setData({ loading: false })))
       .catch(error => dispatch(failure(error)));
 
@@ -43,6 +43,48 @@ export const deleteItem = id =>
     axios.delete(`${API_LIST}/${id}`)
       .then(() => dispatch(searchItem()))
       .catch(error => dispatch(failure(error)));
+
+// with Async functions
+export const _addItem = text =>
+  async dispatch => {
+    try {
+      await axios.post(API_LIST, { text });
+      await dispatch(searchItem());
+    } catch (error) {
+      dispatch(failure(error));
+    }
+  };
+
+export const _searchItem = text =>
+  async dispatch => {
+    try {
+      const { data } = await axios.get(text ? `${API_LIST}?text=${text}` : API_LIST);
+      await dispatch(success(data));
+      await dispatch(setData({ loading: false }));
+    } catch (error) {
+      dispatch(failure(error));
+    }
+  };
+
+export const _editItem = (id, text) =>
+  async dispatch => {
+    try {
+      await axios.put(`${API_LIST}/${id}`, { text });
+      await dispatch(searchItem());
+    } catch (error) {
+      dispatch(failure(error));
+    }
+  };
+
+export const _deleteItem = id =>
+  async dispatch => {
+    try {
+      await axios.delete(`${API_LIST}/${id}`);
+      await dispatch(searchItem());
+    } catch (error) {
+      dispatch(failure(error));
+    }
+  };
 
 /**
  * @name Observable
