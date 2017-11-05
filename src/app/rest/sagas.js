@@ -2,11 +2,15 @@ import { put, takeEvery, all } from 'redux-saga/effects';
 import axios from 'axios';
 
 import { API_LIST, ADD_ITEM_SAGA, SEARCH_ITEM_SAGA, EDIT_ITEM_SAGA, DELETE_ITEM_SAGA } from './constants';
-import { success, searchItemSaga, setData } from './actions';
+import { success, failure, setData, searchItemSaga } from './actions';
 
 export function *effectAddItemSaga({ text }) {
-  yield axios.post(API_LIST, { text });
-  yield put(searchItemSaga());
+  try {
+    yield axios.post(API_LIST, { text });
+    yield put(searchItemSaga());
+  } catch (error) {
+    put(failure(error));
+  }
 }
 
 export function *watchAddItemSaga() {
@@ -14,9 +18,13 @@ export function *watchAddItemSaga() {
 }
 
 export function *effectSearchItemSaga({ text }) {
-  const { data } = yield axios.get(text ? `${API_LIST}?text=${text}` : API_LIST);
-  yield put(success(data));
-  yield put(setData({ loading: false }));
+  try {
+    const { data } = yield axios.get(text ? `${API_LIST}?text=${text}` : API_LIST);
+    yield put(success(data));
+    yield put(setData({ loading: false }));
+  } catch (error) {
+    put(failure(error));
+  }
 }
 
 export function *watchSearchItemSaga() {
@@ -24,8 +32,12 @@ export function *watchSearchItemSaga() {
 }
 
 export function *effectEditItemSaga({ id, text }) {
-  yield axios.put(`${API_LIST}/${id}`, { text });
-  yield put(searchItemSaga());
+  try {
+    yield axios.put(`${API_LIST}/${id}`, { text });
+    yield put(searchItemSaga());
+  } catch (error) {
+    put(failure(error));
+  }
 }
 
 export function *watchEditItemSaga() {
@@ -33,8 +45,12 @@ export function *watchEditItemSaga() {
 }
 
 export function *effectDeleteItemSaga({ id }) {
-  yield axios.delete(`${API_LIST}/${id}`);
-  yield put(searchItemSaga());
+  try {
+    yield axios.delete(`${API_LIST}/${id}`);
+    yield put(searchItemSaga());
+  } catch (error) {
+    put(failure(error));
+  }
 }
 
 export function *watchDeleteItemSaga() {

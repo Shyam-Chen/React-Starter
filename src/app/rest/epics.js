@@ -2,10 +2,11 @@ import { combineEpics } from 'redux-observable';
 import { Observable } from 'rxjs';
 import { fromPromise, concat, of } from 'rxjs/observable';
 import { map, mergeMap, switchMap } from 'rxjs/operator';
+import { _catch } from 'rxjs/operator/catch';
 import axios from 'axios';
 
 import { API_LIST, ADD_ITEM_EPIC, SEARCH_ITEM_EPIC, EDIT_ITEM_EPIC, DELETE_ITEM_EPIC } from './constants';
-import { success, searchItemObservable, setData } from './actions';
+import { success, failure, setData, searchItemObservable } from './actions';
 
 export const addItemEpic = action$ =>
   action$.ofType(ADD_ITEM_EPIC)
@@ -14,7 +15,8 @@ export const addItemEpic = action$ =>
         axios.post(API_LIST, { text })
       )
     )
-    ::map(() => searchItemObservable());
+    ::map(() => searchItemObservable())
+    ::_catch(error => Observable::of(failure(error)));
 
 export const searchItemEpic = action$ =>
   action$.ofType(SEARCH_ITEM_EPIC)
@@ -23,7 +25,8 @@ export const searchItemEpic = action$ =>
         Observable::fromPromise(
             axios.get(text ? `${API_LIST}?text=${text}` : API_LIST)
           )
-          ::map(({ data }) => success(data)),
+          ::map(({ data }) => success(data))
+          ::_catch(error => Observable::of(failure(error))),
         of(setData({ loading: false }))
       )
     );
@@ -35,7 +38,8 @@ export const editItemEpic = action$ =>
         axios.put(`${API_LIST}/${id}`, { text })
       )
     )
-    ::map(() => searchItemObservable());
+    ::map(() => searchItemObservable())
+    ::_catch(error => Observable::of(failure(error)));
 
 export const deleteItemEpic = action$ =>
   action$.ofType(DELETE_ITEM_EPIC)
@@ -44,7 +48,8 @@ export const deleteItemEpic = action$ =>
         axios.delete(`${API_LIST}/${id}`)
       )
     )
-    ::map(() => searchItemObservable());
+    ::map(() => searchItemObservable())
+    ::_catch(error => Observable::of(failure(error)));
 
 export default combineEpics(
   addItemEpic,
