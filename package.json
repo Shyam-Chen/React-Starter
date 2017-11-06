@@ -107,6 +107,9 @@
     "nightwatch": "0.9.16",
     "nock": "9.0.27",
     "nodemon": "1.12.1",
+    "postcss": "6.0.14",
+    "postcss-cssnext": "3.0.2",
+    "postcss-load-plugins": "2.3.0",
     "react-hot-loader": "3.1.1",
     "react-snapshot": "1.2.0",
     "react-test-renderer": "15.6.1",
@@ -114,6 +117,7 @@
     "regenerator-runtime": "0.11.0",
     "selenium-standalone": "6.11.0",
     "styled-jsx": "2.1.2",
+    "styled-jsx-plugin-postcss": "0.1.1",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.3"
   }

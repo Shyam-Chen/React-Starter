@@ -29,6 +29,7 @@
     "no-template-curly-in-string": "error",
     "valid-jsdoc": "error",
 
+    // Best Practices
     "accessor-pairs": "error",
     "array-callback-return": "error",
     "block-scoped-var": "error",
@@ -108,6 +109,6 @@
     "yield-star-spacing": ["error", "after"],
 
     // React
-    "react/prop-types": "off"
+    "react/prop-types": "off"  // use flow
   }
 }
