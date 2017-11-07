@@ -10,7 +10,7 @@ import { RadioGroup } from 'material-ui/Radio';
 import * as actions from '../actions';
 import { nameError, listOfVariety } from '../selectors';
 
-const FormControls = ({ formControls, actions, nameError, listOfVariety }) => {
+const JustRedux = ({ formControls, actions, nameError, listOfVariety }) => {
   const {
     nickname,
     name, nameTouched,
@@ -263,4 +263,4 @@ export default connect(
     listOfVariety: listOfVariety(formControls)
   }),
   dispatch => ({ actions: bindActionCreators(actions, dispatch) })
-)(FormControls);
+)(JustRedux);

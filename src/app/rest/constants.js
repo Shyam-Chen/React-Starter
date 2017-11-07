@@ -25,14 +25,14 @@ export const INITIAL: State = {
 export const SUCCESS = '[REST] SUCCESS';
 export const FAILURE = '[REST] FAILURE';
 
-export const ADD_ITEM_EPIC = '[REST] ADD_ITEM_EPIC';
-export const SEARCH_ITEM_EPIC = '[REST] SEARCH_ITEM_EPIC';
-export const EDIT_ITEM_EPIC = '[REST] EDIT_ITEM_EPIC';
-export const DELETE_ITEM_EPIC = '[REST] DELETE_ITEM_EPIC';
+export const SET_DATA = '[REST] SET_DATA';
 
 export const ADD_ITEM_SAGA = '[REST] ADD_ITEM_SAGA';
 export const SEARCH_ITEM_SAGA = '[REST] SEARCH_ITEM_SAGA';
 export const EDIT_ITEM_SAGA = '[REST] EDIT_ITEM_SAGA';
 export const DELETE_ITEM_SAGA = '[REST] DELETE_ITEM_SAGA';
 
-export const SET_DATA = '[REST] SET_DATA';
+export const ADD_ITEM_EPIC = '[REST] ADD_ITEM_EPIC';
+export const SEARCH_ITEM_EPIC = '[REST] SEARCH_ITEM_EPIC';
+export const EDIT_ITEM_EPIC = '[REST] EDIT_ITEM_EPIC';
+export const DELETE_ITEM_EPIC = '[REST] DELETE_ITEM_EPIC';

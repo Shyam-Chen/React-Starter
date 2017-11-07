@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import Navigation from '~/shared/Navigation';
 
-import { JustRedux } from './JustRedux';
-import { WithReduxForm } from './WithReduxForm';
+import { JustRedux } from './just-redux';
+import { WithReduxForm } from './with-redux-form';
 
 const FormControls = () => (
   <div className="container">
