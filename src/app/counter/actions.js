@@ -3,7 +3,8 @@
 import {
   INCREMENT, DECREMENT, RESET,
   DECREMENT_ASYNC, DECREMENT_IF_EVEN, DECREMENT_IF_ODD,
-  RESET_ASYNC, RESET_IF_EVEN, RESET_IF_ODD
+  RESET_ASYNC, RESET_IF_EVEN, RESET_IF_ODD,
+  START_COUNT, CANCEL_COUNT
 } from './constants';
 
 /**
@@ -37,6 +38,9 @@ export const incrementIfOdd = () =>
 export const decrementAsync = () => ({ type: DECREMENT_ASYNC });
 export const decrementIfEven = () => ({ type: DECREMENT_IF_EVEN });
 export const decrementIfOdd = () => ({ type: DECREMENT_IF_ODD });
+
+export const startCount = () => ({ type: START_COUNT });
+export const cancelCount = () => ({ type: CANCEL_COUNT });
 
 /**
  * @name Saga

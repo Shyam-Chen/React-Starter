@@ -143,7 +143,7 @@ let WithReduxForm = ({ selector }) => {
           <div className="row">
             {/* select */}
             <FormControl>
-              <Field name="age" component={renderSelect} label="Age" list={INITIAL['listOfage']} />
+              <Field name="age" component={renderSelect} label="Age" list={INITIAL.listOfage} />
             </FormControl>
             <div className="outputs">{selector('age')}</div>
           </div>
@@ -151,7 +151,7 @@ let WithReduxForm = ({ selector }) => {
           <div className="row">
             {/* multiple select */}
             <FormControl>
-              <Field name="countries" component={renderMultipleSelect} label="Countries" list={INITIAL['listOfCountries']} />
+              <Field name="countries" component={renderMultipleSelect} label="Countries" list={INITIAL.listOfCountries} />
             </FormControl>
             <div className="outputs">{selector('countries') ? selector('countries').join(', ') : selector('countries')}</div>
           </div>

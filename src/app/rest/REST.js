@@ -13,7 +13,7 @@ import { total } from './selectors';
 import { Add, Search, Edit, Delete } from './containers';
 
 const REST = ({ rest, total, actions }) => {
-  const { dataset, deleteData, editData, loading, /* initial */ } = rest;
+  const { dataset, deleteData, editData, loading /* initial */ } = rest;
 
   // if (!initial) {
   //   actions.setData({ loading: true, initial: true });
@@ -43,6 +43,7 @@ const REST = ({ rest, total, actions }) => {
             </TableHead>
             <TableBody>
               {
+                /* eslint-disable indent */
                 dataset.length
                   ? dataset.map(({ _id, text }) => (
                       <TableRow key={_id} hover>
@@ -74,6 +75,7 @@ const REST = ({ rest, total, actions }) => {
                   : <TableRow>
                       <TableCell colSpan="2">No data available</TableCell>
                     </TableRow>
+                /* eslint-enable indent */
               }
             </TableBody>
           </Table>

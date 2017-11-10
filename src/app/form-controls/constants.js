@@ -88,7 +88,7 @@ export const INITIAL = {
   autoplay: false,
 
   // slider
-  kilometers: 0,
+  kilometers: 0
 
   // autocomplete
 

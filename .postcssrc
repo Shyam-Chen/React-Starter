@@ -1,5 +1,6 @@
 {
   "plugins": {
-    "postcss-cssnext": {}
+    "postcss-cssnext": { "warnForDuplicates": false },
+    "rucksack-css": { "autoprefixer": true }
   }
 }

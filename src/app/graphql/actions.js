@@ -34,7 +34,7 @@ export const searchItem = text =>
               }
             `
       })
-      .then(response => dispatch(success(response.data['list'])))
+      .then(({ data }) => dispatch(success(data.list)))
       .then(() => dispatch(setData({ loading: false })))
       .catch(error => dispatch(failure(error)));
 

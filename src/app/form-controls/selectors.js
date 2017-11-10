@@ -7,6 +7,6 @@ export const nameError = createSelector(
 
 export const listOfVariety = createSelector(
   formControls => formControls,
-  ({ animals, category }): any[] => 
+  ({ animals, category }): any[] =>
     animals.filter(value => value.category === category)
 );

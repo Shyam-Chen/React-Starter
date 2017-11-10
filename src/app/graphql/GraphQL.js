@@ -17,8 +17,6 @@ const GraphQL = ({ graphql, actions }) => {
     <div className="container">
       <Navigation />
 
-      <div>TODO: Watch Query</div>
-
       <Search />
       <Add />
 

@@ -9,7 +9,7 @@ export const INITIAL = {
     { id: 7, name: 'Elizabeth A.', symbol: 'E', color: 'aqua', progress: 71 },
     { id: 8, name: 'Levi C.', symbol: 'Lv', color: 'green', progress: 41 },
     { id: 9, name: 'Cora T.', symbol: 'CT', color: 'fuchsia', progress: 58 },
-    { id: 10, name: 'Arthur M.', symbol: 'A', color: 'teal', progress: 64 },
+    { id: 10, name: 'Arthur M.', symbol: 'A', color: 'teal', progress: 64 }
   ],
   rowsPerPage: 5,
   page: 0

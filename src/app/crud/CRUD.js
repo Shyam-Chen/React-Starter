@@ -31,6 +31,7 @@ const CRUD = ({ crud, actions }) => {
             </TableHead>
             <TableBody>
               {
+                /* eslint-disable indent */
                 dataset.length
                   ? dataset.map(({ id, primary, accent }) => (
                       <TableRow key={id} hover>
@@ -62,6 +63,7 @@ const CRUD = ({ crud, actions }) => {
                   : <TableRow>
                       <TableCell colSpan="2">No data available</TableCell>
                     </TableRow>
+                /* eslint-enable indent */
               }
             </TableBody>
           </Table>

@@ -14,6 +14,7 @@ export const _Navigation = () => {
       <AppBar>
         <Toolbar>
           {
+            /* eslint-disable indent */
             location.pathname === '/'
               ? <IconButton color="contrast" aria-label="Menu">
                   <Icon>toys</Icon>
@@ -23,6 +24,7 @@ export const _Navigation = () => {
                     <Icon>arrow_back</Icon>
                   </IconButton>
                 </Link>
+            /* eslint-enable indent */
           }
           <Typography type="title" color="inherit">
             React by Example, location: <span className="location">{location.pathname}</span>.

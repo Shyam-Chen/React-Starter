@@ -35,7 +35,13 @@ module.exports = {
               ],
               plugins: [
                 'transform-runtime',
-                'styled-jsx/babel',
+                [
+                  'styled-jsx/babel', {
+                    plugins: [
+                      "styled-jsx-plugin-postcss"
+                    ]
+                  }
+                ],
                 'transform-class-properties',
                 'transform-function-bind',
                 'transform-object-rest-spread',

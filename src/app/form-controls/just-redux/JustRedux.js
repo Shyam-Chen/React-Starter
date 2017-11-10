@@ -136,7 +136,7 @@ const JustRedux = ({ formControls, actions, nameError, listOfVariety }) => {
                     <MenuItem value=""><em>None</em></MenuItem>
                     {
                       listOfVariety.length &&
-                      listOfVariety[0]['variety'].map((item, index) => (
+                      listOfVariety[0].variety.map((item, index) => (
                         <MenuItem key={index} value={item}>{item}</MenuItem>
                       ))
                     }

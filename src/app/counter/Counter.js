@@ -51,6 +51,13 @@ export const Counter = ({ counter, actions, evenOrOdd }) => (
       </Typography>
     </div>
 
+    <div className="typography">
+      <Typography type="body1" component="p">
+        <Button raised color="red">Start count</Button>
+        <Button raised color="red">Cancel count</Button>
+      </Typography>
+    </div>
+
     <style jsx>{`
       .container {
         padding: 1rem;
