@@ -5,6 +5,7 @@ import Navigation from '~/shared/Navigation';
 
 import { JustRedux } from './just-redux';
 import { WithReduxForm } from './with-redux-form';
+import { ReactiveForms } from './reactive-forms';
 
 const FormControls = () => (
   <div className="container">
@@ -12,6 +13,7 @@ const FormControls = () => (
 
     <JustRedux />
     <WithReduxForm />
+    <ReactiveForms />
 
     <style jsx>{`
       .container {
