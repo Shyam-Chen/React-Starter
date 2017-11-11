@@ -1,23 +1,24 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Paper, Toolbar, IconButton, Icon, Table, Checkbox } from 'material-ui';
-import { TableBody, TableCell, TableHead, TableRow, TableFooter, TablePagination } from 'material-ui/Table';
+import { Paper } from 'material-ui';
+// import { Paper, Toolbar, IconButton, Icon, Table, Checkbox } from 'material-ui';
+// import { TableBody, TableCell, TableHead, TableRow, TableFooter, TablePagination } from 'material-ui/Table';
 
 import Navigation from '~/shared/Navigation';
 
 import * as actions from './actions';
+import WIP from './wip';
 
-const DataTable = ({ dataTable: { foodNutrients, rowsPerPage, page } }) => {
+const DataTable = () => {
 
   return (
     <div className="container">
       <Navigation />
 
-      <div>Work in Progress</div>
-
-      <Paper style={{ maxWidth: '45rem' }}>
-        <Toolbar>
+      <Paper>
+        <WIP />
+        {/* <Toolbar>
           <div style={{ flex: '0 0 auto' }}>
             Personnel information
           </div>
@@ -76,7 +77,7 @@ const DataTable = ({ dataTable: { foodNutrients, rowsPerPage, page } }) => {
               // onChangeRowsPerPage={handleChangeRowsPerPage}
             />
           </TableFooter>
-        </Table>
+        </Table> */}
       </Paper>
 
       <style jsx>{`
