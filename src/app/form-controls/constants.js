@@ -1,4 +1,8 @@
 export const INITIAL = {
+  justRedux: true,
+  withReduxForm: false,
+  reactiveForms: false,
+
   // input
   nickname: '',
 

@@ -4,13 +4,13 @@ import { Paper, Typography } from 'material-ui';
 
 const ReactiveForms = () => {
   return (
-    <div>
+    <div className="container">
       <Paper>
         <Typography type="title" gutterBottom style={{ padding: '1rem 1rem 0' }}>
           Reactive Forms
         </Typography>
 
-        <form className="container">
+        <form className="form">
           <div className="row">
             ...
           </div>
@@ -18,7 +18,11 @@ const ReactiveForms = () => {
       </Paper>
 
       <style jsx>{`
-        .container {
+        .container{
+          margin: 1rem 0;
+        }
+
+        .form {
           padding: .5rem 1rem;
         }
 

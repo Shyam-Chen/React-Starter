@@ -23,13 +23,13 @@ const JustRedux = ({ formControls, actions, nameError, listOfVariety }) => {
   } = formControls;
 
   return (
-    <div>
+    <div className="container">
       <Paper>
         <Typography type="title" gutterBottom style={{ padding: '1rem 1rem 0' }}>
           Just Redux
         </Typography>
 
-        <form className="container">
+        <form className="form">
           <div className="row">
             {/* input */}
             <FormControl>
@@ -237,6 +237,10 @@ const JustRedux = ({ formControls, actions, nameError, listOfVariety }) => {
 
       <style jsx>{`
         .container {
+          margin: 1rem 0;
+        }
+
+        .form {
           padding: .5rem 1rem;
         }
 

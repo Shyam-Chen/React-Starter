@@ -115,6 +115,7 @@ const validate = ({ name }) => {
  */
 
 let WithReduxForm = ({ selector }) => {
+  // ...
 
   return (
     <div className="container">
@@ -184,7 +185,7 @@ let WithReduxForm = ({ selector }) => {
 
       <style jsx>{`
         .container {
-          margin: 2rem 0;
+          margin: 1rem 0;
         }
 
         .form {
