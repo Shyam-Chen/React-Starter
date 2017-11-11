@@ -1,7 +1,7 @@
 import { put } from 'redux-saga/effects';
 
-import { RESET } from '../constants';
 import watchCounter, { resetAsync, watchResetIfOdd, resetIfEven, watchResetIfEven } from '../sagas';
+import { reset } from '../actions';
 
 describe('Counter', () => {
   describe('sagas', () => {
@@ -9,8 +9,10 @@ describe('Counter', () => {
       const generator = resetAsync();
       generator.next();
       const result = generator.next();
-      expect(result.value).toEqual(put({ type: RESET }));
+      expect(result.value).toEqual(put(reset()));
+    });
 
+    it('ok', () => {
       const watchCounterGen = watchCounter();
       expect(watchCounterGen.next()).toBeDefined();
 
