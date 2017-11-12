@@ -1,8 +1,14 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Paper, Typography } from 'material-ui';
+import { Paper, Typography, TextField } from 'material-ui';
+import { FormControl } from 'material-ui/Form';
 
-const ReactiveForms = () => {
+import * as actions from '../actions';
+
+const ReactiveForms = ({ formControls, actions }) => {
+  const { creditCard } = formControls;
+
   return (
     <div className="container">
       <Paper>
@@ -11,6 +17,18 @@ const ReactiveForms = () => {
         </Typography>
 
         <form className="form">
+          <div className="row">
+            {/* input */}
+            <FormControl>
+              <TextField
+                label="Credit Card"
+                value={creditCard}
+                onChange={event => actions.inputChange({ creditCard: event.target.value })}
+              />
+            </FormControl>
+            <div className="outputs">{creditCard}</div>
+          </div>
+
           <div className="row">
             ...
           </div>
@@ -42,4 +60,7 @@ const ReactiveForms = () => {
   );
 };
 
-export default connect()(ReactiveForms);
+export default connect(
+  ({ formControls }) => ({ formControls }),
+  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
+)(ReactiveForms);

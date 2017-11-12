@@ -1,10 +1,11 @@
 export const INITIAL = {
-  justRedux: true,
+  justRedux: false,
   withReduxForm: false,
   reactiveForms: false,
 
   // input
   nickname: '',
+  creditCard: '',  // reactive
 
   // Input validation
   name: '',
@@ -108,3 +109,5 @@ export const INITIAL = {
 };
 
 export const SET_DATA = '[Form Controls] SET_DATA';
+
+export const INPUT_DATA = '[Form Controls] INPUT_DATA';

@@ -1,4 +1,5 @@
 import FormControls from './FormControls';
+import formControlsEpic from './epics';
 import formControlsReducer from './reducer';
 
-export { FormControls, formControlsReducer };
+export { FormControls, formControlsEpic, formControlsReducer };

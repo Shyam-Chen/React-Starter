@@ -11,7 +11,7 @@ import { counterEpic, counterReducer, watchCounter } from '~/counter';
 import { crudReducer } from '~/crud';
 import { restEpic, restReducer, watchRest } from '~/rest';
 import { graphqlReducer } from '~/graphql';
-import { formControlsReducer } from '~/form-controls';
+import { formControlsReducer, formControlsEpic } from '~/form-controls';
 import { dataTableReducer } from '~/data-table';
 import { authorizationReducer } from '~/authorization';
 
@@ -23,7 +23,8 @@ const rootEpic = combineEpics(
   appEpic,
 
   counterEpic,
-  restEpic
+  restEpic,
+  formControlsEpic
 );
 
 const rootReducer = combineReducers({
