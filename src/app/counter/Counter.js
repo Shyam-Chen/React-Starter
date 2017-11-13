@@ -53,7 +53,7 @@ export const Counter = ({ counter, actions, evenOrOdd }) => (
 
     <div className="typography">
       <Typography type="body1" component="p">
-        <Button raised color="red">Start count</Button>
+        <Button raised color="red" onClick={actions.startCount}>Start count</Button>
         <Button raised color="red">Cancel count</Button>
       </Typography>
     </div>

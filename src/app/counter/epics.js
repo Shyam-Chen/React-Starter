@@ -1,7 +1,9 @@
 import { combineEpics } from 'redux-observable';
-import { delay, filter, map } from 'rxjs/operator';
+import { Observable } from 'rxjs';
+import { interval } from 'rxjs/observable';
+import { delay, filter, map, switchMap } from 'rxjs/operator';
 
-import { DECREMENT_ASYNC, DECREMENT_IF_EVEN, DECREMENT_IF_ODD } from './constants';
+import { DECREMENT_ASYNC, DECREMENT_IF_EVEN, DECREMENT_IF_ODD, START_COUNT, CANCEL_COUNT } from './constants';
 import { decrement } from './actions';
 
 export const decrementAsyncEpic = action$ =>
@@ -19,8 +21,20 @@ export const decrementIfOddEpic = (action$, store) =>
     ::filter(() => Math.abs(store.getState().counter.value % 2) === 1)
     ::map(decrement);
 
+export const startCountEpic = action$ =>
+  action$.ofType(START_COUNT)
+    ::switchMap(() =>
+      Observable::interval(1000)
+        ::map(decrement)
+    );
+
+export const cancelCountEpic = action$ =>
+  action$.ofType(CANCEL_COUNT)
+  // TODO: ...
+
 export default combineEpics(
   decrementAsyncEpic,
   decrementIfEvenEpic,
-  decrementIfOddEpic
+  decrementIfOddEpic,
+  startCountEpic
 );
