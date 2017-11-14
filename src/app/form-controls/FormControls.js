@@ -1,9 +1,11 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
+import { routerActions } from 'react-router-redux';
 
 import Navigation from '~/shared/Navigation';
-// import Link from '~/shared/Link';
+import Link from '~/shared/Link';
 import Button from '~/shared/Button';
 
 import * as actions from './actions';
@@ -11,39 +13,45 @@ import { JustRedux } from './just-redux';
 import { WithReduxForm } from './with-redux-form';
 import { ReactiveForms } from './reactive-forms';
 
-const FormControls = ({ formControls: { justRedux, withReduxForm, reactiveForms }, actions }) => (
-  <div className="container">
-    <Navigation />
+const FormControls = ({ match, routerActions }) => {
 
-    {/* <Link to="/form-controls/just-redux">
-      <Button raised color="teal">Just Redux</Button>
-    </Link> */}
+  return (
+    <div className="container">
+      <Navigation />
 
-    {/* <Link to="/form-controls/with-redux-form">
-      <Button raised color="teal">With Redux Form</Button>
-    </Link> */}
+      <Link to={`${match.url}/just-redux`}>
+        <Button raised color="teal" onClick={() => routerActions.push(`${match.url}/just-redux`)}>
+          Just Redux
+        </Button>
+      </Link>
+      {' '}
+      <Link to={`${match.url}/with-redux-form`}>
+        <Button raised color="teal" onClick={() => routerActions.push(`${match.url}/with-redux-form`)}>
+          With Redux Form
+        </Button>
+      </Link>
+      {' '}
+      <Link to={`${match.url}/reactive-forms`} onClick={() => routerActions.push(`${match.url}/reactive-forms`)}>
+        <Button raised color="teal">Reactive Forms</Button>
+      </Link>
 
-    {/* <Link to="/form-controls/reactive-forms">
-      <Button raised color="teal">Reactive Forms</Button>
-    </Link> */}
+      <Route path={`${match.url}/just-redux`} component={JustRedux}/>
+      <Route path={`${match.url}/with-redux-form`} component={WithReduxForm}/>
+      <Route path={`${match.url}/reactive-forms`} component={ReactiveForms}/>
 
-    <Button raised color="teal" onClick={() => actions.setData({ justRedux: true, withReduxForm: false, reactiveForms: false })}>Just Redux</Button> {'　'}
-    <Button raised color="teal" onClick={() => actions.setData({ justRedux: false, withReduxForm: true, reactiveForms: false })}>With Redux Form</Button> {'　'}
-    <Button raised color="teal" onClick={() => actions.setData({ justRedux: false, withReduxForm: false, reactiveForms: true })}>Reactive Forms</Button>
-
-    {justRedux && <JustRedux />}
-    {withReduxForm && <WithReduxForm />}
-    {reactiveForms && <ReactiveForms />}
-
-    <style jsx>{`
-      .container {
-        padding: 1rem;
-      }
-    `}</style>
-  </div>
-);
+      <style jsx>{`
+        .container {
+          padding: 1rem;
+        }
+      `}</style>
+    </div>
+  );
+};
 
 export default connect(
   ({ formControls }) => ({ formControls }),
-  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
+  dispatch => ({
+    actions: bindActionCreators(actions, dispatch),
+    routerActions: bindActionCreators(routerActions, dispatch)
+  })
 )(FormControls);

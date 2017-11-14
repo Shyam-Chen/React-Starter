@@ -1,8 +1,4 @@
 export const INITIAL = {
-  justRedux: false,
-  withReduxForm: false,
-  reactiveForms: false,
-
   // input
   nickname: '',
   creditCard: '',  // reactive
