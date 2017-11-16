@@ -26,6 +26,5 @@ $ npm start
   * WebGL (Three + Immutable)
 * WebSockets (Socket.IO)
 * Service Workers
-* Hot Module Replacement
 * Prerender
 * Server-side Rendering

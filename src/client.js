@@ -27,3 +27,7 @@ render(
   </Provider>,
   document.querySelector('#app')
 );
+
+if (module.hot) {
+  module.hot.accept();
+}
