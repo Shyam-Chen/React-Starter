@@ -6,7 +6,6 @@
     "start": "webpack-dev-server --progress",
     "test": "jest --coverage",
     "build": "webpack --env.prod -p",
-    "build2": "cross-env NODE_ENV=production webpack -p && react-snapshot",
     "backend": "babel server.js -d build",
     "serve": "cross-env NODE_ENV=production node build/server.js",
     "server": "nodemon server.js --exec babel-node",
@@ -52,11 +51,11 @@
     "react-helmet": "5.2.0",
     "react-intl": "2.4.0",
     "react-loadable": "5.3.1",
-    "react-motion": "0.5.2",
     "react-redux": "5.0.6",
     "react-router": "4.2.0",
     "react-router-dom": "4.2.2",
     "react-router-redux": "5.0.0-alpha.8",
+    "react-transmit": "3.2.0",
     "redux": "3.7.2",
     "redux-actions": "2.2.1",
     "redux-form": "7.1.2",
@@ -66,7 +65,7 @@
     "redux-thunk": "2.2.0",
     "reselect": "3.0.1",
     "rxjs": "5.5.2",
-    "socket.io-client": "2.0.4",
+    "socket.io": "2.0.4",
     "styled-components": "2.2.3",
     "subscriptions-transport-ws": "0.9.1",
     "three": "0.88.0"
@@ -117,7 +116,7 @@
     "rucksack-css": "1.0.2",
     "styled-jsx": "2.1.2",
     "styled-jsx-plugin-postcss": "0.1.1",
-    "uglifyjs-webpack-plugin": "^1.0.1",
+    "uglifyjs-webpack-plugin": "1.0.1",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.3"
   }

@@ -20,11 +20,13 @@ $ npm start
 
 ## TODO List
 
-* Internationalization (React Intl)
+* Internationalization (`react-intl`)
 * Data Chart
-  * SVG & Canvas (D3 + Immutable)
-  * WebGL (Three + Immutable)
-* WebSockets (Socket.IO)
-* Service Workers
-* Prerender
-* Server-side Rendering
+  * SVG & Canvas (`d3`, `immutable`)
+  * WebGL (`three`, `immutable`)
+* WebSockets (`socket.io`)
+* Lazy Loading (`react-loadable`)
+* Service Workers (`sw-precache`)
+* SEO (`react-helmet`)
+* Prerender (`rendertron`)
+* Server-side Rendering (`react-dom/server`, `react-transmit`)
