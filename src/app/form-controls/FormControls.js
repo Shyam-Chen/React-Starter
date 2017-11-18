@@ -24,13 +24,13 @@ const FormControls = ({ match, routerActions }) => {
           Just Redux
         </Button>
       </Link>
-      {' '}
+      {'　'}
       <Link to={`${match.url}/with-redux-form`}>
         <Button raised color="teal" onClick={() => routerActions.push(`${match.url}/with-redux-form`)}>
           With Redux Form
         </Button>
       </Link>
-      {' '}
+      {'　'}
       <Link to={`${match.url}/reactive-forms`} onClick={() => routerActions.push(`${match.url}/reactive-forms`)}>
         <Button raised color="teal">Reactive Forms</Button>
       </Link>

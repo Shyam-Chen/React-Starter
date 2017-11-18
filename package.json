@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress",
     "test": "jest --coverage",
-    "build": "webpack --env.prod -p",
+    "build": "webpack -p",
     "backend": "babel server.js -d build",
     "serve": "cross-env NODE_ENV=production node build/server.js",
     "server": "nodemon server.js --exec babel-node",

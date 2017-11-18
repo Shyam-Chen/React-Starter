@@ -82,21 +82,21 @@ module.exports = env => {
 
   const plugins = [
     new HtmlWebpackPlugin({ filename: 'index.html', template: 'index.html' }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify(env.prod ? 'production' : 'development')
-      }
-    })
+    // new webpack.DefinePlugin({
+    //   'process.env': {
+    //     'NODE_ENV': JSON.stringify(env.prod ? 'production' : 'development')
+    //   }
+    // })
   ];
 
-  if (env.prod) {
-    // plugins.push(new UglifyJSPlugin({ sourceMap: false }));
-  } else {
+  // if (env.prod) {
+  //   // plugins.push(new UglifyJSPlugin({ sourceMap: false }));
+  // } else {
     plugins.push(
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin()
     );
-  }
+  // }
 
   return {
     context: join(__dirname, 'src'),
