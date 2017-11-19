@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
-module.exports = env => {
+module.exports = ({ prod = false } = {}) => {
   const rules = [
     {
       test: /\.js$/,
@@ -82,21 +82,21 @@ module.exports = env => {
 
   const plugins = [
     new HtmlWebpackPlugin({ filename: 'index.html', template: 'index.html' }),
-    // new webpack.DefinePlugin({
-    //   'process.env': {
-    //     'NODE_ENV': JSON.stringify(env.prod ? 'production' : 'development')
-    //   }
-    // })
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(prod ? 'production' : 'development')
+      }
+    })
   ];
 
-  // if (env.prod) {
-  //   // plugins.push(new UglifyJSPlugin({ sourceMap: false }));
-  // } else {
+  if (prod) {
+    plugins.push(new UglifyJSPlugin({ sourceMap: false }));
+  } else {
     plugins.push(
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin()
     );
-  // }
+  }
 
   return {
     context: join(__dirname, 'src'),
