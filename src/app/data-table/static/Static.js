@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import keycode from 'keycode';
 import { Icon } from 'material-ui';
@@ -27,14 +26,6 @@ const columnData = [
 ];
 
 class EnhancedTableHead extends React.Component {
-  static propTypes = {
-    numSelected: PropTypes.number.isRequired,
-    onRequestSort: PropTypes.func.isRequired,
-    onSelectAllClick: PropTypes.func.isRequired,
-    order: PropTypes.string.isRequired,
-    orderBy: PropTypes.string.isRequired,
-    rowCount: PropTypes.number.isRequired
-  };
 
   createSortHandler = property => event => {
     this.props.onRequestSort(event, property);
@@ -142,11 +133,6 @@ let EnhancedTableToolbar = props => {
       </div>
     </Toolbar>
   );
-};
-
-EnhancedTableToolbar.propTypes = {
-  classes: PropTypes.object.isRequired,
-  numSelected: PropTypes.number.isRequired
 };
 
 EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar);
@@ -314,9 +300,5 @@ class EnhancedTable extends React.Component {
     );
   }
 }
-
-EnhancedTable.propTypes = {
-  classes: PropTypes.object.isRequired
-};
 
 export default withStyles(styles)(EnhancedTable);

@@ -1,14 +1,12 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Paper } from 'material-ui';
-// import { Paper, Toolbar, IconButton, Icon, Table, Checkbox } from 'material-ui';
-// import { TableBody, TableCell, TableHead, TableRow, TableFooter, TablePagination } from 'material-ui/Table';
+import { Paper, Typography } from 'material-ui';
 
 import Navigation from '~/shared/Navigation';
 
 import * as actions from './actions';
-import WIP from './wip';
+import { Static } from './static';
 
 const DataTable = () => {
 
@@ -16,73 +14,43 @@ const DataTable = () => {
     <div className="container">
       <Navigation />
 
-      <Paper>
-        <WIP />
-        {/* <Toolbar>
-          <div style={{ flex: '0 0 auto' }}>
-            Personnel information
-          </div>
-          <div style={{ flex: '1 1 100%' }}></div>
-          <div>
-            <IconButton aria-label="Filter List">
-              <Icon>filter_list</Icon>
-            </IconButton>
-          </div>
-          <div>
-            <IconButton aria-label="Filter List">
-              <Icon>more_vert</Icon>
-            </IconButton>
-          </div>
-        </Toolbar>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell padding="checkbox">
-                <Checkbox
-                  // indeterminate={numSelected > 0 && numSelected < rowCount}
-                  // checked={numSelected === rowCount}
-                  // onChange={onSelectAllClick}
-                />
-              </TableCell>
-              <TableCell>ID</TableCell>
-              <TableCell numeric>Name</TableCell>
-              <TableCell numeric>Symbol</TableCell>
-              <TableCell numeric>Color</TableCell>
-              <TableCell numeric>Progress</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {
-              foodNutrients.map((item, index) => (
-                <TableRow key={index} hover>
-                  <TableCell padding="checkbox">
-                    <Checkbox checked={false} />
-                  </TableCell>
-                  <TableCell>{item.id}</TableCell>
-                  <TableCell numeric>{item.name}</TableCell>
-                  <TableCell numeric>{item.symbol}</TableCell>
-                  <TableCell numeric>{item.color}</TableCell>
-                  <TableCell numeric>{item.progress}</TableCell>
-                </TableRow>
-              ))
-            }
-          </TableBody>
-          <TableFooter>
-            <TablePagination
-              count={foodNutrients.length}
-              rowsPerPage={rowsPerPage}
-              rowsPerPageOptions={[5, 10, 20]}
-              page={page}
-              // onChangePage={handleChangePage}
-              // onChangeRowsPerPage={handleChangeRowsPerPage}
-            />
-          </TableFooter>
-        </Table> */}
-      </Paper>
+      <div className="block">
+        <Typography type="title">
+          Static
+        </Typography>
+
+        <Paper>
+          <Static />
+        </Paper>
+      </div>
+
+      <div className="block">
+        <Typography type="title">
+          REST
+        </Typography>
+
+        <Paper>
+          TODO
+        </Paper>
+      </div>
+
+      <div className="block">
+        <Typography type="title">
+          GraphQL
+        </Typography>
+
+        <Paper>
+          TODO
+        </Paper>
+      </div>
 
       <style jsx>{`
         .container {
-          padding: 1rem;
+          padding: 0 1rem;
+        }
+
+        .block {
+          margin: 1rem 0;
         }
       `}</style>
     </div>
