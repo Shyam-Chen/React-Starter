@@ -60,7 +60,13 @@ let WithReduxForm = ({ selector }) => {
           <div className="row">
             {/* radio buttons */}
             <FormControl component="fieldset">
-              <Field name="gender" component={renderRadioButtons} />
+              <Field name="gender" component={renderRadioButtons} label="Gender"
+                list={[
+                  { value: 'male', label: 'Male' },
+                  { value: 'female', label: 'Female' },
+                  { value: 'other', label: 'Other' }
+                ]}
+              />
             </FormControl>
             <div className="outputs" style={{ padding: '0 0 .5rem' }}>
               {selector('gender') ? `${selector('gender')}`.charAt(0).toUpperCase() + `${selector('gender')}`.slice(1) : ''}

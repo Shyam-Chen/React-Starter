@@ -61,26 +61,28 @@ export const renderMultipleSelect = ({ input, label, list, ...other }) => (
   </div>
 );
 
-export const renderRadioButtons = ({ input, ...other }) => (
+export const renderRadioButtons = ({ input, label, list, ...other }) => (
   <div>
-    <FormLabel component="legend">Gender</FormLabel>
+    <FormLabel component="legend">{label}</FormLabel>
     <RadioGroup
       {...input}
       {...other}
       style={{ display: 'flex', flexDirection: 'row' }}
-      aria-label="gender"
-      name="gender"
+      aria-label={label}
+      name={label}
     >
-      <FormControlLabel value="male" control={<Radio />} label="Male" />
-      <FormControlLabel value="female" control={<Radio />} label="Female" />
-      <FormControlLabel value="other" control={<Radio />} label="Other" />
+      {
+        list.map(({ value, label: childLabel }, index) => (
+          <FormControlLabel key={index} value={value} control={<Radio />} label={childLabel} />
+        ))
+      }
     </RadioGroup>
   </div>
 );
 
-export const renderSwitch = ({ input, ...other }) => (
+export const renderSwitch = ({ input, label, ...other }) => (
   <FormGroup row>
-    <FormLabel component="legend" style={{ alignSelf: 'center' }}>Autoplay</FormLabel>
+    <FormLabel component="legend" style={{ alignSelf: 'center' }}>{label}</FormLabel>
     <Switch {...input} {...other} />
   </FormGroup>
 );
