@@ -22,11 +22,11 @@ $ npm start
 
 * Internationalization (`react-intl`)
 * Data Chart
-  * SVG & Canvas (`d3`, `immutable`)
-  * WebGL (`three`, `immutable`)
+  * SVG & Canvas (`d3`)
+  * WebGL (`three`)
 * WebSockets (`socket.io`)
 * Lazy Loading (`react-loadable`)
 * Service Workers (`sw-precache`)
-* SEO (`react-helmet`)
+* Metadata (`react-helmet`)
 * Prerender (`rendertron`)
 * Server-side Rendering (`react-dom/server`, `react-transmit`)
