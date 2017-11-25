@@ -12,7 +12,7 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome',
     'chromeOptions': {
-      'args': ['--no-sandbox', '--headless', '--disable-gpu', '--window-size=1280,720']
+      'args': ['--no-sandbox', '--headless', '--disable-gpu', '--window-size=1280,800']
     }
   },
   baseUrl: `http://localhost:${TEST_PORT}`,

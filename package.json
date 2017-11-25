@@ -10,7 +10,7 @@
     "serve": "cross-env NODE_ENV=production node build/server.js",
     "server": "nodemon server.js --exec babel-node",
     "lint": "eslint src",
-    "unit": "jest --coverage",
+    "unit": "jest --coverage --forceExit",
     "e2e": "gulp e2e",
     "deploy": "firebase deploy",
     "gulp": "gulp",
