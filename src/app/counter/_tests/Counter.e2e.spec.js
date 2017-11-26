@@ -20,6 +20,7 @@ describe('Counter', () => {
     browser = await puppeteer.launch(launch);
     page = await browser.newPage();
     await page.setViewport({ width, height });
+    await page.goto('http://localhost:3000/counter');
   });
 
   afterAll(async () => {
@@ -28,9 +29,13 @@ describe('Counter', () => {
   });
 
   it('should display count', async () => {
-    await page.goto('http://localhost:3000/counter')
-    const text = await page.$eval('.typography > h3', el => el.textContent);
-
+    const text = await page.$eval('.typography:nth-child(2) > h3', el => el.textContent);
     expect(text).toEqual('Clicked: 0 times, value is even.');
+  });
+
+  it('should click increment button', async () => {
+    await page.click('.typography:nth-child(3) button:nth-child(1)');
+    const text = await page.$eval('.typography > h3', el => el.textContent);
+    expect(text).toEqual('Clicked: 1 times, value is odd.');
   });
 });
