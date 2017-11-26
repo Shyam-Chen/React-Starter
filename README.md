@@ -10,23 +10,80 @@ A boilerplate for React, Material, and Express.
 
 [Live Demo](https://react-by-example.firebaseapp.com/)
 
+## Getting Started
+
+1. Clone this Boilerplate
+
 ```bash
-$ npm install
+$ git clone --depth 1 https://github.com/Shyam-Chen/React-Fullstack-Starter <PROJECT_NAME>
+$ cd <PROJECT_NAME>
 ```
+
+2. Install Dependencies
+
+```bash
+$ npm i
+# or
+$ yarn
+
+# then install types
+$ npm run typed
+# or
+$ yarn typed
+```
+
+3. Run the Application
 
 ```bash
 $ npm start
+# or
+$ yarn start
 ```
 
-## TODO List
+4. Build the Application
 
-* Internationalization (`react-intl`)
-* Data Chart
-  * SVG & Canvas (`d3`)
-  * WebGL (`three`)
-* WebSockets (`socket.io`)
-* Lazy Loading (`react-loadable`)
-* Service Workers (`sw-precache`)
-* Metadata (`react-helmet`)
-* Prerender (`rendertron`)
-* Server-side Rendering (`react-dom/server`, `react-transmit`)
+```bash
+$ npm run build
+# or
+$ yarn build
+```
+
+5. Test the Application
+
+```bash
+$ npm test
+# or
+$ yarn test
+```
+
+## Examples
+
+* [x] Counter
+  * [x] Redux (`redux`)
+  * [x] Async
+    * [x] Redux Thunk (`redux-thunk`)
+    * [x] Redux Saga (`redux-saga`)
+    * [x] Redux Observable (`redux-observable`)
+* [x] CRUD
+  * [x] Static
+  * [x] REST
+  * [x] GraphQL (need to upgrade)
+* [ ] Form Controls
+  * [ ] Just Redux (`redux`)
+  * [ ] With Redux Form (`redux`, `redux-form`)
+  * [ ] Reactive Forms (`redux`, `redux-observable`)
+* [ ] Data Table
+  * [x] Static (need to refactor)
+  * [ ] REST
+  * [ ] GraphQL (need to upgrade)
+* [ ] Authorization (need to design API)
+* [ ] Internationalization (`react-intl`)
+* [ ] Data Chart
+  * [ ] SVG & Canvas (`d3`)
+  * [ ] WebGL (`three`)
+* [ ] WebSockets (`socket.io`)
+* [ ] Lazy Loading (`react-loadable`)
+* [ ] Service Workers (`sw-precache`)
+* [ ] Metadata (`react-helmet`)
+* [ ] Prerender (`rendertron`)
+* [ ] Server-side Rendering (`react-dom/server`, `react-transmit`)

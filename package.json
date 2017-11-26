@@ -4,7 +4,7 @@
   "description": "A boilerplate for React, Material, and Express.",
   "scripts": {
     "start": "webpack-dev-server --progress",
-    "test": "jest --coverage",
+    "test": "eslint src && jest --coverage --forceExit",
     "build": "webpack --env.prod",
     "backend": "babel server.js -d build",
     "serve": "cross-env NODE_ENV=production node build/server.js",
