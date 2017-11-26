@@ -25,12 +25,8 @@ jobs:
           command: docker-compose exec app yarn build
 
       - run:
-          name: Static code analysis
-          command: docker-compose exec app yarn lint
-
-      - run:
           name: Test the application
-          command: docker-compose exec app yarn unit
+          command: docker-compose exec app yarn test
 
       - run:
           name: Test coverage integration

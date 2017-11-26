@@ -56,17 +56,20 @@ $ npm test
 $ yarn test
 ```
 
-## Examples
+## Example List
 
 * [x] Counter
   * [x] Redux (`redux`)
   * [x] Async
-    * [x] Redux Thunk (`redux-thunk`)
-    * [x] Redux Saga (`redux-saga`)
-    * [x] Redux Observable (`redux-observable`)
+    * [x] Thunk (`redux-thunk`)
+    * [x] Saga (`redux-saga`)
+    * [x] Observable (`redux-observable`)
 * [x] CRUD
   * [x] Static
   * [x] REST
+    * [x] Thunk (`redux-thunk`)
+    * [x] Saga (`redux-saga`)
+    * [x] Observable (`redux-observable`)
   * [x] GraphQL (need to upgrade)
 * [ ] Form Controls
   * [ ] Just Redux (`redux`)
