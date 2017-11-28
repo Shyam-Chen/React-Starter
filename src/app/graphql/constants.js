@@ -1,10 +1,8 @@
 import { ApolloClient, createNetworkInterface } from 'react-apollo';
 
-import { API_URL } from '~/constants';
-
 export const CLIENT = new ApolloClient({
   networkInterface: createNetworkInterface({
-    uri: `${API_URL}/__/graphql`
+    uri: `${process.env.API_URL}/__/graphql`
   })
 });
 

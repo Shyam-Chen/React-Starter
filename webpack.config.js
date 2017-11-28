@@ -84,7 +84,8 @@ module.exports = ({ prod = false } = {}) => {
     new HtmlWebpackPlugin({ filename: 'index.html', template: 'index.html' }),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify(prod ? 'production' : 'development')
+        'NODE_ENV': JSON.stringify(prod ? 'production' : 'development'),
+        'API_URL': JSON.stringify('https://web-go-demo.herokuapp.com')
       }
     })
   ];

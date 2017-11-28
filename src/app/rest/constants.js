@@ -1,5 +1,3 @@
-import { API_URL } from '~/constants';
-
 export interface State {
   dataset?: Array<{ _id: string, text: string }>;
   addData?: Object;
@@ -10,7 +8,7 @@ export interface State {
   initial?: boolean;
 }
 
-export const API_LIST = `${API_URL}/__/list`;
+export const API_LIST = `${process.env.API_URL}/__/list`;
 
 export const INITIAL: State = {
   dataset: [],
