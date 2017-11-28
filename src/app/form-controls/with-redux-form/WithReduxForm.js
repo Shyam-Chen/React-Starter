@@ -1,4 +1,5 @@
 import React from 'react';
+import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
 import { Paper, Typography } from 'material-ui';
@@ -14,7 +15,7 @@ import {
 } from './renders';
 import { validate } from './validate';
 
-let WithReduxForm = ({ selector }) => {
+const WithReduxForm = ({ selector }) => {
   // ...
 
   return (
@@ -114,8 +115,9 @@ let WithReduxForm = ({ selector }) => {
   );
 };
 
-WithReduxForm = reduxForm({ form: 'example', validate })(WithReduxForm);
-
-export default connect(
-  state => ({ selector: field => formValueSelector('example')(state, field) })
+export default compose(
+  connect(
+    state => ({ selector: field => formValueSelector('example')(state, field) })
+  ),
+  reduxForm({ form: 'example', validate })
 )(WithReduxForm);
