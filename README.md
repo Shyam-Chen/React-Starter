@@ -22,37 +22,27 @@ $ cd <PROJECT_NAME>
 2. Install Dependencies
 
 ```bash
-$ npm i
-# or
-$ yarn
+$ yarn install
 
 # then install types
-$ npm run typed
-# or
 $ yarn typed
 ```
 
 3. Run the Application
 
 ```bash
-$ npm start
-# or
 $ yarn start
 ```
 
 4. Build the Application
 
 ```bash
-$ npm run build
-# or
 $ yarn build
 ```
 
 5. Test the Application
 
 ```bash
-$ npm test
-# or
 $ yarn test
 ```
 
