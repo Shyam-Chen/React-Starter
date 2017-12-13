@@ -10,7 +10,7 @@ module.exports = ({ prod = false } = {}) => ({
   },
   output: {
     path: join(__dirname, 'build'),
-    filename: '[name].[hash].js'
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -90,7 +90,10 @@ module.exports = ({ prod = false } = {}) => ({
     ].filter(Boolean)
   },
   plugins: [
-    new HtmlWebpackPlugin({ filename: 'index.html', template: 'index.html' }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'index.html'
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify(prod ? 'production' : 'development'),
