@@ -46,11 +46,11 @@ $ yarn build
 $ yarn test
 ```
 
-## Example List
+## Practical Examples
 
 * [x] Counter
-  * [x] Redux (`redux`)
-  * [x] Async
+  * [x] State Management (`redux`)
+  * [x] Asynchronous
     * [x] Thunk (`redux-thunk`)
     * [x] Saga (`redux-saga`)
     * [x] Observable (`redux-observable`)
@@ -60,23 +60,25 @@ $ yarn test
     * [x] Thunk (`redux-thunk`)
     * [x] Saga (`redux-saga`)
     * [x] Observable (`redux-observable`)
-  * [x] GraphQL (need to upgrade)
+  * [x] GraphQL
 * [ ] Form Controls
-  * [ ] Just Redux (`redux`)
-  * [ ] With Redux Form (`redux`, `redux-form`)
+  * [x] Just Redux (`redux`)
+  * [x] With Redux Form (`redux`, `redux-form`)
   * [ ] Reactive Forms (`redux`, `redux-observable`)
 * [ ] Data Table
-  * [x] Static (need to refactor)
+  * [x] Static
   * [ ] REST
-  * [ ] GraphQL (need to upgrade)
-* [ ] Authorization (need to design API)
-* [ ] Internationalization (`react-intl`)
+  * [ ] GraphQL
+* [ ] Globalization
+  * [ ] Internationalization (`react-intl`)
+  * [ ] Localization
+* [ ] Authorization
+  * [ ] REST
+  * [ ] GraphQL
 * [ ] Data Chart
-  * [ ] SVG & Canvas (`d3`)
+  * [ ] SVG (`d3`)
+  * [ ] Canvas (`d3`)
   * [ ] WebGL (`three`)
-* [ ] WebSockets (`socket.io`)
-* [ ] Lazy Loading (`react-loadable`)
-* [ ] Service Workers (`sw-precache`)
-* [ ] Metadata (`react-helmet`)
-* [ ] Prerender (`rendertron`)
-* [ ] Server-side Rendering (`react-dom/server`, `react-transmit`)
+* [ ] Realtime
+  * [ ] WebSockets (`socket.io`)
+  * [ ] GraphQL Subscriptions
