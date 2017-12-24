@@ -31,30 +31,36 @@ $ yarn typed
 3. Run the Application
 
 ```bash
-$ yarn start
+# front-end
+$ yarn start:app
+
+# back-end
+$ yarn start:api
 ```
 
 4. Build the Application
 
 ```bash
-$ yarn build
+# front-end
+$ yarn build:app
+
+# back-end
+$ yarn build:api
 ```
 
 5. Test the Application
 
 ```bash
-$ yarn test
+# front-end
+$ yarn test:app
+
+# back-end
+$ yarn test:api
 ```
 
 ## Practical Examples
 
-* [x] Counter
-  * [x] State Management (`redux`)
-  * [x] Asynchronous
-    * [x] Thunk (`redux-thunk`)
-    * [x] Saga (`redux-saga`)
-    * [x] Observable (`redux-observable`)
-* [x] CRUD
+* [x] CRUD Operations
   * [x] Static
   * [x] REST
     * [x] Thunk (`redux-thunk`)
@@ -82,3 +88,11 @@ $ yarn test
 * [ ] Realtime
   * [ ] WebSockets (`socket.io`)
   * [ ] GraphQL Subscriptions
+* [ ] Playground
+  * [x] Counter
+    * [x] State Management (`redux`)
+    * [x] Asynchronous
+      * [x] Thunk (`redux-thunk`)
+      * [x] Saga (`redux-saga`)
+      * [x] Observable (`redux-observable`)
+  * [ ] ...
