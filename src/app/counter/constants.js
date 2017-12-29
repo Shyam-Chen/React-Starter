@@ -1,10 +1,10 @@
 // @flow
 
-export interface State {
+export interface ICounter {
   value: number;
 }
 
-export const INITIAL: State = { value: 0 };
+export const INITIAL: ICounter = { value: 0 };
 
 export const INCREMENT = '[Counter] INCREMENT';
 export const DECREMENT = '[Counter] DECREMENT';

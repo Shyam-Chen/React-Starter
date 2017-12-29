@@ -2,9 +2,9 @@
 
 import { createSelector } from 'reselect';
 
-import { State } from './constants';
+import { ICounter } from './constants';
 
 export const evenOrOdd = createSelector(
-  (counter: State): State => counter,
-  (counter: State): string => counter.value % 2 === 0 ? 'even' : 'odd'
+  (counter: ICounter): ICounter => counter,
+  ({ value }: ICounter): string => value % 2 === 0 ? 'even' : 'odd'
 );
