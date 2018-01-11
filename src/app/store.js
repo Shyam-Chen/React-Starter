@@ -7,13 +7,14 @@ import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import { reducer as formReducer } from 'redux-form';
 import { createLogger } from 'redux-logger';
 
-import { counterEpic, counterReducer, watchCounter } from '~/counter';
-import { crudReducer } from '~/crud';
-import { restEpic, restReducer, watchRest } from '~/rest';
-import { graphqlReducer } from '~/graphql';
+
+import { crudReducer } from '~/crud-operations/crud';
+import { restEpic, restReducer, watchRest } from '~/crud-operations/rest';
+import { graphqlReducer } from '~/crud-operations/graphql';
 import { formControlsReducer, formControlsEpic } from '~/form-controls';
 import { dataTableReducer } from '~/data-table';
 import { authorizationReducer } from '~/authorization';
+import { counterEpic, counterReducer, watchCounter } from '~/playground/counter';
 
 import appEpic from './epics';
 import appReducer from './reducer';
