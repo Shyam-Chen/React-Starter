@@ -1,12 +1,12 @@
-# React Fullstack Starter
+# React Sails Starter
 
-A boilerplate for React, Material, and Express.
+A boilerplate for React, Sails, Babel, and ReactiveX.
 
-[![Build Status](https://img.shields.io/circleci/project/Shyam-Chen/React-Fullstack-Starter/master.svg)](https://circleci.com/gh/Shyam-Chen/React-Fullstack-Starter)
-[![Coverage Status](https://img.shields.io/codecov/c/github/Shyam-Chen/React-Fullstack-Starter/master.svg)](https://codecov.io/gh/Shyam-Chen/React-Fullstack-Starter)
+[![Build Status](https://img.shields.io/circleci/project/Shyam-Chen/React-Sails-Starter/master.svg)](https://circleci.com/gh/Shyam-Chen/React-Sails-Starter)
+[![Coverage Status](https://img.shields.io/codecov/c/github/Shyam-Chen/React-Sails-Starter/master.svg)](https://codecov.io/gh/Shyam-Chen/React-Sails-Starter)
  //
-[![dependencies Status](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter/status.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter)
-[![devDependencies Status](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter/dev-status.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter?type=dev)
+[![dependencies Status](https://david-dm.org/Shyam-Chen/React-Sails-Starter/status.svg)](https://david-dm.org/Shyam-Chen/React-Sails-Starter)
+[![devDependencies Status](https://david-dm.org/Shyam-Chen/React-Sails-Starter/dev-status.svg)](https://david-dm.org/Shyam-Chen/React-Sails-Starter?type=dev)
 
 [Live Demo](https://react-by-example.firebaseapp.com/)
 
@@ -15,7 +15,7 @@ A boilerplate for React, Material, and Express.
 1. Clone this Boilerplate
 
 ```bash
-$ git clone --depth 1 https://github.com/Shyam-Chen/React-Fullstack-Starter <PROJECT_NAME>
+$ git clone --depth 1 https://github.com/Shyam-Chen/React-Sails-Starter <PROJECT_NAME>
 $ cd <PROJECT_NAME>
 ```
 

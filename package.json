@@ -1,11 +1,11 @@
 {
-  "name": "React-Fullstack-Starter",
+  "name": "React-Sails-Starter",
   "version": "1.0.0",
-  "description": "A boilerplate for React, Material, and Express.",
+  "description": "A boilerplate for React, Sails, Babel, and ReactiveX.",
   "scripts": {
     "start:app": "webpack-dev-server --progress",
     "start:api": "nodemon src/server.js --exec babel-node",
-    "build:app": "webpack --env.prod",
+    "build:app": "webpack --env.prod --progress --bail",
     "build:api": "babel src -d dist --ignore client.js,app",
     "test:app": "jest \"src/app/.*\\.js$\" --coverage --forceExit",
     "test:api": "jest \"src/api/.*\\.js$\" --coverage --forceExit",
@@ -16,17 +16,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shyam-Chen/React-Fullstack-Starter.git"
+    "url": "git+https://github.com/Shyam-Chen/React-Sails-Starter.git"
   },
   "keywords": [
-    "React"
+    "React",
+    "Sails",
+    "Babel",
+    "ReactiveX"
   ],
   "author": "Yen-cheng Chen, 陳彥澄",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Shyam-Chen/React-Fullstack-Starter/issues"
+    "url": "https://github.com/Shyam-Chen/React-Sails-Starter/issues"
   },
-  "homepage": "https://github.com/Shyam-Chen/React-Fullstack-Starter#readme",
+  "homepage": "https://github.com/Shyam-Chen/React-Sails-Starter#readme",
   "dependencies": {
     "axios": "0.17.1",
     "body-parser": "1.18.2",
