@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { CRUD } from '~/crud-operations/crud';
-import { REST } from '~/crud-operations/rest';
-import { GraphQL } from '~/crud-operations/graphql';
+import { CRUD } from '~/crud';
+import { REST } from '~/rest';
+import { GraphQL } from '~/graphql';
 import { FormControls } from '~/form-controls';
 import { DataTable } from '~/data-table';
 import { Authorization } from '~/authorization';

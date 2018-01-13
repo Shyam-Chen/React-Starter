@@ -8,9 +8,9 @@ import { reducer as formReducer } from 'redux-form';
 import { createLogger } from 'redux-logger';
 
 
-import { crudReducer } from '~/crud-operations/crud';
-import { restEpic, restReducer, watchRest } from '~/crud-operations/rest';
-import { graphqlReducer } from '~/crud-operations/graphql';
+import { crudReducer } from '~/crud';
+import { restEpic, restReducer, watchRest } from '~/rest';
+import { graphqlReducer } from '~/graphql';
 import { formControlsReducer, formControlsEpic } from '~/form-controls';
 import { dataTableReducer } from '~/data-table';
 import { authorizationReducer } from '~/authorization';
