@@ -2,9 +2,8 @@
 
 import { createSelector } from 'reselect';
 
-import { ICounter } from './constants';
+import { MEMOIZE, ICounter } from './constants';
 
-export const evenOrOdd = createSelector(
-  (counter: ICounter): ICounter => counter,
+export const evenOrOdd = createSelector([MEMOIZE],
   ({ value }: ICounter): string => value % 2 === 0 ? 'even' : 'odd'
 );

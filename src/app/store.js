@@ -7,7 +7,6 @@ import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import { reducer as formReducer } from 'redux-form';
 import { createLogger } from 'redux-logger';
 
-
 import { crudReducer } from '~/crud';
 import { restEpic, restReducer, watchRest } from '~/rest';
 import { graphqlReducer } from '~/graphql';

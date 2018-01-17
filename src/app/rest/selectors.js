@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
 
-export const total = createSelector(
-  rest => rest,
+import { MEMOIZE } from './constants';
+
+export const total = createSelector([MEMOIZE],
   rest => rest.dataset.length
 );

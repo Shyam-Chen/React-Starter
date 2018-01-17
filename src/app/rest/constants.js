@@ -20,6 +20,8 @@ export const INITIAL: State = {
   initial: false
 };
 
+export const MEMOIZE = rest => rest;
+
 export const SUCCESS = '[REST] SUCCESS';
 export const FAILURE = '[REST] FAILURE';
 

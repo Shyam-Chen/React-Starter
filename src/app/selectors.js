@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
 
-export const NAME = createSelector(
-  app => app,
+import { MEMOIZE } from './constants';
+
+export const NAME = createSelector([MEMOIZE],
   app => app
 );
