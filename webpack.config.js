@@ -12,7 +12,7 @@ module.exports = ({ prod = false } = {}) => ({
   },
   output: {
     path: join(__dirname, 'build'),
-    chunkFilename: prod ? '[name].[hash].js' : '[name].js',
+    // chunkFilename: prod ? '[name].[hash].js' : '[name].js',
     filename: prod ? '[name].[hash].js' : '[name].js'
   },
   module: {
@@ -44,7 +44,23 @@ module.exports = ({ prod = false } = {}) => ({
         'API_URL': JSON.stringify(API_URL)
       }
     }),
-    prod && new UglifyJSPlugin({ sourceMap: false }),
+    prod && new UglifyJSPlugin({
+      sourceMap: true,
+      uglifyOptions: {
+        ecma: 5,
+        warnings: false,
+        ie8: false,
+        mangle: true,
+        compress: {
+          pure_getters: true,
+          passes: 3
+        },
+        output: {
+          ascii_only: true,
+          comments: false
+        }
+      }
+    }),
     !prod && new webpack.NamedModulesPlugin(),
     !prod && new webpack.HotModuleReplacementPlugin()
   ].filter(Boolean),

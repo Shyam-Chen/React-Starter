@@ -1,19 +1,15 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Paper, Toolbar, Table } from 'material-ui';
-import { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import { CircularProgress } from 'material-ui/Progress';
 
 import Navigation from '~/shared/Navigation';
-import Button from '~/shared/Button';
 
 import * as actions from './actions';
-import { total } from './selectors';
-import { Add, Search, Edit, Delete } from './containers';
+import { Add, Search, Edit, Delete, Results } from './containers';
 
-const REST = ({ rest, total, actions }) => {
-  const { dataset, deleteData, editData, loading /* initial */ } = rest;
+const REST = ({ rest }) => {
+  const { loading /* , initial */ } = rest;
 
   // if (!initial) {
   //   actions.setData({ loading: true, initial: true });
@@ -27,60 +23,7 @@ const REST = ({ rest, total, actions }) => {
       <Search />
       <Add />
 
-      <div className="table">
-        <Paper elevation={2}>
-          <Toolbar>
-            <div style={{ flex: '0 0 auto' }}>
-              Total: {total}
-            </div>
-          </Toolbar>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell>Text</TableCell>
-                <TableCell>Actions</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {
-                /* eslint-disable indent */
-                dataset.length
-                  ? dataset.map(({ _id, text }) => (
-                      <TableRow key={_id} hover>
-                        <TableCell>{text}</TableCell>
-                        <TableCell>
-                          <Button
-                            color="red"
-                            onClick={() =>
-                              actions.setData({
-                                deleteData: { ...deleteData, _id, dialog: true }
-                              })
-                            }
-                          >
-                            Delete
-                          </Button>
-                          <Button
-                            color="indigo"
-                            onClick={() => {
-                              actions.setData({
-                                editData: { ...editData, _id, text, dialog: true }
-                              });
-                            }}
-                          >
-                            Edit
-                          </Button>
-                        </TableCell>
-                      </TableRow>
-                    ))
-                  : <TableRow>
-                      <TableCell colSpan="2">No data available</TableCell>
-                    </TableRow>
-                /* eslint-enable indent */
-              }
-            </TableBody>
-          </Table>
-        </Paper>
-      </div>
+      <Results />
 
       <aside>
         <Delete />
@@ -94,11 +37,6 @@ const REST = ({ rest, total, actions }) => {
       <style jsx>{`
         .container {
           padding: 1rem;
-        }
-
-        .table {
-          max-width: 30rem;
-          margin: .5rem 0;
         }
 
         .progress {
@@ -120,6 +58,6 @@ const REST = ({ rest, total, actions }) => {
 };
 
 export default connect(
-  ({ rest }) => ({ rest, total: total(rest) }),
+  ({ rest }) => ({ rest }),
   dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(REST);
