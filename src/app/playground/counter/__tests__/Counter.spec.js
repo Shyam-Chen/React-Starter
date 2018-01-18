@@ -15,6 +15,6 @@ describe('Counter', () => {
       <Counter counter={INITIAL} actions={actions} evenOrOdd={evenOrOdd} />
     );
 
-    expect(component).toBeDefined();
+    expect(component).toMatchSnapshot();
   });
 });

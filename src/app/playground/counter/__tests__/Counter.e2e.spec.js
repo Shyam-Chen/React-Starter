@@ -3,8 +3,7 @@ import puppeteer from 'puppeteer';
 import server from '~/e2e';
 
 describe('Counter', () => {
-  let page = null;
-  let browser = null;
+  let [browser, page] = [];
 
   beforeAll(async () => {
     const width = 1280;

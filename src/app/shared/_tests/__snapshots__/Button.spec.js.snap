@@ -4,7 +4,7 @@ exports[`Button should render initial component 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <withStyles(Component) />,
+  Symbol(enzyme.__unrendered__): <WithStyles(Component) />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
