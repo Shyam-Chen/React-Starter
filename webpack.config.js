@@ -21,14 +21,6 @@ module.exports = ({ prod = false } = {}) => ({
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader'
-      },
-      {
-        test: /\.(jpg|png|gif)$/,
-        use: 'file-loader'
-      },
-      {
-        test: /\.(eot|woff2?|svg|ttf)$/,
-        use: 'file-loader'
       }
     ].filter(Boolean)
   },
@@ -45,6 +37,8 @@ module.exports = ({ prod = false } = {}) => ({
       }
     }),
     prod && new UglifyJSPlugin({
+      cache: true,
+      parallel: true,
       sourceMap: true,
       uglifyOptions: {
         ecma: 5,
