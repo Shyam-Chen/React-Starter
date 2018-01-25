@@ -23,7 +23,7 @@ export const searchItemEpic = action$ =>
     ::switchMap(({ text }) =>
       concat(
         Observable
-          ::fromPromise(axios.get(text ? `${API_LIST}?text=${text}` : API_LIST))
+          ::fromPromise(axios.get(API_LIST, { params: { text } }))
           ::map(({ data }) => success(data))
           ::_catch(error => Observable::of(failure(error))),
         of(setData({ loading: false }))

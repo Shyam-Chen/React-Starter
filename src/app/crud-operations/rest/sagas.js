@@ -19,7 +19,7 @@ export function *watchAddItemSaga() {
 
 export function *effectSearchItemSaga({ text }) {
   try {
-    const { data } = yield axios.get(text ? `${API_LIST}?text=${text}` : API_LIST);
+    const { data } = yield axios.get(API_LIST, { params: { text } });
     yield put(success(data));
     yield put(setData({ loading: false }));
   } catch (error) {

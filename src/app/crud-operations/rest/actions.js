@@ -24,7 +24,7 @@ export const addItem = text =>
 
 export const searchItem = text =>
   dispatch =>
-    axios.get(text ? `${API_LIST}?text=${text}` : API_LIST)
+    axios.get(API_LIST, { params: { text } })
       .then(({ data }) => dispatch(success(data)))
       .then(() => dispatch(setData({ loading: false })))
       .catch(error => dispatch(failure(error)));
@@ -55,7 +55,7 @@ export const _addItem = text =>
 export const _searchItem = text =>
   async dispatch => {
     try {
-      const { data } = await axios.get(text ? `${API_LIST}?text=${text}` : API_LIST);
+      const { data } = await axios.get(API_LIST, { params: { text } });
       await dispatch(success(data));
       await dispatch(setData({ loading: false }));
     } catch (error) {
