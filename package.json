@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/Shyam-Chen/React-Fullstack-Starter#readme",
   "dependencies": {
+    "autosuggest-highlight": "^3.1.1",
     "axios": "0.17.1",
     "body-parser": "1.18.2",
     "classnames": "2.2.5",
@@ -43,6 +44,7 @@
     "morgan": "1.9.0",
     "react": "15.6.1",
     "react-apollo": "1.4.16",
+    "react-autosuggest": "^9.3.2",
     "react-dom": "15.6.1",
     "react-helmet": "5.2.0",
     "react-intl": "2.4.0",
