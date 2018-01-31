@@ -1,0 +1,465 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation should render initial component 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <WithStyles(AppBar)>
+          <WithStyles(Toolbar)>
+            <Unknown
+              to="/"
+            >
+              <WithStyles(IconButton)
+                color="contrast"
+              >
+                <WithStyles(Icon)>
+                  arrow_back
+                </WithStyles(Icon)>
+              </WithStyles(IconButton)>
+            </Unknown>
+            <WithStyles(Typography)
+              color="inherit"
+              type="title"
+            >
+              React by Example, location: 
+              <span
+                className="jsx-3411527522 location"
+              >
+                blank
+              </span>
+              .
+            </WithStyles(Typography)>
+          </WithStyles(Toolbar)>
+        </WithStyles(AppBar)>,
+        <div
+          className="jsx-3411527522 filling"
+        />,
+        false,
+        <JSXStyle
+          css=".location.jsx-3411527522{color:#f48fb1;}.filling.jsx-3411527522{padding-top:64px;}.buttons.jsx-3411527522{display:-webkit-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}"
+          styleId="3411527522"
+        />,
+      ],
+      "className": "jsx-3411527522",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <WithStyles(Toolbar)>
+            <Unknown
+              to="/"
+            >
+              <WithStyles(IconButton)
+                color="contrast"
+              >
+                <WithStyles(Icon)>
+                  arrow_back
+                </WithStyles(Icon)>
+              </WithStyles(IconButton)>
+            </Unknown>
+            <WithStyles(Typography)
+              color="inherit"
+              type="title"
+            >
+              React by Example, location: 
+              <span
+                className="jsx-3411527522 location"
+              >
+                blank
+              </span>
+              .
+            </WithStyles(Typography)>
+          </WithStyles(Toolbar)>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Unknown
+                to="/"
+              >
+                <WithStyles(IconButton)
+                  color="contrast"
+                >
+                  <WithStyles(Icon)>
+                    arrow_back
+                  </WithStyles(Icon)>
+                </WithStyles(IconButton)>
+              </Unknown>,
+              <WithStyles(Typography)
+                color="inherit"
+                type="title"
+              >
+                React by Example, location: 
+                <span
+                  className="jsx-3411527522 location"
+                >
+                  blank
+                </span>
+                .
+              </WithStyles(Typography)>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <WithStyles(IconButton)
+                  color="contrast"
+                >
+                  <WithStyles(Icon)>
+                    arrow_back
+                  </WithStyles(Icon)>
+                </WithStyles(IconButton)>,
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <WithStyles(Icon)>
+                    arrow_back
+                  </WithStyles(Icon)>,
+                  "color": "contrast",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "arrow_back",
+                  },
+                  "ref": null,
+                  "rendered": "arrow_back",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  "React by Example, location: ",
+                  <span
+                    className="jsx-3411527522 location"
+                  >
+                    blank
+                  </span>,
+                  ".",
+                ],
+                "color": "inherit",
+                "type": "title",
+              },
+              "ref": null,
+              "rendered": Array [
+                "React by Example, location: ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "blank",
+                    "className": "jsx-3411527522 location",
+                  },
+                  "ref": null,
+                  "rendered": "blank",
+                  "type": "span",
+                },
+                ".",
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "jsx-3411527522 filling",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "css": ".location.jsx-3411527522{color:#f48fb1;}.filling.jsx-3411527522{padding-top:64px;}.buttons.jsx-3411527522{display:-webkit-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}",
+          "styleId": "3411527522",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <WithStyles(AppBar)>
+            <WithStyles(Toolbar)>
+              <Unknown
+                to="/"
+              >
+                <WithStyles(IconButton)
+                  color="contrast"
+                >
+                  <WithStyles(Icon)>
+                    arrow_back
+                  </WithStyles(Icon)>
+                </WithStyles(IconButton)>
+              </Unknown>
+              <WithStyles(Typography)
+                color="inherit"
+                type="title"
+              >
+                React by Example, location: 
+                <span
+                  className="jsx-3411527522 location"
+                >
+                  blank
+                </span>
+                .
+              </WithStyles(Typography)>
+            </WithStyles(Toolbar)>
+          </WithStyles(AppBar)>,
+          <div
+            className="jsx-3411527522 filling"
+          />,
+          false,
+          <JSXStyle
+            css=".location.jsx-3411527522{color:#f48fb1;}.filling.jsx-3411527522{padding-top:64px;}.buttons.jsx-3411527522{display:-webkit-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}"
+            styleId="3411527522"
+          />,
+        ],
+        "className": "jsx-3411527522",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <WithStyles(Toolbar)>
+              <Unknown
+                to="/"
+              >
+                <WithStyles(IconButton)
+                  color="contrast"
+                >
+                  <WithStyles(Icon)>
+                    arrow_back
+                  </WithStyles(Icon)>
+                </WithStyles(IconButton)>
+              </Unknown>
+              <WithStyles(Typography)
+                color="inherit"
+                type="title"
+              >
+                React by Example, location: 
+                <span
+                  className="jsx-3411527522 location"
+                >
+                  blank
+                </span>
+                .
+              </WithStyles(Typography)>
+            </WithStyles(Toolbar)>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <Unknown
+                  to="/"
+                >
+                  <WithStyles(IconButton)
+                    color="contrast"
+                  >
+                    <WithStyles(Icon)>
+                      arrow_back
+                    </WithStyles(Icon)>
+                  </WithStyles(IconButton)>
+                </Unknown>,
+                <WithStyles(Typography)
+                  color="inherit"
+                  type="title"
+                >
+                  React by Example, location: 
+                  <span
+                    className="jsx-3411527522 location"
+                  >
+                    blank
+                  </span>
+                  .
+                </WithStyles(Typography)>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": <WithStyles(IconButton)
+                    color="contrast"
+                  >
+                    <WithStyles(Icon)>
+                      arrow_back
+                    </WithStyles(Icon)>
+                  </WithStyles(IconButton)>,
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <WithStyles(Icon)>
+                      arrow_back
+                    </WithStyles(Icon)>,
+                    "color": "contrast",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "arrow_back",
+                    },
+                    "ref": null,
+                    "rendered": "arrow_back",
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    "React by Example, location: ",
+                    <span
+                      className="jsx-3411527522 location"
+                    >
+                      blank
+                    </span>,
+                    ".",
+                  ],
+                  "color": "inherit",
+                  "type": "title",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "React by Example, location: ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "blank",
+                      "className": "jsx-3411527522 location",
+                    },
+                    "ref": null,
+                    "rendered": "blank",
+                    "type": "span",
+                  },
+                  ".",
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "jsx-3411527522 filling",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "css": ".location.jsx-3411527522{color:#f48fb1;}.filling.jsx-3411527522{padding-top:64px;}.buttons.jsx-3411527522{display:-webkit-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}",
+            "styleId": "3411527522",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

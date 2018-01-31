@@ -12,6 +12,6 @@ describe('Navigation', () => {
       <_Navigation />
     );
 
-    expect(component).toBeDefined();
+    expect(component).toMatchSnapshot();
   });
 });

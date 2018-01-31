@@ -1,7 +1,7 @@
 import { ActionsObservable } from 'redux-observable';
 
 import * as actions from '../actions';
-import counterEpic, { decrementAsyncEpic, decrementIfEvenEpic, decrementIfOddEpic } from '../epics';
+import counterEpic, { decrementAsyncEpic, decrementIfEvenEpic, decrementIfOddEpic, startCountEpic, cancelCountEpic } from '../epics';
 
 describe('Counter', () => {
   describe('epics', () => {
@@ -22,6 +22,16 @@ describe('Counter', () => {
     it('should call get decrementIfOddEpic', () => {
       const observable = new ActionsObservable(actions);
       expect(decrementIfOddEpic(observable)).toBeDefined();
+    });
+
+    it('should call get startCountEpic', () => {
+      const observable = new ActionsObservable(actions);
+      expect(startCountEpic(observable)).toBeDefined();
+    });
+
+    it('should call get cancelCountEpic', () => {
+      const observable = new ActionsObservable(actions);
+      expect(cancelCountEpic(observable)).toBeDefined();
     });
   });
 });
