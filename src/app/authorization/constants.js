@@ -1,3 +1,3 @@
 export const INITIAL = {};
 
-export const SET_DATA = 'SET_DATA';
+export const SET_DATA = '[Authorization] SET_DATA';
