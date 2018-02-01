@@ -7,15 +7,15 @@ import Navigation from '~/shared/Navigation';
 import Button from '~/shared/Button';
 
 import * as actions from './actions';
-import { evenOrOdd } from './selectors';
+import * as selectors from './selectors';
 
-export const Counter = ({ counter, actions, evenOrOdd }) => (
+export const Counter = ({ counter, actions, selectors }) => (
   <div className="container">
     <Navigation />
 
     <div className="typography">
       <Typography type="headline" component="h3">
-        Clicked: {counter.value} times, value is {evenOrOdd}.
+        Clicked: {counter.value} times, value is {selectors.evenOrOdd(counter)}.
       </Typography>
     </div>
 
@@ -71,6 +71,6 @@ export const Counter = ({ counter, actions, evenOrOdd }) => (
 );
 
 export default connect(
-  ({ counter }) => ({ counter, evenOrOdd: evenOrOdd(counter) }),
+  ({ counter }) => ({ counter, selectors }),
   dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(Counter);

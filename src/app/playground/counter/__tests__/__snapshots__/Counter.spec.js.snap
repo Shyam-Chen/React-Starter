@@ -28,7 +28,11 @@ ShallowWrapper {
         "value": 0,
       }
     }
-    evenOrOdd={[Function]}
+    selectors={
+      Object {
+        "evenOrOdd": [Function],
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -54,7 +58,7 @@ ShallowWrapper {
             Clicked: 
             0
              times, value is 
-            [Function]
+            even
             .
           </WithStyles(Typography)>
         </div>,
@@ -249,7 +253,7 @@ ShallowWrapper {
             Clicked: 
             0
              times, value is 
-            [Function]
+            even
             .
           </WithStyles(Typography)>,
           "className": "jsx-2751530667 typography",
@@ -264,7 +268,7 @@ ShallowWrapper {
               "Clicked: ",
               0,
               " times, value is ",
-              [Function],
+              "even",
               ".",
             ],
             "component": "h3",
@@ -275,7 +279,7 @@ ShallowWrapper {
             "Clicked: ",
             0,
             " times, value is ",
-            [Function],
+            "even",
             ".",
           ],
           "type": [Function],
@@ -911,7 +915,7 @@ ShallowWrapper {
               Clicked: 
               0
                times, value is 
-              [Function]
+              even
               .
             </WithStyles(Typography)>
           </div>,
@@ -1106,7 +1110,7 @@ ShallowWrapper {
               Clicked: 
               0
                times, value is 
-              [Function]
+              even
               .
             </WithStyles(Typography)>,
             "className": "jsx-2751530667 typography",
@@ -1121,7 +1125,7 @@ ShallowWrapper {
                 "Clicked: ",
                 0,
                 " times, value is ",
-                [Function],
+                "even",
                 ".",
               ],
               "component": "h3",
@@ -1132,7 +1136,7 @@ ShallowWrapper {
               "Clicked: ",
               0,
               " times, value is ",
-              [Function],
+              "even",
               ".",
             ],
             "type": [Function],
