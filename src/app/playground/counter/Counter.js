@@ -5,6 +5,7 @@ import { Typography } from 'material-ui';
 
 import Navigation from '~/shared/Navigation';
 import Button from '~/shared/Button';
+import { bindSelectCreators } from '~/utils/auto-bind';
 
 import * as actions from './actions';
 import * as selectors from './selectors';
@@ -15,7 +16,7 @@ export const Counter = ({ counter, actions, selectors }) => (
 
     <div className="typography">
       <Typography type="headline" component="h3">
-        Clicked: {counter.value} times, value is {selectors.evenOrOdd(counter)}.
+        Clicked: {counter.value} times, value is {selectors.evenOrOdd}.
       </Typography>
     </div>
 
@@ -71,6 +72,6 @@ export const Counter = ({ counter, actions, selectors }) => (
 );
 
 export default connect(
-  ({ counter }) => ({ counter, selectors }),
+  ({ counter }) => ({ counter, selectors: bindSelectCreators(selectors, counter) }),
   dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(Counter);

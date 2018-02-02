@@ -7,10 +7,12 @@ import { MenuItem } from 'material-ui/Menu';
 import { FormControl, FormGroup, FormControlLabel, FormLabel, FormHelperText } from 'material-ui/Form';
 import { RadioGroup } from 'material-ui/Radio';
 
-import * as actions from '../actions';
-import { nameError, listOfVariety } from '../selectors';
+import { bindSelectCreators } from '~/utils/auto-bind';
 
-const JustRedux = ({ formControls, actions, nameError, listOfVariety }) => {
+import * as actions from '../actions';
+import * as selectors from '../selectors';
+
+const JustRedux = ({ formControls, actions, selectors }) => {
   const {
     nickname,
     name, nameTouched,
@@ -21,6 +23,8 @@ const JustRedux = ({ formControls, actions, nameError, listOfVariety }) => {
     gender,
     autoplay
   } = formControls;
+
+  const { nameError, listOfVariety } = selectors;
 
   return (
     <div className="container">
@@ -261,10 +265,6 @@ const JustRedux = ({ formControls, actions, nameError, listOfVariety }) => {
 };
 
 export default connect(
-  ({ formControls }) => ({
-    formControls,
-    nameError: nameError(formControls),
-    listOfVariety: listOfVariety(formControls)
-  }),
+  ({ formControls }) => ({ formControls, selectors: bindSelectCreators(selectors, formControls) }),
   dispatch => ({ actions: bindActionCreators(actions, dispatch) })
 )(JustRedux);

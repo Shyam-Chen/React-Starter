@@ -58,7 +58,7 @@ ShallowWrapper {
             Clicked: 
             0
              times, value is 
-            even
+            [Function]
             .
           </WithStyles(Typography)>
         </div>,
@@ -253,7 +253,7 @@ ShallowWrapper {
             Clicked: 
             0
              times, value is 
-            even
+            [Function]
             .
           </WithStyles(Typography)>,
           "className": "jsx-2751530667 typography",
@@ -268,7 +268,7 @@ ShallowWrapper {
               "Clicked: ",
               0,
               " times, value is ",
-              "even",
+              [Function],
               ".",
             ],
             "component": "h3",
@@ -279,7 +279,7 @@ ShallowWrapper {
             "Clicked: ",
             0,
             " times, value is ",
-            "even",
+            [Function],
             ".",
           ],
           "type": [Function],
@@ -915,7 +915,7 @@ ShallowWrapper {
               Clicked: 
               0
                times, value is 
-              even
+              [Function]
               .
             </WithStyles(Typography)>
           </div>,
@@ -1110,7 +1110,7 @@ ShallowWrapper {
               Clicked: 
               0
                times, value is 
-              even
+              [Function]
               .
             </WithStyles(Typography)>,
             "className": "jsx-2751530667 typography",
@@ -1125,7 +1125,7 @@ ShallowWrapper {
                 "Clicked: ",
                 0,
                 " times, value is ",
-                "even",
+                [Function],
                 ".",
               ],
               "component": "h3",
@@ -1136,7 +1136,7 @@ ShallowWrapper {
               "Clicked: ",
               0,
               " times, value is ",
-              "even",
+              [Function],
               ".",
             ],
             "type": [Function],
