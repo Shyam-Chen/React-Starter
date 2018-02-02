@@ -97,18 +97,18 @@ const WithReduxForm = ({ selector }) => {
 
         .form {
           padding: .5rem 1rem;
-        }
 
-        .row {
-          padding: .66rem;
-          display: flex;
-          flex-direction: row;
-        }
+          & .row {
+            padding: .66rem;
+            display: flex;
+            flex-direction: row;
+          }
 
-        .outputs {
-          align-self: flex-end;
-          margin: 0 0 .5rem .5rem;
-          color: #3F51B5;
+          & .outputs {
+            align-self: flex-end;
+            margin: 0 0 .5rem .5rem;
+            color: #3F51B5;
+          }
         }
       `}</style>
     </div>

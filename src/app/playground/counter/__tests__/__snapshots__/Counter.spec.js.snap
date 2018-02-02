@@ -4,7 +4,7 @@ exports[`Counter should render initial component 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <Counter
     actions={
       Object {
         "cancelCount": [Function],
@@ -47,7 +47,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(Component) />,
+        <Connect(_Navigation) />,
         <div
           className="jsx-2751530667 typography"
         >
@@ -69,31 +69,31 @@ ShallowWrapper {
             component="p"
             type="body1"
           >
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="indigo"
               onClick={[Function]}
               raised={true}
             >
               Increment
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="pink"
               onClick={[Function]}
               raised={true}
             >
               Decrement
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="deepPurple"
               onClick={[Function]}
               raised={true}
             >
               Reset
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
           </WithStyles(Typography)>
         </div>,
         <div
@@ -103,31 +103,31 @@ ShallowWrapper {
             component="p"
             type="body1"
           >
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="indigo"
               onClick={[Function]}
               raised={true}
             >
               Increment (Async)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="pink"
               onClick={[Function]}
               raised={true}
             >
               Decrement (Async)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="deepPurple"
               onClick={[Function]}
               raised={true}
             >
               Reset (Async)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
           </WithStyles(Typography)>
         </div>,
         <div
@@ -137,31 +137,31 @@ ShallowWrapper {
             component="p"
             type="body1"
           >
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="indigo"
               onClick={[Function]}
               raised={true}
             >
               Increment (If Even)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="pink"
               onClick={[Function]}
               raised={true}
             >
               Decrement (If Even)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="deepPurple"
               onClick={[Function]}
               raised={true}
             >
               Reset (If Even)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
           </WithStyles(Typography)>
         </div>,
         <div
@@ -171,31 +171,31 @@ ShallowWrapper {
             component="p"
             type="body1"
           >
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="indigo"
               onClick={[Function]}
               raised={true}
             >
               Increment (If Odd)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="pink"
               onClick={[Function]}
               raised={true}
             >
               Decrement (If Odd)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="deepPurple"
               onClick={[Function]}
               raised={true}
             >
               Reset (If Odd)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
           </WithStyles(Typography)>
         </div>,
         <div
@@ -205,22 +205,22 @@ ShallowWrapper {
             component="p"
             type="body1"
           >
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="red"
               onClick={[Function]}
               raised={true}
             >
               Start count
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="red"
               onClick={[Function]}
               raised={true}
             >
               Cancel count
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
           </WithStyles(Typography)>
         </div>,
         <JSXStyle
@@ -295,31 +295,31 @@ ShallowWrapper {
             component="p"
             type="body1"
           >
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="indigo"
               onClick={[Function]}
               raised={true}
             >
               Increment
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="pink"
               onClick={[Function]}
               raised={true}
             >
               Decrement
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="deepPurple"
               onClick={[Function]}
               raised={true}
             >
               Reset
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
           </WithStyles(Typography)>,
           "className": "jsx-2751530667 typography",
         },
@@ -330,31 +330,31 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="indigo"
                 onClick={[Function]}
                 raised={true}
               >
                 Increment
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
               " ",
               " ",
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="pink"
                 onClick={[Function]}
                 raised={true}
               >
                 Decrement
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
               " ",
               " ",
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="deepPurple"
                 onClick={[Function]}
                 raised={true}
               >
                 Reset
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
             ],
             "component": "p",
             "type": "body1",
@@ -421,31 +421,31 @@ ShallowWrapper {
             component="p"
             type="body1"
           >
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="indigo"
               onClick={[Function]}
               raised={true}
             >
               Increment (Async)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="pink"
               onClick={[Function]}
               raised={true}
             >
               Decrement (Async)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="deepPurple"
               onClick={[Function]}
               raised={true}
             >
               Reset (Async)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
           </WithStyles(Typography)>,
           "className": "jsx-2751530667 typography",
         },
@@ -456,31 +456,31 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="indigo"
                 onClick={[Function]}
                 raised={true}
               >
                 Increment (Async)
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
               " ",
               " ",
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="pink"
                 onClick={[Function]}
                 raised={true}
               >
                 Decrement (Async)
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
               " ",
               " ",
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="deepPurple"
                 onClick={[Function]}
                 raised={true}
               >
                 Reset (Async)
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
             ],
             "component": "p",
             "type": "body1",
@@ -547,31 +547,31 @@ ShallowWrapper {
             component="p"
             type="body1"
           >
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="indigo"
               onClick={[Function]}
               raised={true}
             >
               Increment (If Even)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="pink"
               onClick={[Function]}
               raised={true}
             >
               Decrement (If Even)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="deepPurple"
               onClick={[Function]}
               raised={true}
             >
               Reset (If Even)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
           </WithStyles(Typography)>,
           "className": "jsx-2751530667 typography",
         },
@@ -582,31 +582,31 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="indigo"
                 onClick={[Function]}
                 raised={true}
               >
                 Increment (If Even)
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
               " ",
               " ",
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="pink"
                 onClick={[Function]}
                 raised={true}
               >
                 Decrement (If Even)
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
               " ",
               " ",
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="deepPurple"
                 onClick={[Function]}
                 raised={true}
               >
                 Reset (If Even)
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
             ],
             "component": "p",
             "type": "body1",
@@ -673,31 +673,31 @@ ShallowWrapper {
             component="p"
             type="body1"
           >
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="indigo"
               onClick={[Function]}
               raised={true}
             >
               Increment (If Odd)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="pink"
               onClick={[Function]}
               raised={true}
             >
               Decrement (If Odd)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="deepPurple"
               onClick={[Function]}
               raised={true}
             >
               Reset (If Odd)
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
           </WithStyles(Typography)>,
           "className": "jsx-2751530667 typography",
         },
@@ -708,31 +708,31 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="indigo"
                 onClick={[Function]}
                 raised={true}
               >
                 Increment (If Odd)
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
               " ",
               " ",
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="pink"
                 onClick={[Function]}
                 raised={true}
               >
                 Decrement (If Odd)
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
               " ",
               " ",
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="deepPurple"
                 onClick={[Function]}
                 raised={true}
               >
                 Reset (If Odd)
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
             ],
             "component": "p",
             "type": "body1",
@@ -799,22 +799,22 @@ ShallowWrapper {
             component="p"
             type="body1"
           >
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="red"
               onClick={[Function]}
               raised={true}
             >
               Start count
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
              
              
-            <WithStyles(Component)
+            <WithStyles(_Button)
               color="red"
               onClick={[Function]}
               raised={true}
             >
               Cancel count
-            </WithStyles(Component)>
+            </WithStyles(_Button)>
           </WithStyles(Typography)>,
           "className": "jsx-2751530667 typography",
         },
@@ -825,22 +825,22 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="red"
                 onClick={[Function]}
                 raised={true}
               >
                 Start count
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
               " ",
               " ",
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="red"
                 onClick={[Function]}
                 raised={true}
               >
                 Cancel count
-              </WithStyles(Component)>,
+              </WithStyles(_Button)>,
             ],
             "component": "p",
             "type": "body1",
@@ -904,7 +904,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(Component) />,
+          <Connect(_Navigation) />,
           <div
             className="jsx-2751530667 typography"
           >
@@ -926,31 +926,31 @@ ShallowWrapper {
               component="p"
               type="body1"
             >
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="indigo"
                 onClick={[Function]}
                 raised={true}
               >
                 Increment
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="pink"
                 onClick={[Function]}
                 raised={true}
               >
                 Decrement
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="deepPurple"
                 onClick={[Function]}
                 raised={true}
               >
                 Reset
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
             </WithStyles(Typography)>
           </div>,
           <div
@@ -960,31 +960,31 @@ ShallowWrapper {
               component="p"
               type="body1"
             >
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="indigo"
                 onClick={[Function]}
                 raised={true}
               >
                 Increment (Async)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="pink"
                 onClick={[Function]}
                 raised={true}
               >
                 Decrement (Async)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="deepPurple"
                 onClick={[Function]}
                 raised={true}
               >
                 Reset (Async)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
             </WithStyles(Typography)>
           </div>,
           <div
@@ -994,31 +994,31 @@ ShallowWrapper {
               component="p"
               type="body1"
             >
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="indigo"
                 onClick={[Function]}
                 raised={true}
               >
                 Increment (If Even)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="pink"
                 onClick={[Function]}
                 raised={true}
               >
                 Decrement (If Even)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="deepPurple"
                 onClick={[Function]}
                 raised={true}
               >
                 Reset (If Even)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
             </WithStyles(Typography)>
           </div>,
           <div
@@ -1028,31 +1028,31 @@ ShallowWrapper {
               component="p"
               type="body1"
             >
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="indigo"
                 onClick={[Function]}
                 raised={true}
               >
                 Increment (If Odd)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="pink"
                 onClick={[Function]}
                 raised={true}
               >
                 Decrement (If Odd)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="deepPurple"
                 onClick={[Function]}
                 raised={true}
               >
                 Reset (If Odd)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
             </WithStyles(Typography)>
           </div>,
           <div
@@ -1062,22 +1062,22 @@ ShallowWrapper {
               component="p"
               type="body1"
             >
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="red"
                 onClick={[Function]}
                 raised={true}
               >
                 Start count
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="red"
                 onClick={[Function]}
                 raised={true}
               >
                 Cancel count
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
             </WithStyles(Typography)>
           </div>,
           <JSXStyle
@@ -1152,31 +1152,31 @@ ShallowWrapper {
               component="p"
               type="body1"
             >
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="indigo"
                 onClick={[Function]}
                 raised={true}
               >
                 Increment
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="pink"
                 onClick={[Function]}
                 raised={true}
               >
                 Decrement
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="deepPurple"
                 onClick={[Function]}
                 raised={true}
               >
                 Reset
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
             </WithStyles(Typography)>,
             "className": "jsx-2751530667 typography",
           },
@@ -1187,31 +1187,31 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": Array [
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="indigo"
                   onClick={[Function]}
                   raised={true}
                 >
                   Increment
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
                 " ",
                 " ",
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="pink"
                   onClick={[Function]}
                   raised={true}
                 >
                   Decrement
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
                 " ",
                 " ",
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="deepPurple"
                   onClick={[Function]}
                   raised={true}
                 >
                   Reset
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
               ],
               "component": "p",
               "type": "body1",
@@ -1278,31 +1278,31 @@ ShallowWrapper {
               component="p"
               type="body1"
             >
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="indigo"
                 onClick={[Function]}
                 raised={true}
               >
                 Increment (Async)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="pink"
                 onClick={[Function]}
                 raised={true}
               >
                 Decrement (Async)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="deepPurple"
                 onClick={[Function]}
                 raised={true}
               >
                 Reset (Async)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
             </WithStyles(Typography)>,
             "className": "jsx-2751530667 typography",
           },
@@ -1313,31 +1313,31 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": Array [
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="indigo"
                   onClick={[Function]}
                   raised={true}
                 >
                   Increment (Async)
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
                 " ",
                 " ",
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="pink"
                   onClick={[Function]}
                   raised={true}
                 >
                   Decrement (Async)
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
                 " ",
                 " ",
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="deepPurple"
                   onClick={[Function]}
                   raised={true}
                 >
                   Reset (Async)
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
               ],
               "component": "p",
               "type": "body1",
@@ -1404,31 +1404,31 @@ ShallowWrapper {
               component="p"
               type="body1"
             >
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="indigo"
                 onClick={[Function]}
                 raised={true}
               >
                 Increment (If Even)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="pink"
                 onClick={[Function]}
                 raised={true}
               >
                 Decrement (If Even)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="deepPurple"
                 onClick={[Function]}
                 raised={true}
               >
                 Reset (If Even)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
             </WithStyles(Typography)>,
             "className": "jsx-2751530667 typography",
           },
@@ -1439,31 +1439,31 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": Array [
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="indigo"
                   onClick={[Function]}
                   raised={true}
                 >
                   Increment (If Even)
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
                 " ",
                 " ",
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="pink"
                   onClick={[Function]}
                   raised={true}
                 >
                   Decrement (If Even)
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
                 " ",
                 " ",
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="deepPurple"
                   onClick={[Function]}
                   raised={true}
                 >
                   Reset (If Even)
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
               ],
               "component": "p",
               "type": "body1",
@@ -1530,31 +1530,31 @@ ShallowWrapper {
               component="p"
               type="body1"
             >
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="indigo"
                 onClick={[Function]}
                 raised={true}
               >
                 Increment (If Odd)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="pink"
                 onClick={[Function]}
                 raised={true}
               >
                 Decrement (If Odd)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="deepPurple"
                 onClick={[Function]}
                 raised={true}
               >
                 Reset (If Odd)
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
             </WithStyles(Typography)>,
             "className": "jsx-2751530667 typography",
           },
@@ -1565,31 +1565,31 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": Array [
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="indigo"
                   onClick={[Function]}
                   raised={true}
                 >
                   Increment (If Odd)
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
                 " ",
                 " ",
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="pink"
                   onClick={[Function]}
                   raised={true}
                 >
                   Decrement (If Odd)
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
                 " ",
                 " ",
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="deepPurple"
                   onClick={[Function]}
                   raised={true}
                 >
                   Reset (If Odd)
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
               ],
               "component": "p",
               "type": "body1",
@@ -1656,22 +1656,22 @@ ShallowWrapper {
               component="p"
               type="body1"
             >
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="red"
                 onClick={[Function]}
                 raised={true}
               >
                 Start count
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
                
                
-              <WithStyles(Component)
+              <WithStyles(_Button)
                 color="red"
                 onClick={[Function]}
                 raised={true}
               >
                 Cancel count
-              </WithStyles(Component)>
+              </WithStyles(_Button)>
             </WithStyles(Typography)>,
             "className": "jsx-2751530667 typography",
           },
@@ -1682,22 +1682,22 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": Array [
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="red"
                   onClick={[Function]}
                   raised={true}
                 >
                   Start count
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
                 " ",
                 " ",
-                <WithStyles(Component)
+                <WithStyles(_Button)
                   color="red"
                   onClick={[Function]}
                   raised={true}
                 >
                   Cancel count
-                </WithStyles(Component)>,
+                </WithStyles(_Button)>,
               ],
               "component": "p",
               "type": "body1",

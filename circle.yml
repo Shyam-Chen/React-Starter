@@ -21,12 +21,20 @@ jobs:
           command: docker-compose up -d
 
       - run:
-          name: Build the application
+          name: Build the app
           command: docker-compose exec app yarn build:app
 
       - run:
-          name: Test the application
+          name: Build the api
+          command: docker-compose exec app yarn build:api
+
+      - run:
+          name: Test the app
           command: docker-compose exec app yarn test:app
+
+      # - run:
+      #     name: Test the api
+      #     command: docker-compose exec app yarn test:app
 
       - run:
           name: Test coverage integration

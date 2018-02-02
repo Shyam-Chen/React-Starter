@@ -4,7 +4,7 @@ exports[`Link should render initial component 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <_Link
     to=""
   />,
   Symbol(enzyme.__renderer__): Object {

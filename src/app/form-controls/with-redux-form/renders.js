@@ -30,6 +30,7 @@ export const renderSelect = ({ input, label, list, ...other }) => (
     <Select
       {...input}
       {...other}
+      value={input.value || ''}
       input={<Input id={label} style={{ width: '7rem' }} />}
     >
       <MenuItem value=""><em>None</em></MenuItem>

@@ -16,13 +16,13 @@ export const _Navigation = () => {
           {
             location.pathname === '/'
               ? (
-                <IconButton color="contrast" aria-label="Menu">
+                <IconButton style={{ color: '#fff' }}>
                   <Icon>toys</Icon>
                 </IconButton>
               )
               : (
                 <Link to="/">
-                  <IconButton color="contrast">
+                  <IconButton style={{ color: '#fff' }}>
                     <Icon>arrow_back</Icon>
                   </IconButton>
                 </Link>
