@@ -36,9 +36,9 @@ jobs:
           name: Deploy to Firebase
           command: docker-compose exec app yarn deploy -- --token ${FIREBASE_TOKEN}
 
-      # - deploy:
-      #     name: Deploy to Heroku
-      #     command: |
-      #       docker login -u="Shyam Chen" -p="${HEROKU_TOKEN}" registry.heroku.com
-      #       docker build -f Dockerfile.prod -t registry.heroku.com/react-by-example/web .
-      #       docker push registry.heroku.com/react-by-example/web
+      - deploy:
+          name: Deploy to Heroku
+          command: |
+            docker login -u="Shyam Chen" -p="${HEROKU_TOKEN}" registry.heroku.com
+            docker build -f Dockerfile.prod -t registry.heroku.com/react-by-example/web .
+            docker push registry.heroku.com/react-by-example/web

@@ -8,7 +8,7 @@ A boilerplate for React, Material, and Express.
 [![dependencies Status](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter/status.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter)
 [![devDependencies Status](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter/dev-status.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter?type=dev)
 
-[Live Demo](https://react-by-example.firebaseapp.com/)
+[Live Demo (Firebase)](https://react-by-example.firebaseapp.com/) | [Live Demo (Heroku)](https://react-by-example.herokuapp.com/)
 
 ## Getting Started
 
