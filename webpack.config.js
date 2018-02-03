@@ -65,5 +65,6 @@ module.exports = ({ prod = false } = {}) => ({
     inline: true,
     port: 8000
   },
-  devtool: 'source-map'
+  // BUG: https://github.com/webpack/webpack/issues/2012
+  devtool: 'eval'
 });
