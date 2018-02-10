@@ -8,7 +8,7 @@ import Navigation from '~/shared/Navigation';
 import Button from '~/shared/Button';
 
 import * as actions from './actions';
-import { Add, Search, Edit, Delete } from './containers';
+import { Add, Search, Edit, Delete } from './views';
 
 const CRUD = ({ crud, actions }) => {
   const { dataset, deleteData, editData } = crud;

@@ -6,7 +6,7 @@ import { CircularProgress } from 'material-ui/Progress';
 import Navigation from '~/shared/Navigation';
 
 import * as actions from './actions';
-import { Add, Search, Edit, Delete, Results } from './containers';
+import { Add, Search, Edit, Delete, Results } from './views';
 
 const REST = ({ rest }) => {
   const { loading /* , initial */ } = rest;
