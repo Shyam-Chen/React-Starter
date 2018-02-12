@@ -1,4 +1,4 @@
-import { put, takeEvery, all } from 'redux-saga/effects';
+import { put, takeLatest, all } from 'redux-saga/effects';
 import axios from 'axios';
 
 import { API_LIST, ADD_ITEM_SAGA, SEARCH_ITEM_SAGA, EDIT_ITEM_SAGA, DELETE_ITEM_SAGA } from './constants';
@@ -14,7 +14,7 @@ export function *effectAddItemSaga({ text }) {
 }
 
 export function *watchAddItemSaga() {
-  yield takeEvery(ADD_ITEM_SAGA, effectAddItemSaga);
+  yield takeLatest(ADD_ITEM_SAGA, effectAddItemSaga);
 }
 
 export function *effectSearchItemSaga({ text }) {
@@ -28,7 +28,7 @@ export function *effectSearchItemSaga({ text }) {
 }
 
 export function *watchSearchItemSaga() {
-  yield takeEvery(SEARCH_ITEM_SAGA, effectSearchItemSaga);
+  yield takeLatest(SEARCH_ITEM_SAGA, effectSearchItemSaga);
 }
 
 export function *effectEditItemSaga({ id, text }) {
@@ -41,7 +41,7 @@ export function *effectEditItemSaga({ id, text }) {
 }
 
 export function *watchEditItemSaga() {
-  yield takeEvery(EDIT_ITEM_SAGA, effectEditItemSaga);
+  yield takeLatest(EDIT_ITEM_SAGA, effectEditItemSaga);
 }
 
 export function *effectDeleteItemSaga({ id }) {
@@ -54,7 +54,7 @@ export function *effectDeleteItemSaga({ id }) {
 }
 
 export function *watchDeleteItemSaga() {
-  yield takeEvery(DELETE_ITEM_SAGA, effectDeleteItemSaga);
+  yield takeLatest(DELETE_ITEM_SAGA, effectDeleteItemSaga);
 }
 
 export default function *() {
