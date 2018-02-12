@@ -17,7 +17,7 @@ jobs:
       - setup_remote_docker
 
       - run:
-          name: Build the image
+          name: Start up containers
           command: docker-compose up -d
 
       - run:
@@ -30,23 +30,27 @@ jobs:
 
       - run:
           name: Test the app
-          command: docker-compose exec app yarn test:app
-
-      # - run:
-      #     name: Test the api
-      #     command: docker-compose exec app yarn test:app
+          command: |
+            docker-compose exec app yarn test:app
+            docker-compose exec app yarn codecov -- --token=${CODECOV_TOKEN}
 
       - run:
-          name: Test coverage integration
-          command: docker-compose exec app yarn codecov -- --token=${CODECOV_TOKEN}
+          name: Test the api
+          command: |
+            docker-compose exec app yarn test:app
+            docker-compose exec app yarn codecov -- --token=${CODECOV_TOKEN}
+
+      # - run:
+      #     name: Test coverage integration
+      #     command: docker-compose exec app yarn codecov -- --token=${CODECOV_TOKEN}
 
       - deploy:
-          name: Deploy to Firebase
+          name: Deploy the app
           command: docker-compose exec app yarn deploy -- --token ${FIREBASE_TOKEN}
 
-      - deploy:
-          name: Deploy to Heroku
-          command: |
-            docker login -u="Shyam Chen" -p="${HEROKU_TOKEN}" registry.heroku.com
-            docker build -f Dockerfile.prod -t registry.heroku.com/react-by-example/web .
-            docker push registry.heroku.com/react-by-example/web
+      # - deploy:
+      #     name: Deploy the api
+      #     command: |
+      #       docker login -u="Shyam Chen" -p="${HEROKU_TOKEN}" registry.heroku.com
+      #       docker build -f Dockerfile.prod -t registry.heroku.com/react-by-example/web .
+      #       docker push registry.heroku.com/react-by-example/web
