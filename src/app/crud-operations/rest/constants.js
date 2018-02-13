@@ -5,7 +5,6 @@ export interface State {
   editData?: Object;
   deleteData?: Object;
   loading?: boolean;
-  initial?: boolean;
 }
 
 export const API_LIST = `${process.env.API_URL}/__/list`;
@@ -17,7 +16,6 @@ export const INITIAL: State = {
   editData: { _id: 0, text: '', dialog: false },
   deleteData: { _id: 0, dialog: false },
   loading: false,
-  initial: false
 };
 
 export const MEMOIZE = rest => rest;

@@ -9,12 +9,7 @@ import * as actions from './actions';
 import { Add, Search, Edit, Delete, Results } from './views';
 
 const REST = ({ rest }) => {
-  const { loading /* , initial */ } = rest;
-
-  // if (!initial) {
-  //   actions.setData({ loading: true, initial: true });
-  //   actions.searchItem();
-  // }
+  const { loading } = rest;
 
   return (
     <div className="container">
