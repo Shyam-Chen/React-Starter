@@ -15,13 +15,13 @@ export const Counter = ({ counter, actions, selectors }) => (
     <Navigation />
 
     <div className="typography">
-      <Typography type="headline" component="h3">
+      <Typography variant="headline" component="h3">
         Clicked: {counter.value} times, value is {selectors.evenOrOdd}.
       </Typography>
     </div>
 
     <div className="typography">
-      <Typography type="body1" component="p">
+      <Typography variant="body1" component="p">
         <Button raised color="indigo" onClick={actions.increment}>Increment</Button> {' '}
         <Button raised color="pink" onClick={actions.decrement}>Decrement</Button> {' '}
         <Button raised color="deepPurple" onClick={actions.reset}>Reset</Button>
@@ -29,7 +29,7 @@ export const Counter = ({ counter, actions, selectors }) => (
     </div>
 
     <div className="typography">
-      <Typography type="body1" component="p">
+      <Typography variant="body1" component="p">
         <Button raised color="indigo" onClick={actions.incrementAsync}>Increment (Async)</Button> {' '}
         <Button raised color="pink" onClick={actions.decrementAsync}>Decrement (Async)</Button> {' '}
         <Button raised color="deepPurple" onClick={actions.resetAsync}>Reset (Async)</Button>
@@ -37,7 +37,7 @@ export const Counter = ({ counter, actions, selectors }) => (
     </div>
 
     <div className="typography">
-      <Typography type="body1" component="p">
+      <Typography variant="body1" component="p">
         <Button raised color="indigo" onClick={actions.incrementIfEven}>Increment (If Even)</Button> {' '}
         <Button raised color="pink" onClick={actions.decrementIfEven}>Decrement (If Even)</Button> {' '}
         <Button raised color="deepPurple" onClick={actions.resetIfEven}>Reset (If Even)</Button>
@@ -45,7 +45,7 @@ export const Counter = ({ counter, actions, selectors }) => (
     </div>
 
     <div className="typography">
-      <Typography type="body1" component="p">
+      <Typography variant="body1" component="p">
         <Button raised color="indigo" onClick={actions.incrementIfOdd}>Increment (If Odd)</Button> {' '}
         <Button raised color="pink" onClick={actions.decrementIfOdd}>Decrement (If Odd)</Button> {' '}
         <Button raised color="deepPurple" onClick={actions.resetIfOdd}>Reset (If Odd)</Button>
@@ -53,7 +53,7 @@ export const Counter = ({ counter, actions, selectors }) => (
     </div>
 
     <div className="typography">
-      <Typography type="body1" component="p">
+      <Typography variant="body1" component="p">
         <Button raised color="red" onClick={actions.startCount}>Start count</Button> {' '}
         <Button raised color="red" onClick={actions.cancelCount}>Cancel count</Button>
       </Typography>

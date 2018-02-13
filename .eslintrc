@@ -34,7 +34,7 @@
     "array-callback-return": "error",
     "block-scoped-var": "error",
     "class-methods-use-this": "error",
-    "complexity": "error",
+    // "complexity": ["error", 2],
     "consistent-return": "off",  // flexible
     "curly": "off",  // flexible
     "default-case": "error",

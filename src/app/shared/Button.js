@@ -77,7 +77,7 @@ export const styles = theme => {
 
 export const _Button = ({ raised, classes, color, className, ...other }) => (
   <Button
-    raised={raised}
+    variant={raised && 'raised'}
     className={classNames(
       classes.root,
       {

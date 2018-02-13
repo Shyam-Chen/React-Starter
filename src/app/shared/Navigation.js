@@ -28,7 +28,7 @@ export const _Navigation = () => {
                 </Link>
               )
           }
-          <Typography type="title" color="inherit">
+          <Typography variant="title" color="inherit">
             React by Example, location: <span className="location">{location.pathname}</span>.
           </Typography>
         </Toolbar>
