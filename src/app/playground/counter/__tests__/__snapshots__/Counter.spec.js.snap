@@ -53,7 +53,7 @@ ShallowWrapper {
         >
           <WithStyles(Typography)
             component="h3"
-            type="headline"
+            variant="headline"
           >
             Clicked: 
             0
@@ -67,7 +67,7 @@ ShallowWrapper {
         >
           <WithStyles(Typography)
             component="p"
-            type="body1"
+            variant="body1"
           >
             <WithStyles(_Button)
               color="indigo"
@@ -101,7 +101,7 @@ ShallowWrapper {
         >
           <WithStyles(Typography)
             component="p"
-            type="body1"
+            variant="body1"
           >
             <WithStyles(_Button)
               color="indigo"
@@ -135,7 +135,7 @@ ShallowWrapper {
         >
           <WithStyles(Typography)
             component="p"
-            type="body1"
+            variant="body1"
           >
             <WithStyles(_Button)
               color="indigo"
@@ -169,7 +169,7 @@ ShallowWrapper {
         >
           <WithStyles(Typography)
             component="p"
-            type="body1"
+            variant="body1"
           >
             <WithStyles(_Button)
               color="indigo"
@@ -203,7 +203,7 @@ ShallowWrapper {
         >
           <WithStyles(Typography)
             component="p"
-            type="body1"
+            variant="body1"
           >
             <WithStyles(_Button)
               color="red"
@@ -248,7 +248,7 @@ ShallowWrapper {
         "props": Object {
           "children": <WithStyles(Typography)
             component="h3"
-            type="headline"
+            variant="headline"
           >
             Clicked: 
             0
@@ -272,7 +272,7 @@ ShallowWrapper {
               ".",
             ],
             "component": "h3",
-            "type": "headline",
+            "variant": "headline",
           },
           "ref": null,
           "rendered": Array [
@@ -293,7 +293,7 @@ ShallowWrapper {
         "props": Object {
           "children": <WithStyles(Typography)
             component="p"
-            type="body1"
+            variant="body1"
           >
             <WithStyles(_Button)
               color="indigo"
@@ -357,7 +357,7 @@ ShallowWrapper {
               </WithStyles(_Button)>,
             ],
             "component": "p",
-            "type": "body1",
+            "variant": "body1",
           },
           "ref": null,
           "rendered": Array [
@@ -419,7 +419,7 @@ ShallowWrapper {
         "props": Object {
           "children": <WithStyles(Typography)
             component="p"
-            type="body1"
+            variant="body1"
           >
             <WithStyles(_Button)
               color="indigo"
@@ -483,7 +483,7 @@ ShallowWrapper {
               </WithStyles(_Button)>,
             ],
             "component": "p",
-            "type": "body1",
+            "variant": "body1",
           },
           "ref": null,
           "rendered": Array [
@@ -545,7 +545,7 @@ ShallowWrapper {
         "props": Object {
           "children": <WithStyles(Typography)
             component="p"
-            type="body1"
+            variant="body1"
           >
             <WithStyles(_Button)
               color="indigo"
@@ -609,7 +609,7 @@ ShallowWrapper {
               </WithStyles(_Button)>,
             ],
             "component": "p",
-            "type": "body1",
+            "variant": "body1",
           },
           "ref": null,
           "rendered": Array [
@@ -671,7 +671,7 @@ ShallowWrapper {
         "props": Object {
           "children": <WithStyles(Typography)
             component="p"
-            type="body1"
+            variant="body1"
           >
             <WithStyles(_Button)
               color="indigo"
@@ -735,7 +735,7 @@ ShallowWrapper {
               </WithStyles(_Button)>,
             ],
             "component": "p",
-            "type": "body1",
+            "variant": "body1",
           },
           "ref": null,
           "rendered": Array [
@@ -797,7 +797,7 @@ ShallowWrapper {
         "props": Object {
           "children": <WithStyles(Typography)
             component="p"
-            type="body1"
+            variant="body1"
           >
             <WithStyles(_Button)
               color="red"
@@ -843,7 +843,7 @@ ShallowWrapper {
               </WithStyles(_Button)>,
             ],
             "component": "p",
-            "type": "body1",
+            "variant": "body1",
           },
           "ref": null,
           "rendered": Array [
@@ -910,7 +910,7 @@ ShallowWrapper {
           >
             <WithStyles(Typography)
               component="h3"
-              type="headline"
+              variant="headline"
             >
               Clicked: 
               0
@@ -924,7 +924,7 @@ ShallowWrapper {
           >
             <WithStyles(Typography)
               component="p"
-              type="body1"
+              variant="body1"
             >
               <WithStyles(_Button)
                 color="indigo"
@@ -958,7 +958,7 @@ ShallowWrapper {
           >
             <WithStyles(Typography)
               component="p"
-              type="body1"
+              variant="body1"
             >
               <WithStyles(_Button)
                 color="indigo"
@@ -992,7 +992,7 @@ ShallowWrapper {
           >
             <WithStyles(Typography)
               component="p"
-              type="body1"
+              variant="body1"
             >
               <WithStyles(_Button)
                 color="indigo"
@@ -1026,7 +1026,7 @@ ShallowWrapper {
           >
             <WithStyles(Typography)
               component="p"
-              type="body1"
+              variant="body1"
             >
               <WithStyles(_Button)
                 color="indigo"
@@ -1060,7 +1060,7 @@ ShallowWrapper {
           >
             <WithStyles(Typography)
               component="p"
-              type="body1"
+              variant="body1"
             >
               <WithStyles(_Button)
                 color="red"
@@ -1105,7 +1105,7 @@ ShallowWrapper {
           "props": Object {
             "children": <WithStyles(Typography)
               component="h3"
-              type="headline"
+              variant="headline"
             >
               Clicked: 
               0
@@ -1129,7 +1129,7 @@ ShallowWrapper {
                 ".",
               ],
               "component": "h3",
-              "type": "headline",
+              "variant": "headline",
             },
             "ref": null,
             "rendered": Array [
@@ -1150,7 +1150,7 @@ ShallowWrapper {
           "props": Object {
             "children": <WithStyles(Typography)
               component="p"
-              type="body1"
+              variant="body1"
             >
               <WithStyles(_Button)
                 color="indigo"
@@ -1214,7 +1214,7 @@ ShallowWrapper {
                 </WithStyles(_Button)>,
               ],
               "component": "p",
-              "type": "body1",
+              "variant": "body1",
             },
             "ref": null,
             "rendered": Array [
@@ -1276,7 +1276,7 @@ ShallowWrapper {
           "props": Object {
             "children": <WithStyles(Typography)
               component="p"
-              type="body1"
+              variant="body1"
             >
               <WithStyles(_Button)
                 color="indigo"
@@ -1340,7 +1340,7 @@ ShallowWrapper {
                 </WithStyles(_Button)>,
               ],
               "component": "p",
-              "type": "body1",
+              "variant": "body1",
             },
             "ref": null,
             "rendered": Array [
@@ -1402,7 +1402,7 @@ ShallowWrapper {
           "props": Object {
             "children": <WithStyles(Typography)
               component="p"
-              type="body1"
+              variant="body1"
             >
               <WithStyles(_Button)
                 color="indigo"
@@ -1466,7 +1466,7 @@ ShallowWrapper {
                 </WithStyles(_Button)>,
               ],
               "component": "p",
-              "type": "body1",
+              "variant": "body1",
             },
             "ref": null,
             "rendered": Array [
@@ -1528,7 +1528,7 @@ ShallowWrapper {
           "props": Object {
             "children": <WithStyles(Typography)
               component="p"
-              type="body1"
+              variant="body1"
             >
               <WithStyles(_Button)
                 color="indigo"
@@ -1592,7 +1592,7 @@ ShallowWrapper {
                 </WithStyles(_Button)>,
               ],
               "component": "p",
-              "type": "body1",
+              "variant": "body1",
             },
             "ref": null,
             "rendered": Array [
@@ -1654,7 +1654,7 @@ ShallowWrapper {
           "props": Object {
             "children": <WithStyles(Typography)
               component="p"
-              type="body1"
+              variant="body1"
             >
               <WithStyles(_Button)
                 color="red"
@@ -1700,7 +1700,7 @@ ShallowWrapper {
                 </WithStyles(_Button)>,
               ],
               "component": "p",
-              "type": "body1",
+              "variant": "body1",
             },
             "ref": null,
             "rendered": Array [

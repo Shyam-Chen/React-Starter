@@ -37,7 +37,7 @@ ShallowWrapper {
             </_Link>
             <WithStyles(Typography)
               color="inherit"
-              type="title"
+              variant="title"
             >
               React by Example, location: 
               <span
@@ -85,7 +85,7 @@ ShallowWrapper {
             </_Link>
             <WithStyles(Typography)
               color="inherit"
-              type="title"
+              variant="title"
             >
               React by Example, location: 
               <span
@@ -121,7 +121,7 @@ ShallowWrapper {
               </_Link>,
               <WithStyles(Typography)
                 color="inherit"
-                type="title"
+                variant="title"
               >
                 React by Example, location: 
                 <span
@@ -197,7 +197,7 @@ ShallowWrapper {
                   ".",
                 ],
                 "color": "inherit",
-                "type": "title",
+                "variant": "title",
               },
               "ref": null,
               "rendered": Array [
@@ -276,7 +276,7 @@ ShallowWrapper {
               </_Link>
               <WithStyles(Typography)
                 color="inherit"
-                type="title"
+                variant="title"
               >
                 React by Example, location: 
                 <span
@@ -324,7 +324,7 @@ ShallowWrapper {
               </_Link>
               <WithStyles(Typography)
                 color="inherit"
-                type="title"
+                variant="title"
               >
                 React by Example, location: 
                 <span
@@ -360,7 +360,7 @@ ShallowWrapper {
                 </_Link>,
                 <WithStyles(Typography)
                   color="inherit"
-                  type="title"
+                  variant="title"
                 >
                   React by Example, location: 
                   <span
@@ -436,7 +436,7 @@ ShallowWrapper {
                     ".",
                   ],
                   "color": "inherit",
-                  "type": "title",
+                  "variant": "title",
                 },
                 "ref": null,
                 "rendered": Array [
