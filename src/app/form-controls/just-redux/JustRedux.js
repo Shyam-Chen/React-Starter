@@ -1,13 +1,12 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
+import { bindSelectCreators } from 'reselect-computed';
 import { connect } from 'react-redux';
 import { Paper, Typography, TextField, Select, Input, Radio, Checkbox, Switch } from 'material-ui';
 import { InputLabel } from 'material-ui/Input';
 import { MenuItem } from 'material-ui/Menu';
 import { FormControl, FormGroup, FormControlLabel, FormLabel, FormHelperText } from 'material-ui/Form';
 import { RadioGroup } from 'material-ui/Radio';
-
-import { bindSelectCreators } from '~/utils/auto-bind';
 
 import * as actions from '../actions';
 import * as selectors from '../selectors';

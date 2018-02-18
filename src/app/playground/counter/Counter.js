@@ -1,11 +1,11 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
+import { bindSelectCreators } from 'reselect-computed';
 import { connect } from 'react-redux';
 import { Typography } from 'material-ui';
 
 import Navigation from '~/shared/Navigation';
 import Button from '~/shared/Button';
-import { bindSelectCreators } from '~/utils/auto-bind';
 
 import * as actions from './actions';
 import * as selectors from './selectors';
