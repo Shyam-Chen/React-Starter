@@ -12,7 +12,7 @@ module.exports = ({ prod = false } = {}) => ({
   },
   output: {
     path: join(__dirname, 'build'),
-    // chunkFilename: prod ? '[name].[hash].js' : '[name].js',
+    chunkFilename: prod ? '[name].[hash].js' : '[name].js',
     filename: prod ? '[name].[hash].js' : '[name].js'
   },
   module: {
@@ -65,6 +65,5 @@ module.exports = ({ prod = false } = {}) => ({
     inline: true,
     port: 8000
   },
-  // BUG: https://github.com/webpack/webpack/issues/2012
-  devtool: 'eval'
+  devtool: prod ? 'hidden-source-map' : 'eval-source-map'
 });
