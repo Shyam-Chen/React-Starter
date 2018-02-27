@@ -1,6 +1,6 @@
 # React Fullstack Starter
 
-A boilerplate for React, Material, and Express.
+:ram: A boilerplate for React, Material, Express, Babel, Flow, and ReactiveX.
 
 [![Build Status](https://img.shields.io/circleci/project/Shyam-Chen/React-Fullstack-Starter/master.svg)](https://circleci.com/gh/Shyam-Chen/React-Fullstack-Starter)
 [![Coverage Status](https://img.shields.io/codecov/c/github/Shyam-Chen/React-Fullstack-Starter/master.svg)](https://codecov.io/gh/Shyam-Chen/React-Fullstack-Starter)

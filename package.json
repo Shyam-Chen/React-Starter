@@ -1,7 +1,7 @@
 {
   "name": "React-Fullstack-Starter",
   "version": "1.0.0",
-  "description": "A boilerplate for React, Material, and Express.",
+  "description": "A boilerplate for React, Material, Express, Babel, Flow, and ReactiveX.",
   "scripts": {
     "start:app": "cross-env BABEL_ENV=app webpack-dev-server --progress --bail",
     "start:api": "cross-env BABEL_ENV=api nodemon src/server.js --exec babel-node",
@@ -37,10 +37,10 @@
     "d3": "4.13.0",
     "express": "4.16.2",
     "express-history-api-fallback": "2.2.1",
-    "immutable": "4.0.0-rc.9",
+    "immer": "1.1.1",
     "intl": "1.2.5",
     "lodash": "4.17.5",
-    "material-ui": "1.0.0-beta.34",
+    "material-ui": "1.0.0-beta.35",
     "morgan": "1.9.0",
     "pm2": "2.10.1",
     "raf": "3.4.0",
@@ -66,7 +66,7 @@
     "reselect-computed": "0.1.0",
     "rxjs": "5.5.6",
     "socket.io": "2.0.4",
-    "subscriptions-transport-ws": "0.9.5",
+    "subscriptions-transport-ws": "0.9.6",
     "three": "0.90.0"
   },
   "devDependencies": {
