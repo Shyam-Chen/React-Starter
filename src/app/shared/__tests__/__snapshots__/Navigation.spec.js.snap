@@ -1,10 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Navigation should handle mapDispatchToProps 1`] = `
+Object {
+  "actions": Object {
+    "go": [Function],
+    "goBack": [Function],
+    "goForward": [Function],
+    "push": [Function],
+    "replace": [Function],
+  },
+}
+`;
+
+exports[`Navigation should handle mapStateToProps 1`] = `
+Object {
+  "router": [MockFunction],
+}
+`;
+
 exports[`Navigation should render initial component 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <_Navigation />,
+  Symbol(enzyme.__unrendered__): <Navigation />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],

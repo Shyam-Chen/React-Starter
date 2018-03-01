@@ -1,5 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Counter should handle mapDispatchToProps 1`] = `
+Object {
+  "actions": Object {
+    "cancelCount": [Function],
+    "decrement": [Function],
+    "decrementAsync": [Function],
+    "decrementIfEven": [Function],
+    "decrementIfOdd": [Function],
+    "increment": [Function],
+    "incrementAsync": [Function],
+    "incrementIfEven": [Function],
+    "incrementIfOdd": [Function],
+    "reset": [Function],
+    "resetAsync": [Function],
+    "resetIfEven": [Function],
+    "resetIfOdd": [Function],
+    "startCount": [Function],
+  },
+}
+`;
+
+exports[`Counter should handle mapStateToProps 1`] = `
+Object {
+  "counter": Object {
+    "value": 0,
+  },
+  "selectors": Object {
+    "evenOrOdd": "even",
+  },
+}
+`;
+
 exports[`Counter should render initial component 1`] = `
 ShallowWrapper {
   "length": 1,
@@ -47,7 +79,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(_Navigation) />,
+        <Connect(Navigation) />,
         <div
           className="jsx-2751530667 typography"
         >
@@ -904,7 +936,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(_Navigation) />,
+          <Connect(Navigation) />,
           <div
             className="jsx-2751530667 typography"
           >

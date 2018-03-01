@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import { Counter } from '../Counter';
+import { Counter, mapStateToProps, mapDispatchToProps } from '../Counter';
 import { INITIAL } from '../constants';
 import * as actions from '../actions';
 import * as selectors from '../selectors';
@@ -16,5 +16,14 @@ describe('Counter', () => {
     );
 
     expect(component).toMatchSnapshot();
+  });
+
+  it('should handle mapStateToProps', () => {
+    const state = { counter: INITIAL };
+    expect(mapStateToProps(state)).toMatchSnapshot();
+  });
+
+  it('should handle mapDispatchToProps', () => {
+    expect(mapDispatchToProps(jest.fn())).toMatchSnapshot();
   });
 });

@@ -71,7 +71,13 @@ export const Counter = ({ counter, actions, selectors }) => (
   </div>
 );
 
-export default connect(
-  ({ counter }) => ({ counter, selectors: bindSelectCreators(selectors, counter) }),
-  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
-)(Counter);
+export const mapStateToProps = ({ counter }) => ({
+  counter,
+  selectors: bindSelectCreators(selectors, counter)
+});
+
+export const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);

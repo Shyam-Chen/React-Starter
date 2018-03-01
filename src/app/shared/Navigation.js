@@ -7,8 +7,7 @@ import { AppBar, Toolbar, IconButton, Icon, Typography } from 'material-ui';
 import Link from '~/shared/Link';
 import Button from '~/shared/Button';
 
-export const _Navigation = () => {
-
+export const Navigation = () => {
   return (
     <div>
       <AppBar>
@@ -86,7 +85,12 @@ export const _Navigation = () => {
   );
 };
 
-export default connect(
-  ({ router }) => ({ router }),
-  dispatch => ({ actions: bindActionCreators(routerActions, dispatch) })
-)(_Navigation);
+export const mapStateToProps = ({ router }) => ({
+  router
+});
+
+export const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(routerActions, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
