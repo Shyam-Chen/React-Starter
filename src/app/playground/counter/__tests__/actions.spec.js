@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import {
   INCREMENT, DECREMENT, RESET,
   DECREMENT_ASYNC, DECREMENT_IF_EVEN, DECREMENT_IF_ODD,
-  RESET_ASYNC, RESET_IF_EVEN, RESET_IF_ODD
+  RESET_ASYNC, RESET_IF_EVEN, RESET_IF_ODD,
 } from '../constants';
 import * as actions from '../actions';
 

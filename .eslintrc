@@ -15,8 +15,23 @@
   "parserOptions": {
     "sourceType": "module"
   },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      },
+      "babel-plugin-root-import": {
+        "rootPathPrefix": "~",
+        "rootPathSuffix": "src/app"
+      }
+    }
+  },
   "rules": {
     // Plugins
+    "import/no-named-as-default": "off",
     "import/prefer-default-export": "off",
     "react/jsx-filename-extension": ["warning", { "extensions": [".js", ".jsx"] }],
     "react/prop-types": "off",
@@ -30,6 +45,7 @@
     // Node.js and CommonJS
 
     // Stylistic Issues
+    "function-paren-newline": "off",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-underscore-dangle": "off",
     "object-curly-newline": ["error", { "consistent": true }],

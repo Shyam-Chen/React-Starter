@@ -12,7 +12,7 @@ configure({ adapter: new Adapter() });
 describe('Counter', () => {
   it('should render initial component', () => {
     const component = shallow(
-      <Counter counter={INITIAL} actions={actions} selectors={selectors} />
+      <Counter counter={INITIAL} actions={actions} selectors={selectors} />,
     );
 
     expect(component).toMatchSnapshot();

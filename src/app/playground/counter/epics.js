@@ -26,7 +26,8 @@ export const startCountEpic = action$ =>
     ::switchMap(() =>
       Observable::interval(1000)
         ::map(increment)
-        ::takeUntil(action$.ofType(CANCEL_COUNT)));
+        ::takeUntil(action$.ofType(CANCEL_COUNT)),
+    );
 
 export const cancelCountEpic = action$ =>
   action$.ofType(CANCEL_COUNT)

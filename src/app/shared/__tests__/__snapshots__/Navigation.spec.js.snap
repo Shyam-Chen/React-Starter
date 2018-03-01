@@ -39,6 +39,7 @@ ShallowWrapper {
         <WithStyles(AppBar)>
           <WithStyles(Toolbar)>
             <_Link
+              href="/"
               to="/"
             >
               <WithStyles(IconButton)
@@ -59,7 +60,7 @@ ShallowWrapper {
             >
               React by Example, location: 
               <span
-                className="jsx-3411527522 location"
+                className="jsx-138544096 location"
               >
                 blank
               </span>
@@ -68,15 +69,15 @@ ShallowWrapper {
           </WithStyles(Toolbar)>
         </WithStyles(AppBar)>,
         <div
-          className="jsx-3411527522 filling"
+          className="jsx-138544096 filling"
         />,
         false,
         <JSXStyle
-          css=".location.jsx-3411527522{color:#f48fb1;}.filling.jsx-3411527522{padding-top:64px;}.buttons.jsx-3411527522{display:-webkit-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}"
-          styleId="3411527522"
+          css=".location.jsx-138544096{color:#f48fb1;}.filling.jsx-138544096{padding-top:64px;}.buttons.jsx-138544096{display:-webkit-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}"
+          styleId="138544096"
         />,
       ],
-      "className": "jsx-3411527522",
+      "className": "jsx-138544096",
     },
     "ref": null,
     "rendered": Array [
@@ -87,6 +88,7 @@ ShallowWrapper {
         "props": Object {
           "children": <WithStyles(Toolbar)>
             <_Link
+              href="/"
               to="/"
             >
               <WithStyles(IconButton)
@@ -107,7 +109,7 @@ ShallowWrapper {
             >
               React by Example, location: 
               <span
-                className="jsx-3411527522 location"
+                className="jsx-138544096 location"
               >
                 blank
               </span>
@@ -123,6 +125,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <_Link
+                href="/"
                 to="/"
               >
                 <WithStyles(IconButton)
@@ -143,7 +146,7 @@ ShallowWrapper {
               >
                 React by Example, location: 
                 <span
-                  className="jsx-3411527522 location"
+                  className="jsx-138544096 location"
                 >
                   blank
                 </span>
@@ -169,6 +172,7 @@ ShallowWrapper {
                     arrow_back
                   </WithStyles(Icon)>
                 </WithStyles(IconButton)>,
+                "href": "/",
                 "to": "/",
               },
               "ref": null,
@@ -208,7 +212,7 @@ ShallowWrapper {
                 "children": Array [
                   "React by Example, location: ",
                   <span
-                    className="jsx-3411527522 location"
+                    className="jsx-138544096 location"
                   >
                     blank
                   </span>,
@@ -226,7 +230,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "blank",
-                    "className": "jsx-3411527522 location",
+                    "className": "jsx-138544096 location",
                   },
                   "ref": null,
                   "rendered": "blank",
@@ -246,7 +250,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "className": "jsx-3411527522 filling",
+          "className": "jsx-138544096 filling",
         },
         "ref": null,
         "rendered": null,
@@ -258,8 +262,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "css": ".location.jsx-3411527522{color:#f48fb1;}.filling.jsx-3411527522{padding-top:64px;}.buttons.jsx-3411527522{display:-webkit-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}",
-          "styleId": "3411527522",
+          "css": ".location.jsx-138544096{color:#f48fb1;}.filling.jsx-138544096{padding-top:64px;}.buttons.jsx-138544096{display:-webkit-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}",
+          "styleId": "138544096",
         },
         "ref": null,
         "rendered": null,
@@ -278,6 +282,7 @@ ShallowWrapper {
           <WithStyles(AppBar)>
             <WithStyles(Toolbar)>
               <_Link
+                href="/"
                 to="/"
               >
                 <WithStyles(IconButton)
@@ -298,7 +303,7 @@ ShallowWrapper {
               >
                 React by Example, location: 
                 <span
-                  className="jsx-3411527522 location"
+                  className="jsx-138544096 location"
                 >
                   blank
                 </span>
@@ -307,15 +312,15 @@ ShallowWrapper {
             </WithStyles(Toolbar)>
           </WithStyles(AppBar)>,
           <div
-            className="jsx-3411527522 filling"
+            className="jsx-138544096 filling"
           />,
           false,
           <JSXStyle
-            css=".location.jsx-3411527522{color:#f48fb1;}.filling.jsx-3411527522{padding-top:64px;}.buttons.jsx-3411527522{display:-webkit-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}"
-            styleId="3411527522"
+            css=".location.jsx-138544096{color:#f48fb1;}.filling.jsx-138544096{padding-top:64px;}.buttons.jsx-138544096{display:-webkit-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}"
+            styleId="138544096"
           />,
         ],
-        "className": "jsx-3411527522",
+        "className": "jsx-138544096",
       },
       "ref": null,
       "rendered": Array [
@@ -326,6 +331,7 @@ ShallowWrapper {
           "props": Object {
             "children": <WithStyles(Toolbar)>
               <_Link
+                href="/"
                 to="/"
               >
                 <WithStyles(IconButton)
@@ -346,7 +352,7 @@ ShallowWrapper {
               >
                 React by Example, location: 
                 <span
-                  className="jsx-3411527522 location"
+                  className="jsx-138544096 location"
                 >
                   blank
                 </span>
@@ -362,6 +368,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <_Link
+                  href="/"
                   to="/"
                 >
                   <WithStyles(IconButton)
@@ -382,7 +389,7 @@ ShallowWrapper {
                 >
                   React by Example, location: 
                   <span
-                    className="jsx-3411527522 location"
+                    className="jsx-138544096 location"
                   >
                     blank
                   </span>
@@ -408,6 +415,7 @@ ShallowWrapper {
                       arrow_back
                     </WithStyles(Icon)>
                   </WithStyles(IconButton)>,
+                  "href": "/",
                   "to": "/",
                 },
                 "ref": null,
@@ -447,7 +455,7 @@ ShallowWrapper {
                   "children": Array [
                     "React by Example, location: ",
                     <span
-                      className="jsx-3411527522 location"
+                      className="jsx-138544096 location"
                     >
                       blank
                     </span>,
@@ -465,7 +473,7 @@ ShallowWrapper {
                     "nodeType": "host",
                     "props": Object {
                       "children": "blank",
-                      "className": "jsx-3411527522 location",
+                      "className": "jsx-138544096 location",
                     },
                     "ref": null,
                     "rendered": "blank",
@@ -485,7 +493,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "className": "jsx-3411527522 filling",
+            "className": "jsx-138544096 filling",
           },
           "ref": null,
           "rendered": null,
@@ -497,8 +505,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "css": ".location.jsx-3411527522{color:#f48fb1;}.filling.jsx-3411527522{padding-top:64px;}.buttons.jsx-3411527522{display:-webkit-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}",
-            "styleId": "3411527522",
+            "css": ".location.jsx-138544096{color:#f48fb1;}.filling.jsx-138544096{padding-top:64px;}.buttons.jsx-138544096{display:-webkit-inline-box;display:-ms-inline-flexbox;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}",
+            "styleId": "138544096",
           },
           "ref": null,
           "rendered": null,
