@@ -9,10 +9,9 @@
     "build:api": "cross-env BABEL_ENV=api babel src -d dist --ignore client.js,polyfill.js,app",
     "test:app": "cross-env BABEL_ENV=app jest \"src/app/.*\\.js$\" --coverage --forceExit",
     "test:api": "cross-env BABEL_ENV=api jest \"src/api/.*\\.js$\" --coverage --forceExit",
-    "deploy": "firebase deploy",
-    "flow": "flow",
     "typed": "flow-typed install",
-    "codecov": "codecov"
+    "codecov": "codecov",
+    "firebase": "firebase"
   },
   "repository": {
     "type": "git",
@@ -92,6 +91,9 @@
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
     "eslint": "4.18.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-plugin-import": "2.9.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-react": "7.7.0",
     "faker": "4.1.0",
     "file-loader": "1.1.6",

@@ -13,7 +13,7 @@ export const Navigation = () => {
       <AppBar>
         <Toolbar>
           {
-            location.pathname === '/'
+            window.location.pathname === '/'
               ? (
                 <IconButton style={{ color: '#fff' }}>
                   <Icon>toys</Icon>
@@ -33,10 +33,10 @@ export const Navigation = () => {
         </Toolbar>
       </AppBar>
 
-      <div className="filling"></div>
+      <div className="filling" />
 
       {
-        location.pathname === '/' &&
+        window.location.pathname === '/' &&
         <div className="buttons">
           <Link to="/counter">
             <Button raised color="teal">Counter</Button>

@@ -11,5 +11,5 @@ export default handleActions({
   },
   [RESET]() {
     return INITIAL;
-  }
+  },
 }, INITIAL);

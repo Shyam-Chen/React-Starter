@@ -21,4 +21,4 @@ export const RESET_IF_EVEN = '[Counter] RESET_IF_EVEN';
 export const RESET_IF_ODD = '[Counter] RESET_IF_ODD';
 
 export const START_COUNT = '[Counter] START_COUNT';
-export const CANCEL_COUNT = '[Counter] CANCEL_COUNT'
+export const CANCEL_COUNT = '[Counter] CANCEL_COUNT';

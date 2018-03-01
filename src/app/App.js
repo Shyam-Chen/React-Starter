@@ -23,5 +23,5 @@ const App = () => (
 
 export default connect(
   ({ app }) => ({ app }),
-  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
+  dispatch => ({ actions: bindActionCreators(actions, dispatch) }),
 )(App);

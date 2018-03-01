@@ -73,11 +73,11 @@ export const Counter = ({ counter, actions, selectors }) => (
 
 export const mapStateToProps = ({ counter }) => ({
   counter,
-  selectors: bindSelectCreators(selectors, counter)
+  selectors: bindSelectCreators(selectors, counter),
 });
 
 export const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(actions, dispatch)
+  actions: bindActionCreators(actions, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

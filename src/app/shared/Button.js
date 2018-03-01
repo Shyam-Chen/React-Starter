@@ -8,24 +8,24 @@ import {
   green, lightGreen, lime,
   yellow, amber, orange,
   deepOrange, brown, grey,
-  blueGrey
+  blueGrey,
 } from 'material-ui/colors';
 import classNames from 'classnames';
 
-export const styles = theme => {
+export const styles = (theme) => {
   const raisedTheme = (color, background) => ({
     color,
     background: background[500],
     '&:hover': {
-      background: background[700]
-    }
+      background: background[700],
+    },
   });
 
   const flatTheme = (color, background = color) => ({
     color: color[500],
     '&:hover': {
-      background: background[50]
-    }
+      background: background[50],
+    },
   });
 
   const { white, black } = theme.palette.common;
@@ -71,7 +71,7 @@ export const styles = theme => {
     flatDeepOrange: flatTheme(deepOrange),
     flatBrown: flatTheme(brown),
     flatGrey: flatTheme(grey),
-    flatBlueGrey: flatTheme(blueGrey)
+    flatBlueGrey: flatTheme(blueGrey),
   };
 };
 
@@ -99,13 +99,12 @@ export const _Button = ({ raised, classes, color, className, ...other }) => (
         [raised ? classes.raisedDeepOrange : classes.flatDeepOrange]: color === 'deepOrange',
         [raised ? classes.raisedBrown : classes.flatBrown]: color === 'brown',
         [raised ? classes.raisedGrey : classes.flatGrey]: color === 'grey',
-        [raised ? classes.raisedBlueGrey : classes.flatBlueGrey]: color === 'blueGrey'
+        [raised ? classes.raisedBlueGrey : classes.flatBlueGrey]: color === 'blueGrey',
       },
-      className
+      className,
     )}
     {...other}
-  >
-  </Button>
+  />
 );
 
 export default withStyles(styles)(_Button);

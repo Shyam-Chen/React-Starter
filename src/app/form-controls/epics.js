@@ -10,5 +10,5 @@ export const nicknameEpic = action$ =>
     ::map(({ data: { creditCard } }) => setData({ creditCard }));
 
 export default combineEpics(
-  nicknameEpic
+  nicknameEpic,
 );

@@ -24,7 +24,7 @@ const rootEpic = combineEpics(
 
   counterEpic,
   restEpic,
-  formControlsEpic
+  formControlsEpic,
 );
 
 const rootReducer = combineReducers({
@@ -38,7 +38,7 @@ const rootReducer = combineReducers({
   graphql: graphqlReducer,
   formControls: formControlsReducer,
   dataTable: dataTableReducer,
-  authorization: authorizationReducer
+  authorization: authorizationReducer,
 });
 
 const rootSaga = function *() {
@@ -46,7 +46,7 @@ const rootSaga = function *() {
     watchApp(),
 
     watchCounter(),
-    watchRest()
+    watchRest(),
   ]);
 };
 
@@ -61,8 +61,8 @@ export default (history, preloadedState = {}) => {
       thunkMiddleware,
       createEpicMiddleware(rootEpic),
       sagaMiddleware,
-      createLogger({ diff: true })
-    )
+      createLogger({ diff: true }),
+    ),
   );
 
   sagaMiddleware.run(rootSaga);

@@ -35,9 +35,9 @@ const FormControls = ({ match, routerActions }) => {
         <Button raised color="teal">Reactive Forms</Button>
       </Link>
 
-      <Route path={`${match.url}/just-redux`} component={JustRedux}/>
-      <Route path={`${match.url}/with-redux-form`} component={WithReduxForm}/>
-      <Route path={`${match.url}/reactive-forms`} component={ReactiveForms}/>
+      <Route path={`${match.url}/just-redux`} component={JustRedux} />
+      <Route path={`${match.url}/with-redux-form`} component={WithReduxForm} />
+      <Route path={`${match.url}/reactive-forms`} component={ReactiveForms} />
 
       <style jsx>{`
         .container {
@@ -52,6 +52,6 @@ export default connect(
   ({ formControls }) => ({ formControls }),
   dispatch => ({
     actions: bindActionCreators(actions, dispatch),
-    routerActions: bindActionCreators(routerActions, dispatch)
-  })
+    routerActions: bindActionCreators(routerActions, dispatch),
+  }),
 )(FormControls);

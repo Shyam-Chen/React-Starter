@@ -35,6 +35,6 @@ export default function *() {
   yield all([
     watchResetAsync(),
     watchResetIfEven(),
-    watchResetIfOdd()
+    watchResetIfOdd(),
   ]);
 }
