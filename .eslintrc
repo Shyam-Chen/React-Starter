@@ -33,12 +33,14 @@
     // Plugins
     "import/no-named-as-default": "off",
     "import/prefer-default-export": "off",
-    "react/jsx-filename-extension": ["warning", { "extensions": [".js", ".jsx"] }],
+
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/prop-types": "off",
 
     // Possible Errors
 
     // Best Practices
+    "no-multi-spaces": ["error", { ignoreEOLComments: true }],
 
     // Variables
 

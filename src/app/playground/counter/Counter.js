@@ -67,8 +67,7 @@ export const Counter = ({ counter, actions, selectors }) => (
       .typography {
         padding: .25rem 0;
       }
-    `}
-    </style>
+    `}</style>
   </div>
 );
 

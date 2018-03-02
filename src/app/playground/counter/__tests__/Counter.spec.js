@@ -1,13 +1,10 @@
 import React from 'react';
-import { shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 
 import { Counter, mapStateToProps, mapDispatchToProps } from '../Counter';
 import { INITIAL } from '../constants';
 import * as actions from '../actions';
 import * as selectors from '../selectors';
-
-configure({ adapter: new Adapter() });
 
 describe('Counter', () => {
   it('should render initial component', () => {

@@ -79,8 +79,7 @@ export const Navigation = () => (
       .buttons {
         display: inline-flex;
       }
-    `}
-    </style>
+    `}</style>
   </div>
 );
 

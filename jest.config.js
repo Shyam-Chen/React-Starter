@@ -1,3 +1,3 @@
 module.exports = {
-  setupTestFrameworkScriptFile: '<rootDir>/src/polyfill.js'
+  setupTestFrameworkScriptFile: '<rootDir>/tools/setup-test.js',
 };

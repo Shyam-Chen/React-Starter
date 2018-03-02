@@ -23,7 +23,7 @@ export const INITIAL = {
     { value: 22, label: 'Twenty two' },
     { value: 23, label: 'Twenty three' },
     { value: 24, label: 'Twenty four' },
-    { value: 25, label: 'Twenty five' }
+    { value: 25, label: 'Twenty five' },
   ],
 
   // multiple select
@@ -44,7 +44,7 @@ export const INITIAL = {
     'Italy',
     'Ukraine',
     'Sweden',
-    'Russia'
+    'Russia',
   ],
 
   // nested select
@@ -59,8 +59,8 @@ export const INITIAL = {
         'Ragdoll',
         'Sphynx',
         'Exotic Shorthair',
-        'Scottish Fold'
-      ]
+        'Scottish Fold',
+      ],
     }, {
       category: 'Dog',
       variety: [
@@ -70,16 +70,16 @@ export const INITIAL = {
         'Bulldog',
         'Golden Retriever',
         'Great Dane',
-        'Poodle'
-      ]
-    }
+        'Poodle',
+      ],
+    },
   ],
 
   // checkboxes
   frameworks: {
     angular: false,
     react: false,
-    vue: false
+    vue: false,
   },
 
   // radio buttons
@@ -89,7 +89,7 @@ export const INITIAL = {
   autoplay: false,
 
   // slider
-  kilometers: 0
+  kilometers: 0,
 
   // autocomplete
 
