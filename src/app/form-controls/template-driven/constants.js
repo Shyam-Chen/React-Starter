@@ -106,6 +106,4 @@ export const INITIAL = {
 
 export const MEMOIZE = formControls => formControls;
 
-export const SET_DATA = '[Form Controls] SET_DATA';
-
-export const INPUT_DATA = '[Form Controls] INPUT_DATA';
+export const SET_DATA = '[Form Controls] [Template-driven] SET_DATA';

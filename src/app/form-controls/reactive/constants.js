@@ -1,7 +1,7 @@
 export const INITIAL = {
-  creditCard: ''
+  creditCard: '',
 };
 
-export const MEMOIZE = formControls => formControls.reactive;
+export const MEMOIZE = formControls => formControls;
 
-export const SET_DATA = '[Form Controls > Reactive] SET_DATA';
+export const SET_DATA = '[Form Controls] [Reactive] SET_DATA';

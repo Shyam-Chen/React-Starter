@@ -10,7 +10,7 @@ import { createLogger } from 'redux-logger';
 import { crudReducer } from '~/crud-operations/crud';
 import { restEpic, restReducer, watchRest } from '~/crud-operations/rest';
 import { graphqlReducer } from '~/crud-operations/graphql';
-import { formControlsReducer, formControlsEpic } from '~/form-controls';
+import { formControls } from '~/form-controls';
 import { dataTableReducer } from '~/data-table';
 import { authorizationReducer } from '~/authorization';
 import { counterEpic, counterReducer, watchCounter } from '~/playground/counter';
@@ -24,7 +24,6 @@ const rootEpic = combineEpics(
 
   counterEpic,
   restEpic,
-  formControlsEpic,
 );
 
 const rootReducer = combineReducers({
@@ -36,7 +35,7 @@ const rootReducer = combineReducers({
   crud: crudReducer,
   rest: restReducer,
   graphql: graphqlReducer,
-  formControls: formControlsReducer,
+  formControls,
   dataTable: dataTableReducer,
   authorization: authorizationReducer,
 });

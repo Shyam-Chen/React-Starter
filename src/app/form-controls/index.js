@@ -1,5 +1,11 @@
-import FormControls from './FormControls';
-import formControlsEpic from './epics';
-import formControlsReducer from './reducer';
+import { combineReducers } from 'redux';
 
-export { FormControls, formControlsEpic, formControlsReducer };
+import { templateDriven } from './template-driven';
+import { reactive } from './reactive';
+
+export { default as FormControls } from './FormControls';
+
+export const formControls = combineReducers({
+  templateDriven,
+  reactive,
+});

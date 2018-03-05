@@ -26,9 +26,12 @@ export const Navigation = () => (
               </Link>
             )
         }
-        <Typography variant="title" color="inherit">
+        <Typography variant="title" color="inherit" style={{ flex: '1 0 auto' }}>
           React by Example, location: <span className="location">{window.location.pathname}</span>.
         </Typography>
+        <IconButton color="inherit" href="https://github.com/Shyam-Chen/React-Fullstack-Starter">
+          <i className="fa fa-github" style={{ fontSize: 24 }} />
+        </IconButton>
       </Toolbar>
     </AppBar>
 

@@ -8,36 +8,36 @@ import Navigation from '~/shared/Navigation';
 import Link from '~/shared/Link';
 import Button from '~/shared/Button';
 
-import * as actions from './actions';
-import { JustRedux } from './just-redux';
-import { WithReduxForm } from './with-redux-form';
-import { ReactiveForms } from './reactive-forms';
+import { TemplateDriven } from './template-driven';
+import { Reactive } from './reactive';
 
 const FormControls = ({ match, routerActions }) => {
-
   return (
     <div className="container">
       <Navigation />
 
-      <Link to={`${match.url}/just-redux`}>
-        <Button raised color="teal" onClick={() => routerActions.push(`${match.url}/just-redux`)}>
-          Just Redux
+      <Link to={`${match.url}/template-driven`} href={`${match.url}/template-driven`}>
+        <Button
+          raised
+          color="teal"
+          onClick={() => routerActions.push(`${match.url}/template-driven`)}
+        >
+          Template-driven
         </Button>
       </Link>
       {'　'}
-      <Link to={`${match.url}/with-redux-form`}>
-        <Button raised color="teal" onClick={() => routerActions.push(`${match.url}/with-redux-form`)}>
-          With Redux Form
+      <Link to={`${match.url}/reactive`} href={`${match.url}/reactive`}>
+        <Button
+          raised
+          color="teal"
+          onClick={() => routerActions.push(`${match.url}/reactive`)}
+        >
+          Reactive
         </Button>
-      </Link>
-      {'　'}
-      <Link to={`${match.url}/reactive-forms`} onClick={() => routerActions.push(`${match.url}/reactive-forms`)}>
-        <Button raised color="teal">Reactive Forms</Button>
       </Link>
 
-      <Route path={`${match.url}/just-redux`} component={JustRedux} />
-      <Route path={`${match.url}/with-redux-form`} component={WithReduxForm} />
-      <Route path={`${match.url}/reactive-forms`} component={ReactiveForms} />
+      <Route path={`${match.url}/template-driven`} component={TemplateDriven} />
+      <Route path={`${match.url}/reactive`} component={Reactive} />
 
       <style jsx>{`
         .container {
@@ -49,9 +49,8 @@ const FormControls = ({ match, routerActions }) => {
 };
 
 export default connect(
-  ({ formControls }) => ({ formControls }),
+  null,
   dispatch => ({
-    actions: bindActionCreators(actions, dispatch),
     routerActions: bindActionCreators(routerActions, dispatch),
   }),
 )(FormControls);

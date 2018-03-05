@@ -1,4 +1,4 @@
 import Reactive from './Reactive';
-import reactiveReducer from './reducer';
+import reactive from './reducer';
 
-export { Reactive, reactiveReducer };
+export { Reactive, reactive };

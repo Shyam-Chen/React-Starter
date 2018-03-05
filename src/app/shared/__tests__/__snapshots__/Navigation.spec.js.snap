@@ -56,6 +56,11 @@ ShallowWrapper {
             </_Link>
             <WithStyles(Typography)
               color="inherit"
+              style={
+                Object {
+                  "flex": "1 0 auto",
+                }
+              }
               variant="title"
             >
               React by Example, location: 
@@ -66,6 +71,19 @@ ShallowWrapper {
               </span>
               .
             </WithStyles(Typography)>
+            <WithStyles(IconButton)
+              color="inherit"
+              href="https://github.com/Shyam-Chen/React-Fullstack-Starter"
+            >
+              <i
+                className="jsx-138544096 fa fa-github"
+                style={
+                  Object {
+                    "fontSize": 24,
+                  }
+                }
+              />
+            </WithStyles(IconButton)>
           </WithStyles(Toolbar)>
         </WithStyles(AppBar)>,
         <div
@@ -105,6 +123,11 @@ ShallowWrapper {
             </_Link>
             <WithStyles(Typography)
               color="inherit"
+              style={
+                Object {
+                  "flex": "1 0 auto",
+                }
+              }
               variant="title"
             >
               React by Example, location: 
@@ -115,6 +138,19 @@ ShallowWrapper {
               </span>
               .
             </WithStyles(Typography)>
+            <WithStyles(IconButton)
+              color="inherit"
+              href="https://github.com/Shyam-Chen/React-Fullstack-Starter"
+            >
+              <i
+                className="jsx-138544096 fa fa-github"
+                style={
+                  Object {
+                    "fontSize": 24,
+                  }
+                }
+              />
+            </WithStyles(IconButton)>
           </WithStyles(Toolbar)>,
         },
         "ref": null,
@@ -142,6 +178,11 @@ ShallowWrapper {
               </_Link>,
               <WithStyles(Typography)
                 color="inherit"
+                style={
+                  Object {
+                    "flex": "1 0 auto",
+                  }
+                }
                 variant="title"
               >
                 React by Example, location: 
@@ -152,6 +193,19 @@ ShallowWrapper {
                 </span>
                 .
               </WithStyles(Typography)>,
+              <WithStyles(IconButton)
+                color="inherit"
+                href="https://github.com/Shyam-Chen/React-Fullstack-Starter"
+              >
+                <i
+                  className="jsx-138544096 fa fa-github"
+                  style={
+                    Object {
+                      "fontSize": 24,
+                    }
+                  }
+                />
+              </WithStyles(IconButton)>,
             ],
           },
           "ref": null,
@@ -219,6 +273,9 @@ ShallowWrapper {
                   ".",
                 ],
                 "color": "inherit",
+                "style": Object {
+                  "flex": "1 0 auto",
+                },
                 "variant": "title",
               },
               "ref": null,
@@ -238,6 +295,39 @@ ShallowWrapper {
                 },
                 ".",
               ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <i
+                  className="jsx-138544096 fa fa-github"
+                  style={
+                    Object {
+                      "fontSize": 24,
+                    }
+                  }
+                />,
+                "color": "inherit",
+                "href": "https://github.com/Shyam-Chen/React-Fullstack-Starter",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "jsx-138544096 fa fa-github",
+                  "style": Object {
+                    "fontSize": 24,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "i",
+              },
               "type": [Function],
             },
           ],
@@ -299,6 +389,11 @@ ShallowWrapper {
               </_Link>
               <WithStyles(Typography)
                 color="inherit"
+                style={
+                  Object {
+                    "flex": "1 0 auto",
+                  }
+                }
                 variant="title"
               >
                 React by Example, location: 
@@ -309,6 +404,19 @@ ShallowWrapper {
                 </span>
                 .
               </WithStyles(Typography)>
+              <WithStyles(IconButton)
+                color="inherit"
+                href="https://github.com/Shyam-Chen/React-Fullstack-Starter"
+              >
+                <i
+                  className="jsx-138544096 fa fa-github"
+                  style={
+                    Object {
+                      "fontSize": 24,
+                    }
+                  }
+                />
+              </WithStyles(IconButton)>
             </WithStyles(Toolbar)>
           </WithStyles(AppBar)>,
           <div
@@ -348,6 +456,11 @@ ShallowWrapper {
               </_Link>
               <WithStyles(Typography)
                 color="inherit"
+                style={
+                  Object {
+                    "flex": "1 0 auto",
+                  }
+                }
                 variant="title"
               >
                 React by Example, location: 
@@ -358,6 +471,19 @@ ShallowWrapper {
                 </span>
                 .
               </WithStyles(Typography)>
+              <WithStyles(IconButton)
+                color="inherit"
+                href="https://github.com/Shyam-Chen/React-Fullstack-Starter"
+              >
+                <i
+                  className="jsx-138544096 fa fa-github"
+                  style={
+                    Object {
+                      "fontSize": 24,
+                    }
+                  }
+                />
+              </WithStyles(IconButton)>
             </WithStyles(Toolbar)>,
           },
           "ref": null,
@@ -385,6 +511,11 @@ ShallowWrapper {
                 </_Link>,
                 <WithStyles(Typography)
                   color="inherit"
+                  style={
+                    Object {
+                      "flex": "1 0 auto",
+                    }
+                  }
                   variant="title"
                 >
                   React by Example, location: 
@@ -395,6 +526,19 @@ ShallowWrapper {
                   </span>
                   .
                 </WithStyles(Typography)>,
+                <WithStyles(IconButton)
+                  color="inherit"
+                  href="https://github.com/Shyam-Chen/React-Fullstack-Starter"
+                >
+                  <i
+                    className="jsx-138544096 fa fa-github"
+                    style={
+                      Object {
+                        "fontSize": 24,
+                      }
+                    }
+                  />
+                </WithStyles(IconButton)>,
               ],
             },
             "ref": null,
@@ -462,6 +606,9 @@ ShallowWrapper {
                     ".",
                   ],
                   "color": "inherit",
+                  "style": Object {
+                    "flex": "1 0 auto",
+                  },
                   "variant": "title",
                 },
                 "ref": null,
@@ -481,6 +628,39 @@ ShallowWrapper {
                   },
                   ".",
                 ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <i
+                    className="jsx-138544096 fa fa-github"
+                    style={
+                      Object {
+                        "fontSize": 24,
+                      }
+                    }
+                  />,
+                  "color": "inherit",
+                  "href": "https://github.com/Shyam-Chen/React-Fullstack-Starter",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "jsx-138544096 fa fa-github",
+                    "style": Object {
+                      "fontSize": 24,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
                 "type": [Function],
               },
             ],

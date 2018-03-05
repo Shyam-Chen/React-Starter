@@ -8,10 +8,10 @@ import { MenuItem } from 'material-ui/Menu';
 import { FormControl, FormGroup, FormControlLabel, FormLabel, FormHelperText } from 'material-ui/Form';
 import { RadioGroup } from 'material-ui/Radio';
 
-import * as actions from '../actions';
-import * as selectors from '../selectors';
+import * as actions from './actions';
+import * as selectors from './selectors';
 
-const JustRedux = ({ formControls, actions, selectors }) => {
+const TemplateDriven = ({ templateDriven, actions, selectors }) => {
   const {
     nickname,
     name, nameTouched,
@@ -20,8 +20,8 @@ const JustRedux = ({ formControls, actions, selectors }) => {
     category, variety, animals,
     frameworks,
     gender,
-    autoplay
-  } = formControls;
+    autoplay,
+  } = templateDriven;
 
   const { nameError, listOfVariety } = selectors;
 
@@ -58,11 +58,15 @@ const JustRedux = ({ formControls, actions, selectors }) => {
               />
               {
                 nameTouched && nameError && (name === '') &&
-                <FormHelperText error={nameTouched && nameError && (name === '')}>Required</FormHelperText>
+                <FormHelperText error={nameTouched && nameError && (name === '')}>
+                  Required
+                </FormHelperText>
               }
               {
                 nameTouched && nameError && (name.length > 15) &&
-                <FormHelperText error={nameTouched && nameError && (name.length > 15)}>Must be 15 characters or less</FormHelperText>
+                <FormHelperText error={nameTouched && nameError && (name.length > 15)}>
+                  Must be 15 characters or less
+                </FormHelperText>
               }
             </FormControl>
             <div className="outputs">{name}</div>
@@ -79,8 +83,8 @@ const JustRedux = ({ formControls, actions, selectors }) => {
               >
                 <MenuItem value=""><em>None</em></MenuItem>
                 {
-                  listOfage.map(({ value, label }, index) => (
-                    <MenuItem key={index} value={value}>{label}</MenuItem>
+                  listOfage.map(({ value, label }) => (
+                    <MenuItem key={value} value={value}>{label}</MenuItem>
                   ))
                 }
               </Select>
@@ -99,8 +103,8 @@ const JustRedux = ({ formControls, actions, selectors }) => {
                 input={<Input id="countries" style={{ width: '15rem' }} />}
               >
                 {
-                  listOfCountries.map((item, index) => (
-                    <MenuItem key={index} value={item}>{item}</MenuItem>
+                  listOfCountries.map(item => (
+                    <MenuItem key={item} value={item}>{item}</MenuItem>
                   ))
                 }
               </Select>
@@ -159,7 +163,9 @@ const JustRedux = ({ formControls, actions, selectors }) => {
                   control={
                     <Checkbox
                       checked={frameworks.angular}
-                      onChange={(event, checked) => actions.setData({ frameworks: { ...frameworks, angular: checked } })}
+                      onChange={(event, checked) =>
+                        actions.setData({ frameworks: { ...frameworks, angular: checked } })
+                      }
                       value="angular"
                     />
                   }
@@ -169,7 +175,9 @@ const JustRedux = ({ formControls, actions, selectors }) => {
                   control={
                     <Checkbox
                       checked={frameworks.react}
-                      onChange={(event, checked) => actions.setData({ frameworks: { ...frameworks, react: checked } })}
+                      onChange={(event, checked) =>
+                        actions.setData({ frameworks: { ...frameworks, react: checked } })
+                      }
                       value="react"
                     />
                   }
@@ -179,7 +187,9 @@ const JustRedux = ({ formControls, actions, selectors }) => {
                   control={
                     <Checkbox
                       checked={frameworks.vue}
-                      onChange={(event, checked) => actions.setData({ frameworks: { ...frameworks, vue: checked } })}
+                      onChange={(event, checked) =>
+                        actions.setData({ frameworks: { ...frameworks, vue: checked } })
+                      }
                       value="vue"
                     />
                   }
@@ -264,6 +274,9 @@ const JustRedux = ({ formControls, actions, selectors }) => {
 };
 
 export default connect(
-  ({ formControls }) => ({ formControls, selectors: bindSelectCreators(selectors, formControls) }),
-  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
-)(JustRedux);
+  ({ formControls: { templateDriven } }) => ({
+    templateDriven,
+    selectors: bindSelectCreators(selectors, templateDriven),
+  }),
+  dispatch => ({ actions: bindActionCreators(actions, dispatch) }),
+)(TemplateDriven);

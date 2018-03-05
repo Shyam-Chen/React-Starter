@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Paper, Typography, TextField } from 'material-ui';
 import { FormControl } from 'material-ui/Form';
 
-import * as actions from '../actions';
+import * as actions from './actions';
 
 const Reactive = ({ reactive, actions }) => {
   const { creditCard } = reactive;
@@ -23,7 +23,7 @@ const Reactive = ({ reactive, actions }) => {
               <TextField
                 label="Credit Card"
                 value={creditCard}
-                onChange={event => actions.inputChange({ creditCard: event.target.value })}
+                onChange={event => actions.setData({ creditCard: event.target.value })}
               />
             </FormControl>
             <div className="outputs">{creditCard}</div>
@@ -60,7 +60,12 @@ const Reactive = ({ reactive, actions }) => {
   );
 };
 
-export default connect(
-  ({ formControls: { reactive } }) => ({ reactive }),
-  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
-)(Reactive);
+export const mapStateToProps = ({ formControls: { reactive } }) => ({
+  reactive,
+});
+
+export const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Reactive);
