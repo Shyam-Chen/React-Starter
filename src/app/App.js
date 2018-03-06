@@ -12,7 +12,7 @@ const App = () => (
       <Navigation />
     </div>
 
-    <style jsx global>{`
+    <style jsx>{`
       .container {
         margin: 0;
         padding: 1rem;

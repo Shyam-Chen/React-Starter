@@ -57,15 +57,10 @@ const TemplateDriven = ({ templateDriven, actions, selectors }) => {
                 onBlur={() => actions.setData({ nameTouched: true })}
               />
               {
-                nameTouched && nameError && (name === '') &&
-                <FormHelperText error={nameTouched && nameError && (name === '')}>
-                  Required
-                </FormHelperText>
-              }
-              {
-                nameTouched && nameError && (name.length > 15) &&
-                <FormHelperText error={nameTouched && nameError && (name.length > 15)}>
-                  Must be 15 characters or less
+                nameTouched && nameError &&
+                <FormHelperText error={nameTouched && nameError}>
+                  {name === '' && 'Required'}
+                  {name.length > 15 && 'Must be 15 characters or less'}
                 </FormHelperText>
               }
             </FormControl>
@@ -126,8 +121,13 @@ const TemplateDriven = ({ templateDriven, actions, selectors }) => {
                   >
                     <MenuItem value=""><em>None</em></MenuItem>
                     {
-                      animals.map(({ category }, index) => (
-                        <MenuItem key={index} value={category}>{category}</MenuItem>
+                      animals.map(item => (
+                        <MenuItem
+                          key={item.category}
+                          value={item.category}
+                        >
+                          {item.category}
+                        </MenuItem>
                       ))
                     }
                   </Select>
@@ -143,8 +143,8 @@ const TemplateDriven = ({ templateDriven, actions, selectors }) => {
                     <MenuItem value=""><em>None</em></MenuItem>
                     {
                       listOfVariety.length &&
-                      listOfVariety[0].variety.map((item, index) => (
-                        <MenuItem key={index} value={item}>{item}</MenuItem>
+                      listOfVariety[0].variety.map(item => (
+                        <MenuItem key={item} value={item}>{item}</MenuItem>
                       ))
                     }
                   </Select>

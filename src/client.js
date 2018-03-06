@@ -17,7 +17,7 @@ render(
       <Router />
     </ConnectedRouter>
   </Provider>,
-  document.querySelector('#app')
+  document.querySelector('#app'),
 );
 
 if (module.hot) {

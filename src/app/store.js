@@ -4,7 +4,6 @@ import thunkMiddleware from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
-import { reducer as formReducer } from 'redux-form';
 import { createLogger } from 'redux-logger';
 
 import { crudReducer } from '~/crud-operations/crud';
@@ -29,7 +28,6 @@ const rootEpic = combineEpics(
 const rootReducer = combineReducers({
   app: appReducer,
   router: routerReducer,
-  form: formReducer,
 
   counter: counterReducer,
   crud: crudReducer,
