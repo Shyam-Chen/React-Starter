@@ -10,6 +10,7 @@
           }
         ],
         "react",
+        "stage-0",
         "flow"
       ],
       "plugins": [
@@ -21,9 +22,6 @@
             ]
           }
         ],
-        "transform-class-properties",
-        "transform-function-bind",
-        "transform-object-rest-spread",
         [
           "babel-plugin-root-import", [
             {
@@ -37,11 +35,6 @@
             "material-ui": {
               "transform": "material-ui/${member}",
               "preventFullImport": true
-            },
-            "rxjs": {
-              "transform": "rxjs/${member}",
-              "preventFullImport": true,
-              "skipDefaultConversion": true
             },
             "rxjs/observable": {
               "transform": "rxjs/observable/${member}",
@@ -66,12 +59,11 @@
             }
           }
         ],
+        "stage-0",
         "flow"
       ],
       "plugins": [
         "transform-runtime",
-        "transform-function-bind",
-        "transform-object-rest-spread",
         [
           "babel-plugin-root-import", [
             {
@@ -82,11 +74,6 @@
         ],
         [
           "transform-imports", {
-            "rxjs": {
-              "transform": "rxjs/${member}",
-              "preventFullImport": true,
-              "skipDefaultConversion": true
-            },
             "rxjs/observable": {
               "transform": "rxjs/observable/${member}",
               "preventFullImport": true,

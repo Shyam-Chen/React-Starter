@@ -1,5 +1,5 @@
 import { combineEpics } from 'redux-observable';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { interval, empty } from 'rxjs/observable';
 import { delay, filter, map, switchMap, takeUntil } from 'rxjs/operator';
 

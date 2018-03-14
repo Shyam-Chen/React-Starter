@@ -1,5 +1,5 @@
 import { combineEpics } from 'redux-observable';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { fromPromise, concat, of } from 'rxjs/observable';
 import { map, mergeMap, switchMap } from 'rxjs/operator';
 import { _catch } from 'rxjs/operator/catch';
