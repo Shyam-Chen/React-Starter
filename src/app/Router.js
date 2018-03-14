@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import loadable from 'react-loadable';
 
 import { CRUD } from '~/crud-operations/crud';
 import { REST } from '~/crud-operations/rest';
@@ -7,11 +8,17 @@ import { GraphQL } from '~/crud-operations/graphql';
 import { FormControls } from '~/form-controls';
 import { DataTable } from '~/data-table';
 import { Authorization } from '~/authorization';
-import { Counter } from '~/playground/counter';
 
 import NotFound from '~/shared/NotFound';
 
 import App from './App';
+
+const Loading = () => <div>Loading...</div>;
+
+const Counter = loadable({
+  loader: () => import('~/playground/counter/Counter'),
+  loading: Loading,
+});
 
 const Router = () => (
   <div>

@@ -40,16 +40,14 @@ module.exports = ({ prod = false } = {}) => ({
           limit: 10000,
           name: posix.join('assets', 'images/[name].[hash].[ext]'),
         },
-      },
-      {
+      }, {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
           name: posix.join('assets', 'medias/[name].[hash].[ext]'),
         },
-      },
-      {
+      }, {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
