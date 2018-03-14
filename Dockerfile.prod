@@ -25,6 +25,8 @@ RUN \
 
 ENV NODE_ENV production
 
+ENV WEB_CONCURRENCY 1
+
 EXPOSE 3000
 
 CMD node processes.js
