@@ -10,7 +10,7 @@ import Button from '~/shared/Button';
 import * as actions from './actions';
 import { Add, Search, Edit, Delete } from './views';
 
-const CRUD = ({ crud, actions }) => {
+export const CRUD = ({ crud, actions }) => {
   const { dataset, deleteData, editData } = crud;
 
   return (
@@ -31,9 +31,9 @@ const CRUD = ({ crud, actions }) => {
             </TableHead>
             <TableBody>
               {
-                /* eslint-disable indent */
                 dataset.length
-                  ? dataset.map(({ id, primary, accent }) => (
+                  ? (
+                    dataset.map(({ id, primary, accent }) => (
                       <TableRow key={id} hover>
                         <TableCell>{primary} - {accent}</TableCell>
                         <TableCell>
@@ -41,7 +41,7 @@ const CRUD = ({ crud, actions }) => {
                             color="red"
                             onClick={() =>
                               actions.setData({
-                                deleteData: { ...deleteData, id, dialog: true }
+                                deleteData: { ...deleteData, id, dialog: true },
                               })
                             }
                           >
@@ -51,7 +51,7 @@ const CRUD = ({ crud, actions }) => {
                             color="indigo"
                             onClick={() => {
                               actions.setData({
-                                editData: { ...editData, id, primary, accent, dialog: true }
+                                editData: { ...editData, id, primary, accent, dialog: true },
                               });
                             }}
                           >
@@ -59,11 +59,13 @@ const CRUD = ({ crud, actions }) => {
                           </Button>
                         </TableCell>
                       </TableRow>
-                    ))
-                  : <TableRow>
+                    )).reverse()
+                  )
+                  : (
+                    <TableRow>
                       <TableCell colSpan="2">No data available</TableCell>
                     </TableRow>
-                /* eslint-enable indent */
+                  )
               }
             </TableBody>
           </Table>
@@ -89,7 +91,12 @@ const CRUD = ({ crud, actions }) => {
   );
 };
 
-export default connect(
-  ({ crud }) => ({ crud }),
-  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
-)(CRUD);
+export const mapStateToProps = ({ crud }) => ({
+  crud,
+});
+
+export const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CRUD);

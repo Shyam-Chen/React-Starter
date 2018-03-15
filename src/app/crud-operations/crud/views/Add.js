@@ -7,7 +7,7 @@ import Button from '~/shared/Button';
 
 import * as actions from '../actions';
 
-const Add = ({ crud: { addData }, actions }) => {
+export const Add = ({ crud: { addData }, actions }) => {
   const { primary, accent } = addData;
 
   return (
@@ -16,7 +16,7 @@ const Add = ({ crud: { addData }, actions }) => {
         value={primary}
         onChange={event =>
           actions.setData({
-            addData: { ...addData, primary: event.target.value }
+            addData: { ...addData, primary: event.target.value },
           })
         }
       />
@@ -25,7 +25,7 @@ const Add = ({ crud: { addData }, actions }) => {
         value={accent}
         onChange={event =>
           actions.setData({
-            addData: { ...addData, accent: event.target.value }
+            addData: { ...addData, accent: event.target.value },
           })
         }
       />
@@ -52,7 +52,12 @@ const Add = ({ crud: { addData }, actions }) => {
   );
 };
 
-export default connect(
-  ({ crud }) => ({ crud }),
-  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
-)(Add);
+export const mapStateToProps = ({ crud }) => ({
+  crud,
+});
+
+export const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Add);

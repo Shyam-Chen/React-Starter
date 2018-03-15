@@ -1,14 +1,14 @@
 export const INITIAL = {
   dataset: [
-    { id: 4, primary: 'Vanilla', accent: 'Cordova' },
-    { id: 3, primary: 'Angular', accent: 'Ionic' },
-    { id: 2, primary: 'React', accent: 'React Native' },
-    { id: 1, primary: 'Vue', accent: 'Weex' }
+    { id: 1, primary: 'Vanilla', accent: 'MobX' },
+    { id: 2, primary: 'Angular', accent: 'NgRx' },
+    { id: 3, primary: 'React', accent: 'Redux' },
+    { id: 4, primary: 'Vue', accent: 'Vuex' },
   ],
   addData: { primary: '', accent: '' },
   searchData: { primary: '', accent: '' },
   editData: { id: 0, primary: '', accent: '', dialog: false },
-  deleteData: { id: 0, dialog: false }
+  deleteData: { id: 0, dialog: false },
 };
 
 export const ADD_ITEM = '[CRUD] ADD_ITEM';

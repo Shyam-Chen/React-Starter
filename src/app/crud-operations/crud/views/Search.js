@@ -7,7 +7,7 @@ import Button from '~/shared/Button';
 
 import * as actions from '../actions';
 
-const Search = ({ crud: { searchData }, actions }) => {
+export const Search = ({ crud: { searchData }, actions }) => {
   const { primary, accent } = searchData;
 
   return (
@@ -16,7 +16,7 @@ const Search = ({ crud: { searchData }, actions }) => {
         value={primary}
         onChange={event =>
           actions.setData({
-            searchData: { ...searchData, primary: event.target.value }
+            searchData: { ...searchData, primary: event.target.value },
           })
         }
       />
@@ -25,7 +25,7 @@ const Search = ({ crud: { searchData }, actions }) => {
         value={accent}
         onChange={event =>
           actions.setData({
-            searchData: { ...searchData, accent: event.target.value }
+            searchData: { ...searchData, accent: event.target.value },
           })
         }
       />
@@ -50,7 +50,12 @@ const Search = ({ crud: { searchData }, actions }) => {
   );
 };
 
-export default connect(
-  ({ crud }) => ({ crud }),
-  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
-)(Search);
+export const mapStateToProps = ({ crud }) => ({
+  crud,
+});
+
+export const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

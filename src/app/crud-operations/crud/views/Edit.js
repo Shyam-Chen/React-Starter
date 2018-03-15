@@ -8,24 +8,24 @@ import Button from '~/shared/Button';
 
 import * as actions from '../actions';
 
-const Edit = ({ crud: { editData }, actions }) => {
+export const Edit = ({ crud: { editData }, actions }) => {
   const { id, primary, accent, dialog } = editData;
 
   const onDialogClose = () =>
     actions.setData({
-      editData: { ...editData, dialog: false }
+      editData: { ...editData, dialog: false },
     });
 
   return (
     <Dialog open={dialog} onRequestClose={onDialogClose}>
-      <DialogTitle></DialogTitle>
+      <DialogTitle>Edit</DialogTitle>
       <DialogContent>
         <DialogContentText>
           <TextField
             value={primary}
             onChange={event =>
               actions.setData({
-                editData: { ...editData, primary: event.target.value }
+                editData: { ...editData, primary: event.target.value },
               })
             }
           />
@@ -34,7 +34,7 @@ const Edit = ({ crud: { editData }, actions }) => {
             value={accent}
             onChange={event =>
               actions.setData({
-                editData: { ...editData, accent: event.target.value }
+                editData: { ...editData, accent: event.target.value },
               })
             }
           />
@@ -58,7 +58,12 @@ const Edit = ({ crud: { editData }, actions }) => {
   );
 };
 
-export default connect(
-  ({ crud }) => ({ crud }),
-  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
-)(Edit);
+export const mapStateToProps = ({ crud }) => ({
+  crud,
+});
+
+export const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Edit);

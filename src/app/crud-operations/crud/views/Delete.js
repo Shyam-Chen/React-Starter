@@ -8,17 +8,17 @@ import Button from '~/shared/Button';
 
 import * as actions from '../actions';
 
-const Delete = ({ crud: { deleteData }, actions }) => {
+export const Delete = ({ crud: { deleteData }, actions }) => {
   const { id, dialog } = deleteData;
 
   const onDialogClose = () =>
     actions.setData({
-      deleteData: { ...deleteData, dialog: false }
+      deleteData: { ...deleteData, dialog: false },
     });
 
   return (
     <Dialog open={dialog} onRequestClose={onDialogClose}>
-      <DialogTitle></DialogTitle>
+      <DialogTitle>Delete</DialogTitle>
       <DialogContent>
         <DialogContentText>
           Are you sure you want to delete it?
@@ -40,7 +40,12 @@ const Delete = ({ crud: { deleteData }, actions }) => {
   );
 };
 
-export default connect(
-  ({ crud }) => ({ crud }),
-  dispatch => ({ actions: bindActionCreators(actions, dispatch) })
-)(Delete);
+export const mapStateToProps = ({ crud }) => ({
+  crud,
+});
+
+export const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Delete);
