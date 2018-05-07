@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { bindSelectCreators } from 'reselect-computed';
 import { connect } from 'react-redux';
+import { compose, lifecycle } from 'recompose';
 import { Typography } from 'material-ui';
 
 import Navigation from '~/shared/Navigation';
@@ -80,4 +81,11 @@ export const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(actions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  lifecycle({
+    componentDidMount() {
+      console.log('Component Did Mount');
+    },
+  }),
+)(Counter);
