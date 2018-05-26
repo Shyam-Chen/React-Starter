@@ -4,6 +4,12 @@ export interface ICounter {
   value: number;
 }
 
+export interface Props {
+  counter: ICounter;
+  actions?: Object;
+  selectors?: Object;
+}
+
 export const INITIAL: ICounter = { value: 0 };
 
 export const MEMOIZE = (counter: ICounter): ICounter => counter;

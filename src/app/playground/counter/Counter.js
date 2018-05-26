@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { bindSelectCreators } from 'reselect-computed';
@@ -8,10 +10,11 @@ import { Typography } from 'material-ui';
 import Navigation from '~/shared/Navigation';
 import Button from '~/shared/Button';
 
+import { Props } from './constants';
 import * as actions from './actions';
 import * as selectors from './selectors';
 
-export const Counter = ({ counter, actions, selectors }) => (
+export const Counter = ({ counter, actions, selectors }: Props): React.Element<Props> => (
   <div className="container">
     <Navigation />
 
@@ -85,7 +88,7 @@ export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   lifecycle({
     componentDidMount() {
-      console.log('Component Did Mount');
+      console.log('Counter is ready.');
     },
   }),
 )(Counter);
