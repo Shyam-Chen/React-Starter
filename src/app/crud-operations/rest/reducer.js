@@ -3,7 +3,7 @@ import { handleActions } from 'redux-actions';
 import { INITIAL, SUCCESS, FAILURE, SET_DATA } from './constants';
 
 export default handleActions({
-  [SUCCESS](state, { data }) {
+  [SUCCESS](state, { payload: { data } }) {
     return { ...state, dataset: [...data].reverse() };
   },
   [FAILURE](state, { error }) {
@@ -11,5 +11,5 @@ export default handleActions({
   },
   [SET_DATA](state, { data }) {
     return { ...state, ...data };
-  }
+  },
 }, INITIAL);

@@ -6,7 +6,7 @@ import {
   ADD_ITEM_SAGA, SEARCH_ITEM_SAGA, EDIT_ITEM_SAGA, DELETE_ITEM_SAGA
 } from './constants';
 
-export const success = data => ({ type: SUCCESS, data });
+export const success = data => ({ type: SUCCESS, payload: data });
 export const failure = error => ({ type: FAILURE, error });
 
 export const setData = data => ({ type: SET_DATA, data });
@@ -43,7 +43,7 @@ export const deleteItem = id =>
 
 // async functions
 export const _addItem = text =>
-  async dispatch => {
+  async (dispatch) => {
     try {
       await axios.post(API_LIST, { text });
       await dispatch(searchItem());
@@ -53,7 +53,7 @@ export const _addItem = text =>
   };
 
 export const _searchItem = text =>
-  async dispatch => {
+  async (dispatch) => {
     try {
       const { data } = await axios.get(API_LIST, { params: { text } });
       await dispatch(success(data));
@@ -64,7 +64,7 @@ export const _searchItem = text =>
   };
 
 export const _editItem = (id, text) =>
-  async dispatch => {
+  async (dispatch) => {
     try {
       await axios.put(`${API_LIST}/${id}`, { text });
       await dispatch(searchItem());
@@ -74,7 +74,7 @@ export const _editItem = (id, text) =>
   };
 
 export const _deleteItem = id =>
-  async dispatch => {
+  async (dispatch) => {
     try {
       await axios.delete(`${API_LIST}/${id}`);
       await dispatch(searchItem());
