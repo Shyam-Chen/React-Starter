@@ -8,7 +8,7 @@
 [![dependencies Status](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter/status.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter)
 [![devDependencies Status](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter/dev-status.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter?type=dev)
 
-[Live Demo (Firebase)](https://react-by-example.firebaseapp.com/) | [Live Demo (Heroku)](https://react-by-example.herokuapp.com/)
+[Live Demo](https://react-by-example.firebaseapp.com/)
 
 ## Getting Started
 
@@ -57,42 +57,3 @@ $ yarn test:app
 # back-end
 $ yarn test:api
 ```
-
-## Practical Examples
-
-* [x] CRUD Operations
-  * [x] Static
-  * [x] REST
-    * [x] Thunk (`redux-thunk`)
-    * [x] Saga (`redux-saga`)
-    * [x] Observable (`redux-observable`)
-  * [x] GraphQL
-* [ ] Form Controls
-  * [x] Just Redux (`redux`)
-  * [x] With Redux Form (`redux`, `redux-form`)
-  * [ ] Reactive Forms (`redux`, `redux-observable`)
-* [ ] Data Table
-  * [x] Static
-  * [ ] REST
-  * [ ] GraphQL
-* [ ] Globalization
-  * [ ] Internationalization (`react-intl`)
-  * [ ] Localization
-* [ ] Authorization
-  * [ ] REST
-  * [ ] GraphQL
-* [ ] Data Chart
-  * [ ] SVG (`d3`)
-  * [ ] Canvas (`d3`)
-  * [ ] WebGL (`three`)
-* [ ] Realtime
-  * [ ] WebSockets (`socket.io`)
-  * [ ] GraphQL Subscriptions
-* [ ] Playground
-  * [x] Counter
-    * [x] State Management (`redux`)
-    * [x] Asynchronous
-      * [x] Thunk (`redux-thunk`)
-      * [x] Saga (`redux-saga`)
-      * [x] Observable (`redux-observable`)
-  * [ ] ...

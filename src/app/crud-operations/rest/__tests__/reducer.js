@@ -4,7 +4,8 @@ import reducer from '../reducer';
 describe('REST', () => {
   describe('reducer', () => {
     it('should handle SUCCESS', () => {
-      const next = reducer(INITIAL, { type: SUCCESS, data: ['foo', 'bar', 'baz'] });
+      const data = ['foo', 'bar', 'baz'];
+      const next = reducer(INITIAL, { type: SUCCESS, payload: { data } });
       expect(next.dataset).toEqual(['baz', 'bar', 'foo']);
     });
 
