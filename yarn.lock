@@ -9400,6 +9400,13 @@ postcss-modules-values@^1.3.0:
     icss-replace-symbols "^1.1.0"
     postcss "^6.0.1"
 
+postcss-nested@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-nested/-/postcss-nested-3.0.0.tgz#cde40bd07a078565f3df72e2dc2665871c724852"
+  dependencies:
+    postcss "^6.0.14"
+    postcss-selector-parser "^3.1.1"
+
 postcss-nesting@^4.0.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-4.2.1.tgz#0483bce338b3f0828ced90ff530b29b98b00300d"
@@ -9621,7 +9628,7 @@ postcss-selector-parser@^2.0.0, postcss-selector-parser@^2.2.2, postcss-selector
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss-selector-parser@^3.0.0-rc.0:
+postcss-selector-parser@^3.0.0-rc.0, postcss-selector-parser@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-3.1.1.tgz#4f875f4afb0c96573d5cf4d74011aee250a7e865"
   dependencies:
@@ -10034,9 +10041,9 @@ react-apollo@1.4.16:
     object-assign "^4.0.1"
     prop-types "^15.5.8"
 
-react-dom@16.2.0:
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
+react-dom@16.4.0:
+  version "16.4.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.0.tgz#099f067dd5827ce36a29eaf9a6cdc7cbf6216b1e"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -10078,6 +10085,10 @@ react-intl@2.4.0:
     intl-messageformat "^2.1.0"
     intl-relativeformat "^2.0.0"
     invariant "^2.1.1"
+
+react-is@^16.4.0:
+  version "16.4.0"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.0.tgz#cc9fdc855ac34d2e7d9d2eb7059bbc240d35ffcf"
 
 react-jss@^8.1.0:
   version "8.2.0"
@@ -10176,13 +10187,14 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-test-renderer@16.2.0:
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.2.0.tgz#bddf259a6b8fcd8555f012afc8eacc238872a211"
+react-test-renderer@16.4.0:
+  version "16.4.0"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.4.0.tgz#0dbe0e24263e94e1830c7afb1f403707fad313a3"
   dependencies:
     fbjs "^0.8.16"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+    react-is "^16.4.0"
 
 react-test-renderer@^16.0.0-0:
   version "16.0.0"
@@ -10202,9 +10214,9 @@ react-transition-group@^2.2.1:
     prop-types "^15.5.8"
     warning "^3.0.0"
 
-react@16.2.0:
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
+react@16.4.0:
+  version "16.4.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.4.0.tgz#402c2db83335336fba1962c08b98c6272617d585"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
