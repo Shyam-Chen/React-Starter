@@ -1,5 +1,8 @@
 {
-  "plugins": [],
+  "plugins": [
+    "flowtype",
+    "flowtype-errors"
+  ],
   "env": {
     "browser": true,
     "node": true,
@@ -9,7 +12,8 @@
   },
   "globals": {},
   "extends": [
-    "airbnb"
+    "airbnb",
+    "plugin:flowtype/recommended"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -17,15 +21,12 @@
   },
   "settings": {
     "import/resolver": {
-      "node": {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+      "webpack": {
+        "config": "webpack.config.js"
       },
       "babel-plugin-root-import": {
         "rootPathPrefix": "~",
-        "rootPathSuffix": "src/app"
+        "rootPathSuffix": "src/api"
       }
     }
   },
@@ -34,8 +35,12 @@
     "import/no-named-as-default": "off",
     "import/prefer-default-export": "off",
 
+    "react/jsx-closing-tag-location": "off",  // styled-jsx
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/prop-types": "off",
+
+    "flowtype-errors/show-errors": "error",
+    "flowtype-errors/show-warnings": "warn",
 
     // Possible Errors
 
@@ -48,6 +53,7 @@
 
     // Stylistic Issues
     "function-paren-newline": "off",
+    "max-len": "off",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-underscore-dangle": "off",
     "object-curly-newline": ["error", { "consistent": true }],
