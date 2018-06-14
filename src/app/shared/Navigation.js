@@ -1,7 +1,7 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
+
 import { connect } from 'react-redux';
-import { routerActions } from 'react-router-redux';
+
 import { AppBar, Toolbar, IconButton, Icon, Typography } from 'material-ui';
 
 import Link from '~/shared/Link';
@@ -90,8 +90,6 @@ export const mapStateToProps = ({ router }) => ({
   router,
 });
 
-export const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(routerActions, dispatch),
-});
+export const mapDispatchToProps = dispatch => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navigation);

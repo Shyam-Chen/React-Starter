@@ -1,5 +1,5 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { routerReducer, routerMiddleware } from 'react-router-redux';
+import { routerMiddleware, connectRouter } from 'connected-react-router'
 import thunkMiddleware from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
@@ -26,7 +26,6 @@ const rootEpic = combineEpics(
 
 const rootReducer = combineReducers({
   app: appReducer,
-  router: routerReducer,
 
   counter: counterReducer,
   crud: crudReducer,
@@ -46,12 +45,11 @@ const rootSaga = function *() {
   ]);
 };
 
-export default (history, preloadedState = {}) => {
+export default (history) => {
   const sagaMiddleware = createSagaMiddleware();
 
   const store = createStore(
-    rootReducer,
-    preloadedState,
+    connectRouter(history)(rootReducer),
     applyMiddleware(
       routerMiddleware(history),
       thunkMiddleware,

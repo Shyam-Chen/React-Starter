@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import { compose, lifecycle } from 'recompose';
 import { Typography } from 'material-ui';
 
-import Navigation from '~/shared/Navigation';
 import Button from '~/shared/Button';
 
 import { Props } from './constants';
@@ -15,9 +14,7 @@ import * as actions from './actions';
 import * as selectors from './selectors';
 
 export const Counter = ({ counter, actions, selectors }: Props): React.Element<Props> => (
-  <div className="container">
-    <Navigation />
-
+  <div>
     <div className="typography">
       <Typography variant="headline" component="h3">
         Clicked: {counter.value} times, value is {selectors.evenOrOdd}.
@@ -64,12 +61,8 @@ export const Counter = ({ counter, actions, selectors }: Props): React.Element<P
     </div>
 
     <style jsx>{`
-      .container {
-        padding: 1rem;
-      }
-
       .typography {
-        padding: .25rem 0;
+        padding: 0.25rem 0;
       }
     `}</style>
   </div>

@@ -3,8 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Paper, Typography } from 'material-ui';
 
-import Navigation from '~/shared/Navigation';
-
 import * as actions from './actions';
 import { Static } from './static';
 
@@ -12,7 +10,6 @@ const DataTable = () => {
 
   return (
     <div className="container">
-      <Navigation />
 
       <div className="block">
         <Typography type="title">

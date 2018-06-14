@@ -73,7 +73,7 @@ const Results = ({ rest, total, actions }) => {
 
       <style jsx>{`
         .table {
-          max-width: 30rem;
+          max-width: 35rem;
           margin: .5rem 0;
         }
       `}</style>

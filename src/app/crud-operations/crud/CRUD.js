@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Paper, Table } from 'material-ui';
 import { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 
-import Navigation from '~/shared/Navigation';
 import Button from '~/shared/Button';
 
 import * as actions from './actions';
@@ -15,8 +14,6 @@ export const CRUD = ({ crud, actions }) => {
 
   return (
     <div className="container">
-      <Navigation />
-
       <Search />
       <Add />
 

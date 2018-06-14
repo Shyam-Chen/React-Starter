@@ -79,9 +79,8 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(Navigation) />,
         <div
-          className="jsx-2751530667 typography"
+          className="jsx-3956918113 typography"
         >
           <WithStyles(Typography)
             component="h3"
@@ -95,7 +94,7 @@ ShallowWrapper {
           </WithStyles(Typography)>
         </div>,
         <div
-          className="jsx-2751530667 typography"
+          className="jsx-3956918113 typography"
         >
           <WithStyles(Typography)
             component="p"
@@ -129,7 +128,7 @@ ShallowWrapper {
           </WithStyles(Typography)>
         </div>,
         <div
-          className="jsx-2751530667 typography"
+          className="jsx-3956918113 typography"
         >
           <WithStyles(Typography)
             component="p"
@@ -163,7 +162,7 @@ ShallowWrapper {
           </WithStyles(Typography)>
         </div>,
         <div
-          className="jsx-2751530667 typography"
+          className="jsx-3956918113 typography"
         >
           <WithStyles(Typography)
             component="p"
@@ -197,7 +196,7 @@ ShallowWrapper {
           </WithStyles(Typography)>
         </div>,
         <div
-          className="jsx-2751530667 typography"
+          className="jsx-3956918113 typography"
         >
           <WithStyles(Typography)
             component="p"
@@ -231,7 +230,7 @@ ShallowWrapper {
           </WithStyles(Typography)>
         </div>,
         <div
-          className="jsx-2751530667 typography"
+          className="jsx-3956918113 typography"
         >
           <WithStyles(Typography)
             component="p"
@@ -256,23 +255,14 @@ ShallowWrapper {
           </WithStyles(Typography)>
         </div>,
         <JSXStyle
-          css=".container.jsx-2751530667{padding:1rem;}.typography.jsx-2751530667{padding:.25rem 0;}"
-          styleId="2751530667"
+          css=".typography.jsx-3956918113{padding:.25rem 0;}"
+          styleId="3956918113"
         />,
       ],
-      "className": "jsx-2751530667 container",
+      "className": "jsx-3956918113",
     },
     "ref": null,
     "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
       Object {
         "instance": null,
         "key": undefined,
@@ -288,7 +278,7 @@ ShallowWrapper {
             [Function]
             .
           </WithStyles(Typography)>,
-          "className": "jsx-2751530667 typography",
+          "className": "jsx-3956918113 typography",
         },
         "ref": null,
         "rendered": Object {
@@ -353,7 +343,7 @@ ShallowWrapper {
               Reset
             </WithStyles(_Button)>
           </WithStyles(Typography)>,
-          "className": "jsx-2751530667 typography",
+          "className": "jsx-3956918113 typography",
         },
         "ref": null,
         "rendered": Object {
@@ -479,7 +469,7 @@ ShallowWrapper {
               Reset (Async)
             </WithStyles(_Button)>
           </WithStyles(Typography)>,
-          "className": "jsx-2751530667 typography",
+          "className": "jsx-3956918113 typography",
         },
         "ref": null,
         "rendered": Object {
@@ -605,7 +595,7 @@ ShallowWrapper {
               Reset (If Even)
             </WithStyles(_Button)>
           </WithStyles(Typography)>,
-          "className": "jsx-2751530667 typography",
+          "className": "jsx-3956918113 typography",
         },
         "ref": null,
         "rendered": Object {
@@ -731,7 +721,7 @@ ShallowWrapper {
               Reset (If Odd)
             </WithStyles(_Button)>
           </WithStyles(Typography)>,
-          "className": "jsx-2751530667 typography",
+          "className": "jsx-3956918113 typography",
         },
         "ref": null,
         "rendered": Object {
@@ -848,7 +838,7 @@ ShallowWrapper {
               Cancel count
             </WithStyles(_Button)>
           </WithStyles(Typography)>,
-          "className": "jsx-2751530667 typography",
+          "className": "jsx-3956918113 typography",
         },
         "ref": null,
         "rendered": Object {
@@ -919,8 +909,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "css": ".container.jsx-2751530667{padding:1rem;}.typography.jsx-2751530667{padding:.25rem 0;}",
-          "styleId": "2751530667",
+          "css": ".typography.jsx-3956918113{padding:.25rem 0;}",
+          "styleId": "3956918113",
         },
         "ref": null,
         "rendered": null,
@@ -936,9 +926,8 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(Navigation) />,
           <div
-            className="jsx-2751530667 typography"
+            className="jsx-3956918113 typography"
           >
             <WithStyles(Typography)
               component="h3"
@@ -952,7 +941,7 @@ ShallowWrapper {
             </WithStyles(Typography)>
           </div>,
           <div
-            className="jsx-2751530667 typography"
+            className="jsx-3956918113 typography"
           >
             <WithStyles(Typography)
               component="p"
@@ -986,7 +975,7 @@ ShallowWrapper {
             </WithStyles(Typography)>
           </div>,
           <div
-            className="jsx-2751530667 typography"
+            className="jsx-3956918113 typography"
           >
             <WithStyles(Typography)
               component="p"
@@ -1020,7 +1009,7 @@ ShallowWrapper {
             </WithStyles(Typography)>
           </div>,
           <div
-            className="jsx-2751530667 typography"
+            className="jsx-3956918113 typography"
           >
             <WithStyles(Typography)
               component="p"
@@ -1054,7 +1043,7 @@ ShallowWrapper {
             </WithStyles(Typography)>
           </div>,
           <div
-            className="jsx-2751530667 typography"
+            className="jsx-3956918113 typography"
           >
             <WithStyles(Typography)
               component="p"
@@ -1088,7 +1077,7 @@ ShallowWrapper {
             </WithStyles(Typography)>
           </div>,
           <div
-            className="jsx-2751530667 typography"
+            className="jsx-3956918113 typography"
           >
             <WithStyles(Typography)
               component="p"
@@ -1113,23 +1102,14 @@ ShallowWrapper {
             </WithStyles(Typography)>
           </div>,
           <JSXStyle
-            css=".container.jsx-2751530667{padding:1rem;}.typography.jsx-2751530667{padding:.25rem 0;}"
-            styleId="2751530667"
+            css=".typography.jsx-3956918113{padding:.25rem 0;}"
+            styleId="3956918113"
           />,
         ],
-        "className": "jsx-2751530667 container",
+        "className": "jsx-3956918113",
       },
       "ref": null,
       "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
         Object {
           "instance": null,
           "key": undefined,
@@ -1145,7 +1125,7 @@ ShallowWrapper {
               [Function]
               .
             </WithStyles(Typography)>,
-            "className": "jsx-2751530667 typography",
+            "className": "jsx-3956918113 typography",
           },
           "ref": null,
           "rendered": Object {
@@ -1210,7 +1190,7 @@ ShallowWrapper {
                 Reset
               </WithStyles(_Button)>
             </WithStyles(Typography)>,
-            "className": "jsx-2751530667 typography",
+            "className": "jsx-3956918113 typography",
           },
           "ref": null,
           "rendered": Object {
@@ -1336,7 +1316,7 @@ ShallowWrapper {
                 Reset (Async)
               </WithStyles(_Button)>
             </WithStyles(Typography)>,
-            "className": "jsx-2751530667 typography",
+            "className": "jsx-3956918113 typography",
           },
           "ref": null,
           "rendered": Object {
@@ -1462,7 +1442,7 @@ ShallowWrapper {
                 Reset (If Even)
               </WithStyles(_Button)>
             </WithStyles(Typography)>,
-            "className": "jsx-2751530667 typography",
+            "className": "jsx-3956918113 typography",
           },
           "ref": null,
           "rendered": Object {
@@ -1588,7 +1568,7 @@ ShallowWrapper {
                 Reset (If Odd)
               </WithStyles(_Button)>
             </WithStyles(Typography)>,
-            "className": "jsx-2751530667 typography",
+            "className": "jsx-3956918113 typography",
           },
           "ref": null,
           "rendered": Object {
@@ -1705,7 +1685,7 @@ ShallowWrapper {
                 Cancel count
               </WithStyles(_Button)>
             </WithStyles(Typography)>,
-            "className": "jsx-2751530667 typography",
+            "className": "jsx-3956918113 typography",
           },
           "ref": null,
           "rendered": Object {
@@ -1776,8 +1756,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "css": ".container.jsx-2751530667{padding:1rem;}.typography.jsx-2751530667{padding:.25rem 0;}",
-            "styleId": "2751530667",
+            "css": ".typography.jsx-3956918113{padding:.25rem 0;}",
+            "styleId": "3956918113",
           },
           "ref": null,
           "rendered": null,

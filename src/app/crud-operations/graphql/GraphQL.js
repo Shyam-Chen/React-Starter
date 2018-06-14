@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Paper } from 'material-ui';
 import { CircularProgress } from 'material-ui/Progress';
 
-import Navigation from '~/shared/Navigation';
 import Button from '~/shared/Button';
 
 import * as actions from './actions';
@@ -15,8 +14,6 @@ const GraphQL = ({ graphql, actions }) => {
 
   return (
     <div className="container">
-      <Navigation />
-
       <Search />
       <Add />
 
@@ -56,7 +53,7 @@ const GraphQL = ({ graphql, actions }) => {
       <Delete />
 
       <div className="progress" style={{ display: loading ? '' : 'none' }}>
-        <CircularProgress color="accent" />
+        <CircularProgress />
       </div>
 
       <style jsx>{`

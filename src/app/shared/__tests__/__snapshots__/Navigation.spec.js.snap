@@ -1,16 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navigation should handle mapDispatchToProps 1`] = `
-Object {
-  "actions": Object {
-    "go": [Function],
-    "goBack": [Function],
-    "goForward": [Function],
-    "push": [Function],
-    "replace": [Function],
-  },
-}
-`;
+exports[`Navigation should handle mapDispatchToProps 1`] = `Object {}`;
 
 exports[`Navigation should handle mapStateToProps 1`] = `
 Object {

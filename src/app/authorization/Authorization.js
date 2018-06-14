@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { TextField } from 'material-ui';
 
-import Navigation from '~/shared/Navigation';
 import Button from '~/shared/Button';
 
 import * as actions from './actions';
@@ -12,7 +11,6 @@ const Authorization = () => {
 
   return (
     <div>
-      <Navigation />
 
       <div>TODO: API Authentication</div>
 

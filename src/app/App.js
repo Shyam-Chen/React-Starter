@@ -2,22 +2,24 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import { ConnectedRouter } from 'connected-react-router';
+
 import Navigation from '~/shared/Navigation';
+import Routes from '~/core/Router';
 
 import * as actions from './actions';
 
-const App = () => (
+const App = ({ history }) => (
   <div>
-    <div className="container">
-      <Navigation />
-    </div>
+    <ConnectedRouter history={history}>
+      <div>
+        <Navigation />
 
-    <style jsx>{`
-      .container {
-        margin: 0;
-        padding: 1rem;
-      }
-    `}</style>
+        <Routes />
+      </div>
+    </ConnectedRouter>
+
+    <style jsx>{``}</style>
   </div>
 );
 
