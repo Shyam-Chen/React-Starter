@@ -12,7 +12,7 @@ const truncate = (value: string, length?: number = 15): string => {
 };
 
 const timeString = (value: number): string => {
-  const date = new Date(null);
+  const date = new Date();
   date.setSeconds(value);
   return date.toISOString().substr(14, 5);
 };
@@ -95,7 +95,7 @@ export const Home = ({ list, soft, setSoft, length, setLength }): React$Element<
       }
     </div>
 
-    <div>{filerList(list, length).length === 0 && '沒有篩選結果'}</div>
+    <div>{compose(softList(soft), filerList(length))(list).length === 0 && '沒有篩選結果'}</div>
 
     <style jsx>{`
       .ml-3 {
