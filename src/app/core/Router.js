@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 import loadable from 'react-loadable';
 
-import App from '~/App';
+import Home from '~/home/Home';
 import { CRUD } from '~/crud-operations/crud';
 import { REST } from '~/crud-operations/rest';
 import { GraphQL } from '~/crud-operations/graphql';
@@ -21,7 +21,7 @@ const Counter = loadable({
 const Router = () => (
   <div>
     <Switch>
-      <Route exact path="/" component={() => <div>Home</div>} />
+      <Route exact path="/" component={Home} />
 
       <Route path="/crud" component={CRUD} />
       <Route path="/rest" component={REST} />

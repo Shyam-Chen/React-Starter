@@ -6,8 +6,8 @@ export interface ICounter {
 
 export interface Props {
   counter: ICounter;
-  actions?: Object;
-  selectors?: Object;
+  actions: Object;
+  selectors: Object;
 }
 
 export const INITIAL: ICounter = { value: 0 };

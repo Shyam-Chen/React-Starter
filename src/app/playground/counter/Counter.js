@@ -13,7 +13,7 @@ import { Props } from './constants';
 import * as actions from './actions';
 import * as selectors from './selectors';
 
-export const Counter = ({ counter, actions, selectors }: Props): React.Element<Props> => (
+export const Counter = ({ counter, actions, selectors }: Props): React$Element<*> => (
   <div>
     <div className="typography">
       <Typography variant="headline" component="h3">
