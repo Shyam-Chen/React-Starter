@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import { compose, withState, withHandlers, lifecycle } from 'recompose';
+import { compose, withState, lifecycle } from 'recompose';
 import { Button, Icon } from 'material-ui';
 import axios from 'axios';
 
@@ -17,7 +17,7 @@ const timeString = (value: number): string => {
   return date.toISOString().substr(14, 5);
 };
 
-const filerList = (list, length) => {
+const filerList = length => (list) => {
   return list.filter((item) => {
     // < 4
     if (length === 'a') {
@@ -38,20 +38,20 @@ const filerList = (list, length) => {
   });
 };
 
-const softList = (array, soft) => {
+const softList = soft => (list) => {
   if (soft === 'publish') {
-    return array.sort((a, b) => a.publish - b.publish).reverse();
+    return list.sort((a, b) => a.publish - b.publish).reverse();
   }
 
   if (soft === 'views') {
-    return array.sort((a, b) => a.views - b.views).reverse();
+    return list.sort((a, b) => a.views - b.views).reverse();
   }
 
   if (soft === 'collectCount') {
-    return array.sort((a, b) => a.collectCount - b.collectCount).reverse();
+    return list.sort((a, b) => a.collectCount - b.collectCount).reverse();
   }
 
-  return array;
+  return list;
 };
 
 export const Home = ({ list, soft, setSoft, length, setLength }): React$Element<*> => (
@@ -77,7 +77,7 @@ export const Home = ({ list, soft, setSoft, length, setLength }): React$Element<
 
     <div className="grid">
       {
-        softList(filerList(list, length), soft).map(item => (
+        compose(softList(soft), filerList(length))(list).map(item => (
           <div key={item.id} className="card ma-3">
             <div className="card-media">
               <img src={item.thumbnail} alt="" className="card-image" />
