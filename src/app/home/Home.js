@@ -39,16 +39,8 @@ const filerList = length => (list) => {
 };
 
 const softList = soft => (list) => {
-  if (soft === 'publish') {
-    return list.sort((a, b) => a.publish - b.publish).reverse();
-  }
-
-  if (soft === 'views') {
-    return list.sort((a, b) => a.views - b.views).reverse();
-  }
-
-  if (soft === 'collectCount') {
-    return list.sort((a, b) => a.collectCount - b.collectCount).reverse();
+  if (soft) {
+    return list.sort((a, b) => a[soft] - b[soft]).reverse();
   }
 
   return list;
