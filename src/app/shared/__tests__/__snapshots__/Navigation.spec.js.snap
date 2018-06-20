@@ -53,13 +53,7 @@ ShallowWrapper {
               }
               variant="title"
             >
-              React by Example, location: 
-              <span
-                className="jsx-138544096 location"
-              >
-                blank
-              </span>
-              .
+              Oh My React
             </WithStyles(Typography)>
             <WithStyles(IconButton)
               color="inherit"
@@ -120,13 +114,7 @@ ShallowWrapper {
               }
               variant="title"
             >
-              React by Example, location: 
-              <span
-                className="jsx-138544096 location"
-              >
-                blank
-              </span>
-              .
+              Oh My React
             </WithStyles(Typography)>
             <WithStyles(IconButton)
               color="inherit"
@@ -175,13 +163,7 @@ ShallowWrapper {
                 }
                 variant="title"
               >
-                React by Example, location: 
-                <span
-                  className="jsx-138544096 location"
-                >
-                  blank
-                </span>
-                .
+                Oh My React
               </WithStyles(Typography)>,
               <WithStyles(IconButton)
                 color="inherit"
@@ -253,15 +235,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": Array [
-                  "React by Example, location: ",
-                  <span
-                    className="jsx-138544096 location"
-                  >
-                    blank
-                  </span>,
-                  ".",
-                ],
+                "children": "Oh My React",
                 "color": "inherit",
                 "style": Object {
                   "flex": "1 0 auto",
@@ -269,22 +243,7 @@ ShallowWrapper {
                 "variant": "title",
               },
               "ref": null,
-              "rendered": Array [
-                "React by Example, location: ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "blank",
-                    "className": "jsx-138544096 location",
-                  },
-                  "ref": null,
-                  "rendered": "blank",
-                  "type": "span",
-                },
-                ".",
-              ],
+              "rendered": "Oh My React",
               "type": [Function],
             },
             Object {
@@ -386,13 +345,7 @@ ShallowWrapper {
                 }
                 variant="title"
               >
-                React by Example, location: 
-                <span
-                  className="jsx-138544096 location"
-                >
-                  blank
-                </span>
-                .
+                Oh My React
               </WithStyles(Typography)>
               <WithStyles(IconButton)
                 color="inherit"
@@ -453,13 +406,7 @@ ShallowWrapper {
                 }
                 variant="title"
               >
-                React by Example, location: 
-                <span
-                  className="jsx-138544096 location"
-                >
-                  blank
-                </span>
-                .
+                Oh My React
               </WithStyles(Typography)>
               <WithStyles(IconButton)
                 color="inherit"
@@ -508,13 +455,7 @@ ShallowWrapper {
                   }
                   variant="title"
                 >
-                  React by Example, location: 
-                  <span
-                    className="jsx-138544096 location"
-                  >
-                    blank
-                  </span>
-                  .
+                  Oh My React
                 </WithStyles(Typography)>,
                 <WithStyles(IconButton)
                   color="inherit"
@@ -586,15 +527,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": Array [
-                    "React by Example, location: ",
-                    <span
-                      className="jsx-138544096 location"
-                    >
-                      blank
-                    </span>,
-                    ".",
-                  ],
+                  "children": "Oh My React",
                   "color": "inherit",
                   "style": Object {
                     "flex": "1 0 auto",
@@ -602,22 +535,7 @@ ShallowWrapper {
                   "variant": "title",
                 },
                 "ref": null,
-                "rendered": Array [
-                  "React by Example, location: ",
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "blank",
-                      "className": "jsx-138544096 location",
-                    },
-                    "ref": null,
-                    "rendered": "blank",
-                    "type": "span",
-                  },
-                  ".",
-                ],
+                "rendered": "Oh My React",
                 "type": [Function],
               },
               Object {
