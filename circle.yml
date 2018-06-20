@@ -53,3 +53,15 @@ jobs:
       #       docker login -u="Shyam Chen" -p="${HEROKU_TOKEN}" registry.heroku.com
       #       docker build -f Dockerfile.prod -t registry.heroku.com/react-by-example/web .
       #       docker push registry.heroku.com/react-by-example/web
+
+# workflows:
+#   version: 2
+#   build-test-deploy:
+#     jobs:
+#       - build
+#       - test:
+#           requires:
+#             - build
+#       - deploy:
+#           requires:
+#             - test

@@ -6,13 +6,13 @@ import { compose } from 'recompose';
 import SoftFilerList from './SoftFilerList';
 
 export const Home = (): React$Element<*> => (
-  <div className="home">
+  <div id="home">
     <h1>Oh My React</h1>
 
     <SoftFilerList />
 
     <style jsx>{`
-      .home {}
+      #home {}
     `}</style>
   </div>
 );
