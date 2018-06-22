@@ -3,13 +3,13 @@
 import React from 'react';
 import { compose } from 'recompose';
 
-import SoftFilerList from './SoftFilerList';
+import SortFilterList from './SortFilterList';
 
 export const Home = (): React$Element<*> => (
   <div id="home">
     <h1>Oh My React</h1>
 
-    <SoftFilerList />
+    <SortFilterList />
 
     <style jsx>{`
       #home {}
