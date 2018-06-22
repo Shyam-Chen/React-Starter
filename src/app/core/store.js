@@ -47,19 +47,21 @@ const rootSaga = function *() {
 
 export default (history) => {
   const sagaMiddleware = createSagaMiddleware();
+  const epicMiddleware = createEpicMiddleware();
 
   const store = createStore(
     connectRouter(history)(rootReducer),
     applyMiddleware(
       routerMiddleware(history),
       thunkMiddleware,
-      createEpicMiddleware(rootEpic),
+      epicMiddleware,
       sagaMiddleware,
       createLogger({ diff: true }),
     ),
   );
 
   sagaMiddleware.run(rootSaga);
+  epicMiddleware.run(rootEpic);
 
   return store;
 };
