@@ -16,45 +16,30 @@ const convertSeconds = (value: number): string => {
   const minute = Math.round(value / 60);
 
   if (second < 10) return `${minute}:0${second}`;
-
   return `${minute}:${second}`;
 };
 
 const timeSince = (date) => {
-  const d = new Date(1529585376100);
+  const ago = new Date(date * 1000);
   const now = new Date();
 
-  const seconds = Math.round(Math.abs((now.getTime() - d.getTime()) / 1000));
+  const seconds = Math.round(Math.abs((now.getTime() - ago.getTime()) / 1000));
   const minutes = Math.round(Math.abs(seconds / 60));
   const hours = Math.round(Math.abs(minutes / 60));
   const days = Math.round(Math.abs(hours / 24));
   const months = Math.round(Math.abs(days / 30.416));
   const years = Math.round(Math.abs(days / 365));
 
-  if (Number.isNaN(seconds)) {
-    return '';
-  } else if (seconds <= 45) {
-    return 'a few seconds ago';
-  } else if (seconds <= 90) {
-    return 'a minute ago';
-  } else if (minutes <= 45) {
-    return `${minutes} minutes ago`;
-  } else if (minutes <= 90) {
-    return 'an hour ago';
-  } else if (hours <= 22) {
-    return `${hours} hours ago`;
-  } else if (hours <= 36) {
-    return 'a day ago';
-  } else if (days <= 25) {
-    return `${days} days ago`;
-  } else if (days <= 45) {
-    return 'a month ago';
-  } else if (days <= 345) {
-    return `${months} months ago`;
-  } else if (days <= 545) {
-    return 'a year ago';
-  }
-
+  if (seconds <= 45) return 'a few seconds ago';
+  if (seconds <= 90) return 'a minute ago';
+  if (minutes <= 45) return `${minutes} minutes ago`;
+  if (minutes <= 90) return 'an hour ago';
+  if (hours <= 22) return `${hours} hours ago`;
+  if (hours <= 36) return 'a day ago';
+  if (days <= 25) return `${days} days ago`;
+  if (days <= 45) return 'a month ago';
+  if (days <= 345) return `${months} months ago`;
+  if (days <= 545) return 'a year ago';
   return `${years} years ago`;
 };
 
@@ -69,65 +54,62 @@ const filerList = (length: string) => (list) => {
 };
 
 const sortList = (sort: string) => (list) => {
-  if (sort === 'published') {
-    return list.sort((a, b) => a.publish - b.publish).reverse();
-  }
+  const typedList = type => list.sort((a, b) => a[type] - b[type]).reverse();
 
-  if (sort === 'views') {
-    return list.sort((a, b) => a.views - b.views).reverse();
-  }
-
-  if (sort === 'collections') {
-    return list.sort((a, b) => a.collectCount - b.collectCount).reverse();
-  }
+  if (sort === 'published') return typedList('publish');
+  if (sort === 'views') return typedList('views');
+  if (sort === 'collections') return typedList('collectCount');
 
   return list;
 };
 
-export const Home = ({ list, sort, setSort, length, setLength }): React$Element<*> => (
-  <div>
-    <div className="nav">
-      <div>
-        <span className="mr-3">Sort</span>
-        <span className="ma-2"><Button variant="raised" color={sort === 'published' ? 'primary' : 'default'} onClick={() => setSort('published')}>Published</Button></span>
-        <span className="ma-2"><Button variant="raised" color={sort === 'views' ? 'primary' : 'default'} onClick={() => setSort('views')}>Views</Button></span>
-        <span className="ma-2"><Button variant="raised" color={sort === 'collections' ? 'primary' : 'default'} onClick={() => setSort('collections')}>Collections</Button></span>
+export const Home = ({ list, sort, setSort, length, setLength }): React$Element<*> => {
+  const composeList = compose(sortList(sort), filerList(length))(list);
+
+  return (
+    <div>
+      <div className="nav">
+        <div>
+          <span className="mr-3">Sort</span>
+          <span className="ma-2"><Button variant="raised" color={sort === 'published' ? 'primary' : 'default'} onClick={() => setSort('published')}>Published</Button></span>
+          <span className="ma-2"><Button variant="raised" color={sort === 'views' ? 'primary' : 'default'} onClick={() => setSort('views')}>Views</Button></span>
+          <span className="ma-2"><Button variant="raised" color={sort === 'collections' ? 'primary' : 'default'} onClick={() => setSort('collections')}>Collections</Button></span>
+        </div>
+
+        <div>
+          <span className="ml-3 mr-3">Length</span>
+          <span className="ma-2"><Button variant="raised" color={length === 'any' ? 'primary' : 'default'} onClick={() => setLength('any')}>Any</Button></span>
+          <span className="ma-2"><Button variant="raised" color={length === 'lessThanFive' ? 'primary' : 'default'} onClick={() => setLength('lessThanFive')}>Less than five minutes</Button></span>
+          <span className="ma-2"><Button variant="raised" color={length === 'fiveToTen' ? 'primary' : 'default'} onClick={() => setLength('fiveToTen')}>Five to ten minutes</Button></span>
+          <span className="ma-2"><Button variant="raised" color={length === 'moreThanTen' ? 'primary' : 'default'} onClick={() => setLength('moreThanTen')}>More than ten minutes</Button></span>
+        </div>
       </div>
 
-      <div>
-        <span className="ml-3 mr-3">Length</span>
-        <span className="ma-2"><Button variant="raised" color={length === 'any' ? 'primary' : 'default'} onClick={() => setLength('any')}>Any</Button></span>
-        <span className="ma-2"><Button variant="raised" color={length === 'lessThanFive' ? 'primary' : 'default'} onClick={() => setLength('lessThanFive')}>Less than five minutes</Button></span>
-        <span className="ma-2"><Button variant="raised" color={length === 'fiveToTen' ? 'primary' : 'default'} onClick={() => setLength('fiveToTen')}>Five to ten minutes</Button></span>
-        <span className="ma-2"><Button variant="raised" color={length === 'moreThanTen' ? 'primary' : 'default'} onClick={() => setLength('moreThanTen')}>More than ten minutes</Button></span>
-      </div>
-    </div>
+      <div className="grid">
+        {
+          composeList.map(item => (
+            <div key={item.id} className="card ma-3">
+              <div className="card-media">
+                <img src={item.thumbnail} alt="" className="card-image" />
+                <div>
+                  <span className="black white--text pa-1 card-time">{convertSeconds(item.duration)}</span>
+                </div>
+              </div>
 
-    <div className="grid">
-      {
-        compose(sortList(sort), filerList(length))(list).map(item => (
-          <div key={item.id} className="card ma-3">
-            <div className="card-media">
-              <img src={item.thumbnail} alt="" className="card-image" />
-              <div>
-                <span className="black white--text pa-1 card-time">{convertSeconds(item.duration)}</span>
+              <div className="card-content">
+                <div className="pl-2 pr-2">{truncate(item.title, 55)}</div>
+                <div className="ma-2 icon"><Icon>headset</Icon> {item.views.toLocaleString('en-US')}</div>
+                <div><Icon>event</Icon>{timeSince(item.publish)}</div>
+                <div><Icon>video_library</Icon>{item.collectCount.toLocaleString('en-US')}</div>
               </div>
             </div>
+          ))
+        }
+      </div>
 
-            <div className="card-content">
-              <div className="pl-2 pr-2">{truncate(item.title, 55)}</div>
-              <div className="ma-2 icon"><Icon>headset</Icon> {item.views.toLocaleString('en-US')}</div>
-              <div><Icon>event</Icon>{timeSince(item.publish)}</div>
-              <div><Icon>video_library</Icon>{item.collectCount.toLocaleString('en-US')}</div>
-            </div>
-          </div>
-        ))
-      }
-    </div>
+      <div>{composeList.length === 0 && 'No results'}</div>
 
-    <div>{compose(sortList(sort), filerList(length))(list).length === 0 && 'No results'}</div>
-
-    <style jsx>{`
+      <style jsx>{`
       .ml-3 {
         margin-left: 1rem;
       }
@@ -155,7 +137,6 @@ export const Home = ({ list, sort, setSort, length, setLength }): React$Element<
       .grid {
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
         max-width: 1280px;
       }
 
@@ -204,8 +185,9 @@ export const Home = ({ list, sort, setSort, length, setLength }): React$Element<
         align-self: center;
       }
     `}</style>
-  </div>
-);
+    </div>
+  );
+};
 
 export default compose(
   withState('list', 'setList', []),
