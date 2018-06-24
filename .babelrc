@@ -35,16 +35,6 @@
             "material-ui": {
               "transform": "material-ui/${member}",
               "preventFullImport": true
-            },
-            "rxjs/observable": {
-              "transform": "rxjs/observable/${member}",
-              "preventFullImport": true,
-              "skipDefaultConversion": true
-            },
-            "rxjs/operator": {
-              "transform": "rxjs/operator/${member}",
-              "preventFullImport": true,
-              "skipDefaultConversion": true
             }
           }
         ]
@@ -71,20 +61,6 @@
               "rootPathSuffix": "src/api"
             }
           ]
-        ],
-        [
-          "transform-imports", {
-            "rxjs/observable": {
-              "transform": "rxjs/observable/${member}",
-              "preventFullImport": true,
-              "skipDefaultConversion": true
-            },
-            "rxjs/operator": {
-              "transform": "rxjs/operator/${member}",
-              "preventFullImport": true,
-              "skipDefaultConversion": true
-            }
-          }
         ]
       ]
     }

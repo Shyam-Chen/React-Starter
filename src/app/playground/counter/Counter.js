@@ -9,7 +9,7 @@ import { Typography } from 'material-ui';
 
 import Button from '~/shared/Button';
 
-import { Props } from './constants';
+import { Props } from './types';
 import * as actions from './actions';
 import * as selectors from './selectors';
 

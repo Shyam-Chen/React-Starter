@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -8,7 +10,7 @@ import Routes from '~/core/Router';
 
 import * as actions from './actions';
 
-const App = ({ history }) => (
+const App = ({ history }): React$Element<*> => (
   <div id="app">
     <ConnectedRouter history={history}>
       <div>

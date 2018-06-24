@@ -1,31 +1,81 @@
-import { join } from 'path';
+import * as functions from 'firebase-functions';
+import * as admin from 'firebase-admin';
 import express from 'express';
+import { graphqlExpress } from 'apollo-server-express';
 import compression from 'compression';
 import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
-import history from 'express-history-api-fallback';
+import request from 'request';
+import Raven from 'raven';
 
-const app = express();
+import routes from './api';
+import schema from './api/graphql';
 
-app.set('port', process.env.PORT || 3000);
-
-app.use(compression());
-app.use(cors());
-app.use(morgan('tiny'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+admin.initializeApp();
 
 if (process.env.NODE_ENV === 'production') {
-  const root = join(__dirname, '../build');
-
-  app.use(express.static(root));
-  app.use(history('index.html', { root }));
+  Raven.config(process.env.SENTRY_DSN).install();
 }
 
-const api = app.listen(app.get('port'), (): void => {
-  console.log('App: Bootstrap Succeeded.');
-  console.log(`Port: ${app.get('port')}.`);
+const vm = express();
+
+if (process.env.NODE_ENV === 'production') {
+  vm.use(Raven.requestHandler());
+}
+
+vm.use(compression());
+vm.use(cors({ origin: true }));
+vm.use(morgan('tiny'));
+vm.use(bodyParser.json());
+vm.use(bodyParser.urlencoded({ extended: false }));
+
+vm.use('/', routes);
+vm.use('/graphql', graphqlExpress({ schema }));
+
+if (process.env.NODE_ENV === 'production') {
+  vm.use(Raven.errorHandler());
+}
+
+export const api = functions.https.onRequest(vm);
+
+// -
+
+const sh = express();
+
+sh.get('*', (req, res) => {
+  const botUserAgents = [
+    'W3C_Validator',
+    'baiduspider',
+    'bingbot',
+    'embedly',
+    'facebookexternalhit',
+    'linkedinbot',
+    'outbrain',
+    'pinterest',
+    'quora link preview',
+    'rogerbot',
+    'showyoubot',
+    'slackbot',
+    'twitterbot',
+    'vkShare',
+  ];
+
+  const rendertronUrl = process.env.RENDERTRON_URL;
+  const targetUrl = process.env.SITE_URL + req.originalUrl;
+
+  if (new RegExp(botUserAgents.join('|'), 'i').test(req.headers['user-agent'])) {
+    request(`${rendertronUrl}/render/${targetUrl}`, (error, response, body) => {
+      res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
+      res.set('Vary', 'User-Agent');
+
+      res.send(`${body}`);
+    });
+  } else {
+    request(process.env.SITE_URL, (error, response, body) => {
+      res.send(`${body}`);
+    });
+  }
 });
 
-export default api;
+export const app = functions.https.onRequest(sh);

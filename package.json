@@ -4,9 +4,9 @@
   "description": "A boilerplate for React, Material, Express, Babel, Flow, and ReactiveX.",
   "scripts": {
     "start:app": "rimraf public && cross-env BABEL_ENV=app webpack-dev-server --progress",
-    "start:api": "cross-env BABEL_ENV=api nodemon src/server.js --exec babel-node",
+    "start:api": "rimraf functions && cross-env BABEL_ENV=api gulp",
     "build:app": "rimraf public && cross-env BABEL_ENV=app webpack --env.prod",
-    "build:api": "cross-env BABEL_ENV=api babel src -d dist --ignore client.js,polyfill.js,app",
+    "build:api": "rimraf functions && cross-env BABEL_ENV=api gulp --prod",
     "lint:app": "echo \"TODO\"",
     "lint:api": "echo \"TODO\"",
     "test:app": "cross-env BABEL_ENV=app JEST_ENV=app jest \"src/app/.*\\.js$\" --coverage --forceExit",

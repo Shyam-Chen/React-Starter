@@ -1,18 +1,10 @@
 // @flow
 
-export interface ICounter {
-  value: number;
-}
+import { ICounter } from './types';
 
-export interface Props {
-  counter: ICounter;
-  actions: Object;
-  selectors: Object;
-}
-
-export const INITIAL: ICounter = { value: 0 };
-
-export const MEMOIZE = (counter: ICounter): ICounter => counter;
+export const INITIAL: ICounter = {
+  value: 0,
+};
 
 export const INCREMENT = '[Counter] INCREMENT';
 export const DECREMENT = '[Counter] DECREMENT';
