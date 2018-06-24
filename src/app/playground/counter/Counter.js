@@ -31,32 +31,32 @@ export const Counter = ({ counter, actions, selectors }: Props): React$Element<*
 
     <div className="typography">
       <Typography variant="body1" component="p">
-        <Button raised color="indigo" onClick={actions.incrementAsync}>Increment (Async)</Button> {' '}
-        <Button raised color="pink" onClick={actions.decrementAsync}>Decrement (Async)</Button> {' '}
-        <Button raised color="deepPurple" onClick={actions.resetAsync}>Reset (Async)</Button>
+        <Button raised color="indigo" onClick={actions.incrementAsync}>Increment (Async, Thunk)</Button> {' '}
+        <Button raised color="pink" onClick={actions.decrementAsync}>Decrement (Async, Observable)</Button> {' '}
+        <Button raised color="deepPurple" onClick={actions.resetAsync}>Reset (Async, Saga)</Button>
       </Typography>
     </div>
 
     <div className="typography">
       <Typography variant="body1" component="p">
-        <Button raised color="indigo" onClick={actions.incrementIfEven}>Increment (If Even)</Button> {' '}
-        <Button raised color="pink" onClick={actions.decrementIfEven}>Decrement (If Even)</Button> {' '}
-        <Button raised color="deepPurple" onClick={actions.resetIfEven}>Reset (If Even)</Button>
+        <Button raised color="indigo" onClick={actions.incrementIfEven}>Increment (If Even, Thunk)</Button> {' '}
+        <Button raised color="pink" onClick={actions.decrementIfEven}>Decrement (If Even, Observable)</Button> {' '}
+        <Button raised color="deepPurple" onClick={actions.resetIfEven}>Reset (If Even, Saga)</Button>
       </Typography>
     </div>
 
     <div className="typography">
       <Typography variant="body1" component="p">
-        <Button raised color="indigo" onClick={actions.incrementIfOdd}>Increment (If Odd)</Button> {' '}
-        <Button raised color="pink" onClick={actions.decrementIfOdd}>Decrement (If Odd)</Button> {' '}
-        <Button raised color="deepPurple" onClick={actions.resetIfOdd}>Reset (If Odd)</Button>
+        <Button raised color="indigo" onClick={actions.incrementIfOdd}>Increment (If Odd, Thunk)</Button> {' '}
+        <Button raised color="pink" onClick={actions.decrementIfOdd}>Decrement (If Odd, Observable)</Button> {' '}
+        <Button raised color="deepPurple" onClick={actions.resetIfOdd}>Reset (If Odd, Saga)</Button>
       </Typography>
     </div>
 
     <div className="typography">
       <Typography variant="body1" component="p">
-        <Button raised color="red" onClick={actions.startCount}>Start count</Button> {' '}
-        <Button raised color="red" onClick={actions.cancelCount}>Cancel count</Button>
+        <Button raised color="red" onClick={actions.startCount}>Start count (Observable)</Button> {' '}
+        <Button raised color="red" onClick={actions.cancelCount}>Cancel count (Observable)</Button>
       </Typography>
     </div>
 

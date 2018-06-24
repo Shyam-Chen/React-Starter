@@ -22,9 +22,9 @@ export const searchItemEpic = action$ =>
           from(axios.get(API_LIST, { params: { text } }))
             .pipe(
               map(({ data }) => success(data)),
-              catchError(error => Observable:: of(failure(error))),
+              catchError(error => of(failure(error))),
             ),
-          of(setData({ loading: false }))
+          of(setData({ loading: false })),
         ),
       ),
     );

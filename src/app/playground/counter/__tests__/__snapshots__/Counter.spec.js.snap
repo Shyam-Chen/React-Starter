@@ -139,7 +139,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Increment (Async)
+              Increment (Async, Thunk)
             </WithStyles(_Button)>
              
              
@@ -148,7 +148,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Decrement (Async)
+              Decrement (Async, Observable)
             </WithStyles(_Button)>
              
              
@@ -157,7 +157,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Reset (Async)
+              Reset (Async, Saga)
             </WithStyles(_Button)>
           </WithStyles(Typography)>
         </div>,
@@ -173,7 +173,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Increment (If Even)
+              Increment (If Even, Thunk)
             </WithStyles(_Button)>
              
              
@@ -182,7 +182,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Decrement (If Even)
+              Decrement (If Even, Observable)
             </WithStyles(_Button)>
              
              
@@ -191,7 +191,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Reset (If Even)
+              Reset (If Even, Saga)
             </WithStyles(_Button)>
           </WithStyles(Typography)>
         </div>,
@@ -207,7 +207,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Increment (If Odd)
+              Increment (If Odd, Thunk)
             </WithStyles(_Button)>
              
              
@@ -216,7 +216,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Decrement (If Odd)
+              Decrement (If Odd, Observable)
             </WithStyles(_Button)>
              
              
@@ -225,7 +225,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Reset (If Odd)
+              Reset (If Odd, Saga)
             </WithStyles(_Button)>
           </WithStyles(Typography)>
         </div>,
@@ -241,7 +241,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Start count
+              Start count (Observable)
             </WithStyles(_Button)>
              
              
@@ -250,7 +250,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Cancel count
+              Cancel count (Observable)
             </WithStyles(_Button)>
           </WithStyles(Typography)>
         </div>,
@@ -448,7 +448,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Increment (Async)
+              Increment (Async, Thunk)
             </WithStyles(_Button)>
              
              
@@ -457,7 +457,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Decrement (Async)
+              Decrement (Async, Observable)
             </WithStyles(_Button)>
              
              
@@ -466,7 +466,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Reset (Async)
+              Reset (Async, Saga)
             </WithStyles(_Button)>
           </WithStyles(Typography)>,
           "className": "jsx-3956918113 typography",
@@ -483,7 +483,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Increment (Async)
+                Increment (Async, Thunk)
               </WithStyles(_Button)>,
               " ",
               " ",
@@ -492,7 +492,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Decrement (Async)
+                Decrement (Async, Observable)
               </WithStyles(_Button)>,
               " ",
               " ",
@@ -501,7 +501,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Reset (Async)
+                Reset (Async, Saga)
               </WithStyles(_Button)>,
             ],
             "component": "p",
@@ -514,13 +514,13 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "Increment (Async)",
+                "children": "Increment (Async, Thunk)",
                 "color": "indigo",
                 "onClick": [Function],
                 "raised": true,
               },
               "ref": null,
-              "rendered": "Increment (Async)",
+              "rendered": "Increment (Async, Thunk)",
               "type": [Function],
             },
             " ",
@@ -530,13 +530,13 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "Decrement (Async)",
+                "children": "Decrement (Async, Observable)",
                 "color": "pink",
                 "onClick": [Function],
                 "raised": true,
               },
               "ref": null,
-              "rendered": "Decrement (Async)",
+              "rendered": "Decrement (Async, Observable)",
               "type": [Function],
             },
             " ",
@@ -546,13 +546,13 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "Reset (Async)",
+                "children": "Reset (Async, Saga)",
                 "color": "deepPurple",
                 "onClick": [Function],
                 "raised": true,
               },
               "ref": null,
-              "rendered": "Reset (Async)",
+              "rendered": "Reset (Async, Saga)",
               "type": [Function],
             },
           ],
@@ -574,7 +574,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Increment (If Even)
+              Increment (If Even, Thunk)
             </WithStyles(_Button)>
              
              
@@ -583,7 +583,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Decrement (If Even)
+              Decrement (If Even, Observable)
             </WithStyles(_Button)>
              
              
@@ -592,7 +592,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Reset (If Even)
+              Reset (If Even, Saga)
             </WithStyles(_Button)>
           </WithStyles(Typography)>,
           "className": "jsx-3956918113 typography",
@@ -609,7 +609,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Increment (If Even)
+                Increment (If Even, Thunk)
               </WithStyles(_Button)>,
               " ",
               " ",
@@ -618,7 +618,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Decrement (If Even)
+                Decrement (If Even, Observable)
               </WithStyles(_Button)>,
               " ",
               " ",
@@ -627,7 +627,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Reset (If Even)
+                Reset (If Even, Saga)
               </WithStyles(_Button)>,
             ],
             "component": "p",
@@ -640,13 +640,13 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "Increment (If Even)",
+                "children": "Increment (If Even, Thunk)",
                 "color": "indigo",
                 "onClick": [Function],
                 "raised": true,
               },
               "ref": null,
-              "rendered": "Increment (If Even)",
+              "rendered": "Increment (If Even, Thunk)",
               "type": [Function],
             },
             " ",
@@ -656,13 +656,13 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "Decrement (If Even)",
+                "children": "Decrement (If Even, Observable)",
                 "color": "pink",
                 "onClick": [Function],
                 "raised": true,
               },
               "ref": null,
-              "rendered": "Decrement (If Even)",
+              "rendered": "Decrement (If Even, Observable)",
               "type": [Function],
             },
             " ",
@@ -672,13 +672,13 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "Reset (If Even)",
+                "children": "Reset (If Even, Saga)",
                 "color": "deepPurple",
                 "onClick": [Function],
                 "raised": true,
               },
               "ref": null,
-              "rendered": "Reset (If Even)",
+              "rendered": "Reset (If Even, Saga)",
               "type": [Function],
             },
           ],
@@ -700,7 +700,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Increment (If Odd)
+              Increment (If Odd, Thunk)
             </WithStyles(_Button)>
              
              
@@ -709,7 +709,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Decrement (If Odd)
+              Decrement (If Odd, Observable)
             </WithStyles(_Button)>
              
              
@@ -718,7 +718,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Reset (If Odd)
+              Reset (If Odd, Saga)
             </WithStyles(_Button)>
           </WithStyles(Typography)>,
           "className": "jsx-3956918113 typography",
@@ -735,7 +735,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Increment (If Odd)
+                Increment (If Odd, Thunk)
               </WithStyles(_Button)>,
               " ",
               " ",
@@ -744,7 +744,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Decrement (If Odd)
+                Decrement (If Odd, Observable)
               </WithStyles(_Button)>,
               " ",
               " ",
@@ -753,7 +753,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Reset (If Odd)
+                Reset (If Odd, Saga)
               </WithStyles(_Button)>,
             ],
             "component": "p",
@@ -766,13 +766,13 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "Increment (If Odd)",
+                "children": "Increment (If Odd, Thunk)",
                 "color": "indigo",
                 "onClick": [Function],
                 "raised": true,
               },
               "ref": null,
-              "rendered": "Increment (If Odd)",
+              "rendered": "Increment (If Odd, Thunk)",
               "type": [Function],
             },
             " ",
@@ -782,13 +782,13 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "Decrement (If Odd)",
+                "children": "Decrement (If Odd, Observable)",
                 "color": "pink",
                 "onClick": [Function],
                 "raised": true,
               },
               "ref": null,
-              "rendered": "Decrement (If Odd)",
+              "rendered": "Decrement (If Odd, Observable)",
               "type": [Function],
             },
             " ",
@@ -798,13 +798,13 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "Reset (If Odd)",
+                "children": "Reset (If Odd, Saga)",
                 "color": "deepPurple",
                 "onClick": [Function],
                 "raised": true,
               },
               "ref": null,
-              "rendered": "Reset (If Odd)",
+              "rendered": "Reset (If Odd, Saga)",
               "type": [Function],
             },
           ],
@@ -826,7 +826,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Start count
+              Start count (Observable)
             </WithStyles(_Button)>
              
              
@@ -835,7 +835,7 @@ ShallowWrapper {
               onClick={[Function]}
               raised={true}
             >
-              Cancel count
+              Cancel count (Observable)
             </WithStyles(_Button)>
           </WithStyles(Typography)>,
           "className": "jsx-3956918113 typography",
@@ -852,7 +852,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Start count
+                Start count (Observable)
               </WithStyles(_Button)>,
               " ",
               " ",
@@ -861,7 +861,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Cancel count
+                Cancel count (Observable)
               </WithStyles(_Button)>,
             ],
             "component": "p",
@@ -874,13 +874,13 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "Start count",
+                "children": "Start count (Observable)",
                 "color": "red",
                 "onClick": [Function],
                 "raised": true,
               },
               "ref": null,
-              "rendered": "Start count",
+              "rendered": "Start count (Observable)",
               "type": [Function],
             },
             " ",
@@ -890,13 +890,13 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "Cancel count",
+                "children": "Cancel count (Observable)",
                 "color": "red",
                 "onClick": [Function],
                 "raised": true,
               },
               "ref": null,
-              "rendered": "Cancel count",
+              "rendered": "Cancel count (Observable)",
               "type": [Function],
             },
           ],
@@ -986,7 +986,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Increment (Async)
+                Increment (Async, Thunk)
               </WithStyles(_Button)>
                
                
@@ -995,7 +995,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Decrement (Async)
+                Decrement (Async, Observable)
               </WithStyles(_Button)>
                
                
@@ -1004,7 +1004,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Reset (Async)
+                Reset (Async, Saga)
               </WithStyles(_Button)>
             </WithStyles(Typography)>
           </div>,
@@ -1020,7 +1020,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Increment (If Even)
+                Increment (If Even, Thunk)
               </WithStyles(_Button)>
                
                
@@ -1029,7 +1029,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Decrement (If Even)
+                Decrement (If Even, Observable)
               </WithStyles(_Button)>
                
                
@@ -1038,7 +1038,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Reset (If Even)
+                Reset (If Even, Saga)
               </WithStyles(_Button)>
             </WithStyles(Typography)>
           </div>,
@@ -1054,7 +1054,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Increment (If Odd)
+                Increment (If Odd, Thunk)
               </WithStyles(_Button)>
                
                
@@ -1063,7 +1063,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Decrement (If Odd)
+                Decrement (If Odd, Observable)
               </WithStyles(_Button)>
                
                
@@ -1072,7 +1072,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Reset (If Odd)
+                Reset (If Odd, Saga)
               </WithStyles(_Button)>
             </WithStyles(Typography)>
           </div>,
@@ -1088,7 +1088,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Start count
+                Start count (Observable)
               </WithStyles(_Button)>
                
                
@@ -1097,7 +1097,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Cancel count
+                Cancel count (Observable)
               </WithStyles(_Button)>
             </WithStyles(Typography)>
           </div>,
@@ -1295,7 +1295,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Increment (Async)
+                Increment (Async, Thunk)
               </WithStyles(_Button)>
                
                
@@ -1304,7 +1304,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Decrement (Async)
+                Decrement (Async, Observable)
               </WithStyles(_Button)>
                
                
@@ -1313,7 +1313,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Reset (Async)
+                Reset (Async, Saga)
               </WithStyles(_Button)>
             </WithStyles(Typography)>,
             "className": "jsx-3956918113 typography",
@@ -1330,7 +1330,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   raised={true}
                 >
-                  Increment (Async)
+                  Increment (Async, Thunk)
                 </WithStyles(_Button)>,
                 " ",
                 " ",
@@ -1339,7 +1339,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   raised={true}
                 >
-                  Decrement (Async)
+                  Decrement (Async, Observable)
                 </WithStyles(_Button)>,
                 " ",
                 " ",
@@ -1348,7 +1348,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   raised={true}
                 >
-                  Reset (Async)
+                  Reset (Async, Saga)
                 </WithStyles(_Button)>,
               ],
               "component": "p",
@@ -1361,13 +1361,13 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Increment (Async)",
+                  "children": "Increment (Async, Thunk)",
                   "color": "indigo",
                   "onClick": [Function],
                   "raised": true,
                 },
                 "ref": null,
-                "rendered": "Increment (Async)",
+                "rendered": "Increment (Async, Thunk)",
                 "type": [Function],
               },
               " ",
@@ -1377,13 +1377,13 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Decrement (Async)",
+                  "children": "Decrement (Async, Observable)",
                   "color": "pink",
                   "onClick": [Function],
                   "raised": true,
                 },
                 "ref": null,
-                "rendered": "Decrement (Async)",
+                "rendered": "Decrement (Async, Observable)",
                 "type": [Function],
               },
               " ",
@@ -1393,13 +1393,13 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Reset (Async)",
+                  "children": "Reset (Async, Saga)",
                   "color": "deepPurple",
                   "onClick": [Function],
                   "raised": true,
                 },
                 "ref": null,
-                "rendered": "Reset (Async)",
+                "rendered": "Reset (Async, Saga)",
                 "type": [Function],
               },
             ],
@@ -1421,7 +1421,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Increment (If Even)
+                Increment (If Even, Thunk)
               </WithStyles(_Button)>
                
                
@@ -1430,7 +1430,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Decrement (If Even)
+                Decrement (If Even, Observable)
               </WithStyles(_Button)>
                
                
@@ -1439,7 +1439,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Reset (If Even)
+                Reset (If Even, Saga)
               </WithStyles(_Button)>
             </WithStyles(Typography)>,
             "className": "jsx-3956918113 typography",
@@ -1456,7 +1456,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   raised={true}
                 >
-                  Increment (If Even)
+                  Increment (If Even, Thunk)
                 </WithStyles(_Button)>,
                 " ",
                 " ",
@@ -1465,7 +1465,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   raised={true}
                 >
-                  Decrement (If Even)
+                  Decrement (If Even, Observable)
                 </WithStyles(_Button)>,
                 " ",
                 " ",
@@ -1474,7 +1474,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   raised={true}
                 >
-                  Reset (If Even)
+                  Reset (If Even, Saga)
                 </WithStyles(_Button)>,
               ],
               "component": "p",
@@ -1487,13 +1487,13 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Increment (If Even)",
+                  "children": "Increment (If Even, Thunk)",
                   "color": "indigo",
                   "onClick": [Function],
                   "raised": true,
                 },
                 "ref": null,
-                "rendered": "Increment (If Even)",
+                "rendered": "Increment (If Even, Thunk)",
                 "type": [Function],
               },
               " ",
@@ -1503,13 +1503,13 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Decrement (If Even)",
+                  "children": "Decrement (If Even, Observable)",
                   "color": "pink",
                   "onClick": [Function],
                   "raised": true,
                 },
                 "ref": null,
-                "rendered": "Decrement (If Even)",
+                "rendered": "Decrement (If Even, Observable)",
                 "type": [Function],
               },
               " ",
@@ -1519,13 +1519,13 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Reset (If Even)",
+                  "children": "Reset (If Even, Saga)",
                   "color": "deepPurple",
                   "onClick": [Function],
                   "raised": true,
                 },
                 "ref": null,
-                "rendered": "Reset (If Even)",
+                "rendered": "Reset (If Even, Saga)",
                 "type": [Function],
               },
             ],
@@ -1547,7 +1547,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Increment (If Odd)
+                Increment (If Odd, Thunk)
               </WithStyles(_Button)>
                
                
@@ -1556,7 +1556,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Decrement (If Odd)
+                Decrement (If Odd, Observable)
               </WithStyles(_Button)>
                
                
@@ -1565,7 +1565,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Reset (If Odd)
+                Reset (If Odd, Saga)
               </WithStyles(_Button)>
             </WithStyles(Typography)>,
             "className": "jsx-3956918113 typography",
@@ -1582,7 +1582,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   raised={true}
                 >
-                  Increment (If Odd)
+                  Increment (If Odd, Thunk)
                 </WithStyles(_Button)>,
                 " ",
                 " ",
@@ -1591,7 +1591,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   raised={true}
                 >
-                  Decrement (If Odd)
+                  Decrement (If Odd, Observable)
                 </WithStyles(_Button)>,
                 " ",
                 " ",
@@ -1600,7 +1600,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   raised={true}
                 >
-                  Reset (If Odd)
+                  Reset (If Odd, Saga)
                 </WithStyles(_Button)>,
               ],
               "component": "p",
@@ -1613,13 +1613,13 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Increment (If Odd)",
+                  "children": "Increment (If Odd, Thunk)",
                   "color": "indigo",
                   "onClick": [Function],
                   "raised": true,
                 },
                 "ref": null,
-                "rendered": "Increment (If Odd)",
+                "rendered": "Increment (If Odd, Thunk)",
                 "type": [Function],
               },
               " ",
@@ -1629,13 +1629,13 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Decrement (If Odd)",
+                  "children": "Decrement (If Odd, Observable)",
                   "color": "pink",
                   "onClick": [Function],
                   "raised": true,
                 },
                 "ref": null,
-                "rendered": "Decrement (If Odd)",
+                "rendered": "Decrement (If Odd, Observable)",
                 "type": [Function],
               },
               " ",
@@ -1645,13 +1645,13 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Reset (If Odd)",
+                  "children": "Reset (If Odd, Saga)",
                   "color": "deepPurple",
                   "onClick": [Function],
                   "raised": true,
                 },
                 "ref": null,
-                "rendered": "Reset (If Odd)",
+                "rendered": "Reset (If Odd, Saga)",
                 "type": [Function],
               },
             ],
@@ -1673,7 +1673,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Start count
+                Start count (Observable)
               </WithStyles(_Button)>
                
                
@@ -1682,7 +1682,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 raised={true}
               >
-                Cancel count
+                Cancel count (Observable)
               </WithStyles(_Button)>
             </WithStyles(Typography)>,
             "className": "jsx-3956918113 typography",
@@ -1699,7 +1699,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   raised={true}
                 >
-                  Start count
+                  Start count (Observable)
                 </WithStyles(_Button)>,
                 " ",
                 " ",
@@ -1708,7 +1708,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   raised={true}
                 >
-                  Cancel count
+                  Cancel count (Observable)
                 </WithStyles(_Button)>,
               ],
               "component": "p",
@@ -1721,13 +1721,13 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Start count",
+                  "children": "Start count (Observable)",
                   "color": "red",
                   "onClick": [Function],
                   "raised": true,
                 },
                 "ref": null,
-                "rendered": "Start count",
+                "rendered": "Start count (Observable)",
                 "type": [Function],
               },
               " ",
@@ -1737,13 +1737,13 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Cancel count",
+                  "children": "Cancel count (Observable)",
                   "color": "red",
                   "onClick": [Function],
                   "raised": true,
                 },
                 "ref": null,
-                "rendered": "Cancel count",
+                "rendered": "Cancel count (Observable)",
                 "type": [Function],
               },
             ],
