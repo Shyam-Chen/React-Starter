@@ -5,6 +5,18 @@ import { compose, withState, lifecycle } from 'recompose';
 import { Button, Icon } from 'material-ui';
 import axios from 'axios';
 
+type List = {
+  [value: string]: any,
+};
+
+type Props = {
+  list: List[],
+  sort: string,
+  setSort(value: string): void,
+  length: string,
+  setLength(value: string): void,
+};
+
 const truncate = (value: string, length?: number = 15): string => {
   if (!value) return '';
   if (value.length <= length) return value;
@@ -12,15 +24,16 @@ const truncate = (value: string, length?: number = 15): string => {
 };
 
 const convertSeconds = (value: number): string => {
-  const second = Math.round(value % 60);
-  const minute = Math.round(value / 60);
+  const timeSubstr = (start?: number = 11, end?: number = 8): string => (
+    new Date(value * 1000).toISOString().substr(start, end)
+  );
 
-  if (second < 10) return `${minute}:0${second}`;
-  return `${minute}:${second}`;
+  if (value < 3600) return timeSubstr(14, 5);
+  return timeSubstr();
 };
 
-const timeSince = (date) => {
-  const ago = new Date(date * 1000);
+const timeSince = (date: any): string => {
+  const ago = new Date(date);
   const now = new Date();
 
   const seconds = Math.round(Math.abs((now.getTime() - ago.getTime()) / 1000));
@@ -43,17 +56,17 @@ const timeSince = (date) => {
   return `${years} years ago`;
 };
 
-const filerList = (length: string) => (list) => {
-  return list.filter((item) => {
+const filerList = (length: string) => (list: List[]) => (
+  list.filter((item) => {
     if (length === 'lessThanFive') return item.duration < 300;
     if (length === 'fiveToTen') return item.duration >= 300 && item.duration <= 600;
     if (length === 'moreThanTen') return item.duration > 600;
 
     return list;
-  });
-};
+  })
+);
 
-const sortList = (sort: string) => (list) => {
+const sortList = (sort: string) => (list: List[]) => {
   const typedList = type => list.sort((a, b) => a[type] - b[type]).reverse();
 
   if (sort === 'published') return typedList('publish');
@@ -63,7 +76,7 @@ const sortList = (sort: string) => (list) => {
   return list;
 };
 
-export const Home = ({ list, sort, setSort, length, setLength }): React$Element<*> => {
+export const Home = ({ list, sort, setSort, length, setLength }: Props): React$Element<*> => {
   const composeList = compose(sortList(sort), filerList(length))(list);
 
   return (
@@ -92,7 +105,7 @@ export const Home = ({ list, sort, setSort, length, setLength }): React$Element<
               <div className="card-media">
                 <img src={item.thumbnail} alt="" className="card-image" />
                 <div>
-                  <span className="black white--text pa-1 card-time">{convertSeconds(item.duration)}</span>
+                  <span className="black white--text pa-1 card-time">{convertSeconds(item.duration * 1000)}</span>
                 </div>
               </div>
 
@@ -110,80 +123,80 @@ export const Home = ({ list, sort, setSort, length, setLength }): React$Element<
       <div>{composeList.length === 0 && 'No results'}</div>
 
       <style jsx>{`
-      .ml-3 {
-        margin-left: 1rem;
-      }
-
-      .mr-3 {
-        margin-right: 1rem;
-      }
-
-      .ma-2 {
-        margin: 0.5rem;
-      }
-
-      .black {
-        background: black;
-      }
-
-      .white--text {
-        color: white;
-      }
-
-      .pa-1 {
-        padding: 0.25rem;
-      }
-
-      .grid {
-        display: flex;
-        flex-flow: row wrap;
-        max-width: 1280px;
-      }
-
-      .nav {
-        display: flex;
-        flex-flow: row wrap;
-        max-width: 1280px;
-        justify-content: flex-start;
-      }
-
-      .card {
-        width: 240px;
-        height: 280px;
-        box-sizing: border-box;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        margin: 0.75rem;
-      }
-
-      .card-media {
-        position: relative;
-        transition: any 0.2s ease-in-out;
-
-        &:hover {
-          transform: scale(1.1);
+        .ml-3 {
+          margin-left: 1rem;
         }
-      }
 
-      .card-image {
-        width: 240px;
-        height: 135px;
-      }
+        .mr-3 {
+          margin-right: 1rem;
+        }
 
-      .card-time {
-        position: absolute;
-        right: 0.5rem;
-        bottom: 0.5rem;
-      }
+        .ma-2 {
+          margin: 0.5rem;
+        }
 
-      .card-content {
-        width: 240px;
-        height: 93px;
-      }
+        .black {
+          background: black;
+        }
 
-      .icon {
-        display: flex;
-        align-self: center;
-      }
+        .white--text {
+          color: white;
+        }
+
+        .pa-1 {
+          padding: 0.25rem;
+        }
+
+        .grid {
+          display: flex;
+          flex-flow: row wrap;
+          max-width: 1280px;
+        }
+
+        .nav {
+          display: flex;
+          flex-flow: row wrap;
+          max-width: 1280px;
+          justify-content: flex-start;
+        }
+
+        .card {
+          width: 240px;
+          height: 280px;
+          box-sizing: border-box;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          margin: 0.75rem;
+        }
+
+        .card-media {
+          position: relative;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
+        .card-image {
+          width: 240px;
+          height: 135px;
+        }
+
+        .card-time {
+          position: absolute;
+          right: 0.5rem;
+          bottom: 0.5rem;
+        }
+
+        .card-content {
+          width: 240px;
+          height: 93px;
+        }
+
+        .icon {
+          display: flex;
+          align-self: center;
+        }
     `}</style>
     </div>
   );
