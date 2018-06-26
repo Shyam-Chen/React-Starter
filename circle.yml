@@ -66,9 +66,9 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run:
-          name: Log in to Docker
-          command: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      # - run:
+      #     name: Log in to Docker
+      #     command: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
       - run:
           name: Deploy the project
           command: |

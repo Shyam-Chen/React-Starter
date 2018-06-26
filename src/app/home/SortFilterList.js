@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { compose, withState, lifecycle } from 'recompose';
+import Typography from '@material-ui/core/Typography';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { Button, Icon } from 'material-ui';
 import axios from 'axios';
 
@@ -15,6 +17,7 @@ type Props = {
   setSort(value: string): void,
   length: string,
   setLength(value: string): void,
+  isLoading: boolean,
 };
 
 const truncate = (value: string, length?: number = 15): string => {
@@ -76,21 +79,21 @@ const sortList = (sort: string) => (list: List[]) => {
   return list;
 };
 
-export const Home = ({ list, sort, setSort, length, setLength }: Props): React$Element<*> => {
+export const Home = ({ list, sort, setSort, length, setLength, isLoading }: Props): React$Element<*> => {
   const composeList = compose(sortList(sort), filerList(length))(list);
 
   return (
     <div>
       <div className="nav">
-        <div>
-          <span className="mr-3">Sort</span>
+        <div className="row">
+          <Typography variant="body2">Sort</Typography>
           <span className="ma-2"><Button variant="raised" color={sort === 'published' ? 'primary' : 'default'} onClick={() => setSort('published')}>Published</Button></span>
           <span className="ma-2"><Button variant="raised" color={sort === 'views' ? 'primary' : 'default'} onClick={() => setSort('views')}>Views</Button></span>
           <span className="ma-2"><Button variant="raised" color={sort === 'collections' ? 'primary' : 'default'} onClick={() => setSort('collections')}>Collections</Button></span>
         </div>
 
-        <div>
-          <span className="ml-3 mr-3">Length</span>
+        <div className="row">
+          <Typography variant="body2">Length</Typography>
           <span className="ma-2"><Button variant="raised" color={length === 'any' ? 'primary' : 'default'} onClick={() => setLength('any')}>Any</Button></span>
           <span className="ma-2"><Button variant="raised" color={length === 'lessThanFive' ? 'primary' : 'default'} onClick={() => setLength('lessThanFive')}>Less than five minutes</Button></span>
           <span className="ma-2"><Button variant="raised" color={length === 'fiveToTen' ? 'primary' : 'default'} onClick={() => setLength('fiveToTen')}>Five to ten minutes</Button></span>
@@ -98,29 +101,43 @@ export const Home = ({ list, sort, setSort, length, setLength }: Props): React$E
         </div>
       </div>
 
-      <div className="grid">
+      <div>
         {
-          composeList.map(item => (
-            <div key={item.id} className="card ma-3">
-              <div className="card-media">
-                <img src={item.thumbnail} alt="" className="card-image" />
-                <div>
-                  <span className="black white--text pa-1 card-time">{convertSeconds(item.duration)}</span>
-                </div>
-              </div>
+          !isLoading
+            ? (
+              <div>
+                {
+                  composeList.length !== 0
+                    ? (
+                      <div className="grid">
+                        {
+                          composeList.map(item => (
+                            <div key={item.id} className="card ma-3">
+                              <div className="card-media">
+                                <img src={item.thumbnail} alt="" className="card-image" />
+                                <Typography>
+                                  <span className="black white--text pa-1 card-time">{convertSeconds(item.duration)}</span>
+                                </Typography>
+                              </div>
 
-              <div className="card-content">
-                <div className="pl-2 pr-2">{truncate(item.title, 55)}</div>
-                <div className="ma-2 icon"><Icon>headset</Icon> {item.views.toLocaleString('en-US')}</div>
-                <div><Icon>event</Icon>{timeSince(item.publish * 1000)}</div>
-                <div><Icon>video_library</Icon>{item.collectCount.toLocaleString('en-US')}</div>
+                              <div className="card-content">
+                                <Typography className="pl-2 pr-2">{truncate(item.title, 55)}</Typography>
+                                <Typography className="ma-2 icon"><Icon>headset</Icon> {item.views.toLocaleString('en-US')}</Typography>
+                                <Typography><Icon>event</Icon>{timeSince(item.publish * 1000)}</Typography>
+                                <Typography><Icon>video_library</Icon>{item.collectCount.toLocaleString('en-US')}</Typography>
+                              </div>
+                            </div>
+                          ))
+                        }
+                      </div>
+                    )
+                    : <div>No results</div>
+                }
               </div>
-            </div>
-          ))
+            )
+            : <CircularProgress />
         }
       </div>
-
-      <div>{composeList.length === 0 && 'No results'}</div>
 
       <style jsx>{`
         .ml-3 {
@@ -141,6 +158,11 @@ export const Home = ({ list, sort, setSort, length, setLength }: Props): React$E
 
         .white--text {
           color: white;
+        }
+
+        .row {
+          display: flex;
+          flex-flow: row wrap;
         }
 
         .pa-1 {
@@ -206,11 +228,15 @@ export default compose(
   withState('list', 'setList', []),
   withState('length', 'setLength', 'any'),
   withState('sort', 'setSort', 'published'),
+  withState('isLoading', 'setIsLoading', true),
   lifecycle({
     componentDidMount() {
       axios.get('https://us-central1-lithe-window-713.cloudfunctions.net/fronted-demo')
         .then(({ data }) => {
-          this.setState({ list: data.data });
+          this.setState({
+            list: data.data,
+            isLoading: false,
+          });
         });
     },
   }),
