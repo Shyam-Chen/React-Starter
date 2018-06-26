@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "react-by-example"
+    "development": "react-by-example",
+    "production": "react-by-example"
   }
 }
