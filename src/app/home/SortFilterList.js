@@ -138,14 +138,6 @@ export const Home = ({ list, sort, setSort, length, setLength, isLoading }: Prop
       </div>
 
       <style jsx>{`
-        .ml-3 {
-          margin-left: 1rem;
-        }
-
-        .mr-3 {
-          margin-right: 1rem;
-        }
-
         .ma-2 {
           margin: 0.5rem;
         }
@@ -212,20 +204,15 @@ export const Home = ({ list, sort, setSort, length, setLength, isLoading }: Prop
           width: 240px;
           height: 93px;
         }
-
-        .icon {
-          display: flex;
-          align-self: center;
-        }
     `}</style>
     </div>
   );
 };
 
 export default compose(
-  withState('list', 'setList', []),
-  withState('length', 'setLength', 'any'),
   withState('sort', 'setSort', 'published'),
+  withState('length', 'setLength', 'any'),
+  withState('list', 'setList', []),
   withState('isLoading', 'setIsLoading', true),
   lifecycle({
     componentDidMount() {

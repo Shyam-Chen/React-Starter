@@ -19,9 +19,9 @@ const App = ({ history }): React$Element<*> => (
       </div>
     </ConnectedRouter>
 
-    <style jsx>{`
+    {/* <style jsx>{`
       #app {}
-    `}</style>
+    `}</style> */}
   </div>
 );
 

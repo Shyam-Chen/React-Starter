@@ -11,9 +11,9 @@ export const Home = (): React$Element<*> => (
 
     <SortFilterList />
 
-    <style jsx>{`
+    {/* <style jsx>{`
       #home {}
-    `}</style>
+    `}</style> */}
   </div>
 );
 
