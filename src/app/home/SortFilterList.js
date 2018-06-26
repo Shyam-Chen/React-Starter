@@ -2,9 +2,7 @@
 
 import React from 'react';
 import { compose, withState, lifecycle } from 'recompose';
-import Typography from '@material-ui/core/Typography';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import { Button, Icon } from 'material-ui';
+import { Button, Icon, Typography } from 'material-ui';
 import axios from 'axios';
 
 type List = {
@@ -121,8 +119,8 @@ export const Home = ({ list, sort, setSort, length, setLength, isLoading }: Prop
                               </div>
 
                               <div className="card-content">
-                                <Typography className="pl-2 pr-2">{truncate(item.title, 55)}</Typography>
-                                <Typography className="ma-2 icon"><Icon>headset</Icon> {item.views.toLocaleString('en-US')}</Typography>
+                                <Typography>{truncate(item.title, 55)}</Typography>
+                                <Typography><Icon>headset</Icon> {item.views.toLocaleString('en-US')}</Typography>
                                 <Typography><Icon>event</Icon>{timeSince(item.publish * 1000)}</Typography>
                                 <Typography><Icon>video_library</Icon>{item.collectCount.toLocaleString('en-US')}</Typography>
                               </div>
@@ -135,7 +133,7 @@ export const Home = ({ list, sort, setSort, length, setLength, isLoading }: Prop
                 }
               </div>
             )
-            : <CircularProgress />
+            : <div>Loading...</div>
         }
       </div>
 
