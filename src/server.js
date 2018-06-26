@@ -1,28 +1,28 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
 import express from 'express';
-import { graphqlExpress } from 'apollo-server-express';
+// import { graphqlExpress } from 'apollo-server-express';
 import compression from 'compression';
 import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import request from 'request';
-import Raven from 'raven';
+// import Raven from 'raven';
 
 import routes from './api';
-import schema from './api/graphql';
+// import schema from './api/graphql';
 
 admin.initializeApp();
 
-if (process.env.NODE_ENV === 'production') {
-  Raven.config(process.env.SENTRY_DSN).install();
-}
+// if (process.env.NODE_ENV === 'production') {
+//   Raven.config(process.env.SENTRY_DSN).install();
+// }
 
 const vm = express();
 
-if (process.env.NODE_ENV === 'production') {
-  vm.use(Raven.requestHandler());
-}
+// if (process.env.NODE_ENV === 'production') {
+//   vm.use(Raven.requestHandler());
+// }
 
 vm.use(compression());
 vm.use(cors({ origin: true }));
@@ -31,11 +31,11 @@ vm.use(bodyParser.json());
 vm.use(bodyParser.urlencoded({ extended: false }));
 
 vm.use('/', routes);
-vm.use('/graphql', graphqlExpress({ schema }));
+// vm.use('/graphql', graphqlExpress({ schema }));
 
-if (process.env.NODE_ENV === 'production') {
-  vm.use(Raven.errorHandler());
-}
+// if (process.env.NODE_ENV === 'production') {
+//   vm.use(Raven.errorHandler());
+// }
 
 export const api = functions.https.onRequest(vm);
 
