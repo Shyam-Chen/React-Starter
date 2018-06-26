@@ -105,14 +105,14 @@ export const Home = ({ list, sort, setSort, length, setLength }: Props): React$E
               <div className="card-media">
                 <img src={item.thumbnail} alt="" className="card-image" />
                 <div>
-                  <span className="black white--text pa-1 card-time">{convertSeconds(item.duration * 1000)}</span>
+                  <span className="black white--text pa-1 card-time">{convertSeconds(item.duration)}</span>
                 </div>
               </div>
 
               <div className="card-content">
                 <div className="pl-2 pr-2">{truncate(item.title, 55)}</div>
                 <div className="ma-2 icon"><Icon>headset</Icon> {item.views.toLocaleString('en-US')}</div>
-                <div><Icon>event</Icon>{timeSince(item.publish)}</div>
+                <div><Icon>event</Icon>{timeSince(item.publish * 1000)}</div>
                 <div><Icon>video_library</Icon>{item.collectCount.toLocaleString('en-US')}</div>
               </div>
             </div>
