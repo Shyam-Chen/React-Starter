@@ -9,37 +9,18 @@ import { createLogger } from 'redux-logger';
 import appEpic from '~/epics';
 import appReducer from '~/reducer';
 import watchApp from '~/sagas';
-import { crudReducer } from '~/crud-operations/crud';
-import { restEpic, restReducer, watchRest } from '~/crud-operations/rest';
-import { graphqlReducer } from '~/crud-operations/graphql';
-import { formControls } from '~/form-controls';
-import { dataTableReducer } from '~/data-table';
-import { counterEpic, counterReducer, watchCounter } from '~/playground/counter';
 
 const rootEpic = combineEpics(
   appEpic,
-
-  counterEpic,
-  restEpic,
 );
 
 const rootReducer = combineReducers({
   app: appReducer,
-
-  counter: counterReducer,
-  crud: crudReducer,
-  rest: restReducer,
-  graphql: graphqlReducer,
-  formControls,
-  dataTable: dataTableReducer,
 });
 
 const rootSaga = function *() {
   yield all([
     watchApp(),
-
-    watchCounter(),
-    watchRest(),
   ]);
 };
 

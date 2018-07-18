@@ -67,10 +67,10 @@ $ yarn lint:api  # (not yet)
 
 ```bash
 # front-end
-$ yarn test:app
+$ yarn test:app  # (not yet)
 
 # back-end
-$ yarn test:api
+$ yarn test:api  # (not yet)
 ```
 
 8. Run the end-to-end tests
