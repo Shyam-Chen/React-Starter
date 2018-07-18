@@ -3,24 +3,12 @@ import { Route, Switch } from 'react-router';
 import loadable from 'react-loadable';
 
 import Home from '~/shell/home/Home';
-import { CRUD } from '~/crud-operations/crud';
-import { REST } from '~/crud-operations/rest';
-import { GraphQL } from '~/crud-operations/graphql';
-import { FormControls } from '~/form-controls';
-import { DataTable } from '~/data-table';
-import NotFound from '~/shared/NotFound';
-
-const Loading = () => <div>Loading...</div>;
-
-const Counter = loadable({
-  loader: () => import('~/playground/counter/Counter'),
-  loading: Loading,
-});
+import NotFound from '~/shell/not-found/NotFound';
 
 const AsyncShell = module => (
   loadable({
     loader: () => import(`~/shell${module}`),
-    loading: Loading,
+    loading: () => <div>Loading...</div>,
   })
 );
 
@@ -30,17 +18,6 @@ const Router = () => (
       <Route exact path="/" component={Home} />
 
       <Route path="/hello-world" component={AsyncShell('/hello-world/HelloWorld')} />
-
-      <Route path="/crud" component={CRUD} />
-      <Route path="/rest" component={REST} />
-      <Route path="/graphql" component={GraphQL} />
-
-      <Route path="/form-controls" component={FormControls} />
-
-      <Route path="/data-table" component={DataTable} />
-
-
-      <Route path="/counter" component={Counter} />
 
       <Route path="*" component={NotFound} />
     </Switch>
