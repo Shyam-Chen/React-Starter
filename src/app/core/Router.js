@@ -2,13 +2,12 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 import loadable from 'react-loadable';
 
-import Home from '~/home/Home';
+import Home from '~/shell/home/Home';
 import { CRUD } from '~/crud-operations/crud';
 import { REST } from '~/crud-operations/rest';
 import { GraphQL } from '~/crud-operations/graphql';
 import { FormControls } from '~/form-controls';
 import { DataTable } from '~/data-table';
-import { Authorization } from '~/authorization';
 import NotFound from '~/shared/NotFound';
 
 const Loading = () => <div>Loading...</div>;
@@ -18,10 +17,19 @@ const Counter = loadable({
   loading: Loading,
 });
 
+const AsyncShell = module => (
+  loadable({
+    loader: () => import(`~/shell${module}`),
+    loading: Loading,
+  })
+);
+
 const Router = () => (
   <div>
     <Switch>
       <Route exact path="/" component={Home} />
+
+      <Route path="/hello-world" component={AsyncShell('/hello-world/HelloWorld')} />
 
       <Route path="/crud" component={CRUD} />
       <Route path="/rest" component={REST} />
@@ -31,7 +39,6 @@ const Router = () => (
 
       <Route path="/data-table" component={DataTable} />
 
-      <Route path="/authorization" component={Authorization} />
 
       <Route path="/counter" component={Counter} />
 

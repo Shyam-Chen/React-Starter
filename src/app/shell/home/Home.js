@@ -10,10 +10,6 @@ export const Home = (): React$Element<*> => (
     <h1>Oh My React</h1>
 
     <SortFilterList />
-
-    {/* <style jsx>{`
-      #home {}
-    `}</style> */}
   </div>
 );
 

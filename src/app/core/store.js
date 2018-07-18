@@ -1,5 +1,5 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { routerMiddleware, connectRouter } from 'connected-react-router'
+import { routerMiddleware, connectRouter } from 'connected-react-router';
 import thunkMiddleware from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
@@ -14,7 +14,6 @@ import { restEpic, restReducer, watchRest } from '~/crud-operations/rest';
 import { graphqlReducer } from '~/crud-operations/graphql';
 import { formControls } from '~/form-controls';
 import { dataTableReducer } from '~/data-table';
-import { authorizationReducer } from '~/authorization';
 import { counterEpic, counterReducer, watchCounter } from '~/playground/counter';
 
 const rootEpic = combineEpics(
@@ -33,7 +32,6 @@ const rootReducer = combineReducers({
   graphql: graphqlReducer,
   formControls,
   dataTable: dataTableReducer,
-  authorization: authorizationReducer,
 });
 
 const rootSaga = function *() {
