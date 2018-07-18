@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import Navigation from '~/shared/Navigation';
+import Layout from '~/shared/Layout';
 import Routes from '~/core/Router';
 
 import * as actions from './actions';
@@ -17,10 +17,9 @@ const App = ({ history }): React$Element<*> => (
       <CssBaseline />
 
       <ConnectedRouter history={history}>
-        <div>
-          <Navigation />
+        <Layout>
           <Routes />
-        </div>
+        </Layout>
       </ConnectedRouter>
     </React.Fragment>
   </div>

@@ -3,11 +3,15 @@ const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlPlugin = require('script-ext-html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-// const RobotstxtPlugin  = require('robotstxt-webpack-plugin').default;
-// const SitemapPlugin =require('sitemap-webpack-plugin').default;
+// const { GenerateSW } = require('workbox-webpack-plugin');
+// const PurgecssPlugin = require('purgecss-webpack-plugin');
+// const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
+// const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const envify = require('process-envify');
+// const glob = require('glob-all');
 
 const env = require('./env');
+// const pkg = require('./package');
 
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'public');
@@ -73,6 +77,7 @@ module.exports = ({ prod = false } = {}) => ({
     },
   },
   plugins: [
+    new webpack.DefinePlugin(envify(env)),
     new HtmlPlugin({
       template: 'index.html',
       minify: prod && {
@@ -80,7 +85,7 @@ module.exports = ({ prod = false } = {}) => ({
         collapseWhitespace: true,
         removeAttributeQuotes: true,
       },
-      chunksSortMode: prod ? 'dependency' : 'auto',
+      chunksSortMode: prod ? 'manual' : 'auto',
     }),
     new ScriptExtHtmlPlugin({
       defaultAttribute: 'defer',
@@ -100,8 +105,25 @@ module.exports = ({ prod = false } = {}) => ({
         ignore: ['assets/styles/**/*'],
       },
     ]),
-    new webpack.DefinePlugin(envify(env)),
     !prod && new webpack.HotModuleReplacementPlugin(),
+    // prod && new webpack.optimize.AggressiveSplittingPlugin(),
+    // prod && new GenerateSW({
+    //   skipWaiting: true,
+    //   clientsClaim: true,
+    //   runtimeCaching: [{
+    //     urlPattern: new RegExp(env.SITE_URL),
+    //     handler: 'staleWhileRevalidate',
+    //   }],
+    //   navigateFallback: '/',
+    //   navigateFallbackWhitelist: [/^(?!\/__).*/],
+    //   cacheId: pkg.name,
+    // }),
+    // prod && new PurgecssPlugin({
+    //   paths: glob.sync([
+    //     path.join(SOURCE_ROOT, './app/**/*.vue'),
+    //   ]),
+    //   whitelist: ['html', 'body'],
+    // }),
     // prod && new RobotstxtPlugin(),
     // prod && new SitemapPlugin(env.SITE_URL, [{ path: '/' }]),
   ].filter(Boolean),
@@ -130,6 +152,7 @@ module.exports = ({ prod = false } = {}) => ({
     host: env.HOST_NAME,
     hot: true,
     inline: true,
+    overlay: true,
     port: env.SITE_PORT,
   },
   devtool: prod ? 'hidden-source-map' : 'cheap-module-eval-source-map',

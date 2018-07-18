@@ -39,8 +39,8 @@ jobs:
       - run:
           name: Check the code
           command: |
-            docker-compose exec default yarn lint:app
-            docker-compose exec default yarn lint:api
+            # docker-compose exec default yarn lint:app
+            # docker-compose exec default yarn lint:api
       - run:
           name: Test the application
           command: |
@@ -54,8 +54,8 @@ jobs:
       - run:
           name: End-to-end UI tests
           command: |
-            docker-compose exec default sh -c "sleep 10"
-            docker-compose exec default yarn e2e:app
+            # docker-compose exec default sh -c "sleep 10"
+            # docker-compose exec default yarn e2e:app
       - run:
           name: End-to-end HTTP tests
           command: |
