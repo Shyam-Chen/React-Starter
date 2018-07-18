@@ -85,7 +85,8 @@ module.exports = ({ prod = false } = {}) => ({
         collapseWhitespace: true,
         removeAttributeQuotes: true,
       },
-      chunksSortMode: prod ? 'manual' : 'auto',
+      chunksSortMode: prod ? 'dependency' : 'auto',
+      // chunksSortMode: prod ? 'manual' : 'auto',
     }),
     new ScriptExtHtmlPlugin({
       defaultAttribute: 'defer',
