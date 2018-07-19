@@ -8,7 +8,15 @@
 [![dependencies Status](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter/status.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter)
 [![devDependencies Status](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter/dev-status.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter?type=dev)
 
-[Live Demo](https://react-by-example.firebaseapp.com/)
+:rainbow: Live Demo: Develop | [Master](https://react-by-example.firebaseapp.com/)
+
+## Table of Contents
+
+* [Getting Started](#getting-started)
+* Project Template
+* Dockerization
+* Configuration
+* [Directory Structure](#directory-structure)
 
 ## Getting Started
 
@@ -81,4 +89,129 @@ $ yarn e2e:app  # (not yet)
 
 # back-end
 $ yarn e2e:api  # (not yet)
+```
+
+## Directory Structure
+
+The structure follows the LIFT Guidelines.
+
+```coffee
+.
+├── src
+│   ├── api
+│   │   ├── __tests__
+│   │   │   └── ...
+│   │   ├── _<THING>  -> api of private things
+│   │   │   └── ...
+│   │   ├── core  -> core feature module
+│   │   │   └── ...
+│   │   ├── <FEATURE>  -> feature modules
+│   │   │   ├── __tests__
+│   │   │   │   └── ...
+│   │   │   ├── _<THING>  -> feature of private things
+│   │   │   │   └── ...
+│   │   │   └── ...
+│   │   ├── <GROUP>  -> module group
+│   │   │   └── <FEATURE>  -> feature modules
+│   │   │       ├── __tests__
+│   │   │       │   └── ...
+│   │   │       ├── _<THING>  -> feature of private things
+│   │   │       │   └── ...
+│   │   │       └── ...
+│   │   ├── graphql
+│   │   │   ├── <FEATURE>  -> feature modules
+│   │   │   │   ├── __tests__
+│   │   │   │   │   └── ...
+│   │   │   │   ├── _<THING>  -> feature of private things
+│   │   │   │   │   └── ...
+│   │   │   │   └── ...
+│   │   │   └── <GROUP>  -> module group
+│   │   │       └── <FEATURE>  -> feature modules
+│   │   │           ├── __tests__
+│   │   │           │   └── ...
+│   │   │           ├── _<THING>  -> feature of private things
+│   │   │           │   └── ...
+│   │   │           └── ...
+│   │   ├── shared  -> shared feature module
+│   │   │   └── ...
+│   │   └── index.js
+│   ├── app
+│   │   ├── __tests__
+│   │   │   └── ...
+│   │   ├── _<THING>  -> app of private things
+│   │   │   └── ...
+│   │   ├── core  -> core feature module
+│   │   │   └── ...
+│   │   ├── <FEATURE>  -> feature modules
+│   │   │   ├── __tests__
+│   │   │   │   ├── actions.spec.js
+│   │   │   │   ├── <FEATURE>.e2e-spec.js
+│   │   │   │   ├── <FEATURE>.spec.js
+│   │   │   │   ├── <epics|sagas>.spec.js
+│   │   │   │   ├── reducer.spec.js
+│   │   │   │   └── selectors.spec.js
+│   │   │   ├── _<THING>  -> feature of private things
+│   │   │   │   └── ...
+│   │   │   ├── actions.js
+│   │   │   ├── constants.js
+│   │   │   ├── <FEATURE>.vue
+│   │   │   ├── <epics|sagas>.js
+│   │   │   ├── reducer.js
+│   │   │   ├── selectors.js
+│   │   │   └── types.js
+│   │   ├── <GROUP>  -> module group
+│   │   │   └── <FEATURE>  -> feature modules
+│   │   │       ├── __tests__
+│   │   │       │   ├── actions.spec.js
+│   │   │       │   ├── <FEATURE>.e2e-spec.js
+│   │   │       │   ├── <FEATURE>.spec.js
+│   │   │       │   ├── <epics|sagas>.spec.js
+│   │   │       │   ├── reducer.spec.js
+│   │   │       │   └── selectors.spec.js
+│   │   │       ├── _<THING>  -> feature of private things
+│   │   │       │   └── ...
+│   │   │       ├── actions.js
+│   │   │       ├── constants.js
+│   │   │       ├── <FEATURE>.js
+│   │   │       ├── <epics|sagas>.js
+│   │   │       ├── reducer.js
+│   │   │       ├── selectors.js
+│   │   │       └── types.js
+│   │   ├── shared  -> shared feature module
+│   │   │   └── ...
+│   │   ├── actions.js
+│   │   ├── App.js
+│   │   ├── constants.js
+│   │   ├── epics.js
+│   │   ├── reducer.js
+│   │   ├── sagas.js
+│   │   ├── selectors.js
+│   │   └── types.js
+│   ├── assets  -> datas, fonts, images, medias, styles
+│   │   └── ...
+│   ├── client.js
+│   ├── index.html
+│   └── server.js
+├── tools
+│   └── ...
+├── .babelrc
+├── .editorconfig
+├── .eslintrc
+├── .firebaserc
+├── .flowconfig
+├── .gitignore
+├── .postcssrc
+├── .stylelintrc
+├── Dockerfile
+├── LICENSE
+├── README.md
+├── circle.yml
+├── docker-compose.yml
+├── env.js
+├── firebase.json
+├── gulpfile.js
+├── jest.config.js
+├── package.json
+├── webpack.config.js
+└── yarn.lock
 ```
