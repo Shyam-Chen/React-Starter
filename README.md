@@ -13,6 +13,7 @@
 ## Table of Contents
 
 * [Getting Started](#getting-started)
+* [Key Features](#key-features)
 * Project Template
 * Dockerization
 * Configuration
@@ -90,6 +91,13 @@ $ yarn e2e:app
 # back-end
 $ yarn e2e:api
 ```
+
+## Key Features
+
+* [JSX](https://github.com/facebook/jsx)
+* [JSS](https://github.com/cssinjs/jss)
+* [Babel](https://github.com/babel/babel)
+* [Flow](https://github.com/facebook/flow)
 
 ## Directory Structure
 
@@ -187,7 +195,7 @@ The structure follows the LIFT Guidelines.
 │   │   ├── sagas.js
 │   │   ├── selectors.js
 │   │   └── types.js
-│   ├── assets  -> datas, fonts, images, medias, styles
+│   ├── assets  -> datas, fonts, images, medias
 │   │   └── ...
 │   ├── client.js
 │   ├── index.html

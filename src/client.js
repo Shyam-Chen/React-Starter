@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
 
-import './assets/styles/global.css';
 import configureStore from './app/core/store';
 import App from './app/App';
 

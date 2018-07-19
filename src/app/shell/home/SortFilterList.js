@@ -2,10 +2,14 @@
 
 import React from 'react';
 import { compose, withState, lifecycle } from 'recompose';
-import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
-import Typography from '@material-ui/core/Typography';
 import axios from 'axios';
+
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
+import HeadsetIcon from '@material-ui/icons/Headset';
+import EventIcon from '@material-ui/icons/Event';
+import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 
 type List = {
   [value: string]: any,
@@ -122,9 +126,9 @@ export const Home = ({ list, sort, setSort, length, setLength, isLoading }: Prop
 
                               <div className="card-content">
                                 <Typography>{truncate(item.title, 55)}</Typography>
-                                <Typography><Icon>headset</Icon> {item.views.toLocaleString('en-US')}</Typography>
-                                <Typography><Icon>event</Icon>{timeSince(item.publish * 1000)}</Typography>
-                                <Typography><Icon>video_library</Icon>{item.collectCount.toLocaleString('en-US')}</Typography>
+                                <Typography><HeadsetIcon /> {item.views.toLocaleString('en-US')}</Typography>
+                                <Typography><EventIcon /> {timeSince(item.publish * 1000)}</Typography>
+                                <Typography><VideoLibraryIcon /> {item.collectCount.toLocaleString('en-US')}</Typography>
                               </div>
                             </div>
                           ))
@@ -180,15 +184,6 @@ export const Home = ({ list, sort, setSort, length, setLength, isLoading }: Prop
           box-sizing: border-box;
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
           margin: 0.75rem;
-        }
-
-        .card-media {
-          position: relative;
-          transition: all 0.2s ease-in-out;
-
-          &:hover {
-            transform: scale(1.1);
-          }
         }
 
         .card-image {
