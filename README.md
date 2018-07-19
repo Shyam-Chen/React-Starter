@@ -65,10 +65,10 @@ $ yarn build:api
 
 ```bash
 # front-end
-$ yarn lint:app  # (not yet)
+$ yarn lint:app
 
 # back-end
-$ yarn lint:api  # (not yet)
+$ yarn lint:api
 ```
 
 7. Run the unit tests
@@ -78,7 +78,7 @@ $ yarn lint:api  # (not yet)
 $ yarn test:app
 
 # back-end
-$ yarn test:api  # (not yet)
+$ yarn test:api
 ```
 
 8. Run the end-to-end tests
@@ -88,7 +88,7 @@ $ yarn test:api  # (not yet)
 $ yarn e2e:app
 
 # back-end
-$ yarn e2e:api  # (not yet)
+$ yarn e2e:api
 ```
 
 ## Directory Structure

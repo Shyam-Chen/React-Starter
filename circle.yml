@@ -49,8 +49,8 @@ jobs:
       - run:
           name: Test cloud functions
           command: |
-            # docker-compose exec default yarn test:api
-            # docker-compose exec default yarn codecov --token=$CODECOV_TOKEN
+            docker-compose exec default yarn test:api
+            docker-compose exec default yarn codecov --token=$CODECOV_TOKEN
       - run:
           name: End-to-end UI tests
           command: |
@@ -66,9 +66,9 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      # - run:
-      #     name: Log in to Docker
-      #     command: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - run:
+          name: Log in to Docker
+          command: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
       - run:
           name: Deploy the project
           command: |
