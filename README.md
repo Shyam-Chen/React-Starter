@@ -25,7 +25,7 @@ Follow steps to execute this boilerplate.
 1. Clone this Boilerplate
 
 ```bash
-$ git clone --depth 1 https://github.com/Shyam-Chen/AngularNest-Fullstack-Starter <PROJECT_NAME>
+$ git clone --depth 1 https://github.com/Shyam-Chen/React-Fullstack-Starter <PROJECT_NAME>
 $ cd <PROJECT_NAME>
 ```
 
