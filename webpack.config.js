@@ -157,4 +157,5 @@ module.exports = ({ prod = false } = {}) => ({
     port: env.SITE_PORT,
   },
   devtool: prod ? 'hidden-source-map' : 'cheap-module-eval-source-map',
+  externals: ['puppeteer'],
 });

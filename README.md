@@ -75,7 +75,7 @@ $ yarn lint:api  # (not yet)
 
 ```bash
 # front-end
-$ yarn test:app  # (not yet)
+$ yarn test:app
 
 # back-end
 $ yarn test:api  # (not yet)
@@ -85,7 +85,7 @@ $ yarn test:api  # (not yet)
 
 ```bash
 # front-end
-$ yarn e2e:app  # (not yet)
+$ yarn e2e:app
 
 # back-end
 $ yarn e2e:api  # (not yet)
