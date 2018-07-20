@@ -36,14 +36,6 @@ module.exports = ({ prod = false } = {}) => ({
         loader: 'babel-loader',
       },
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
-          { loader: 'postcss-loader', options: { sourceMap: true } },
-        ],
-      },
-      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {

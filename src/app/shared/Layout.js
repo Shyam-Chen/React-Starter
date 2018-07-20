@@ -17,8 +17,8 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
-    zIndex: 1,
+    'flex-grow': 1,
+    'z-index': 1,
     overflow: 'hidden',
     position: 'relative',
     display: 'flex',
@@ -27,17 +27,17 @@ const styles = theme => ({
     color: '#fff',
   },
   appBar: {
-    zIndex: theme.zIndex.drawer + 1,
+    'z-index': theme.zIndex.drawer + 1,
   },
   drawerPaper: {
     position: 'fixed',
-    width: '20rem',
+    width: '300px',
   },
   content: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
+    'flex-grow': 1,
+    'background-color': theme.palette.background.default,
     padding: theme.spacing.unit * 3,
-    marginLeft: '20rem',
+    'margin-left': '300px',
   },
   toolbar: theme.mixins.toolbar,
 });

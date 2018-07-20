@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 import loadable from 'react-loadable';
 
-import Home from '~/shell/home/Home';
-import NotFound from '~/shell/not-found/NotFound';
+import Home from '~/home/Home';
+import NotFound from '~/not-found/NotFound';
 
 const AsyncShell = module => (
   loadable({

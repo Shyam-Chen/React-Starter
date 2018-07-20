@@ -456,8 +456,6 @@ The structure follows the LIFT Guidelines.
 ├── .firebaserc
 ├── .flowconfig
 ├── .gitignore
-├── .postcssrc
-├── .stylelintrc
 ├── Dockerfile
 ├── LICENSE
 ├── README.md

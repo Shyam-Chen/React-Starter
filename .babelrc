@@ -16,27 +16,12 @@
       "plugins": [
         "transform-runtime",
         [
-          "styled-jsx/babel", {
-            "plugins": [
-              "styled-jsx-plugin-postcss"
-            ]
-          }
-        ],
-        [
           "babel-plugin-root-import", [
             {
               "rootPathPrefix": "~",
               "rootPathSuffix": "src/app"
             }
           ]
-        ],
-        [
-          "transform-imports", {
-            "material-ui": {
-              "transform": "material-ui/${member}",
-              "preventFullImport": true
-            }
-          }
         ]
       ]
     },
