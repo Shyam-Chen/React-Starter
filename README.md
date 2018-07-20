@@ -94,10 +94,44 @@ $ yarn e2e:api
 
 ## Key Features
 
-* [JSX](https://github.com/facebook/jsx)
-* [JSS](https://github.com/cssinjs/jss)
-* [Babel](https://github.com/babel/babel)
-* [Flow](https://github.com/facebook/flow)
+This seed repository provides the following features:
+
+* ---------- **Core** ----------
+* [x] [Web Fundamentals](https://developers.google.com/web/fundamentals/)
+* [x] [Firebase Platform](https://firebase.google.com/)
+* [x] [Google Cloud](https://cloud.google.com/)
+* [x] [Docker](https://www.docker.com/)
+* [x] [CircleCI](https://circleci.com/)
+* [x] [Codecov](https://codecov.io/)
+* ---------- **Front-end** ----------
+* [x] [React](https://github.com/facebook/react)
+* [x] [React Router](https://github.com/ReactTraining/react-router)
+* [x] [Recompose](https://github.com/acdlite/recompose)
+* [x] [Redux](https://github.com/reduxjs/redux)
+* [x] [Redux Thunk](https://github.com/reduxjs/redux-thunk)
+* [x] [Redux Saga](https://github.com/redux-saga/redux-saga)
+* [x] [Redux Observable](https://github.com/redux-observable/redux-observable)
+* [x] [Reselect](https://github.com/reduxjs/reselect)
+* [x] [Material UI](https://github.com/mui-org/material-ui)
+* [x] [Axios](https://github.com/axios/axios)
+* [x] [Webpack](https://github.com/webpack/webpack)
+* [x] [JSX](https://github.com/facebook/jsx)
+* [x] [JSS](https://github.com/cssinjs/jss)
+* [x] [Enzyme](https://github.com/airbnb/enzyme)
+* [x] [Puppeteer](https://github.com/GoogleChrome/puppeteer)
+* ---------- **Back-end** ----------
+* [x] [Express](https://github.com/expressjs/express)
+* [x] [Request](https://github.com/request/request)
+* [x] [Gulp](https://github.com/gulpjs/gulp)
+* [x] [SuperTest](https://github.com/visionmedia/supertest)
+* ---------- **Shared** ----------
+* [ ] [Apollo GraphQL](https://github.com/apollographql)
+* [x] [ReactiveX](https://github.com/ReactiveX/rxjs)
+* [ ] [TensorFlow](https://github.com/tensorflow/tfjs)
+* [x] [Babel](https://github.com/babel/babel)
+* [x] [Flow](https://github.com/facebook/flow)
+* [x] [ESLint](https://github.com/eslint/eslint)
+* [x] [Jest](https://github.com/facebook/jest)
 
 ## Directory Structure
 
