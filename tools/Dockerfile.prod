@@ -10,8 +10,8 @@ RUN yarn install
 ENV NODE_ENV production
 
 # envs --
-ENV SITE_URL https://react-by-example.firebaseapp.com
-ENV FUNC_URL https://us-central1-react-by-example.cloudfunctions.net
+ENV SITE_URL https://react-by-example-prod.firebaseapp.com
+ENV FUNC_URL https://us-central1-react-by-example-prod.cloudfunctions.net
 # -- envs
 
 RUN yarn build:app

@@ -23,7 +23,7 @@
 
 Follow steps to execute this boilerplate.
 
-1. Clone this Boilerplate
+1. Clone this boilerplate
 
 ```bash
 $ git clone --depth 1 https://github.com/Shyam-Chen/React-Fullstack-Starter <PROJECT_NAME>
@@ -34,6 +34,9 @@ $ cd <PROJECT_NAME>
 
 ```bash
 $ yarn install
+
+# install flow types
+$ yarn typed
 ```
 
 3. Set an active project for working direct
