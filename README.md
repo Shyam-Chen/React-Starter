@@ -8,7 +8,7 @@
 [![dependencies Status](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter/status.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter)
 [![devDependencies Status](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter/dev-status.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter?type=dev)
 
-:rainbow: Live Demo: Develop | [Master](https://react-by-example.firebaseapp.com/)
+:rainbow: Live Demo: [Develop](https://react-by-example-dev.firebaseapp.com/) | [Master](https://react-by-example-prod.firebaseapp.com/)
 
 ## Table of Contents
 
