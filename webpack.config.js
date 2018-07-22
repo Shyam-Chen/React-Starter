@@ -4,11 +4,9 @@ const HtmlPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlPlugin = require('script-ext-html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 // const { GenerateSW } = require('workbox-webpack-plugin');
-// const PurgecssPlugin = require('purgecss-webpack-plugin');
 // const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
 // const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const envify = require('process-envify');
-// const glob = require('glob-all');
 
 const env = require('./env');
 // const pkg = require('./package');
@@ -77,8 +75,7 @@ module.exports = ({ prod = false } = {}) => ({
         collapseWhitespace: true,
         removeAttributeQuotes: true,
       },
-      chunksSortMode: prod ? 'dependency' : 'auto',
-      // chunksSortMode: prod ? 'manual' : 'auto',
+      chunksSortMode: prod ? 'manual' : 'auto',
     }),
     new ScriptExtHtmlPlugin({
       defaultAttribute: 'defer',
@@ -99,7 +96,7 @@ module.exports = ({ prod = false } = {}) => ({
       },
     ]),
     !prod && new webpack.HotModuleReplacementPlugin(),
-    // prod && new webpack.optimize.AggressiveSplittingPlugin(),
+    prod && new webpack.optimize.AggressiveSplittingPlugin(),
     // prod && new GenerateSW({
     //   skipWaiting: true,
     //   clientsClaim: true,
@@ -110,12 +107,6 @@ module.exports = ({ prod = false } = {}) => ({
     //   navigateFallback: '/',
     //   navigateFallbackWhitelist: [/^(?!\/__).*/],
     //   cacheId: pkg.name,
-    // }),
-    // prod && new PurgecssPlugin({
-    //   paths: glob.sync([
-    //     path.join(SOURCE_ROOT, './app/**/*.vue'),
-    //   ]),
-    //   whitelist: ['html', 'body'],
     // }),
     // prod && new RobotstxtPlugin(),
     // prod && new SitemapPlugin(env.SITE_URL, [{ path: '/' }]),

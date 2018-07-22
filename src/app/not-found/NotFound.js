@@ -5,7 +5,9 @@ import { compose } from 'recompose';
 
 export const NotFound = (): React$Element<*> => (
   <div>
-    <h1>404</h1>
+    <h1>
+      404
+    </h1>
   </div>
 );
 

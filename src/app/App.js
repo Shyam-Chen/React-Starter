@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { compose } from 'recompose';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
@@ -25,7 +26,9 @@ const App = ({ history }): React$Element<*> => (
   </div>
 );
 
-export default connect(
-  ({ app }) => ({ app }),
-  dispatch => ({ actions: bindActionCreators(actions, dispatch) }),
+export default compose(
+  connect(
+    ({ app }) => ({ app }),
+    (dispatch: any) => ({ actions: bindActionCreators(actions, dispatch) }),
+  ),
 )(App);

@@ -35,7 +35,6 @@
     "import/no-named-as-default": "off",
     "import/prefer-default-export": "off",
 
-    "react/jsx-closing-tag-location": "off",  // styled-jsx
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/prop-types": "off",
 

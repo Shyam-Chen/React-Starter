@@ -1,3 +1,5 @@
+// @flow
+
 import { handleActions } from 'redux-actions';
 
 import { INITIAL, SET_DATA } from './constants';

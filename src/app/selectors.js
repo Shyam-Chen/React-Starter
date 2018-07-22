@@ -1,3 +1,5 @@
+// @flow
+
 import { createSelector } from 'reselect';
 
 export const NAME = createSelector(

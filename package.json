@@ -67,6 +67,7 @@
     "redux-observable": "1.0.0",
     "redux-saga": "0.16.0",
     "redux-thunk": "2.3.0",
+    "register-service-worker": "1.4.1",
     "request": "2.87.0",
     "reselect": "3.0.1",
     "reselect-computed": "0.1.2",
@@ -109,7 +110,7 @@
     "gulp-replaces": "0.1.3",
     "gulp-shell": "0.6.5",
     "gulp-util": "3.0.8",
-    "html-webpack-plugin": "3.2.0",
+    "html-webpack-plugin": "4.0.0-alpha",
     "jest": "23.4.1",
     "process-envify": "0.1.3",
     "puppeteer": "1.6.0",
@@ -123,6 +124,7 @@
     "url-loader": "1.0.1",
     "webpack": "4.16.1",
     "webpack-cli": "3.1.0",
-    "webpack-dev-server": "3.1.4"
+    "webpack-dev-server": "3.1.4",
+    "workbox-webpack-plugin": "3.4.1"
   }
 }
