@@ -33,10 +33,7 @@ $ cd <PROJECT_NAME>
 2. Install dependencies
 
 ```bash
-$ yarn install
-
-# install flow types
-$ yarn typed
+$ yarn install && yarn typed
 ```
 
 3. Set an active project for working direct
@@ -128,6 +125,7 @@ This seed repository provides the following features:
 * [x] [Gulp](https://github.com/gulpjs/gulp)
 * [x] [SuperTest](https://github.com/visionmedia/supertest)
 * ---------- **Shared** ----------
+* [x] [Yarn](https://github.com/yarnpkg/yarn)
 * [ ] [Apollo GraphQL](https://github.com/apollographql)
 * [x] [ReactiveX](https://github.com/ReactiveX/rxjs)
 * [ ] [TensorFlow](https://github.com/tensorflow/tfjs)
