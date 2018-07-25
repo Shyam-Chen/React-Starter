@@ -10,12 +10,15 @@ import appEpic from '~/epics';
 import appReducer from '~/reducer';
 import watchApp from '~/sagas';
 
+import crudOperations from '~/shell/crud-operations/reducer';
+
 const rootEpic = combineEpics(
   appEpic,
 );
 
 const rootReducer = combineReducers({
   app: appReducer,
+  crudOperations,
 });
 
 const rootSaga = function *() {

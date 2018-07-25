@@ -19,6 +19,8 @@ const Router = () => (
 
       <Route path="/hello-world" component={AsyncShell('/hello-world/HelloWorld')} />
 
+      <Route path="/crud-operations/basic" component={AsyncShell('/crud-operations/basic/Basic')} />
+
       <Route path="*" component={NotFound} />
     </Switch>
   </div>

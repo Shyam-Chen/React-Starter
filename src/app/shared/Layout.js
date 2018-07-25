@@ -51,6 +51,7 @@ const Layout = ({ classes, children }) => (
         <IconButton>
           <MenuIcon className={classes.menu} />
         </IconButton>
+        {/* TODO: remove window.location.href */}
         <Typography variant="title" color="inherit" noWrap onClick={() => { window.location.href = '/'; }}>
           Oh My React
         </Typography>
@@ -59,21 +60,26 @@ const Layout = ({ classes, children }) => (
 
     <Drawer variant="permanent" classes={{ paper: classes.drawerPaper }}>
       <div className={classes.toolbar} />
+      {/* TODO: list rendering */}
       <List>
+        {/* TODO: remove window.location.href */}
         <ListItem button onClick={() => { window.location.href = '/hello-world'; }}>
-          <ListItemIcon>
-            <FaceIcon />
-          </ListItemIcon>
+          <ListItemIcon><FaceIcon /></ListItemIcon>
           <ListItemText primary="Hello World" />
+        </ListItem>
+      </List>
+      <List>
+        {/* TODO: remove window.location.href */}
+        <ListItem button onClick={() => { window.location.href = '/crud-operations/basic'; }}>
+          <ListItemIcon><FaceIcon /></ListItemIcon>
+          <ListItemText primary="CRUD Operations (Basic)" />
         </ListItem>
       </List>
     </Drawer>
 
     <main className={classes.content}>
       <div className={classes.toolbar} />
-      <div>
-        {children}
-      </div>
+      <div>{children}</div>
     </main>
   </div>
 );
