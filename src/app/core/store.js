@@ -6,11 +6,17 @@ import { all } from 'redux-saga/effects';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import { createLogger } from 'redux-logger';
 
+import watchApp from '~/sagas';
 import appEpic from '~/epics';
 import appReducer from '~/reducer';
-import watchApp from '~/sagas';
 
 import crudOperations from '~/shell/crud-operations/reducer';
+
+const rootSaga = function *() {
+  yield all([
+    watchApp(),
+  ]);
+};
 
 const rootEpic = combineEpics(
   appEpic,
@@ -21,12 +27,6 @@ const rootReducer = combineReducers({
   crudOperations,
 });
 
-const rootSaga = function *() {
-  yield all([
-    watchApp(),
-  ]);
-};
-
 export default (history) => {
   const sagaMiddleware = createSagaMiddleware();
   const epicMiddleware = createEpicMiddleware();
@@ -36,8 +36,8 @@ export default (history) => {
     applyMiddleware(
       routerMiddleware(history),
       thunkMiddleware,
-      epicMiddleware,
       sagaMiddleware,
+      epicMiddleware,
       createLogger({ diff: true }),
     ),
   );
