@@ -48,6 +48,7 @@
     "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
 
     // Variables
+    "no-shadow": "off",
 
     // Node.js and CommonJS
 
