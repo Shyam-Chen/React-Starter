@@ -4,7 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import { bindActionCreators } from 'redux';
-// import { bindSelectCreators } from 'reselect-computed';
+import { bindSelectCreators } from 'reselect-computed';
 
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -30,7 +30,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 import { Props } from './types';
 import * as actions from './actions';
-// import * as selectors from './selectors';
+import * as selectors from './selectors';
 
 const styles = theme => ({
   root: {
@@ -43,7 +43,7 @@ const styles = theme => ({
   },
 });
 
-export const Basic = ({ classes, b$, actions }: Props): React$Element<*> => (
+export const Basic = ({ classes, b$, actions, selectors }: Props): React$Element<*> => (
   <div id="basic">
     <Typography>CRUD Operations - Basic</Typography>
 
@@ -87,6 +87,7 @@ export const Basic = ({ classes, b$, actions }: Props): React$Element<*> => (
             actions.setData({ searchData: event.target.value })
           )}
         />
+        <Typography>{selectors.numSelected}</Typography>
       </Toolbar>
       <Table className={classes.table}>
         <TableHead>
@@ -97,9 +98,10 @@ export const Basic = ({ classes, b$, actions }: Props): React$Element<*> => (
                 checked={b$.selected.length === b$.dataset.length}
                 onChange={(event, checked) => {
                   if (checked) {
-                    actions.setData(({ selected: b$.dataset.map(item => item.id) }));
+                    actions.setData(({ selected: b$.dataset.map(item => item) }));
                     return;
                   }
+
                   actions.setData({ selected: [] });
                 }}
               />
@@ -118,18 +120,33 @@ export const Basic = ({ classes, b$, actions }: Props): React$Element<*> => (
                 || item.accent.toLowerCase().indexOf(b$.searchData.toLowerCase()) !== -1
               ))
               .map((item: any) => (
-                <TableRow hover role="checkbox" key={item.id}>
+                <TableRow
+                  hover
+                  role="checkbox"
+                  key={item.id}
+                  selected={b$.selected.indexOf(item) !== -1}
+                  onClick={() => {
+                    const selectedIndex = b$.selected.indexOf(item);
+                    let res = [];
+
+                    if (selectedIndex === -1) {
+                      res = res.concat(b$.selected, item);
+                    } else if (selectedIndex === 0) {
+                      res = res.concat(b$.selected.slice(1));
+                    } else if (selectedIndex === b$.selected.length - 1) {
+                      res = res.concat(b$.selected.slice(0, -1));
+                    } else if (selectedIndex > 0) {
+                      res = res.concat(
+                        b$.selected.slice(0, selectedIndex),
+                        b$.selected.slice(selectedIndex + 1),
+                      );
+                    }
+
+                    actions.setData({ selected: res });
+                  }}
+                >
                   <TableCell padding="checkbox">
-                    <Checkbox
-                      onChange={(event, checked) => {
-                        if (checked) {
-                          actions.setData(({ selected: [...b$.selected, item] }));
-                        } else {
-                          const index = b$.selected.indexOf(item);
-                          actions.setData({ selected: b$.selected.splice(index, 1) });
-                        }
-                      }}
-                    />
+                    <Checkbox checked={b$.selected.indexOf(item) !== -1} />
                   </TableCell>
                   <TableCell>{item.id}</TableCell>
                   <TableCell>{item.primary}</TableCell>
@@ -225,7 +242,7 @@ export default compose(
   connect(
     ({ crudOperations: { basic } }) => ({
       b$: basic,
-      // selectors: bindSelectCreators(selectors, basic),
+      selectors: bindSelectCreators(selectors, basic),
     }),
     (dispatch: any) => ({ actions: bindActionCreators(actions, dispatch) }),
   ),
