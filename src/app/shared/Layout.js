@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { compose } from 'recompose';
+import { Link } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -24,6 +25,9 @@ const styles = theme => ({
     overflow: 'hidden',
     position: 'relative',
     display: 'flex',
+  },
+  'o-title': {
+    'text-decoration': 'none',
   },
   menu: {
     color: '#fff',
@@ -51,8 +55,7 @@ const Layout = ({ classes, children }) => (
         <IconButton>
           <MenuIcon className={classes.menu} />
         </IconButton>
-        {/* TODO: remove window.location.href */}
-        <Typography variant="title" color="inherit" noWrap onClick={() => { window.location.href = '/'; }}>
+        <Typography variant="title" color="inherit" noWrap component={Link} to="/" className={classes['o-title']}>
           Oh My React
         </Typography>
       </Toolbar>
@@ -62,15 +65,13 @@ const Layout = ({ classes, children }) => (
       <div className={classes.toolbar} />
       {/* TODO: list rendering */}
       <List>
-        {/* TODO: remove window.location.href */}
-        <ListItem button onClick={() => { window.location.href = '/hello-world'; }}>
+        <ListItem button component={Link} to="/hello-world">
           <ListItemIcon><FaceIcon /></ListItemIcon>
           <ListItemText primary="Hello World" />
         </ListItem>
       </List>
       <List>
-        {/* TODO: remove window.location.href */}
-        <ListItem button onClick={() => { window.location.href = '/crud-operations/basic'; }}>
+        <ListItem button component={Link} to="/crud-operations/basic">
           <ListItemIcon><FaceIcon /></ListItemIcon>
           <ListItemText primary="CRUD Operations (Basic)" />
         </ListItem>
