@@ -78,17 +78,27 @@ export const Basic = ({ classes, b$, actions, selectors }: Props): React$Element
     </Button>
 
     <Paper>
-      <Toolbar>
-        <Typography>Board</Typography>
-        <TextField
-          label="Search"
-          value={b$.searchData}
-          onChange={event => (
-            actions.setData({ searchData: event.target.value })
-          )}
-        />
-        <Typography>{selectors.numSelected}</Typography>
-      </Toolbar>
+      {
+        selectors.numSelected !== 0
+          ? (
+            <Toolbar>
+              <Typography>{selectors.numSelected} selected</Typography>
+            </Toolbar>
+          )
+          : (
+            <Toolbar>
+              <Typography>Board</Typography>
+              <TextField
+                label="Search"
+                value={b$.searchData}
+                onChange={event => (
+                  actions.setData({ searchData: event.target.value })
+                )}
+              />
+            </Toolbar>
+          )
+      }
+
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
@@ -120,33 +130,22 @@ export const Basic = ({ classes, b$, actions, selectors }: Props): React$Element
                 || item.accent.toLowerCase().indexOf(b$.searchData.toLowerCase()) !== -1
               ))
               .map((item: any) => (
-                <TableRow
-                  hover
-                  role="checkbox"
-                  key={item.id}
-                  selected={b$.selected.indexOf(item) !== -1}
-                  onClick={() => {
-                    const selectedIndex = b$.selected.indexOf(item);
-                    let res = [];
-
-                    if (selectedIndex === -1) {
-                      res = res.concat(b$.selected, item);
-                    } else if (selectedIndex === 0) {
-                      res = res.concat(b$.selected.slice(1));
-                    } else if (selectedIndex === b$.selected.length - 1) {
-                      res = res.concat(b$.selected.slice(0, -1));
-                    } else if (selectedIndex > 0) {
-                      res = res.concat(
-                        b$.selected.slice(0, selectedIndex),
-                        b$.selected.slice(selectedIndex + 1),
-                      );
-                    }
-
-                    actions.setData({ selected: res });
-                  }}
-                >
+                <TableRow hover role="checkbox" key={item.id}>
                   <TableCell padding="checkbox">
-                    <Checkbox checked={b$.selected.indexOf(item) !== -1} />
+                    <Checkbox
+                      checked={b$.selected.indexOf(item) !== -1}
+                      onChange={() => {
+                        let res = [];
+
+                        const index = b$.selected.indexOf(item);
+                        if (index === -1) res = res.concat(b$.selected, item);
+                        if (index === 0) res = res.concat(b$.selected.slice(1));
+                        if (index === b$.selected.length - 1) res = res.concat(b$.selected.slice(0, -1));
+                        if (index > 0) res = res.concat(b$.selected.slice(0, index), b$.selected.slice(index + 1));
+
+                        actions.setData({ selected: res });
+                      }}
+                    />
                   </TableCell>
                   <TableCell>{item.id}</TableCell>
                   <TableCell>{item.primary}</TableCell>
