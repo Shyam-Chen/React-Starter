@@ -4,6 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import { bindActionCreators } from 'redux';
+// import { bindSelectCreators } from 'reselect-computed';
 
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -29,180 +30,203 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 import { Props } from './types';
 import * as actions from './actions';
+// import * as selectors from './selectors';
 
 const styles = theme => ({
   root: {
     width: '100%',
-    marginTop: theme.spacing.unit * 3,
+    'margin-top': theme.spacing.unit * 3,
   },
   table: {},
   tableWrapper: {
-    overflowX: 'auto',
+    'overflow-x': 'auto',
   },
 });
 
-export const Basic = ({ classes, b$, actions }: Props): React$Element<*> => {
-  console.log('[*]', b$);
+export const Basic = ({ classes, b$, actions }: Props): React$Element<*> => (
+  <div id="basic">
+    <Typography>CRUD Operations - Basic</Typography>
 
-  return (
-    <div id="basic">
-      <Typography>CRUD Operations - Basic</Typography>
+    <TextField
+      label="Primary"
+      value={b$.primary}
+      onChange={event => (
+        actions.setData({
+          addData: { ...b$.addData, primary: event.target.value },
+        })
+      )}
+    />
+    <TextField
+      label="Accent"
+      value={b$.accent}
+      onChange={event => (
+        actions.setData({
+          addData: { ...b$.addData, accent: event.target.value },
+        })
+      )}
+    />
+    <Button
+      variant="contained"
+      onClick={async () => {
+        if (b$.addData.primary && b$.addData.accent) {
+          await actions.addItem(b$.addData);
+          await actions.setData({ addData: { primary: '', accent: '' } });
+        }
+      }}
+    >
+      Add
+    </Button>
 
-      <TextField
-        label="Primary"
-        value={b$.primary}
-        onChange={event => (
-          actions.setData({
-            addData: { ...b$.addData, primary: event.target.value },
-          })
-        )}
-      />
-      <TextField
-        label="Accent"
-        value={b$.accent}
-        onChange={event => (
-          actions.setData({
-            addData: { ...b$.addData, accent: event.target.value },
-          })
-        )}
-      />
-      <Button
-        variant="contained"
-        onClick={async () => {
-          if (b$.addData.primary && b$.addData.accent) {
-            await actions.addItem(b$.addData.primary, b$.addData.accent);
-            await actions.setData({ addData: { primary: '', accent: '' } });
+    <Paper>
+      <Toolbar>
+        <Typography>Board</Typography>
+        <TextField
+          label="Search"
+          value={b$.searchData}
+          onChange={event => (
+            actions.setData({ searchData: event.target.value })
+          )}
+        />
+      </Toolbar>
+      <Table className={classes.table}>
+        <TableHead>
+          <TableRow>
+            <TableCell padding="checkbox">
+              <Checkbox
+                indeterminate={b$.selected.length > 0 && b$.selected.length < b$.dataset.length}
+                checked={b$.selected.length === b$.dataset.length}
+                onChange={(event, checked) => {
+                  if (checked) {
+                    actions.setData(({ selected: b$.dataset.map(item => item.id) }));
+                    return;
+                  }
+                  actions.setData({ selected: [] });
+                }}
+              />
+            </TableCell>
+            <TableCell>ID</TableCell>
+            <TableCell>Primary</TableCell>
+            <TableCell>Accent</TableCell>
+            <TableCell>Actions</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {
+            b$.dataset
+              .filter(item => (
+                item.primary.toLowerCase().indexOf(b$.searchData.toLowerCase()) > -1
+                || item.accent.toLowerCase().indexOf(b$.searchData.toLowerCase()) !== -1
+              ))
+              .map((item: any) => (
+                <TableRow hover role="checkbox" key={item.id}>
+                  <TableCell padding="checkbox">
+                    <Checkbox
+                      onChange={(event, checked) => {
+                        if (checked) {
+                          actions.setData(({ selected: [...b$.selected, item] }));
+                        } else {
+                          const index = b$.selected.indexOf(item);
+                          actions.setData({ selected: b$.selected.splice(index, 1) });
+                        }
+                      }}
+                    />
+                  </TableCell>
+                  <TableCell>{item.id}</TableCell>
+                  <TableCell>{item.primary}</TableCell>
+                  <TableCell>{item.accent}</TableCell>
+                  <TableCell>
+                    <IconButton
+                      onClick={() => (
+                        actions.setData({
+                          editData: { ...b$.editData, id: item.id, primary: item.primary, accent: item.accent },
+                          dialogs: { ...b$.dialogs, edit: true },
+                        })
+                      )}
+                    >
+                      <EditIcon />
+                    </IconButton>
+                    <IconButton
+                      onClick={() => (
+                        actions.setData({
+                          deleteData: { ...b$.deleteData, id: item.id },
+                          dialogs: { ...b$.dialogs, delete: true },
+                        })
+                      )}
+                    >
+                      <DeleteIcon />
+                    </IconButton>
+                  </TableCell>
+                </TableRow>
+              ))
           }
-        }}
-      >
-        Add
-      </Button>
+        </TableBody>
+      </Table>
+    </Paper>
 
-      <Paper>
-        <Toolbar>
-          <Typography>Board</Typography>
+    <Dialog open={b$.dialogs.edit} onClose={() => actions.setData({ dialogs: { ...b$.dialogs, edit: false } })}>
+      <DialogTitle>Edit</DialogTitle>
+      <DialogContent>
+        <DialogContentText>
           <TextField
-            label="Search"
-            value={b$.searchData}
+            label="Primary"
+            value={b$.editData.primary}
             onChange={event => (
-              actions.setData({ searchData: event.target.value })
+              actions.setData({
+                editData: { ...b$.editData, primary: event.target.value },
+              })
             )}
           />
-        </Toolbar>
-        <Table className={classes.table}>
-          <TableHead>
-            <TableRow>
-              <TableCell padding="checkbox"><Checkbox /></TableCell>
-              <TableCell>ID</TableCell>
-              <TableCell>Primary</TableCell>
-              <TableCell>Accent</TableCell>
-              <TableCell>Actions</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {
-              b$.dataset
-                .filter(item => (
-                  item.primary.toLowerCase().indexOf(b$.searchData.toLowerCase()) > -1 ||
-                  item.accent.toLowerCase().indexOf(b$.searchData.toLowerCase()) !== -1
-                ))
-                .map((item: any) => (
-                  <TableRow hover role="checkbox" key={item.id}>
-                    <TableCell padding="checkbox"><Checkbox /></TableCell>
-                    <TableCell>{item.id}</TableCell>
-                    <TableCell>{item.primary}</TableCell>
-                    <TableCell>{item.accent}</TableCell>
-                    <TableCell>
-                      <IconButton
-                        onClick={() => (
-                          actions.setData({
-                            editData: { ...b$.editData, id: item.id, primary: item.primary, accent: item.accent },
-                            dialogs: { ...b$.dialogs, edit: true },
-                          })
-                        )}
-                      >
-                        <EditIcon />
-                      </IconButton>
-                      <IconButton
-                        onClick={() => (
-                          actions.setData({
-                            deleteData: { ...b$.deleteData, id: item.id },
-                            dialogs: { ...b$.dialogs, delete: true },
-                          })
-                        )}
-                      >
-                        <DeleteIcon />
-                      </IconButton>
-                    </TableCell>
-                  </TableRow>
-                ))
-            }
-          </TableBody>
-        </Table>
-      </Paper>
+          <TextField
+            label="Accent"
+            value={b$.editData.accent}
+            onChange={event => (
+              actions.setData({
+                editData: { ...b$.editData, accent: event.target.value },
+              })
+            )}
+          />
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={() => actions.setData({ dialogs: { ...b$.dialogs, edit: false } })}>Cancel</Button>
+        <Button
+          onClick={async () => {
+            await actions.editItem(b$.editData);
+            await actions.setData({ dialogs: { ...b$.dialogs, edit: false } });
+          }}
+        >
+          Save
+        </Button>
+      </DialogActions>
+    </Dialog>
 
-      <Dialog open={b$.dialogs.edit} onClose={() => actions.setData({ dialogs: { ...b$.dialogs, edit: false } })}>
-        <DialogTitle>Edit</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            <TextField
-              label="Primary"
-              value={b$.editData.primary}
-              onChange={event => (
-                actions.setData({
-                  editData: { ...b$.editData, primary: event.target.value },
-                })
-              )}
-            />
-            <TextField
-              label="Accent"
-              value={b$.editData.accent}
-              onChange={event => (
-                actions.setData({
-                  editData: { ...b$.editData, accent: event.target.value },
-                })
-              )}
-            />
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => actions.setData({ dialogs: { ...b$.dialogs, edit: false } })}>Cancel</Button>
-          <Button
-            onClick={async () => {
-              await actions.editItem(b$.editData);
-              await actions.setData({ dialogs: { ...b$.dialogs, edit: false } });
-            }}
-          >
-            Save
-          </Button>
-        </DialogActions>
-      </Dialog>
-
-      <Dialog open={b$.dialogs.delete} onClose={() => actions.setData({ dialogs: { ...b$.dialogs, delete: false } })}>
-        <DialogTitle>Delete</DialogTitle>
-        <DialogContent>
-          <DialogContentText>Are you sure you want to delete it?</DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => actions.setData({ dialogs: { ...b$.dialogs, delete: false } })}>Cancel</Button>
-          <Button
-            onClick={async () => {
-              await actions.deleteItem(b$.deleteData.id);
-              await actions.setData({ dialogs: { ...b$.dialogs, delete: false } });
-            }}
-          >
-            Confirm
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
-  );
-};
+    <Dialog open={b$.dialogs.delete} onClose={() => actions.setData({ dialogs: { ...b$.dialogs, delete: false } })}>
+      <DialogTitle>Delete</DialogTitle>
+      <DialogContent>
+        <DialogContentText>Are you sure you want to delete it?</DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={() => actions.setData({ dialogs: { ...b$.dialogs, delete: false } })}>Cancel</Button>
+        <Button
+          onClick={async () => {
+            await actions.deleteItem(b$.deleteData.id);
+            await actions.setData({ dialogs: { ...b$.dialogs, delete: false } });
+          }}
+        >
+          Confirm
+        </Button>
+      </DialogActions>
+    </Dialog>
+  </div>
+);
 
 export default compose(
   withStyles(styles),
   connect(
-    ({ crudOperations: { basic } }) => ({ b$: basic }),
+    ({ crudOperations: { basic } }) => ({
+      b$: basic,
+      // selectors: bindSelectCreators(selectors, basic),
+    }),
     (dispatch: any) => ({ actions: bindActionCreators(actions, dispatch) }),
   ),
 )(Basic);

@@ -10,7 +10,6 @@ export const INITIAL = {
   ],
 
   addData: {},
-
   editData: {},
   deleteData: {},
 
@@ -21,7 +20,6 @@ export const INITIAL = {
 };
 
 export const ADD_ITEM = '[crud-operations/basic] ADD_ITEM';
-export const SEARCH_ITEM = '[crud-operations/basic] SEARCH_ITEM';
 export const EDIT_ITEM = '[crud-operations/basic] EDIT_ITEM';
 export const DELETE_ITEM = '[crud-operations/basic] DELETE_ITEM';
 

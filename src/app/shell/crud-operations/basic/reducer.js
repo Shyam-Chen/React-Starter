@@ -5,7 +5,7 @@ import { handleActions } from 'redux-actions';
 import { INITIAL, ADD_ITEM, EDIT_ITEM, DELETE_ITEM, SET_DATA } from './constants';
 
 export default handleActions({
-  [ADD_ITEM](state, { primary, accent }) {
+  [ADD_ITEM](state, { payload: { primary, accent } }) {
     const id = state.dataset.reduce((maxId, item) => Math.max(item.id, maxId), -1) + 1;
 
     return {
@@ -13,7 +13,7 @@ export default handleActions({
       dataset: [...state.dataset, { id, primary, accent }],
     };
   },
-  [EDIT_ITEM](state, { item: { id, primary, accent } }) {
+  [EDIT_ITEM](state, { payload: { id, primary, accent } }) {
     return {
       ...state,
       dataset: [
