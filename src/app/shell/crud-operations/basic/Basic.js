@@ -37,6 +37,12 @@ const styles = theme => ({
     width: '100%',
     'margin-top': theme.spacing.unit * 3,
   },
+  'o-toolbar-selected': {
+    color: '#ff5252',
+  },
+  'o-spacer': {
+    flex: '1 0 auto',
+  },
   table: {},
   tableWrapper: {
     'overflow-x': 'auto',
@@ -82,7 +88,16 @@ export const Basic = ({ classes, b$, actions, selectors }: Props): React$Element
         selectors.numSelected !== 0
           ? (
             <Toolbar>
-              <Typography>{selectors.numSelected} selected</Typography>
+              <Typography className={classes['o-toolbar-selected']}>{selectors.numSelected} selected</Typography>
+              <div className={classes['o-spacer']} />
+              <IconButton
+                onClick={async () => {
+                  await b$.selected.forEach(({ id }) => actions.deleteItem(id));
+                  await actions.setData({ selected: [] });
+                }}
+              >
+                <DeleteIcon />
+              </IconButton>
             </Toolbar>
           )
           : (
@@ -105,7 +120,7 @@ export const Basic = ({ classes, b$, actions, selectors }: Props): React$Element
             <TableCell padding="checkbox">
               <Checkbox
                 indeterminate={b$.selected.length > 0 && b$.selected.length < b$.dataset.length}
-                checked={b$.selected.length === b$.dataset.length}
+                checked={b$.selected.length === b$.dataset.length && b$.dataset.length !== 0}
                 onChange={(event, checked) => {
                   if (checked) {
                     actions.setData(({ selected: b$.dataset.map(item => item) }));
