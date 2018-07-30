@@ -12,7 +12,7 @@ import appReducer from '~/reducer';
 
 import crudOperations from '~/shell/crud-operations/reducer';
 
-const rootSaga = function *() {
+const rootSaga = function* rootSaga() {
   yield all([
     watchApp(),
   ]);

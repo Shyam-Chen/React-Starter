@@ -60,6 +60,5 @@
     "object-curly-newline": ["error", { "consistent": true }],
 
     // JS.Next
-    "generator-star-spacing": ["error", { "before": true, "after": false }],
   }
 }
