@@ -27,7 +27,7 @@ const Router = () => (
       <Route exact path="/" component={Home} />
 
       <Route path="/hello-world" component={lazyload(() => import('~/shell/hello-world/HelloWorld'))} />
-
+      <Route path="/sort-filter-list" component={lazyload(() => import('~/shell/SortFilterList'))} />
       <Route path="/crud-operations/basic" component={lazyload(() => import('~/shell/crud-operations/basic/Basic'))} />
 
       <Route path="*" component={NotFound} />

@@ -71,6 +71,12 @@ const Layout = ({ classes, children }) => (
         </ListItem>
       </List>
       <List>
+        <ListItem button component={Link} to="/sort-filter-list">
+          <ListItemIcon><FaceIcon /></ListItemIcon>
+          <ListItemText primary="Sort Filter List" />
+        </ListItem>
+      </List>
+      <List>
         <ListItem button component={Link} to="/crud-operations/basic">
           <ListItemIcon><FaceIcon /></ListItemIcon>
           <ListItemText primary="CRUD Operations (Basic)" />
