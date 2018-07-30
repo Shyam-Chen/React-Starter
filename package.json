@@ -2,6 +2,9 @@
   "name": "React-Fullstack-Starter",
   "version": "1.0.0",
   "description": "A boilerplate for React, Material, Express, Babel, Flow, and ReactiveX.",
+  "engines": {
+    "node": "8"
+  },
   "scripts": {
     "start:app": "rimraf public && cross-env BABEL_ENV=app webpack-dev-server --progress",
     "start:api": "rimraf functions && cross-env BABEL_ENV=api gulp",
@@ -44,7 +47,7 @@
     "express": "4.16.3",
     "express-history-api-fallback": "2.2.1",
     "firebase-admin": "5.13.0",
-    "firebase-functions": "1.1.0",
+    "firebase-functions": "2.0.2",
     "history": "4.7.2",
     "intl": "1.2.5",
     "lodash": "4.17.10",
@@ -100,7 +103,7 @@
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-react": "7.10.0",
     "firebase-functions-test": "0.1.2",
-    "firebase-tools": "3.19.3",
+    "firebase-tools": "4.0.0",
     "flow-bin": "0.74.0",
     "flow-typed": "2.5.1",
     "gulp": "3.9.1",
