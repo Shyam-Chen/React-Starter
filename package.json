@@ -10,7 +10,7 @@
     "start:api": "rimraf functions && cross-env BABEL_ENV=api gulp",
     "build:app": "rimraf public && cross-env BABEL_ENV=app webpack --env.prod",
     "build:api": "rimraf functions && cross-env BABEL_ENV=api gulp --prod",
-    "lint:app": "eslint src/client.js 'src/app/**/*.js' && stylelint 'src/**/*.css'",
+    "lint:app": "eslint src/client.js 'src/app/**/*.js'",
     "lint:api": "eslint src/server.js 'src/api/**/*.js'",
     "test:app": "cross-env BABEL_ENV=app JEST_ENV=app jest \"src/app/.*\\.js$\" --coverage --forceExit",
     "test:api": "cross-env BABEL_ENV=test JEST_ENV=api jest \"src/api/.*\\.js$\" --coverage --forceExit",
