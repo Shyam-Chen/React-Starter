@@ -1,5 +1,5 @@
 {
-  "name": "React-Fullstack-Starter",
+  "name": "react-fullstack-starter",
   "version": "1.0.0",
   "description": "A boilerplate for React, Material, Express, Babel, Flow, and ReactiveX.",
   "engines": {
@@ -125,9 +125,11 @@
     "react-test-renderer": "16.4.1",
     "redux-mock-store": "1.5.3",
     "regenerator-runtime": "0.12.0",
+    "robotstxt-webpack-plugin": "4.0.1",
     "rucksack-css": "1.0.2",
     "run-sequence": "2.2.1",
     "script-ext-html-webpack-plugin": "2.0.1",
+    "sitemap-webpack-plugin": "0.6.0",
     "supertest": "3.1.0",
     "url-loader": "1.0.1",
     "webpack": "4.16.1",
