@@ -2,11 +2,11 @@
 
 :ram: A boilerplate for React, Material, Express, Babel, Flow, and ReactiveX.
 
-[![Build Status](https://img.shields.io/circleci/project/Shyam-Chen/React-Fullstack-Starter/develop.svg)](https://circleci.com/gh/Shyam-Chen/React-Fullstack-Starter)
+[![Build Status](https://img.shields.io/circleci/project/github/Shyam-Chen/React-Fullstack-Starter/develop.svg)](https://circleci.com/gh/Shyam-Chen/React-Fullstack-Starter)
 [![Coverage Status](https://img.shields.io/codecov/c/github/Shyam-Chen/React-Fullstack-Starter/develop.svg)](https://codecov.io/gh/Shyam-Chen/React-Fullstack-Starter)
  //
-[![dependencies Status](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter/status.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter)
-[![devDependencies Status](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter/dev-status.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter?type=dev)
+[![dependencies Status](https://img.shields.io/david/Shyam-Chen/React-Fullstack-Starter.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter)
+[![devDependencies Status](https://img.shields.io/david/dev/Shyam-Chen/React-Fullstack-Starter.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter?type=dev)
 
 :rainbow: Live Demo: [Develop](https://react-by-example-dev.firebaseapp.com/) | [Master](https://react-by-example-prod.firebaseapp.com/)
 
