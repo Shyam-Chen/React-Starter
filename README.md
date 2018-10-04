@@ -172,14 +172,15 @@ $ docker-compose up -d --build <SERVICE>
   public
   functions
   coverage
-+ Dockerfile.dev
-+ Dockerfile.prod
++ dev.Dockerfile
++ stage.Dockerfile
++ prod.Dockerfile
   *.log
 ```
 
 ```bash
 $ docker login
-$ docker build -f tools/Dockerfile.<dev|prod> -t <IMAGE_NAME>:<IMAGE_TAG> .
+$ docker build -f ./tools/<dev|stage|prod>.Dockerfile -t <IMAGE_NAME>:<IMAGE_TAG> .
 
 # checkout
 $ docker images
@@ -198,11 +199,11 @@ $ docker rmi <IMAGE_ID>
 ```diff
 # docker-compose.yml
 
-  <dev|prod>:
--   image: <dev|prod>
+  <dev|stage|prod>:
+-   image: <dev|stage|prod>
 -   build:
 -     context: .
--     dockerfile: tools/Dockerfile.<dev|prod>
+-     dockerfile: ./tools/<dev|stage|prod>.Dockerfile
 +   image: <DOCKER_ID_USER>/<IMAGE_NAME>:<IMAGE_TAG>
     volumes:
       - yarn:/home/node/.cache/yarn
@@ -220,6 +221,7 @@ Change to your project.
 {
   "projects": {
     "development": "<PROJECT_NAME>",
+    "staging": "<STAGE_PROJECT_NAME>",
     "production": "<PROJECT_NAME>"
   }
 }
