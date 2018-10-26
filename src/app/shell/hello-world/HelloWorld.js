@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import { compose } from 'recompose';
+import { type HOC, compose } from 'recompose';
 
 export const HelloWorld = (): React$Element<*> => (
   <div id="hello-world">
@@ -9,4 +9,6 @@ export const HelloWorld = (): React$Element<*> => (
   </div>
 );
 
-export default compose()(HelloWorld);
+export const enhance: HOC<*, {}> = compose();
+
+export default enhance(HelloWorld);

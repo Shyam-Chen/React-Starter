@@ -105,6 +105,7 @@ This seed repository provides the following features:
 * ---------- **Front-end** ----------
 * [x] [React](https://github.com/facebook/react)
 * [x] [React Router](https://github.com/ReactTraining/react-router)
+* [ ] React Intl
 * [x] [Recompose](https://github.com/acdlite/recompose)
 * [x] [Redux](https://github.com/reduxjs/redux)
 * [x] [Redux Thunk](https://github.com/reduxjs/redux-thunk)
