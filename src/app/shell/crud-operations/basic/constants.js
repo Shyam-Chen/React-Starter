@@ -1,4 +1,8 @@
-export const INITIAL = {
+// @flow
+
+import { IBasic } from './types';
+
+export const INITIAL: IBasic = {
   searchData: '',
   selected: [],
 
@@ -11,16 +15,19 @@ export const INITIAL = {
 
   addData: {},
   editData: {},
+  viewData: {},
   deleteData: {},
 
   dialogs: {
+    add: false,
     edit: false,
+    view: false,
     delete: false,
   },
 };
 
-export const ADD_ITEM = '[crud-operations/basic] ADD_ITEM';
-export const EDIT_ITEM = '[crud-operations/basic] EDIT_ITEM';
-export const DELETE_ITEM = '[crud-operations/basic] DELETE_ITEM';
+export const ADD_ITEM = '[crudOperations/basic] ADD_ITEM';
+export const EDIT_ITEM = '[crudOperations/basic] EDIT_ITEM';
+export const DELETE_ITEM = '[crudOperations/basic] DELETE_ITEM';
 
-export const SET_DATA = '[crud-operations/basic] SET_DATA';
+export const SET_DATA = '[crudOperations/basic] SET_DATA';

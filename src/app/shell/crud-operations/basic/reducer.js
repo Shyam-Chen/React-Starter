@@ -28,7 +28,7 @@ export default handleActions({
     return {
       ...state,
       dataset: removeById(state.dataset),
-      selected: removeById(state.selected),
+      selected: state.selected.length ? removeById(state.selected) : state.selected,
     };
   },
   [SET_DATA](state, { data }) {

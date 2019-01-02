@@ -32,30 +32,13 @@ import { Props } from './types';
 import * as actions from './actions';
 import * as selectors from './selectors';
 
-const styles = theme => ({
-  root: {
-    width: '100%',
-    'margin-top': theme.spacing.unit * 3,
-  },
-  'o-toolbar-selected': {
-    color: '#ff5252',
-  },
-  'o-spacer': {
-    flex: '1 0 auto',
-  },
-  table: {},
-  tableWrapper: {
-    'overflow-x': 'auto',
-  },
-});
-
 export const Basic = ({ classes, b$, actions, selectors }: Props): React$Element<*> => (
   <div id="basic">
     <Typography>CRUD Operations - Basic</Typography>
 
     <TextField
       label="Primary"
-      value={b$.primary}
+      value={b$.addData.primary}
       onChange={event => (
         actions.setData({
           addData: { ...b$.addData, primary: event.target.value },
@@ -64,7 +47,7 @@ export const Basic = ({ classes, b$, actions, selectors }: Props): React$Element
     />
     <TextField
       label="Accent"
-      value={b$.accent}
+      value={b$.addData.accent}
       onChange={event => (
         actions.setData({
           addData: { ...b$.addData, accent: event.target.value },
@@ -121,14 +104,7 @@ export const Basic = ({ classes, b$, actions, selectors }: Props): React$Element
               <Checkbox
                 indeterminate={b$.selected.length > 0 && b$.selected.length < b$.dataset.length}
                 checked={b$.selected.length === b$.dataset.length && b$.dataset.length !== 0}
-                onChange={(event, checked) => {
-                  if (checked) {
-                    actions.setData(({ selected: b$.dataset.map(item => item) }));
-                    return;
-                  }
-
-                  actions.setData({ selected: [] });
-                }}
+                onChange={(event, checked) => actions.setData({ selected: checked ? b$.dataset.map(item => item) : [] })}
               />
             </TableCell>
             <TableCell>ID</TableCell>
@@ -150,6 +126,7 @@ export const Basic = ({ classes, b$, actions, selectors }: Props): React$Element
                     <Checkbox
                       checked={b$.selected.indexOf(item) !== -1}
                       onChange={() => {
+                        // FIXME: When editing is complete, it should not be unchecked.
                         let res = [];
 
                         const index = b$.selected.indexOf(item);
@@ -252,7 +229,22 @@ export const Basic = ({ classes, b$, actions, selectors }: Props): React$Element
 );
 
 export default compose(
-  withStyles(styles),
+  withStyles(theme => ({
+    root: {
+      width: '100%',
+      'margin-top': theme.spacing.unit * 3,
+    },
+    'o-toolbar-selected': {
+      color: '#ff5252',
+    },
+    'o-spacer': {
+      flex: '1 0 auto',
+    },
+    table: {},
+    tableWrapper: {
+      'overflow-x': 'auto',
+    },
+  })),
   connect(
     ({ crudOperations: { basic } }) => ({
       b$: basic,
