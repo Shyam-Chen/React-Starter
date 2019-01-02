@@ -1,5 +1,3 @@
-// @flow
-
 import { handleActions } from 'redux-actions';
 
 import { INITIAL, ADD_ITEM, EDIT_ITEM, DELETE_ITEM, SET_DATA } from './constants';
@@ -23,9 +21,14 @@ export default handleActions({
     };
   },
   [DELETE_ITEM](state, { id }) {
+    const removeById = arr => (
+      [...arr.filter(item => item.id !== id)]
+    );
+
     return {
       ...state,
-      dataset: [...state.dataset.filter(item => item.id !== id)],
+      dataset: removeById(state.dataset),
+      selected: removeById(state.selected),
     };
   },
   [SET_DATA](state, { data }) {
