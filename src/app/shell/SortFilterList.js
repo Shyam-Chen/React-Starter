@@ -1,7 +1,7 @@
 // @flow
 
-import React from 'react';
-import { compose, withState, lifecycle } from 'recompose';
+import React, { useState, useEffect } from 'react';
+import { compose } from 'recompose';
 import axios from 'axios';
 
 import { withStyles } from '@material-ui/core/styles';
@@ -18,12 +18,6 @@ type List = {
 
 type Props = {
   classes: any,
-  list: List[],
-  sort: string,
-  setSort(value: string): void,
-  length: string,
-  setLength(value: string): void,
-  isLoading: boolean,
 };
 
 const styles = () => ({
@@ -139,25 +133,38 @@ const sortList = (sort: string) => (list: List[]) => {
   return list;
 };
 
-export const Home = ({ classes, list, sort, setSort, length, setLength, isLoading }: Props): React$Element<*> => {
+export const Home = ({ classes }: Props): React$Element<*> => {
+  const [sort, setSort] = useState('published');
+  const [length, setLength] = useState('any');
+  const [list, setList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   const composeList = compose(sortList(sort), filerList(length))(list);
+
+  useEffect(() => {
+    axios.get('https://us-central1-lithe-window-713.cloudfunctions.net/fronted-demo')
+      .then(({ data }) => {
+        setList(data.data);
+        setIsLoading(false);
+      });
+  });
 
   return (
     <div>
       <div className={classes['o-button-groups']}>
         <div className={classes['o-button-group']}>
-          <Typography variant="title">Sort</Typography>
-          <Button className={classes['o-button']} variant="raised" color={sort === 'published' ? 'primary' : 'default'} onClick={() => setSort('published')}>Published</Button>
-          <Button className={classes['o-button']} variant="raised" color={sort === 'views' ? 'primary' : 'default'} onClick={() => setSort('views')}>Views</Button>
-          <Button className={classes['o-button']} variant="raised" color={sort === 'collections' ? 'primary' : 'default'} onClick={() => setSort('collections')}>Collections</Button>
+          <Typography variant="h6">Sort</Typography>
+          <Button className={classes['o-button']} variant="contained" color={sort === 'published' ? 'primary' : 'default'} onClick={() => setSort('published')}>Published</Button>
+          <Button className={classes['o-button']} variant="contained" color={sort === 'views' ? 'primary' : 'default'} onClick={() => setSort('views')}>Views</Button>
+          <Button className={classes['o-button']} variant="contained" color={sort === 'collections' ? 'primary' : 'default'} onClick={() => setSort('collections')}>Collections</Button>
         </div>
 
         <div className={classes['o-button-group']}>
-          <Typography variant="title">Length</Typography>
-          <Button className={classes['o-button']} variant="raised" color={length === 'any' ? 'primary' : 'default'} onClick={() => setLength('any')}>Any</Button>
-          <Button className={classes['o-button']} variant="raised" color={length === 'lessThanFive' ? 'primary' : 'default'} onClick={() => setLength('lessThanFive')}>Less than five minutes</Button>
-          <Button className={classes['o-button']} variant="raised" color={length === 'fiveToTen' ? 'primary' : 'default'} onClick={() => setLength('fiveToTen')}>Five to ten minutes</Button>
-          <Button className={classes['o-button']} variant="raised" color={length === 'moreThanTen' ? 'primary' : 'default'} onClick={() => setLength('moreThanTen')}>More than ten minutes</Button>
+          <Typography variant="h6">Length</Typography>
+          <Button className={classes['o-button']} variant="contained" color={length === 'any' ? 'primary' : 'default'} onClick={() => setLength('any')}>Any</Button>
+          <Button className={classes['o-button']} variant="contained" color={length === 'lessThanFive' ? 'primary' : 'default'} onClick={() => setLength('lessThanFive')}>Less than five minutes</Button>
+          <Button className={classes['o-button']} variant="contained" color={length === 'fiveToTen' ? 'primary' : 'default'} onClick={() => setLength('fiveToTen')}>Five to ten minutes</Button>
+          <Button className={classes['o-button']} variant="contained" color={length === 'moreThanTen' ? 'primary' : 'default'} onClick={() => setLength('moreThanTen')}>More than ten minutes</Button>
         </div>
       </div>
 
@@ -201,19 +208,19 @@ export const Home = ({ classes, list, sort, setSort, length, setLength, isLoadin
 
 export default compose(
   withStyles(styles),
-  withState('sort', 'setSort', 'published'),
-  withState('length', 'setLength', 'any'),
-  withState('list', 'setList', []),
-  withState('isLoading', 'setIsLoading', true),
-  lifecycle({
-    componentDidMount() {
-      axios.get('https://us-central1-lithe-window-713.cloudfunctions.net/fronted-demo')
-        .then(({ data }) => {
-          this.setState({
-            list: data.data,
-            isLoading: false,
-          });
-        });
-    },
-  }),
+  // withState('sort', 'setSort', 'published'),
+  // withState('length', 'setLength', 'any'),
+  // withState('list', 'setList', []),
+  // withState('isLoading', 'setIsLoading', true),
+  // lifecycle({
+  //   componentDidMount() {
+  //     axios.get('https://us-central1-lithe-window-713.cloudfunctions.net/fronted-demo')
+  //       .then(({ data }) => {
+  //         this.setState({
+  //           list: data.data,
+  //           isLoading: false,
+  //         });
+  //       });
+  //   },
+  // }),
 )(Home);

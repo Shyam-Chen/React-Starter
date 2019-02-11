@@ -55,7 +55,7 @@ const Layout = ({ classes, children }) => (
         <IconButton>
           <MenuIcon className={classes.menu} />
         </IconButton>
-        <Typography variant="title" color="inherit" noWrap component={Link} to="/" className={classes['o-title']}>
+        <Typography variant="h6" color="inherit" noWrap component={Link} to="/" className={classes['o-title']}>
           Oh My React
         </Typography>
       </Toolbar>
