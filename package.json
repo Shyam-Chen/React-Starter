@@ -1,21 +1,16 @@
 {
-  "name": "react-fullstack-starter",
+  "name": "react-play",
   "version": "1.0.0",
   "description": "A boilerplate for React, Material, Express, Babel, Flow, and ReactiveX.",
   "engines": {
     "node": "8"
   },
   "scripts": {
-    "start:app": "rimraf public && cross-env BABEL_ENV=app webpack-dev-server --progress",
-    "start:api": "rimraf functions && cross-env BABEL_ENV=api gulp",
-    "build:app": "rimraf public && cross-env BABEL_ENV=app webpack --env.prod",
-    "build:api": "rimraf functions && cross-env BABEL_ENV=api gulp --prod",
-    "lint:app": "eslint src/client.js 'src/app/**/*.js'",
-    "lint:api": "eslint src/server.js 'src/api/**/*.js'",
-    "test:app": "cross-env BABEL_ENV=app JEST_ENV=app jest \"src/app/.*\\.js$\" --coverage --forceExit",
-    "test:api": "cross-env BABEL_ENV=test JEST_ENV=api jest \"src/api/.*\\.js$\" --coverage --forceExit",
-    "e2e:app": "cross-env BABEL_ENV=test JEST_ENV=e2e jest \"src/app/.*\\.js$\" --forceExit",
-    "e2e:api": "cross-env BABEL_ENV=test JEST_ENV=e2e jest \"src/api/.*\\.js$\" --forceExit",
+    "start": "cross-env BABEL_ENV=app webpack-dev-server --progress",
+    "build": "rimraf public functions && cross-env BABEL_ENV=app webpack --env.prod && cross-env BABEL_ENV=api gulp --prod",
+    "lint": "eslint src/client.js 'src/app/**/*.js'",
+    "unit": "cross-env BABEL_ENV=app JEST_ENV=app jest \"src/app/.*\\.js$\" --coverage --forceExit",
+    "e2e": "cross-env BABEL_ENV=test JEST_ENV=e2e jest \"src/app/.*\\.js$\" --forceExit",
     "typed": "flow-typed install",
     "codecov": "codecov",
     "firebase": "firebase",
@@ -23,31 +18,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shyam-Chen/React-Fullstack-Starter.git"
+    "url": "git+https://github.com/Shyam-Chen/React-Play.git"
   },
   "keywords": [
     "React",
     "Fullstack"
   ],
-  "author": "Yen-cheng Chen, 陳彥澄",
+  "author": "Shyam Chen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Shyam-Chen/React-Fullstack-Starter/issues"
+    "url": "https://github.com/Shyam-Chen/React-Play/issues"
   },
-  "homepage": "https://github.com/Shyam-Chen/React-Fullstack-Starter#readme",
+  "homepage": "https://github.com/Shyam-Chen/React-Play#readme",
   "dependencies": {
     "@material-ui/core": "3.3.1",
     "@material-ui/icons": "3.0.1",
-    "apollo-server-express": "2.1.0",
     "axios": "0.18.0",
-    "body-parser": "1.18.3",
     "classnames": "2.2.6",
-    "compression": "1.7.3",
     "connected-react-router": "4.5.0",
     "core-js": "2.5.7",
-    "cors": "2.8.4",
     "express": "4.16.4",
-    "express-history-api-fallback": "2.2.1",
     "firebase-admin": "6.1.0",
     "firebase-functions": "2.1.0",
     "graphql": "14.0.2",
@@ -56,8 +46,6 @@
     "history": "4.7.2",
     "intl": "1.2.5",
     "lodash": "4.17.11",
-    "merge-graphql-schemas": "1.5.7",
-    "morgan": "1.9.1",
     "raf": "3.4.0",
     "raven": "2.6.4",
     "react": "16.8.1",

@@ -1,6 +1,6 @@
 FROM node:8
 
-ENV HOME /React-Fullstack-Starter
+ENV HOME /React-Play
 
 WORKDIR ${HOME}
 ADD . $HOME
@@ -14,5 +14,5 @@ ENV SITE_URL https://react-by-example-dev.firebaseapp.com
 ENV FUNC_URL https://us-central1-react-by-example-dev.cloudfunctions.net
 # -- envs
 
-RUN yarn build:app
+RUN yarn build
 RUN yarn build:api && cd functions && yarn install

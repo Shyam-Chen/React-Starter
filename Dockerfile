@@ -1,6 +1,6 @@
 FROM node:8
 
-ENV HOME /React-Fullstack-Starter
+ENV HOME /React-Play
 
 WORKDIR ${HOME}
 ADD . $HOME

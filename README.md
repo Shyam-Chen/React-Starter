@@ -2,11 +2,11 @@
 
 :ram: A boilerplate for React, Material, Express, Babel, Flow, and ReactiveX.
 
-[![Build Status](https://img.shields.io/circleci/project/github/Shyam-Chen/React-Fullstack-Starter/develop.svg)](https://circleci.com/gh/Shyam-Chen/React-Fullstack-Starter)
-[![Coverage Status](https://img.shields.io/codecov/c/github/Shyam-Chen/React-Fullstack-Starter/develop.svg)](https://codecov.io/gh/Shyam-Chen/React-Fullstack-Starter)
+[![Build Status](https://img.shields.io/circleci/project/github/Shyam-Chen/React-Play/develop.svg)](https://circleci.com/gh/Shyam-Chen/React-Play)
+[![Coverage Status](https://img.shields.io/codecov/c/github/Shyam-Chen/React-Play/develop.svg)](https://codecov.io/gh/Shyam-Chen/React-Play)
  //
-[![dependencies Status](https://img.shields.io/david/Shyam-Chen/React-Fullstack-Starter.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter)
-[![devDependencies Status](https://img.shields.io/david/dev/Shyam-Chen/React-Fullstack-Starter.svg)](https://david-dm.org/Shyam-Chen/React-Fullstack-Starter?type=dev)
+[![dependencies Status](https://img.shields.io/david/Shyam-Chen/React-Play.svg)](https://david-dm.org/Shyam-Chen/React-Play)
+[![devDependencies Status](https://img.shields.io/david/dev/Shyam-Chen/React-Play.svg)](https://david-dm.org/Shyam-Chen/React-Play?type=dev)
 
 :rainbow: Live Demo: [Develop](https://react-by-example-dev.firebaseapp.com/) | [Master](https://react-by-example-prod.firebaseapp.com/)
 
@@ -25,7 +25,7 @@ Follow steps to execute this boilerplate.
 1. Clone this boilerplate
 
 ```bash
-$ git clone --depth 1 https://github.com/Shyam-Chen/React-Fullstack-Starter <PROJECT_NAME>
+$ git clone --depth 1 https://github.com/Shyam-Chen/React-Play <PROJECT_NAME>
 $ cd <PROJECT_NAME>
 ```
 
@@ -35,77 +35,50 @@ $ cd <PROJECT_NAME>
 $ yarn install && yarn typed
 ```
 
-3. Set an active project for working direct
+3. Start a local server
 
 ```bash
-$ yarn firebase use development
+$ yarn start
 ```
 
-4. Start a local server
+4. Compile and bundle code
 
 ```bash
-# front-end
-$ yarn start:app
-
-# back-end
-$ yarn start:api
+$ yarn build
 ```
 
-5. Compile and bundle code
+5. Check code quality
 
 ```bash
-# front-end
-$ yarn build:app
-
-# back-end
-$ yarn build:api
+$ yarn lint
 ```
 
-6. Check the code quality
+6. Runs unit tests
 
 ```bash
-# front-end
-$ yarn lint:app
-
-# back-end
-$ yarn lint:api
+$ yarn unit
 ```
 
-7. Run the unit tests
+7. Runs end-to-end tests
 
 ```bash
-# front-end
-$ yarn test:app
-
-# back-end
-$ yarn test:api
-```
-
-8. Run the end-to-end tests
-
-```bash
-# front-end
-$ yarn e2e:app
-
-# back-end
-$ yarn e2e:api
+$ yarn e2e
 ```
 
 ## Key Features
 
 This seed repository provides the following features:
 
-* ---------- **Core** ----------
 * [x] [Web Fundamentals](https://developers.google.com/web/fundamentals/)
 * [x] [Firebase Platform](https://firebase.google.com/)
 * [x] [Google Cloud](https://cloud.google.com/)
 * [x] [Docker](https://www.docker.com/)
 * [x] [CircleCI](https://circleci.com/)
 * [x] [Codecov](https://codecov.io/)
-* ---------- **Front-end** ----------
+* ----------
 * [x] [React](https://github.com/facebook/react)
 * [x] [React Router](https://github.com/ReactTraining/react-router)
-* [ ] React Intl
+* [ ] [React Intl](https://github.com/yahoo/react-intl)
 * [x] [Recompose](https://github.com/acdlite/recompose)
 * [x] [Redux](https://github.com/reduxjs/redux)
 * [x] [Redux Thunk](https://github.com/reduxjs/redux-thunk)
@@ -119,12 +92,7 @@ This seed repository provides the following features:
 * [x] [JSS](https://github.com/cssinjs/jss)
 * [x] [Enzyme](https://github.com/airbnb/enzyme)
 * [x] [Puppeteer](https://github.com/GoogleChrome/puppeteer)
-* ---------- **Back-end** ----------
-* [x] [Express](https://github.com/expressjs/express)
-* [x] [Request](https://github.com/request/request)
-* [x] [Gulp](https://github.com/gulpjs/gulp)
-* [x] [SuperTest](https://github.com/visionmedia/supertest)
-* ---------- **Shared** ----------
+* ----------
 * [x] [Yarn](https://github.com/yarnpkg/yarn)
 * [ ] [Apollo GraphQL](https://github.com/apollographql)
 * [x] [ReactiveX](https://github.com/ReactiveX/rxjs)
