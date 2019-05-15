@@ -14,39 +14,7 @@
         "flow"
       ],
       "plugins": [
-        "transform-runtime",
-        [
-          "babel-plugin-root-import", [
-            {
-              "rootPathPrefix": "~",
-              "rootPathSuffix": "src/app"
-            }
-          ]
-        ]
-      ]
-    },
-    "api": {
-      "presets": [
-        [
-          "env", {
-            "targets": {
-              "node": "current"
-            }
-          }
-        ],
-        "stage-0",
-        "flow"
-      ],
-      "plugins": [
-        "transform-runtime",
-        [
-          "babel-plugin-root-import", [
-            {
-              "rootPathPrefix": "~",
-              "rootPathSuffix": "src/api"
-            }
-          ]
-        ]
+        "transform-runtime"
       ]
     },
     "test": {

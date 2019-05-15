@@ -1,14 +1,33 @@
-# React Fullstack Starter
+# React Play
 
-:ram: A boilerplate for React, Material, Express, Babel, Flow, and ReactiveX.
+:ram: A boilerplate for React, Material, Babel, Flow, and ReactiveX.
 
-[![Build Status](https://img.shields.io/circleci/project/github/Shyam-Chen/React-Play/develop.svg)](https://circleci.com/gh/Shyam-Chen/React-Play)
-[![Coverage Status](https://img.shields.io/codecov/c/github/Shyam-Chen/React-Play/develop.svg)](https://codecov.io/gh/Shyam-Chen/React-Play)
- //
-[![dependencies Status](https://img.shields.io/david/Shyam-Chen/React-Play.svg)](https://david-dm.org/Shyam-Chen/React-Play)
-[![devDependencies Status](https://img.shields.io/david/dev/Shyam-Chen/React-Play.svg)](https://david-dm.org/Shyam-Chen/React-Play?type=dev)
+|    | Project Information |
+|:--:|---------------------|
+| Live Demo | [![Develop Demo][demo-develop-image]][demo-develop-link] [![Master Demo][demo-master-image]][demo-master-link] |
+| Develop Branch | [![Build Status][develop-build-image]][develop-build-link] [![Coverage Status][develop-coverage-image]][develop-coverage-link] |
+| Master Branch | [![Build Status][master-build-image]][master-build-link] [![Coverage Status][master-coverage-image]][master-coverage-link] |
+| Npm Package | [![dependencies Status][package-dependencies-image]][package-dependencies-link] [![devDependencies Status][package-devDependencies-image]][package-devDependencies-link] |
 
-:rainbow: Live Demo: [Develop](https://react-by-example-dev.firebaseapp.com/) | [Master](https://react-by-example-prod.firebaseapp.com/)
+[demo-develop-image]: https://img.shields.io/badge/link-develop-blue.svg
+[demo-develop-link]: https://react-by-example-dev.firebaseapp.com/
+[demo-master-image]: https://img.shields.io/badge/link-master-blue.svg
+[demo-master-link]: https://react-by-example-prod.firebaseapp.com/
+
+[develop-build-image]: https://img.shields.io/circleci/project/github/Shyam-Chen/React-Play/develop.svg
+[develop-build-link]: https://circleci.com/gh/Shyam-Chen/workflows/React-Play
+[develop-coverage-image]: https://img.shields.io/codecov/c/github/Shyam-Chen/React-Play/develop.svg
+[develop-coverage-link]: https://codecov.io/gh/Shyam-Chen/React-Play
+
+[master-build-image]: https://img.shields.io/circleci/project/github/Shyam-Chen/React-Play/master.svg
+[master-build-link]: https://circleci.com/gh/Shyam-Chen/workflows/React-Play
+[master-coverage-image]: https://img.shields.io/codecov/c/github/Shyam-Chen/React-Play/master.svg
+[master-coverage-link]: https://codecov.io/gh/Shyam-Chen/React-Play
+
+[package-dependencies-image]: https://img.shields.io/david/Shyam-Chen/React-Play.svg
+[package-dependencies-link]: https://david-dm.org/Shyam-Chen/React-Play
+[package-devDependencies-image]: https://img.shields.io/david/dev/Shyam-Chen/React-Play.svg
+[package-devDependencies-link]: https://david-dm.org/Shyam-Chen/React-Play?type=dev
 
 ## Table of Contents
 
@@ -96,7 +115,6 @@ This seed repository provides the following features:
 * [x] [Yarn](https://github.com/yarnpkg/yarn)
 * [ ] [Apollo GraphQL](https://github.com/apollographql)
 * [x] [ReactiveX](https://github.com/ReactiveX/rxjs)
-* [ ] [TensorFlow](https://github.com/tensorflow/tfjs)
 * [x] [Babel](https://github.com/babel/babel)
 * [x] [Flow](https://github.com/facebook/flow)
 * [x] [ESLint](https://github.com/eslint/eslint)
@@ -212,19 +230,7 @@ function Environments() {
   this.SITE_PORT = process.env.SITE_PORT || 8000;
   this.SITE_URL = process.env.SITE_URL || `http://${this.HOST_NAME}:${this.SITE_PORT}`;
 
-  this.FUNC_PORT = process.env.FUNC_PORT || 5000;
-  this.FUNC_URL = process.env.FUNC_URL || `http://${this.HOST_NAME}:${this.FUNC_PORT}/${this.PROJECT_NAME}/us-central1`;
-
   this.APP_BASE = process.env.APP_BASE || '/';
-
-  this.FIREBASE_CONFIG = process.env.FIREBASE_CONFIG || {
-    apiKey: process.env.FIREBASE_API_KEY || '<API_KEY>',
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN || '<FIREBASE_AUTH_DOMAIN>',
-    databaseURL: process.env.FIREBASE_DATABASE_URL || '<FIREBASE_DATABASE_URL>',
-    projectId: process.env.FIREBASE_PROJECT_ID || '<FIREBASE_PROJECT_ID>',
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET || '<FIREBASE_STORAGE_BUCKET>',
-    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID || '<FIREBASE_MESSAGING_SENDER_ID>',
-  };
 
   this.GOOGLE_ANALYTICS = process.env.GOOGLE_ANALYTICS || '<GOOGLE_ANALYTICS>';
 

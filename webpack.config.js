@@ -17,9 +17,7 @@ const DIST_ROOT = path.join(__dirname, 'public');
 module.exports = ({ prod = false } = {}) => ({
   mode: prod ? 'production' : 'development',
   context: SOURCE_ROOT,
-  entry: {
-    client: './client.js',
-  },
+  entry: ['./main.js'],
   output: {
     path: DIST_ROOT,
     filename: prod ? '[name].[hash].js' : '[name].js',
@@ -62,8 +60,7 @@ module.exports = ({ prod = false } = {}) => ({
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      '~': path.join(SOURCE_ROOT, 'app'),
-      '~assets': path.join(SOURCE_ROOT, 'assets'),
+      '~': SOURCE_ROOT,
     },
   },
   plugins: [
