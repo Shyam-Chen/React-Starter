@@ -436,7 +436,6 @@ The structure follows the LIFT Guidelines.
 ├── docker-compose.yml
 ├── env.js
 ├── firebase.json
-├── gulpfile.js
 ├── jest.config.js
 ├── package.json
 ├── webpack.config.js
