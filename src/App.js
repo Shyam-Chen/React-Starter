@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import { compose } from 'recompose';
 import { bindActionCreators } from 'redux';
@@ -23,7 +21,7 @@ const theme = createMuiTheme({
   },
 });
 
-const App = ({ history }): React$Element<*> => (
+const App = ({ history }) => (
   <div>
     <React.Fragment>
       <CssBaseline />
@@ -42,6 +40,6 @@ const App = ({ history }): React$Element<*> => (
 export default compose(
   connect(
     ({ app }) => ({ app }),
-    (dispatch: any) => ({ actions: bindActionCreators(actions, dispatch) }),
+    dispatch => ({ actions: bindActionCreators(actions, dispatch) }),
   ),
 )(App);

@@ -1,12 +1,18 @@
 // @flow
 
 import React from 'react';
-import { compose } from 'recompose';
+import { makeStyles } from '@material-ui/core/styles';
 
-export const Home = (): React$Element<*> => (
-  <div id="home">
-    <h1>Oh My React</h1>
-  </div>
-);
+const useStyles = makeStyles(theme => ({}));
 
-export default compose()(Home);
+const Home = (): React$Element<*> => {
+  const classes = useStyles();
+
+  return (
+    <div id="home">
+      <h1>Oh My React</h1>
+    </div>
+  );
+};
+
+export default Home;

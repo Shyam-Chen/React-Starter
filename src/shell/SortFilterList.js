@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { compose } from 'recompose';
 import axios from 'axios';
 
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
@@ -20,7 +20,7 @@ type Props = {
   classes: any,
 };
 
-const styles = () => ({
+const useStyles = makeStyles(theme => ({
   'o-button-groups': {
     display: 'flex',
     'flex-flow': 'row wrap',
@@ -72,7 +72,7 @@ const styles = () => ({
   'o-card-icon': {
     'margin-right': '0.25rem',
   },
-});
+}));
 
 const truncate = (value: string, length?: number = 15): string => {
   if (!value) return '';
@@ -133,7 +133,9 @@ const sortList = (sort: string) => (list: List[]) => {
   return list;
 };
 
-export const Home = ({ classes }: Props): React$Element<*> => {
+export const Home = (): React$Element<*> => {
+  const classes = useStyles();
+
   const [sort, setSort] = useState('published');
   const [length, setLength] = useState('any');
   const [list, setList] = useState([]);
@@ -207,7 +209,7 @@ export const Home = ({ classes }: Props): React$Element<*> => {
 };
 
 export default compose(
-  withStyles(styles),
+  // withStyles(styles),
   // withState('sort', 'setSort', 'published'),
   // withState('length', 'setLength', 'any'),
   // withState('list', 'setList', []),
