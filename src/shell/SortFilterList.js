@@ -133,7 +133,7 @@ const sortList = (sort: string) => (list: List[]) => {
   return list;
 };
 
-export const Home = (): React$Element<*> => {
+const Home = (): React$Element<*> => {
   const classes = useStyles();
 
   const [sort, setSort] = useState('published');
@@ -208,21 +208,4 @@ export const Home = (): React$Element<*> => {
   );
 };
 
-export default compose(
-  // withStyles(styles),
-  // withState('sort', 'setSort', 'published'),
-  // withState('length', 'setLength', 'any'),
-  // withState('list', 'setList', []),
-  // withState('isLoading', 'setIsLoading', true),
-  // lifecycle({
-  //   componentDidMount() {
-  //     axios.get('https://us-central1-lithe-window-713.cloudfunctions.net/fronted-demo')
-  //       .then(({ data }) => {
-  //         this.setState({
-  //           list: data.data,
-  //           isLoading: false,
-  //         });
-  //       });
-  //   },
-  // }),
-)(Home);
+export default Home;

@@ -4,7 +4,7 @@ import React from 'react';
 import { compose } from 'recompose';
 import { Link } from 'react-router-dom';
 
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -18,7 +18,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import FaceIcon from '@material-ui/icons/Face';
 import Typography from '@material-ui/core/Typography';
 
-const styles = theme => ({
+const useStyles = makeStyles(theme => ({
   root: {
     'flex-grow': 1,
     'z-index': 1,
@@ -46,50 +46,54 @@ const styles = theme => ({
     'margin-left': '300px',
   },
   toolbar: theme.mixins.toolbar,
-});
+}));
 
-const Layout = ({ classes, children }) => (
-  <div className={classes.root}>
-    <AppBar className={classes.appBar}>
-      <Toolbar>
-        <IconButton>
-          <MenuIcon className={classes.menu} />
-        </IconButton>
-        <Typography variant="h6" color="inherit" noWrap component={Link} to="/" className={classes['o-title']}>
-          Oh My React
-        </Typography>
-      </Toolbar>
-    </AppBar>
+const Layout = ({ children }) => {
+  const classes = useStyles();
 
-    <Drawer variant="permanent" classes={{ paper: classes.drawerPaper }}>
-      <div className={classes.toolbar} />
-      {/* TODO: list rendering */}
-      <List>
-        <ListItem button component={Link} to="/hello-world">
-          <ListItemIcon><FaceIcon /></ListItemIcon>
-          <ListItemText primary="Hello World" />
-        </ListItem>
-      </List>
-      <List>
-        <ListItem button component={Link} to="/sort-filter-list">
-          <ListItemIcon><FaceIcon /></ListItemIcon>
-          <ListItemText primary="Sort Filter List" />
-        </ListItem>
-      </List>
-      <List>
-        <ListItem button component={Link} to="/crud-operations/basic">
-          <ListItemIcon><FaceIcon /></ListItemIcon>
-          <ListItemText primary="CRUD Operations (Basic)" />
-        </ListItem>
-      </List>
-    </Drawer>
+  return (
+    <div className={classes.root}>
+      <AppBar className={classes.appBar}>
+        <Toolbar>
+          <IconButton>
+            <MenuIcon className={classes.menu} />
+          </IconButton>
+          <Typography variant="h6" color="inherit" noWrap component={Link} to="/" className={classes['o-title']}>
+            Oh My React
+          </Typography>
+        </Toolbar>
+      </AppBar>
 
-    <main className={classes.content}>
-      <div className={classes.toolbar} />
-      <div>{children}</div>
-    </main>
-  </div>
-);
+      <Drawer variant="permanent" classes={{ paper: classes.drawerPaper }}>
+        <div className={classes.toolbar} />
+        {/* TODO: list rendering */}
+        <List>
+          <ListItem button component={Link} to="/hello-world">
+            <ListItemIcon><FaceIcon /></ListItemIcon>
+            <ListItemText primary="Hello World" />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem button component={Link} to="/sort-filter-list">
+            <ListItemIcon><FaceIcon /></ListItemIcon>
+            <ListItemText primary="Sort Filter List" />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem button component={Link} to="/crud-operations/basic">
+            <ListItemIcon><FaceIcon /></ListItemIcon>
+            <ListItemText primary="CRUD Operations (Basic)" />
+          </ListItem>
+        </List>
+      </Drawer>
+
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+        <div>{children}</div>
+      </main>
+    </div>
+  );
+};
 
 export default compose(
   withStyles(styles),
