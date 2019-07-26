@@ -1,14 +1,13 @@
-// @flow
+import React, { useState } from 'react';
 
-import React from 'react';
-import { type HOC, compose } from 'recompose';
+const HelloWorld = () => {
+  const [word] = useState('World');
 
-export const HelloWorld = (): React$Element<*> => (
-  <div id="hello-world">
-    <h1>Hello, World!</h1>
-  </div>
-);
+  return (
+    <div id="hello-world">
+      <h1>Hello, {word}!</h1>
+    </div>
+  );
+};
 
-export const enhance: HOC<*, {}> = compose();
-
-export default enhance(HelloWorld);
+export default HelloWorld;

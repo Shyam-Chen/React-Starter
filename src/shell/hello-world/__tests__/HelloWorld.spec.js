@@ -1,14 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
-import { HelloWorld } from '../HelloWorld';
+import HelloWorld from '../HelloWorld';
 
 describe('HelloWorld', () => {
   it('should render an initial component', () => {
-    const component = shallow(
-      <HelloWorld />,
-    );
-
-    expect(component).toMatchSnapshot();
+    const { container } = render(<HelloWorld />);
+    expect(container).toMatchSnapshot();
   });
 });
