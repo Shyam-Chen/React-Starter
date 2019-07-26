@@ -52,13 +52,10 @@
     "redux-actions": "2.6.3",
     "redux-dynamic-modules": "4.0.0-alpha.1",
     "redux-logger": "3.0.6",
-    "redux-observable": "1.0.0",
-    "redux-saga": "0.16.2",
     "redux-thunk": "2.3.0",
     "register-service-worker": "1.5.2",
     "reselect": "4.0.0",
-    "reselect-computed": "0.1.2",
-    "rxjs": "6.3.3"
+    "reselect-computed": "0.1.2"
   },
   "devDependencies": {
     "@testing-library/react-hooks": "1.1.0",
