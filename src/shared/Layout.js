@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react';
-import { compose } from 'recompose';
 import { Link } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -42,7 +41,7 @@ const useStyles = makeStyles(theme => ({
   content: {
     'flex-grow': 1,
     'background-color': theme.palette.background.default,
-    padding: theme.spacing.unit * 3,
+    padding: theme.spacing(3),
     'margin-left': '300px',
   },
   toolbar: theme.mixins.toolbar,
@@ -95,6 +94,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default compose(
-  withStyles(styles),
-)(Layout);
+export default Layout;

@@ -35,7 +35,7 @@ import * as selectors from './selectors';
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    'margin-top': theme.spacing.unit * 3,
+    'margin-top': theme.spacing(3),
   },
   'o-toolbar-selected': {
     color: '#ff5252',

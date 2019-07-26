@@ -1,4 +1,4 @@
-import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware, connectRouter } from 'connected-react-router';
 import thunkMiddleware from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
@@ -22,23 +22,28 @@ const rootEpic = combineEpics(
   appEpic,
 );
 
-const rootReducer = combineReducers({
-  app: appReducer,
-  crudOperations,
-});
+const rootReducer = history =>
+  combineReducers({
+    app: appReducer,
+    router: connectRouter(history),
+    crudOperations,
+  });
 
 export default (history) => {
   const sagaMiddleware = createSagaMiddleware();
   const epicMiddleware = createEpicMiddleware();
 
   const store = createStore(
-    connectRouter(history)(rootReducer),
-    applyMiddleware(
-      routerMiddleware(history),
-      thunkMiddleware,
-      sagaMiddleware,
-      epicMiddleware,
-      createLogger({ diff: true }),
+    rootReducer(history),
+    undefined,
+    compose(
+      applyMiddleware(
+        routerMiddleware(history),
+        thunkMiddleware,
+        sagaMiddleware,
+        epicMiddleware,
+        createLogger({ diff: true }),
+      ),
     ),
   );
 
