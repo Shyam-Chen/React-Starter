@@ -1,3 +1,5 @@
+const env = require('./env');
+
 switch (process.env.JEST_ENV) {
   case 'app':
     module.exports = {
@@ -6,12 +8,13 @@ switch (process.env.JEST_ENV) {
       moduleNameMapper: {
         '~(.*)': '<rootDir>/src$1',
       },
-      setupTestFrameworkScriptFile: '<rootDir>/tools/setup-app.js',
+      setupFilesAfterEnv: ['<rootDir>/tools/setup-app.js'],
       testPathIgnorePatterns: [
         '<rootDir>/node_modules/',
         '<rootDir>/.flow-typed',
         '.*\\.e2e-spec.js$',
       ],
+      testURL: `http://${env.HOST_NAME}/`,
       transform: {
         '^.+\\.js$': 'babel-jest',
         '^[./a-zA-Z0-9$_-]+\\.(bmp|gif|jpg|jpeg|png|psd|svg|webp)$':
@@ -22,12 +25,13 @@ switch (process.env.JEST_ENV) {
 
   case 'e2e':
     module.exports = {
-      setupTestFrameworkScriptFile: '<rootDir>/tools/setup-e2e.js',
+      setupFilesAfterEnv: ['<rootDir>/tools/setup-e2e.js'],
       testPathIgnorePatterns: [
         '<rootDir>/node_modules/',
         '<rootDir>/.flow-typed',
         '.*\\.spec.js$',
       ],
+      testURL: `http://${env.HOST_NAME}/`,
       transform: {
         '^.+\\.js$': 'babel-jest',
       },

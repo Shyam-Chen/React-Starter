@@ -1,3 +1,0 @@
-// @flow
-
-export interface IApp {}

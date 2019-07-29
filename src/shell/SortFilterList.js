@@ -1,5 +1,3 @@
-// @flow
-
 import React, { useState, useEffect } from 'react';
 import { compose } from 'recompose';
 import axios from 'axios';
@@ -11,14 +9,6 @@ import Typography from '@material-ui/core/Typography';
 import HeadsetIcon from '@material-ui/icons/Headset';
 import EventIcon from '@material-ui/icons/Event';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
-
-type List = {
-  [value: string]: any,
-};
-
-type Props = {
-  classes: any,
-};
 
 const useStyles = makeStyles(theme => ({
   'o-button-groups': {
@@ -74,22 +64,21 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const truncate = (value: string, length?: number = 15): string => {
+const truncate = (value, length = 15) => {
   if (!value) return '';
   if (value.length <= length) return value;
   return `${value.substring(0, length)}...`;
 };
 
-const convertSeconds = (value: number): string => {
-  const timeSubstr = (start?: number = 11, end?: number = 8): string => (
-    new Date(value * 1000).toISOString().substr(start, end)
-  );
+const convertSeconds = value => {
+  const timeSubstr = (start = 11, end = 8) =>
+    new Date(value * 1000).toISOString().substr(start, end);
 
   if (value < 3600) return timeSubstr(14, 5);
   return timeSubstr();
 };
 
-const timeSince = (date: any): string => {
+const timeSince = date => {
   const ago = new Date(date);
   const now = new Date();
 
@@ -113,17 +102,17 @@ const timeSince = (date: any): string => {
   return `${years} years ago`;
 };
 
-const filerList = (length: string) => (list: List[]) => (
-  list.filter((item) => {
+const filerList = length => list =>
+  list.filter(item => {
     if (length === 'lessThanFive') return item.duration < 300;
-    if (length === 'fiveToTen') return item.duration >= 300 && item.duration <= 600;
+    if (length === 'fiveToTen')
+      return item.duration >= 300 && item.duration <= 600;
     if (length === 'moreThanTen') return item.duration > 600;
 
     return list;
-  })
-);
+  });
 
-const sortList = (sort: string) => (list: List[]) => {
+const sortList = sort => list => {
   const typedList = type => list.sort((a, b) => a[type] - b[type]).reverse();
 
   if (sort === 'published') return typedList('publish');
@@ -133,7 +122,7 @@ const sortList = (sort: string) => (list: List[]) => {
   return list;
 };
 
-const Home = (): React$Element<*> => {
+const Home = () => {
   const classes = useStyles();
 
   const [sort, setSort] = useState('published');

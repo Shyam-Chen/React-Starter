@@ -1,9 +1,7 @@
-// @flow
-
 import React from 'react';
 import { compose } from 'recompose';
 
-export const NotFound = (): React$Element<*> => (
+export const NotFound = () => (
   <div>
     <h1>
       404

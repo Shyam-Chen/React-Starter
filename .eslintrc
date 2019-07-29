@@ -1,7 +1,6 @@
 {
   "plugins": [
-    "flowtype",
-    "flowtype-errors"
+    "prettier"
   ],
   "env": {
     "browser": true,
@@ -13,7 +12,8 @@
   "globals": {},
   "extends": [
     "airbnb",
-    "plugin:flowtype/recommended"
+    "prettier",
+    "prettier/react"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -23,10 +23,6 @@
     "import/resolver": {
       "webpack": {
         "config": "webpack.config.js"
-      },
-      "babel-plugin-root-import": {
-        "rootPathPrefix": "~",
-        "rootPathSuffix": "src/api"
       }
     }
   },
@@ -35,12 +31,11 @@
     "import/no-named-as-default": "off",
     "import/prefer-default-export": "off",
 
+    "prettier/prettier": "off",
+
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/jsx-one-expression-per-line": "off",
     "react/prop-types": "off",
-
-    "flowtype-errors/show-errors": "error",
-    "flowtype-errors/show-warnings": "warn",
 
     // Possible Errors
 

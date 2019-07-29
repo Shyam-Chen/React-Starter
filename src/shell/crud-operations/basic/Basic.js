@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
@@ -28,7 +26,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-import { Props } from './types';
 import * as actions from './actions';
 import * as selectors from './selectors';
 
@@ -49,7 +46,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export const Basic = ({ b$, actions, selectors }: Props): React$Element<*> => {
+export const Basic = ({ b$, actions, selectors }) => {
   const classes = useStyles();
 
   return (

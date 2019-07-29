@@ -51,7 +51,7 @@ $ cd <PROJECT_NAME>
 2. Install dependencies
 
 ```bash
-$ yarn install && yarn typed
+$ yarn install
 ```
 
 3. Start a local server
