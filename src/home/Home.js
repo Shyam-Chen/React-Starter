@@ -1,10 +1,10 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({}));
+// const useStyles = makeStyles(() => ({}));
 
 const Home = ()=> {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <div id="home">

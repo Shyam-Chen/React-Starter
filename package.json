@@ -11,8 +11,8 @@
     "lint": "eslint 'src/**/*.js'",
     "unit": "cross-env BABEL_ENV=app JEST_ENV=app jest \"src/.*\\.js$\" --coverage --forceExit",
     "e2e": "cross-env BABEL_ENV=test JEST_ENV=e2e jest \"src/.*\\.js$\" --forceExit",
-    "codecov": "codecov",
-    "firebase": "firebase"
+    "_codecov": "codecov",
+    "_firebase": "firebase"
   },
   "repository": {
     "type": "git",

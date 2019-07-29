@@ -30,6 +30,6 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /src/*.deb
 
-RUN yarn install && yarn typed
+RUN yarn install
 
-EXPOSE 8000 5000
+EXPOSE 8000

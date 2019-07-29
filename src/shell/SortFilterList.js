@@ -10,7 +10,7 @@ import HeadsetIcon from '@material-ui/icons/Headset';
 import EventIcon from '@material-ui/icons/Event';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   'o-button-groups': {
     display: 'flex',
     'flex-flow': 'row wrap',
