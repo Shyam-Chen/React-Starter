@@ -56,20 +56,20 @@ export const Basic = ({ b$, actions, selectors }) => {
       <TextField
         label="Primary"
         value={b$.addData.primary}
-        onChange={event => (
+        onChange={event =>
           actions.setData({
             addData: { ...b$.addData, primary: event.target.value },
           })
-        )}
+        }
       />
       <TextField
         label="Accent"
         value={b$.addData.accent}
-        onChange={event => (
+        onChange={event =>
           actions.setData({
             addData: { ...b$.addData, accent: event.target.value },
           })
-        )}
+        }
       />
       <Button
         variant="contained"
@@ -84,44 +84,52 @@ export const Basic = ({ b$, actions, selectors }) => {
       </Button>
 
       <Paper>
-        {
-          selectors.numSelected !== 0
-            ? (
-              <Toolbar>
-                <Typography className={classes['o-toolbar-selected']}>{selectors.numSelected} selected</Typography>
-                <div className={classes['o-spacer']} />
-                <IconButton
-                  onClick={async () => {
-                    await b$.selected.forEach(({ id }) => actions.deleteItem(id));
-                    await actions.setData({ selected: [] });
-                  }}
-                >
-                  <DeleteIcon />
-                </IconButton>
-              </Toolbar>
-            )
-            : (
-              <Toolbar>
-                <Typography>Board</Typography>
-                <TextField
-                  label="Search"
-                  value={b$.searchData}
-                  onChange={event => (
-                    actions.setData({ searchData: event.target.value })
-                  )}
-                />
-              </Toolbar>
-            )
-        }
+        {selectors.numSelected !== 0 ? (
+          <Toolbar>
+            <Typography className={classes['o-toolbar-selected']}>
+              {selectors.numSelected} selected
+            </Typography>
+            <div className={classes['o-spacer']} />
+            <IconButton
+              onClick={async () => {
+                await b$.selected.forEach(({ id }) => actions.deleteItem(id));
+                await actions.setData({ selected: [] });
+              }}
+            >
+              <DeleteIcon />
+            </IconButton>
+          </Toolbar>
+        ) : (
+          <Toolbar>
+            <Typography>Board</Typography>
+            <TextField
+              label="Search"
+              value={b$.searchData}
+              onChange={event =>
+                actions.setData({ searchData: event.target.value })
+              }
+            />
+          </Toolbar>
+        )}
 
         <Table className={classes.table}>
           <TableHead>
             <TableRow>
               <TableCell padding="checkbox">
                 <Checkbox
-                  indeterminate={b$.selected.length > 0 && b$.selected.length < b$.dataset.length}
-                  checked={b$.selected.length === b$.dataset.length && b$.dataset.length !== 0}
-                  onChange={(event, checked) => actions.setData({ selected: checked ? b$.dataset.map(item => item) : [] })}
+                  indeterminate={
+                    b$.selected.length > 0 &&
+                    b$.selected.length < b$.dataset.length
+                  }
+                  checked={
+                    b$.selected.length === b$.dataset.length &&
+                    b$.dataset.length !== 0
+                  }
+                  onChange={(event, checked) =>
+                    actions.setData({
+                      selected: checked ? b$.dataset.map(item => item) : [],
+                    })
+                  }
                 />
               </TableCell>
               <TableCell>ID</TableCell>
@@ -131,93 +139,119 @@ export const Basic = ({ b$, actions, selectors }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {
-              b$.dataset
-                .filter(item => (
-                  item.primary.toLowerCase().indexOf(b$.searchData.toLowerCase()) > -1
-                  || item.accent.toLowerCase().indexOf(b$.searchData.toLowerCase()) !== -1
-                ))
-                .map((item: any) => (
-                  <TableRow hover role="checkbox" key={item.id}>
-                    <TableCell padding="checkbox">
-                      <Checkbox
-                        checked={b$.selected.indexOf(item) !== -1}
-                        onChange={() => {
-                          // FIXME: When editing is complete, it should not be unchecked.
-                          let res = [];
+            {b$.dataset
+              .filter(
+                item =>
+                  item.primary
+                    .toLowerCase()
+                    .indexOf(b$.searchData.toLowerCase()) > -1 ||
+                  item.accent
+                    .toLowerCase()
+                    .indexOf(b$.searchData.toLowerCase()) !== -1,
+              )
+              .map(item => (
+                <TableRow hover role="checkbox" key={item.id}>
+                  <TableCell padding="checkbox">
+                    <Checkbox
+                      checked={b$.selected.indexOf(item) !== -1}
+                      onChange={() => {
+                        // FIXME: When editing is complete, it should not be unchecked.
+                        let res = [];
 
-                          const index = b$.selected.indexOf(item);
-                          if (index === -1) res = res.concat(b$.selected, item);
-                          if (index === 0) res = res.concat(b$.selected.slice(1));
-                          if (index === b$.selected.length - 1) res = res.concat(b$.selected.slice(0, -1));
-                          if (index > 0) res = res.concat(b$.selected.slice(0, index), b$.selected.slice(index + 1));
+                        const index = b$.selected.indexOf(item);
+                        if (index === -1) res = res.concat(b$.selected, item);
+                        if (index === 0) res = res.concat(b$.selected.slice(1));
+                        if (index === b$.selected.length - 1)
+                          res = res.concat(b$.selected.slice(0, -1));
+                        if (index > 0)
+                          res = res.concat(
+                            b$.selected.slice(0, index),
+                            b$.selected.slice(index + 1),
+                          );
 
-                          actions.setData({ selected: res });
-                        }}
-                      />
-                    </TableCell>
-                    <TableCell>{item.id}</TableCell>
-                    <TableCell>{item.primary}</TableCell>
-                    <TableCell>{item.accent}</TableCell>
-                    <TableCell>
-                      <IconButton
-                        onClick={() => (
-                          actions.setData({
-                            editData: { ...b$.editData, id: item.id, primary: item.primary, accent: item.accent },
-                            dialogs: { ...b$.dialogs, edit: true },
-                          })
-                        )}
-                      >
-                        <EditIcon />
-                      </IconButton>
-                      <IconButton
-                        onClick={() => (
-                          actions.setData({
-                            deleteData: { ...b$.deleteData, id: item.id },
-                            dialogs: { ...b$.dialogs, delete: true },
-                          })
-                        )}
-                      >
-                        <DeleteIcon />
-                      </IconButton>
-                    </TableCell>
-                  </TableRow>
-                ))
-            }
+                        actions.setData({ selected: res });
+                      }}
+                    />
+                  </TableCell>
+                  <TableCell>{item.id}</TableCell>
+                  <TableCell>{item.primary}</TableCell>
+                  <TableCell>{item.accent}</TableCell>
+                  <TableCell>
+                    <IconButton
+                      onClick={() =>
+                        actions.setData({
+                          editData: {
+                            ...b$.editData,
+                            id: item.id,
+                            primary: item.primary,
+                            accent: item.accent,
+                          },
+                          dialogs: { ...b$.dialogs, edit: true },
+                        })
+                      }
+                    >
+                      <EditIcon />
+                    </IconButton>
+                    <IconButton
+                      onClick={() =>
+                        actions.setData({
+                          deleteData: { ...b$.deleteData, id: item.id },
+                          dialogs: { ...b$.dialogs, delete: true },
+                        })
+                      }
+                    >
+                      <DeleteIcon />
+                    </IconButton>
+                  </TableCell>
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
       </Paper>
 
-      <Dialog open={b$.dialogs.edit} onClose={() => actions.setData({ dialogs: { ...b$.dialogs, edit: false } })}>
+      <Dialog
+        open={b$.dialogs.edit}
+        onClose={() =>
+          actions.setData({ dialogs: { ...b$.dialogs, edit: false } })
+        }
+      >
         <DialogTitle>Edit</DialogTitle>
         <DialogContent>
           <DialogContentText>
             <TextField
               label="Primary"
               value={b$.editData.primary}
-              onChange={event => (
+              onChange={event =>
                 actions.setData({
                   editData: { ...b$.editData, primary: event.target.value },
                 })
-              )}
+              }
             />
             <TextField
               label="Accent"
               value={b$.editData.accent}
-              onChange={event => (
+              onChange={event =>
                 actions.setData({
                   editData: { ...b$.editData, accent: event.target.value },
                 })
-              )}
+              }
             />
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => actions.setData({ dialogs: { ...b$.dialogs, edit: false } })}>Cancel</Button>
+          <Button
+            onClick={() =>
+              actions.setData({ dialogs: { ...b$.dialogs, edit: false } })
+            }
+          >
+            Cancel
+          </Button>
           <Button
             onClick={async () => {
               await actions.editItem(b$.editData);
-              await actions.setData({ dialogs: { ...b$.dialogs, edit: false } });
+              await actions.setData({
+                dialogs: { ...b$.dialogs, edit: false },
+              });
             }}
           >
             Save
@@ -225,17 +259,32 @@ export const Basic = ({ b$, actions, selectors }) => {
         </DialogActions>
       </Dialog>
 
-      <Dialog open={b$.dialogs.delete} onClose={() => actions.setData({ dialogs: { ...b$.dialogs, delete: false } })}>
+      <Dialog
+        open={b$.dialogs.delete}
+        onClose={() =>
+          actions.setData({ dialogs: { ...b$.dialogs, delete: false } })
+        }
+      >
         <DialogTitle>Delete</DialogTitle>
         <DialogContent>
-          <DialogContentText>Are you sure you want to delete it?</DialogContentText>
+          <DialogContentText>
+            Are you sure you want to delete it?
+          </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => actions.setData({ dialogs: { ...b$.dialogs, delete: false } })}>Cancel</Button>
+          <Button
+            onClick={() =>
+              actions.setData({ dialogs: { ...b$.dialogs, delete: false } })
+            }
+          >
+            Cancel
+          </Button>
           <Button
             onClick={async () => {
               await actions.deleteItem(b$.deleteData.id);
-              await actions.setData({ dialogs: { ...b$.dialogs, delete: false } });
+              await actions.setData({
+                dialogs: { ...b$.dialogs, delete: false },
+              });
             }}
           >
             Confirm
@@ -252,6 +301,6 @@ export default compose(
       b$: basic,
       selectors: bindSelectCreators(selectors, basic),
     }),
-    (dispatch: any) => ({ actions: bindActionCreators(actions, dispatch) }),
+    dispatch => ({ actions: bindActionCreators(actions, dispatch) }),
   ),
 )(Basic);
