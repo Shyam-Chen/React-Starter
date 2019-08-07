@@ -49,6 +49,7 @@
     "redux": "4.0.1",
     "redux-actions": "2.6.3",
     "redux-dynamic-modules": "5.0.1",
+    "redux-dynamic-modules-react": "5.0.1",
     "redux-dynamic-modules-thunk": "5.0.1",
     "redux-logger": "3.0.6",
     "redux-thunk": "2.3.0",

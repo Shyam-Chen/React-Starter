@@ -55,7 +55,14 @@ const Layout = ({ children }) => {
           <IconButton>
             <MenuIcon className={classes.menu} />
           </IconButton>
-          <Typography variant="h6" color="inherit" noWrap component={Link} to="/" className={classes['o-title']}>
+          <Typography
+            variant="h6"
+            color="inherit"
+            noWrap
+            component={Link}
+            to="/"
+            className={classes['o-title']}
+          >
             Oh My React
           </Typography>
         </Toolbar>
@@ -66,19 +73,36 @@ const Layout = ({ children }) => {
         {/* TODO: list rendering */}
         <List>
           <ListItem button component={Link} to="/hello-world">
-            <ListItemIcon><FaceIcon /></ListItemIcon>
+            <ListItemIcon>
+              <FaceIcon />
+            </ListItemIcon>
             <ListItemText primary="Hello World" />
           </ListItem>
         </List>
+
         <List>
           <ListItem button component={Link} to="/sort-filter-list">
-            <ListItemIcon><FaceIcon /></ListItemIcon>
+            <ListItemIcon>
+              <FaceIcon />
+            </ListItemIcon>
             <ListItemText primary="Sort Filter List" />
           </ListItem>
         </List>
+
+        <List>
+          <ListItem button component={Link} to="/recursive-list">
+            <ListItemIcon>
+              <FaceIcon />
+            </ListItemIcon>
+            <ListItemText primary="RecursiveList" />
+          </ListItem>
+        </List>
+
         <List>
           <ListItem button component={Link} to="/crud-operations/basic">
-            <ListItemIcon><FaceIcon /></ListItemIcon>
+            <ListItemIcon>
+              <FaceIcon />
+            </ListItemIcon>
             <ListItemText primary="CRUD Operations (Basic)" />
           </ListItem>
         </List>

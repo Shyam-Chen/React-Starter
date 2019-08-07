@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { compose } from 'recompose';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { bindSelectCreators } from 'reselect-computed';
 

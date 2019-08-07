@@ -138,7 +138,7 @@ const Home = () => {
         setList(data.data);
         setIsLoading(false);
       });
-  });
+  }, []);
 
   return (
     <div>
