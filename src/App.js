@@ -22,7 +22,7 @@ const theme = createMuiTheme({
 });
 
 const App = ({ history }) => (
-  <div>
+  <>
     <React.Fragment>
       <CssBaseline />
 
@@ -34,7 +34,7 @@ const App = ({ history }) => (
         </ConnectedRouter>
       </MuiThemeProvider>
     </React.Fragment>
-  </div>
+  </>
 );
 
 export default compose(
