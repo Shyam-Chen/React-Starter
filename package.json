@@ -21,6 +21,7 @@
   "author": "Shyam Chen",
   "license": "MIT",
   "dependencies": {
+    "@apollo/react-hooks": "3.0.0",
     "@babel/runtime": "7.5.5",
     "@material-ui/core": "4.3.0",
     "@material-ui/icons": "4.2.1",

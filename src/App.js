@@ -8,7 +8,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
 import pink from '@material-ui/core/colors/pink';
 
-import Layout from '~/shared/Layout';
+import Layout from '~/core/Layout';
 import Routes from '~/core/Router';
 
 import * as actions from './actions';
