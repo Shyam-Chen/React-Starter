@@ -26,8 +26,11 @@ import DialogActions from '@material-ui/core/DialogActions';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
+import { dynamic } from '~/core/store';
+
 import * as actions from './actions';
 import * as selectors from './selectors';
+import reducer from './reducer';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -303,4 +306,5 @@ export default compose(
     }),
     dispatch => ({ actions: bindActionCreators(actions, dispatch) }),
   ),
+  dynamic(['crudOperations', 'basic'], reducer),
 )(Basic);

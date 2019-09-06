@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { createBrowserHistory } from 'history';
 
-import configureStore from '~/core/store';
+import { configureStore } from '~/core/store';
 import i18n from '~/core/i18n';
 
 import App from './App';

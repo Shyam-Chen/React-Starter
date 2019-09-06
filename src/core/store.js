@@ -1,30 +1,81 @@
+import React from 'react';
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware, connectRouter } from 'connected-react-router';
 import thunkMiddleware from 'redux-thunk';
-import { createLogger } from 'redux-logger';
+import global from 'global';
 
 import appReducer from '~/reducer';
 
 import crudOperations from '~/shell/crud-operations/reducer';
+import { isArray } from 'util';
 
-const rootReducer = history => combineReducers({
+const createRootReducer = history => ({
   app: appReducer,
   router: connectRouter(history),
   crudOperations,
 });
 
-export default (history) => {
+const createReducerManager = initialReducers => {
+  const reducers = { ...initialReducers };
+
+  let combinedReducer = combineReducers(reducers);
+  let keysToRemove = [];
+
+  return {
+    getReducerMap: () => reducers,
+    reduce(state, action) {
+      if (keysToRemove.length > 0) {
+        state = { ...state };
+
+        for (const key of keysToRemove) {
+          delete state[key];
+        }
+
+        keysToRemove = [];
+      }
+
+      return combinedReducer(state, action);
+    },
+    add(key, reducer) {
+      if (!key || reducers[key]) return;
+      reducers[key] = reducer;
+      combinedReducer = combineReducers(reducers);
+    },
+    remove(key) {
+      if (!key || !reducers[key]) return;
+      delete reducers[key];
+      keysToRemove.push(key);
+      combinedReducer = combineReducers(reducers);
+    },
+  };
+};
+
+export const configureStore = history => {
+  const reducerManager = createReducerManager(createRootReducer(history));
+  const composeEnhancer =
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
   const store = createStore(
-    rootReducer(history),
-    undefined,
-    compose(
-      applyMiddleware(
-        routerMiddleware(history),
-        thunkMiddleware,
-        createLogger({ diff: true }),
-      ),
+    reducerManager.reduce,
+    composeEnhancer(
+      applyMiddleware(routerMiddleware(history), thunkMiddleware),
     ),
   );
 
+  global.reducerManager = reducerManager;
+
   return store;
+};
+
+export const dynamic = (key, reducer) => WrappedComponent => {
+  if (typeof key === 'string') {
+    global.reducerManager.add(key, reducer);
+  }
+
+  if (isArray(key)) {
+    // key.forEach(item => {});
+  }
+
+  const Dynamic = props => <WrappedComponent {...props} />;
+  return Dynamic;
 };

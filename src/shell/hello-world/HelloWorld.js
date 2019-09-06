@@ -1,4 +1,11 @@
 import React, { useState } from 'react';
+import { dynamic } from '~/core/store';
+
+import compose from '~/shared/compose';
+
+// import * as actions from './actions';
+// import * as selectors from './selectors';
+import reducer from './reducer';
 
 const HelloWorld = () => {
   const [word] = useState('World');
@@ -10,4 +17,6 @@ const HelloWorld = () => {
   );
 };
 
-export default HelloWorld;
+export default compose(
+  dynamic('helloWorld', reducer),
+)(HelloWorld);

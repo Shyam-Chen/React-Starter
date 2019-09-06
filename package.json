@@ -29,6 +29,7 @@
     "classnames": "2.2.6",
     "connected-react-router": "6.5.2",
     "core-js": "3.2.1",
+    "global": "4.4.0",
     "graphql": "14.4.2",
     "graphql-request": "1.8.2",
     "graphql-tag": "2.10.1",
