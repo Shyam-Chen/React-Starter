@@ -1,5 +1,6 @@
 import React from 'react';
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
+import { useDispatch } from 'react-redux';
 import { routerMiddleware, connectRouter } from 'connected-react-router';
 import thunkMiddleware from 'redux-thunk';
 import global from 'global';
@@ -7,7 +8,6 @@ import global from 'global';
 import appReducer from '~/reducer';
 
 import crudOperations from '~/shell/crud-operations/reducer';
-import { isArray } from 'util';
 
 const createRootReducer = history => ({
   app: appReducer,
@@ -72,10 +72,15 @@ export const dynamic = (key, reducer) => WrappedComponent => {
     global.reducerManager.add(key, reducer);
   }
 
-  if (isArray(key)) {
+  if (Array.isArray(key)) {
     // key.forEach(item => {});
   }
 
-  const Dynamic = props => <WrappedComponent {...props} />;
+  const Dynamic = props => {
+    const dispatch = useDispatch();
+    dispatch({ type: '@@redux/INIT' });
+    return <WrappedComponent {...props} />;
+  };
+
   return Dynamic;
 };

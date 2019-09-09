@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { dynamic } from '~/core/store';
 
-import compose from '~/shared/compose';
+import { dynamic } from '~/core/store';
 
 // import * as actions from './actions';
 // import * as selectors from './selectors';
@@ -17,6 +16,4 @@ const HelloWorld = () => {
   );
 };
 
-export default compose(
-  dynamic('helloWorld', reducer),
-)(HelloWorld);
+export default dynamic('helloWorld', reducer)(HelloWorld);
