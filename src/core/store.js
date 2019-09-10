@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-param-reassign */
 import React from 'react';
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { useDispatch } from 'react-redux';

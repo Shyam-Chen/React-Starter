@@ -22,7 +22,7 @@ const lazyload = (getComponent) => {
 };
 
 const Router = () => (
-  <div>
+  <>
     <Switch>
       <Route exact path="/" component={Home} />
 
@@ -47,7 +47,7 @@ const Router = () => (
 
       <Route path="*" component={NotFound} />
     </Switch>
-  </div>
+  </>
 );
 
 export default Router;

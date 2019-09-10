@@ -2,40 +2,126 @@ import React from 'react';
 import { compose } from 'recompose';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import blue from '@material-ui/core/colors/blue';
-import pink from '@material-ui/core/colors/pink';
+import { Link } from 'react-router-dom';
 
-import Layout from '~/core/Layout';
+import { makeStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+
+import MenuIcon from '@material-ui/icons/Menu';
+import FaceIcon from '@material-ui/icons/Face';
+import Typography from '@material-ui/core/Typography';
+
 import Routes from '~/core/Router';
 
 import * as actions from './actions';
 
-const theme = createMuiTheme({
-  palette: {
-    primary: { main: blue[500] },
-    secondary: { main: pink[500] },
-    type: 'light',
+const useStyles = makeStyles(theme => ({
+  root: {
+    'flex-grow': 1,
+    'z-index': 1,
+    overflow: 'hidden',
+    position: 'relative',
+    display: 'flex',
   },
-});
+  'o-title': {
+    'text-decoration': 'none',
+  },
+  menu: {
+    color: '#fff',
+  },
+  appBar: {
+    'z-index': theme.zIndex.drawer + 1,
+  },
+  drawerPaper: {
+    position: 'fixed',
+    width: '300px',
+  },
+  content: {
+    'flex-grow': 1,
+    'background-color': theme.palette.background.default,
+    padding: theme.spacing(3),
+    'margin-left': '300px',
+  },
+  toolbar: theme.mixins.toolbar,
+}));
 
-const App = ({ history }) => (
-  <>
-    <React.Fragment>
-      <CssBaseline />
+const App = () => {
+  const classes = useStyles();
 
-      <MuiThemeProvider theme={theme}>
-        <ConnectedRouter history={history}>
-          <Layout>
-            <Routes />
-          </Layout>
-        </ConnectedRouter>
-      </MuiThemeProvider>
-    </React.Fragment>
-  </>
-);
+  return (
+    <div className={classes.root}>
+      <AppBar className={classes.appBar}>
+        <Toolbar>
+          <IconButton>
+            <MenuIcon className={classes.menu} />
+          </IconButton>
+          <Typography
+            variant="h6"
+            color="inherit"
+            noWrap
+            component={Link}
+            to="/"
+            className={classes['o-title']}
+          >
+            Oh My React
+          </Typography>
+        </Toolbar>
+      </AppBar>
+
+      <Drawer variant="permanent" classes={{ paper: classes.drawerPaper }}>
+        <div className={classes.toolbar} />
+        {/* TODO: react-router-config */}
+        <List>
+          <ListItem button component={Link} to="/hello-world">
+            <ListItemIcon>
+              <FaceIcon />
+            </ListItemIcon>
+            <ListItemText primary="Hello World" />
+          </ListItem>
+        </List>
+
+        <List>
+          <ListItem button component={Link} to="/sort-filter-list">
+            <ListItemIcon>
+              <FaceIcon />
+            </ListItemIcon>
+            <ListItemText primary="Sort Filter List" />
+          </ListItem>
+        </List>
+
+        <List>
+          <ListItem button component={Link} to="/recursive-list">
+            <ListItemIcon>
+              <FaceIcon />
+            </ListItemIcon>
+            <ListItemText primary="RecursiveList" />
+          </ListItem>
+        </List>
+
+        <List>
+          <ListItem button component={Link} to="/crud-operations/basic">
+            <ListItemIcon>
+              <FaceIcon />
+            </ListItemIcon>
+            <ListItemText primary="CRUD Operations (Basic)" />
+          </ListItem>
+        </List>
+      </Drawer>
+
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+        <div><Routes /></div>
+      </main>
+    </div>
+  );
+};
 
 export default compose(
   connect(
