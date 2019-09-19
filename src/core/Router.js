@@ -1,25 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
-import Loadable from 'react-loadable';
+import loadable from '@loadable/component'
 
 import Home from '~/home/Home';
 import NotFound from '~/not-found/NotFound';
-
-const Loading = () => <div>Loading...</div>;
-
-const lazyload = (getComponent) => {
-  const RouteComponent = Loadable({
-    loader: () => getComponent(),
-    loading: Loading,
-    render(loaded, props) {
-      const Component = loaded.default;
-      return <Component {...props} />;
-    },
-  });
-
-  const LoadableRoute = routeProps => <RouteComponent {...routeProps} />;
-  return LoadableRoute;
-};
 
 const Router = () => (
   <>
@@ -28,19 +12,19 @@ const Router = () => (
 
       <Route
         path="/hello-world"
-        component={lazyload(() => import('~/shell/hello-world/HelloWorld'))}
+        component={loadable(() => import('~/shell/hello-world/HelloWorld'))}
       />
       <Route
         path="/sort-filter-list"
-        component={lazyload(() => import('~/shell/SortFilterList'))}
+        component={loadable(() => import('~/shell/SortFilterList'))}
       />
       <Route
         path="/recursive-list"
-        component={lazyload(() => import('~/shell/RecursiveList'))}
+        component={loadable(() => import('~/shell/RecursiveList'))}
       />
       <Route
         path="/crud-operations/basic"
-        component={lazyload(() =>
+        component={loadable(() =>
           import('~/shell/crud-operations/basic/Basic'),
         )}
       />
