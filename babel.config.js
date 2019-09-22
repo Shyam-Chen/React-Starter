@@ -15,6 +15,7 @@ module.exports = api => {
             },
           ],
           '@babel/preset-react',
+          '@babel/preset-flow',
         ],
         plugins: [
           '@babel/plugin-transform-runtime',
@@ -35,6 +36,7 @@ module.exports = api => {
             },
           ],
           '@babel/preset-react',
+          '@babel/preset-flow',
         ],
         plugins: [
           '@babel/plugin-transform-runtime',
