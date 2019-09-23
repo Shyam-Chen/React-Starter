@@ -10,26 +10,25 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import { configureStore } from '~/core/store';
 import { theme } from '~/core/material';
 import i18n from '~/core/i18n';
+import nestPairs from '~/shared/nest-pairs';
+
 import App from '~/App';
 
 const history = createBrowserHistory();
 const store = configureStore(history);
 const language = navigator.language.split(/[-_]/)[0];
 
-render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <IntlProvider locale={language} messages={i18n[language]}>
-        <MuiThemeProvider theme={theme}>
-          <CssBaseline />
-          <App />
-        </MuiThemeProvider>
-      </IntlProvider>
-    </ConnectedRouter>
-  </Provider>,
-  document.querySelector('#app'),
+const Providers = nestPairs(
+  [Provider, { store }],
+  [ConnectedRouter, { history }],
+  [IntlProvider, { locale: language, messages: i18n[language] }],
+  [MuiThemeProvider, { theme }],
 );
 
-if (module.hot) {
-  module.hot.accept();
-}
+render(
+  <Providers>
+    <CssBaseline />
+    <App />
+  </Providers>,
+  document.querySelector('#app'),
+);

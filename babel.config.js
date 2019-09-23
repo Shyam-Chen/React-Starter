@@ -1,3 +1,5 @@
+const env = require('./env');
+
 module.exports = api => {
   api.cache(true);
 
@@ -20,6 +22,7 @@ module.exports = api => {
         plugins: [
           '@babel/plugin-transform-runtime',
           '@babel/plugin-syntax-dynamic-import',
+          ['emotion', { sourceMap: env.NODE_ENV !== 'production' }],
         ],
       },
       test: {
@@ -41,6 +44,7 @@ module.exports = api => {
         plugins: [
           '@babel/plugin-transform-runtime',
           '@babel/plugin-syntax-dynamic-import',
+          'emotion',
           'dynamic-import-node',
         ],
       },
