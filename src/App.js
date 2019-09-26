@@ -1,7 +1,4 @@
 import React from 'react';
-import { compose } from 'recompose';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,8 +16,6 @@ import FaceIcon from '@material-ui/icons/Face';
 import Typography from '@material-ui/core/Typography';
 
 import Routes from '~/core/Router';
-
-import * as actions from './actions';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -123,9 +118,4 @@ const App = () => {
   );
 };
 
-export default compose(
-  connect(
-    ({ app }) => ({ app }),
-    dispatch => ({ actions: bindActionCreators(actions, dispatch) }),
-  ),
-)(App);
+export default App;

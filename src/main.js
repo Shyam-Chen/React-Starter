@@ -28,6 +28,8 @@ const Providers = nestPairs(
 render(
   <Providers>
     <CssBaseline />
+    {/* TODO: prefix lang */}
+    {/* <Routes /> */}
     <App />
   </Providers>,
   document.querySelector('#app'),
