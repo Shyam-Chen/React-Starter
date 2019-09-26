@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { dynamic } from '~/core/store';
 
@@ -7,11 +8,12 @@ import { dynamic } from '~/core/store';
 import reducer from './reducer';
 
 const HelloWorld = () => {
-  const [word] = useState('World');
+  const [world] = useState('World');
+  const { hello } = useSelector(state => state.helloWorld);
 
   return (
     <div id="hello-world">
-      <h1>Hello, {word}!</h1>
+      <h1>{hello}, {world}!</h1>
     </div>
   );
 };

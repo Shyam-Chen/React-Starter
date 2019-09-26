@@ -1,9 +1,12 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 import loadable from '@loadable/component'
+import { createBrowserHistory } from 'history';
 
 import Home from '~/home/Home';
 import NotFound from '~/not-found/NotFound';
+
+export const history = createBrowserHistory();
 
 const Router = () => (
   <>

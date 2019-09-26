@@ -11,7 +11,9 @@ import appReducer from '~/reducer';
 
 import crudOperations from '~/shell/crud-operations/reducer';
 
-const createRootReducer = history => ({
+import { history } from './Router';
+
+const createRootReducer = () => ({
   app: appReducer,
   router: connectRouter(history),
   crudOperations,
@@ -52,8 +54,9 @@ const createReducerManager = initialReducers => {
   };
 };
 
-export const configureStore = history => {
-  const reducerManager = createReducerManager(createRootReducer(history));
+const reducerManager = createReducerManager(createRootReducer());
+
+export const configureStore = () => {
   const composeEnhancer =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -70,8 +73,10 @@ export const configureStore = history => {
 };
 
 export const dynamic = (key, reducer) => WrappedComponent => {
+
+
   if (typeof key === 'string') {
-    global.reducerManager.add(key, reducer);
+    reducerManager.add(key, reducer);
   }
 
   if (Array.isArray(key)) {
