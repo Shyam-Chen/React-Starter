@@ -22,6 +22,7 @@ module.exports = api => {
         plugins: [
           '@babel/plugin-transform-runtime',
           '@babel/plugin-syntax-dynamic-import',
+          '@babel/plugin-proposal-class-properties',
           ['emotion', { sourceMap: env.NODE_ENV !== 'production' }],
           'lodash',
         ],
@@ -45,6 +46,7 @@ module.exports = api => {
         plugins: [
           '@babel/plugin-transform-runtime',
           '@babel/plugin-syntax-dynamic-import',
+          '@babel/plugin-proposal-class-properties',
           'emotion',
           'lodash',
           'dynamic-import-node',

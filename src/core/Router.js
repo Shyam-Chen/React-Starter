@@ -31,6 +31,10 @@ const Router = () => (
           import('~/shell/crud-operations/basic/Basic'),
         )}
       />
+      <Route
+        path="/github-repos"
+        component={loadable(() => import('~/github-repos/GithubRepos'))}
+      />
 
       <Route path="*" component={NotFound} />
     </Switch>

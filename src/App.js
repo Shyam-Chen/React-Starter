@@ -108,11 +108,22 @@ const App = () => {
             <ListItemText primary="CRUD Operations (Basic)" />
           </ListItem>
         </List>
+
+        <List>
+          <ListItem button component={Link} to="/github-repos/GithubRepos">
+            <ListItemIcon>
+              <FaceIcon />
+            </ListItemIcon>
+            <ListItemText primary="Github Repos" />
+          </ListItem>
+        </List>
       </Drawer>
 
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <div><Routes /></div>
+        <div>
+          <Routes />
+        </div>
       </main>
     </div>
   );
