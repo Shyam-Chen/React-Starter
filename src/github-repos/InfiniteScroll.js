@@ -23,6 +23,7 @@ export default class InfiniteScroll extends Component {
   };
 
   scrollComponent = null;
+
   pageLoaded = null;
 
   componentDidMount() {

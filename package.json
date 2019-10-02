@@ -40,6 +40,7 @@
     "history": "4.9.0",
     "intl": "1.2.5",
     "lodash": "4.17.15",
+    "prop-types": "^15.7.2",
     "raven": "2.6.4",
     "react": "16.9.0",
     "react-apollo": "3.0.1",
