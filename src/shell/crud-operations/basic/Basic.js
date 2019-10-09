@@ -1,8 +1,5 @@
 import React from 'react';
-import { compose } from 'recompose';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { bindSelectCreators } from 'reselect-computed';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -49,8 +46,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export const Basic = ({ b$, actions, selectors }) => {
+export const Basic = () => {
   const classes = useStyles();
+  const b$ = useSelector(state => state.crudOperations.basic);
+  const numSelected = useSelector(selectors.numSelected);
+  const dispatch = useDispatch();
 
   return (
     <div id="basic">
@@ -60,26 +60,32 @@ export const Basic = ({ b$, actions, selectors }) => {
         label="Primary"
         value={b$.addData.primary}
         onChange={event =>
-          actions.setData({
-            addData: { ...b$.addData, primary: event.target.value },
-          })
+          dispatch(
+            actions.setData({
+              addData: { ...b$.addData, primary: event.target.value },
+            }),
+          )
         }
       />
       <TextField
         label="Accent"
         value={b$.addData.accent}
         onChange={event =>
-          actions.setData({
-            addData: { ...b$.addData, accent: event.target.value },
-          })
+          dispatch(
+            actions.setData({
+              addData: { ...b$.addData, accent: event.target.value },
+            }),
+          )
         }
       />
       <Button
         variant="contained"
         onClick={async () => {
           if (b$.addData.primary && b$.addData.accent) {
-            await actions.addItem(b$.addData);
-            await actions.setData({ addData: { primary: '', accent: '' } });
+            await dispatch(actions.addItem(b$.addData));
+            await dispatch(
+              actions.setData({ addData: { primary: '', accent: '' } }),
+            );
           }
         }}
       >
@@ -87,16 +93,18 @@ export const Basic = ({ b$, actions, selectors }) => {
       </Button>
 
       <Paper>
-        {selectors.numSelected !== 0 ? (
+        {numSelected !== 0 ? (
           <Toolbar>
             <Typography className={classes['o-toolbar-selected']}>
-              {selectors.numSelected} selected
+              {numSelected} selected
             </Typography>
             <div className={classes['o-spacer']} />
             <IconButton
               onClick={async () => {
-                await b$.selected.forEach(({ id }) => actions.deleteItem(id));
-                await actions.setData({ selected: [] });
+                await b$.selected.forEach(({ id }) =>
+                  dispatch(actions.deleteItem(id)),
+                );
+                await dispatch(actions.setData({ selected: [] }));
               }}
             >
               <DeleteIcon />
@@ -109,7 +117,7 @@ export const Basic = ({ b$, actions, selectors }) => {
               label="Search"
               value={b$.searchData}
               onChange={event =>
-                actions.setData({ searchData: event.target.value })
+                dispatch(actions.setData({ searchData: event.target.value }))
               }
             />
           </Toolbar>
@@ -129,9 +137,11 @@ export const Basic = ({ b$, actions, selectors }) => {
                     b$.dataset.length !== 0
                   }
                   onChange={(event, checked) =>
-                    actions.setData({
-                      selected: checked ? b$.dataset.map(item => item) : [],
-                    })
+                    dispatch(
+                      actions.setData({
+                        selected: checked ? b$.dataset.map(item => item) : [],
+                      }),
+                    )
                   }
                 />
               </TableCell>
@@ -172,7 +182,7 @@ export const Basic = ({ b$, actions, selectors }) => {
                             b$.selected.slice(index + 1),
                           );
 
-                        actions.setData({ selected: res });
+                        dispatch(actions.setData({ selected: res }));
                       }}
                     />
                   </TableCell>
@@ -182,25 +192,29 @@ export const Basic = ({ b$, actions, selectors }) => {
                   <TableCell>
                     <IconButton
                       onClick={() =>
-                        actions.setData({
-                          editData: {
-                            ...b$.editData,
-                            id: item.id,
-                            primary: item.primary,
-                            accent: item.accent,
-                          },
-                          dialogs: { ...b$.dialogs, edit: true },
-                        })
+                        dispatch(
+                          actions.setData({
+                            editData: {
+                              ...b$.editData,
+                              id: item.id,
+                              primary: item.primary,
+                              accent: item.accent,
+                            },
+                            dialogs: { ...b$.dialogs, edit: true },
+                          }),
+                        )
                       }
                     >
                       <EditIcon />
                     </IconButton>
                     <IconButton
                       onClick={() =>
-                        actions.setData({
-                          deleteData: { ...b$.deleteData, id: item.id },
-                          dialogs: { ...b$.dialogs, delete: true },
-                        })
+                        dispatch(
+                          actions.setData({
+                            deleteData: { ...b$.deleteData, id: item.id },
+                            dialogs: { ...b$.dialogs, delete: true },
+                          }),
+                        )
                       }
                     >
                       <DeleteIcon />
@@ -215,7 +229,7 @@ export const Basic = ({ b$, actions, selectors }) => {
       <Dialog
         open={b$.dialogs.edit}
         onClose={() =>
-          actions.setData({ dialogs: { ...b$.dialogs, edit: false } })
+          dispatch(actions.setData({ dialogs: { ...b$.dialogs, edit: false } }))
         }
       >
         <DialogTitle>Edit</DialogTitle>
@@ -225,18 +239,22 @@ export const Basic = ({ b$, actions, selectors }) => {
               label="Primary"
               value={b$.editData.primary}
               onChange={event =>
-                actions.setData({
-                  editData: { ...b$.editData, primary: event.target.value },
-                })
+                dispatch(
+                  actions.setData({
+                    editData: { ...b$.editData, primary: event.target.value },
+                  }),
+                )
               }
             />
             <TextField
               label="Accent"
               value={b$.editData.accent}
               onChange={event =>
-                actions.setData({
-                  editData: { ...b$.editData, accent: event.target.value },
-                })
+                dispatch(
+                  actions.setData({
+                    editData: { ...b$.editData, accent: event.target.value },
+                  }),
+                )
               }
             />
           </DialogContentText>
@@ -244,17 +262,21 @@ export const Basic = ({ b$, actions, selectors }) => {
         <DialogActions>
           <Button
             onClick={() =>
-              actions.setData({ dialogs: { ...b$.dialogs, edit: false } })
+              dispatch(
+                actions.setData({ dialogs: { ...b$.dialogs, edit: false } }),
+              )
             }
           >
             Cancel
           </Button>
           <Button
             onClick={async () => {
-              await actions.editItem(b$.editData);
-              await actions.setData({
-                dialogs: { ...b$.dialogs, edit: false },
-              });
+              await dispatch(actions.editItem(b$.editData));
+              await dispatch(
+                actions.setData({
+                  dialogs: { ...b$.dialogs, edit: false },
+                }),
+              );
             }}
           >
             Save
@@ -265,7 +287,9 @@ export const Basic = ({ b$, actions, selectors }) => {
       <Dialog
         open={b$.dialogs.delete}
         onClose={() =>
-          actions.setData({ dialogs: { ...b$.dialogs, delete: false } })
+          dispatch(
+            actions.setData({ dialogs: { ...b$.dialogs, delete: false } }),
+          )
         }
       >
         <DialogTitle>Delete</DialogTitle>
@@ -277,17 +301,21 @@ export const Basic = ({ b$, actions, selectors }) => {
         <DialogActions>
           <Button
             onClick={() =>
-              actions.setData({ dialogs: { ...b$.dialogs, delete: false } })
+              dispatch(
+                actions.setData({ dialogs: { ...b$.dialogs, delete: false } }),
+              )
             }
           >
             Cancel
           </Button>
           <Button
             onClick={async () => {
-              await actions.deleteItem(b$.deleteData.id);
-              await actions.setData({
-                dialogs: { ...b$.dialogs, delete: false },
-              });
+              await dispatch(actions.deleteItem(b$.deleteData.id));
+              await dispatch(
+                actions.setData({
+                  dialogs: { ...b$.dialogs, delete: false },
+                }),
+              );
             }}
           >
             Confirm
@@ -298,13 +326,4 @@ export const Basic = ({ b$, actions, selectors }) => {
   );
 };
 
-export default compose(
-  connect(
-    ({ crudOperations: { basic } }) => ({
-      b$: basic,
-      selectors: bindSelectCreators(selectors, basic),
-    }),
-    dispatch => ({ actions: bindActionCreators(actions, dispatch) }),
-  ),
-  dynamic(['crudOperations', 'basic'], reducer),
-)(Basic);
+export default dynamic(['crudOperations', 'basic'], reducer)(Basic);

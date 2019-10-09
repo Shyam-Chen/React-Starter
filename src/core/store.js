@@ -5,19 +5,15 @@ import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { useDispatch } from 'react-redux';
 import { routerMiddleware, connectRouter } from 'connected-react-router';
 import thunkMiddleware from 'redux-thunk';
-import global from 'global';
 
 import appReducer from '~/reducer';
 
-import crudOperations from '~/shell/crud-operations/reducer';
-
 import { history } from './Router';
 
-const createRootReducer = () => ({
+const rootReducer = {
   app: appReducer,
   router: connectRouter(history),
-  crudOperations,
-});
+};
 
 const createReducerManager = initialReducers => {
   const reducers = { ...initialReducers };
@@ -54,7 +50,7 @@ const createReducerManager = initialReducers => {
   };
 };
 
-const reducerManager = createReducerManager(createRootReducer());
+const reducerManager = createReducerManager(rootReducer);
 
 export const configureStore = () => {
   const composeEnhancer =
@@ -67,20 +63,27 @@ export const configureStore = () => {
     ),
   );
 
-  global.reducerManager = reducerManager;
-
   return store;
 };
 
 export const dynamic = (key, reducer) => WrappedComponent => {
-
-
   if (typeof key === 'string') {
     reducerManager.add(key, reducer);
   }
 
   if (Array.isArray(key)) {
-    // key.forEach(item => {});
+    if (key.length === 2) {
+      reducerManager.add(key[0], combineReducers({ [key[1]]: reducer }));
+    }
+
+    if (key.length === 3) {
+      reducerManager.add(
+        key[0],
+        combineReducers({
+          [key[1]]: combineReducers({ [key[2]]: reducer }),
+        }),
+      );
+    }
   }
 
   const Dynamic = props => {

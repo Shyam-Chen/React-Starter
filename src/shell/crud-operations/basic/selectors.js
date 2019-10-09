@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
 export const numSelected = createSelector(
-  basic => basic,
+  state => state.crudOperations.basic,
   ({ selected }) => selected.length,
 );
