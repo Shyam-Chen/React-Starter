@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { dynamic } from 'redux-dynamic-manager';
 import styled from '@emotion/styled';
-
-import { dynamic } from '~/core/store';
 
 // import * as actions from './actions';
 // import * as selectors from './selectors';

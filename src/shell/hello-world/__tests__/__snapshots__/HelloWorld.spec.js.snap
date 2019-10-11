@@ -5,7 +5,9 @@ exports[`HelloWorld should render an initial component 1`] = `
   <div
     id="hello-world"
   >
-    <h1>
+    <h1
+      class="css-19gglmn-Title eck0crl0"
+    >
       Hello
       , 
       World
