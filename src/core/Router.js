@@ -33,7 +33,7 @@ const Router = () => (
       />
       <Route
         path="/github-repos"
-        component={loadable(() => import('~/github-repos/GithubRepos'))}
+        component={loadable(() => import('~/shell/github-repos/GithubRepos'))}
       />
 
       <Route path="*" component={NotFound} />

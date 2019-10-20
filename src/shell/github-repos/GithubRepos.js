@@ -69,6 +69,7 @@ const GithubRepos = () => {
       <Title>Github Repos</Title>
 
       <Input
+        placeholder="Search Repos"
         onChange={evt => {
           if (evt.target.value) {
             setResetPage(true);

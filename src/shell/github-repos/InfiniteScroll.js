@@ -66,7 +66,6 @@ export default class InfiniteScroll extends Component {
 
       if (hasMore && typeof loadMore === 'function') {
         loadMore((this.pageLoaded += 1));
-        this.loadMore = null;
       }
     }
   };
