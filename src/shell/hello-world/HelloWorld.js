@@ -3,12 +3,10 @@ import { useSelector } from 'react-redux';
 import { dynamic } from 'redux-dynamic-manager';
 import styled from '@emotion/styled';
 
-// import * as actions from './actions';
-// import * as selectors from './selectors';
 import reducer from './reducer';
 
 const Title = styled('h1')`
-  color: #222222;
+  color: #222;
 `;
 
 const HelloWorld = () => {
