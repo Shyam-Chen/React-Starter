@@ -9,6 +9,7 @@ switch (process.env.JEST_ENV) {
         '~(.*)': '<rootDir>/src$1',
       },
       setupFilesAfterEnv: ['<rootDir>/tools/setup-app.js'],
+      snapshotSerializers: ['jest-emotion'],
       testPathIgnorePatterns: [
         '<rootDir>/node_modules/',
         '<rootDir>/.flow-typed',
