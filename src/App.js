@@ -117,6 +117,15 @@ const App = () => {
             <ListItemText primary="Github Repos" />
           </ListItem>
         </List>
+
+        <List>
+          <ListItem button component={Link} to="/markdown-editor">
+            <ListItemIcon>
+              <FaceIcon />
+            </ListItemIcon>
+            <ListItemText primary="Markdown Editor" />
+          </ListItem>
+        </List>
       </Drawer>
 
       <main className={classes.content}>

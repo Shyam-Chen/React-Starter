@@ -35,6 +35,16 @@ const Router = () => (
         path="/github-repos"
         component={loadable(() => import('~/shell/github-repos/GithubRepos'))}
       />
+      <Route
+        exact
+        path="/markdown-editor"
+        component={loadable(() => import('~/shell/markdown-editor/MarkdownEditor'))}
+      />
+      <Route
+        exact
+        path="/markdown-editor/:id"
+        component={loadable(() => import('~/shell/markdown-editor/ArticleDetail'))}
+      />
 
       <Route path="*" component={NotFound} />
     </Switch>
