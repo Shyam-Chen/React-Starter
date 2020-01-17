@@ -5,7 +5,6 @@ const ScriptExtHtmlPlugin = require('script-ext-html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 // const { GenerateSW } = require('workbox-webpack-plugin');
 const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
-const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const envify = require('process-envify');
 
 const env = require('./env');
@@ -106,25 +105,18 @@ module.exports = ({ prod = false } = {}) => ({
     //   cacheId: pkg.name,
     // }),
     prod && new RobotstxtPlugin(),
-    prod && new SitemapPlugin(env.SITE_URL, [{ path: '/' }]),
   ].filter(Boolean),
   optimization: {
+    runtimeChunk: 'single',
     splitChunks: {
+      chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0,
       cacheGroups: {
-        common: {
-          name: 'common',
-          chunks: 'initial',
-          minChunks: 2,
-        },
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'all',
         },
       },
-    },
-    runtimeChunk: {
-      name: 'manifest',
     },
   },
   devServer: {
@@ -137,5 +129,5 @@ module.exports = ({ prod = false } = {}) => ({
     port: env.SITE_PORT,
   },
   devtool: prod ? 'hidden-source-map' : 'cheap-module-eval-source-map',
-  externals: ['puppeteer'],
+  // externals: ['puppeteer'],
 });

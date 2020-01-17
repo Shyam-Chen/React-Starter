@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "A boilerplate for React, Material, Babel, Flow, and ReactiveX.",
   "engines": {
-    "node": "10"
+    "node": "12"
   },
   "scripts": {
-    "start": "cross-env BABEL_ENV=app webpack-dev-server --progress",
+    "serve": "cross-env BABEL_ENV=app webpack-dev-server --progress",
     "build": "rimraf public && cross-env BABEL_ENV=app webpack --env.prod",
     "lint": "eslint 'src/**/*.js'",
     "unit": "cross-env BABEL_ENV=app JEST_ENV=app jest \"src/.*\\.js$\" --coverage --forceExit",
