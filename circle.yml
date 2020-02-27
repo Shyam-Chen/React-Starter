@@ -3,7 +3,7 @@ version: 2.1
 executors:
   react-play:
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     working_directory: ~/React-Play
 
 jobs:
@@ -29,9 +29,9 @@ jobs:
           name: Combat preparation
           command: |
             docker-compose up -d default
-            docker-compose exec default yarn _firebase use development --token $FIREBASE_TOKEN
+            # docker-compose exec default yarn _firebase use development --token $FIREBASE_TOKEN
             docker-compose exec default yarn build
-            docker-compose exec -d default yarn _firebase serve --only hosting --port 8000 --token $FIREBASE_TOKEN
+            # docker-compose exec -d default yarn _firebase serve --only hosting --port 8000 --token $FIREBASE_TOKEN
       - run:
           name: Check the code
           command: |
@@ -40,12 +40,12 @@ jobs:
           name: Test the application
           command: |
             docker-compose exec default yarn unit
-            docker-compose exec default yarn _codecov --token=$CODECOV_TOKEN
-      - run:
-          name: End-to-end UI tests
-          command: |
-            docker-compose exec default sh -c "sleep 10"
-            docker-compose exec default yarn e2e
+            docker-compose exec default yarn _codecov -t $CODECOV_TOKEN
+      # - run:
+      #     name: End-to-end UI tests
+      #     command: |
+      #       docker-compose exec default sh -c "sleep 10"
+      #       docker-compose exec default yarn e2e
 
   deploy:
     executor: react-play
@@ -58,23 +58,23 @@ jobs:
       - run:
           name: Deploy the project
           command: |
-            if [[ "${CIRCLE_BRANCH}" == "develop" ]]; then
-              docker-compose up -d dev
-              docker-compose exec dev yarn _firebase use development --token $FIREBASE_TOKEN
-              docker-compose exec dev yarn _firebase deploy --only hosting --token $FIREBASE_TOKEN
-            fi
+            # if [[ "${CIRCLE_BRANCH}" == "develop" ]]; then
+            #   docker-compose up -d dev
+            #   docker-compose exec dev yarn _firebase use development --token $FIREBASE_TOKEN
+            #   docker-compose exec dev yarn _firebase deploy --only hosting --token $FIREBASE_TOKEN
+            # fi
 
-            if [[ "${CIRCLE_BRANCH}" == *"release"* ]]; then
-              docker-compose up -d stage
-              docker-compose exec stage yarn _firebase use staging --token $FIREBASE_TOKEN
-              docker-compose exec stage yarn _firebase deploy --only hosting --token $FIREBASE_TOKEN
-            fi
+            # if [[ "${CIRCLE_BRANCH}" == *"release"* ]]; then
+            #   docker-compose up -d stage
+            #   docker-compose exec stage yarn _firebase use staging --token $FIREBASE_TOKEN
+            #   docker-compose exec stage yarn _firebase deploy --only hosting --token $FIREBASE_TOKEN
+            # fi
 
-            if [[ "${CIRCLE_BRANCH}" == "master" ]]; then
-              docker-compose up -d prod
-              docker-compose exec prod yarn _firebase use production --token $FIREBASE_TOKEN
-              docker-compose exec prod yarn _firebase deploy --only hosting --token $FIREBASE_TOKEN
-            fi
+            # if [[ "${CIRCLE_BRANCH}" == "master" ]]; then
+            #   docker-compose up -d prod
+            #   docker-compose exec prod yarn _firebase use production --token $FIREBASE_TOKEN
+            #   docker-compose exec prod yarn _firebase deploy --only hosting --token $FIREBASE_TOKEN
+            # fi
 
 workflows:
   version: 2

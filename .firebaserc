@@ -1,7 +1,0 @@
-{
-  "projects": {
-    "development": "react-by-example-dev",
-    "staging": "react-by-example-stage",
-    "production": "react-by-example-prod"
-  }
-}
