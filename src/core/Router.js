@@ -6,7 +6,7 @@ import { createBrowserHistory } from 'history';
 import Home from '~/home/Home';
 import NotFound from '~/not-found/NotFound';
 
-export const history = createBrowserHistory();
+export const history = createBrowserHistory({ pathname: '/' });
 
 const Router = () => (
   <>

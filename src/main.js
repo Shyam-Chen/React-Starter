@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Router } from 'react-router';
 import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { ConnectedRouter } from 'connected-react-router';
@@ -19,6 +20,7 @@ const store = configureStore();
 const language = navigator.language.split(/[-_]/)[0];
 
 const Providers = nestPairs(
+  [Router, { history }],
   [Provider, { store }],
   [ConnectedRouter, { history }],
   [IntlProvider, { locale: language, messages: i18n[language] }],
