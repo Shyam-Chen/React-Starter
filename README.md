@@ -2,119 +2,120 @@
 
 :ram: A boilerplate for React, Material, Babel, Flow, and ReactiveX.
 
-|    | Project Information |
-|:--:|---------------------|
-| Live Demo | [![Develop Demo][demo-develop-image]][demo-develop-link] [![Master Demo][demo-master-image]][demo-master-link] |
-| Develop Branch | [![Build Status][develop-build-image]][develop-build-link] [![Coverage Status][develop-coverage-image]][develop-coverage-link] |
-| Master Branch | [![Build Status][master-build-image]][master-build-link] [![Coverage Status][master-coverage-image]][master-coverage-link] |
-| Npm Package | [![dependencies Status][package-dependencies-image]][package-dependencies-link] [![devDependencies Status][package-devDependencies-image]][package-devDependencies-link] |
-
-[demo-develop-image]: https://img.shields.io/badge/link-develop-blue.svg
-[demo-develop-link]: https://react-by-example-dev.web.app/
-[demo-master-image]: https://img.shields.io/badge/link-master-blue.svg
-[demo-master-link]: https://react-by-example-prod.web.app/
-
-[develop-build-image]: https://img.shields.io/circleci/project/github/Shyam-Chen/React-Play/develop.svg
-[develop-build-link]: https://circleci.com/gh/Shyam-Chen/workflows/React-Play
-[develop-coverage-image]: https://img.shields.io/codecov/c/github/Shyam-Chen/React-Play/develop.svg
-[develop-coverage-link]: https://codecov.io/gh/Shyam-Chen/React-Play
-
-[master-build-image]: https://img.shields.io/circleci/project/github/Shyam-Chen/React-Play/master.svg
-[master-build-link]: https://circleci.com/gh/Shyam-Chen/workflows/React-Play
-[master-coverage-image]: https://img.shields.io/codecov/c/github/Shyam-Chen/React-Play/master.svg
-[master-coverage-link]: https://codecov.io/gh/Shyam-Chen/React-Play
-
-[package-dependencies-image]: https://img.shields.io/david/Shyam-Chen/React-Play.svg
-[package-dependencies-link]: https://david-dm.org/Shyam-Chen/React-Play
-[package-devDependencies-image]: https://img.shields.io/david/dev/Shyam-Chen/React-Play.svg
-[package-devDependencies-link]: https://david-dm.org/Shyam-Chen/React-Play?type=dev
-
 ## Table of Contents
 
-* [Getting Started](#getting-started)
-* [Key Features](#key-features)
-* [Dockerization](#dockerization)
-* [Configuration](#configuration)
-* [Directory Structure](#directory-structure)
+- [Project Setup](#project-setup)
+- [Key Features](#key-features)
+- [Dockerization](#dockerization)
+- [Configuration](#configuration)
+- [Directory Structure](#directory-structure)
 
-## Getting Started
+## Project Setup
 
 Follow steps to execute this boilerplate.
 
-1. Clone this boilerplate
+### Install dependencies
 
-```bash
-$ git clone --depth 1 https://github.com/Shyam-Chen/React-Play <PROJECT_NAME>
-$ cd <PROJECT_NAME>
-```
-
-2. Install dependencies
-
-```bash
+```sh
 $ yarn install
 ```
 
-3. Start a local server
+### Compiles and hot-reloads for development
 
-```bash
+```sh
 $ yarn serve
 ```
 
-4. Compile and bundle code
+### Compiles and minifies for production
 
-```bash
+```sh
 $ yarn build
 ```
 
-5. Check code quality
+### Lints and fixes files
 
-```bash
+```sh
 $ yarn lint
 ```
 
-6. Runs unit tests
+### Runs unit tests
 
-```bash
+Files: `src/**/*.spec.js`
+
+```sh
 $ yarn unit
 ```
 
-7. Runs end-to-end tests
+### Runs end-to-end tests
 
-```bash
+Files: `e2e/**/*.spec.js`
+
+```sh
+# Before running the `e2e` command, make sure to run the following commands.
+$ yarn build
+$ yarn preview
+
+# If it's not setup, run it.
+$ yarn setup
+
 $ yarn e2e
+```
+
+### Measures site's URLs
+
+Files: `e2e/**/*.meas.js`
+
+```sh
+# Before running the `meas` command, make sure to run the following commands.
+$ yarn build
+$ yarn preview
+
+# If it's not setup, run it.
+$ yarn setup
+
+$ yarn meas
+```
+
+### Mock requests
+
+[`mock/requests`](./mock/requests) is a fork of [Koa-Starter](https://github.com/Shyam-Chen/Koa-Starter) that was made easy and quick way to run mock APIs locally.
+
+```sh
+# If it's not active, run it.
+$ yarn active
+
+$ yarn mock
 ```
 
 ## Key Features
 
 This seed repository provides the following features:
 
-* [x] [Web Fundamentals](https://developers.google.com/web/fundamentals/)
-* [x] [Firebase Platform](https://firebase.google.com/)
-* [x] [Google Cloud](https://cloud.google.com/)
-* [x] [Docker](https://www.docker.com/)
-* [x] [CircleCI](https://circleci.com/)
-* [x] [Codecov](https://codecov.io/)
-* ----------
-* [x] [React](https://github.com/facebook/react)
-* [x] [React Router](https://github.com/ReactTraining/react-router)
-* [ ] [React Intl](https://github.com/yahoo/react-intl)
-* [x] [Recompose](https://github.com/acdlite/recompose)
-* [x] [Redux](https://github.com/reduxjs/redux)
-* [x] [Redux Thunk](https://github.com/reduxjs/redux-thunk)
-* [x] [Reselect](https://github.com/reduxjs/reselect)
-* [x] [Material UI](https://github.com/mui-org/material-ui)
-* [x] [Axios](https://github.com/axios/axios)
-* [x] [Webpack](https://github.com/webpack/webpack)
-* [x] [JSX](https://github.com/facebook/jsx)
-* [x] [JSS](https://github.com/cssinjs/jss)
-* [x] [Puppeteer](https://github.com/GoogleChrome/puppeteer)
-* ----------
-* [x] [Yarn](https://github.com/yarnpkg/yarn)
-* [ ] [Apollo GraphQL](https://github.com/apollographql)
-* [x] [ReactiveX](https://github.com/ReactiveX/rxjs)
-* [x] [Babel](https://github.com/babel/babel)
-* [x] [ESLint](https://github.com/eslint/eslint)
-* [x] [Jest](https://github.com/facebook/jest)
+- ---------- **Essentials** ----------
+- [x] [React](https://github.com/facebook/react)
+- [x] [React Router](https://github.com/ReactTraining/react-router)
+- [ ] [React Intl](https://github.com/yahoo/react-intl)
+- [x] [Recompose](https://github.com/acdlite/recompose)
+- [x] [Redux](https://github.com/reduxjs/redux)
+- [x] [Redux Thunk](https://github.com/reduxjs/redux-thunk)
+- [x] [Reselect](https://github.com/reduxjs/reselect)
+- [x] [Material UI](https://github.com/mui-org/material-ui)
+- [x] [Axios](https://github.com/axios/axios)
+- [ ] [Apollo GraphQL](https://github.com/apollographql)
+- [x] [ReactiveX](https://github.com/ReactiveX/rxjs)
+- ---------- **Tools** ----------
+- [x] [Webpack](https://github.com/webpack/webpack)
+- [x] [JSX](https://github.com/facebook/jsx)
+- [x] [JSS](https://github.com/cssinjs/jss)
+- [x] [Puppeteer](https://github.com/GoogleChrome/puppeteer)
+- [x] [Babel](https://github.com/babel/babel)
+- [x] [ESLint](https://github.com/eslint/eslint)
+- [x] [Jest](https://github.com/facebook/jest)
+- ---------- **Environments** ----------
+- [x] [Node.js](https://nodejs.org/en/)
+- [x] [Yarn](https://classic.yarnpkg.com/lang/en/)
+- [ ] [Caddy](https://caddyserver.com/)
+- [ ] [Netlify](https://www.netlify.com/)
 
 ## Dockerization
 

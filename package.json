@@ -1,10 +1,7 @@
 {
   "name": "react-starter",
   "version": "1.0.0",
-  "description": "A boilerplate for React, Material, Babel, Flow, and ReactiveX.",
-  "engines": {
-    "node": "12"
-  },
+  "private": true,
   "scripts": {
     "serve": "cross-env BABEL_ENV=app webpack-dev-server --progress",
     "build": "rimraf public && cross-env BABEL_ENV=app webpack --env.prod",
@@ -15,12 +12,6 @@
     "_codecov": "codecov",
     "_firebase": "firebase"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Shyam-Chen/React-Play.git"
-  },
-  "author": "Shyam Chen",
-  "license": "MIT",
   "dependencies": {
     "@apollo/react-hooks": "3.0.1",
     "@babel/runtime": "7.5.5",
